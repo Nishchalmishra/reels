@@ -1,0 +1,8 @@
+The language of measurement
+Arivihan animated demo lesson
+
+Length → metre (m)
+
+The SI base unit of length is the metre. A distance of 3 metres means three standard metre lengths.
+
+Revisit: /player/units/units-1

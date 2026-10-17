@@ -1,0 +1,44 @@
+import fs from 'node:fs';
+import assert from 'node:assert/strict';
+import {createClient} from '@supabase/supabase-js';
+import {chromium} from 'playwright';
+import {publicConfig} from './supabase-env.mjs';
+import {retainTestSessions} from './test-sessions.mjs';
+
+const {url,key}=publicConfig();
+const journey=JSON.parse(fs.readFileSync('verification-live/full-journey.json','utf8'));
+const archive=`supabase/.test-sessions/${journey.run}.json`;
+const stored=JSON.parse(fs.readFileSync(fs.existsSync(archive)?archive:'supabase/.test-sessions.json','utf8'));
+assert.equal(stored.run,journey.run,'Restore the retained mobile journey session, not a different API test run.');
+const client=createClient(url,key,{auth:{persistSession:false,autoRefreshToken:false}});
+const rpc=async(c,name,args={})=>{const {data,error}=await c.rpc('ar_reels_'+name,args);if(error)throw error;return data;};
+const guest=createClient(url,key,{auth:{persistSession:false,autoRefreshToken:false}});
+assert.ok(await rpc(guest,'catalogue'));
+assert.ok(await rpc(guest,'product_catalogue'));
+const {data,error}=await client.auth.setSession(stored.sessions[0]);
+if(error)throw error;
+const refreshed=await client.auth.refreshSession();
+if(refreshed.error)throw refreshed.error;
+retainTestSessions(stored.run,stored.users,[refreshed.data.session]);
+const state=await rpc(client,'snapshot');
+assert.equal(state.profile.id,journey.userId);
+assert.equal(state.orders.length,1);
+assert.equal(state.ledger.reduce((n,l)=>n+l.amount,0),0);
+const before=await rpc(client,'recognition');
+await rpc(client,'confirm',{p_product:'pro',p_coins:5,p_request:state.orders[0].id});
+assert.deepEqual(await rpc(client,'recognition'),before);
+const browser=await chromium.launch({channel:'chrome',headless:true});
+try{
+ const page=await browser.newPage({viewport:{width:390,height:844}});
+ const errors=[];page.on('pageerror',e=>errors.push(e.message));
+ await page.addInitScript(({key,session})=>localStorage.setItem(key,JSON.stringify(session)),{key:`sb-${new URL(url).hostname.split('.')[0]}-auth-token`,session:refreshed.data.session});
+ await page.goto('http://127.0.0.1:4174/store/pro');
+ await page.getByRole('heading',{name:'Your demo order is recorded.'}).waitFor();
+ await page.getByText(/deducted once from your learning wallet/).waitFor();
+ await page.reload();
+ await page.getByRole('heading',{name:'Your demo order is recorded.'}).waitFor();
+ await page.screenshot({path:'verification-live/completed-simulated-order.png',fullPage:true});
+ assert.deepEqual(errors,[]);
+ fs.writeFileSync('verification-live/post-hardening.json',JSON.stringify({status:'passed',at:new Date().toISOString(),checks:['Public catalogue RPCs work with browser credentials under invoker security','Real Auth refresh/re-login restores existing test identity and persisted wallet/order','Repeated confirmation remains idempotent and recognition unchanged','Mobile production UI restores completed simulated order after reload with accurate live labels'],newUsersCreated:0},null,2));
+ console.log('PASS post-hardening public catalogue, Auth refresh, persisted records, idempotent order and mobile UI. No new users created.');
+}finally{await browser.close();}

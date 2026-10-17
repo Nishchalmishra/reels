@@ -1,0 +1,55 @@
+{
+  "run": "98014f8c-92cd-4102-b7e8-a593221d48b4",
+  "project": "pbaegeqjargtsfortsyh",
+  "startedAt": "2026-10-17T12:43:19.780Z",
+  "checks": [
+    {
+      "name": "Dedicated authenticated A/B identities and profile restoration",
+      "status": "passed"
+    },
+    {
+      "name": "Actual catalogue and private answer-key API isolation",
+      "status": "passed"
+    },
+    {
+      "name": "Stored coverage rejects seeks/background/repeats and mixed chapters",
+      "status": "passed"
+    },
+    {
+      "name": "Answer persistence, ownership, 4/5 zero coins and correct mapping",
+      "status": "passed"
+    },
+    {
+      "name": "Perfect retry and concurrent completion earn exactly five once",
+      "status": "passed"
+    },
+    {
+      "name": "Five-coin quote uses trusted backend price and cancellation has no debit",
+      "status": "passed"
+    },
+    {
+      "name": "All four money examples with an isolated TEST-only 495-coin fixture",
+      "status": "passed"
+    },
+    {
+      "name": "Concurrent spend protection, idempotency, actual orders/debits and stable recognition",
+      "status": "passed"
+    },
+    {
+      "name": "User B cannot read or mutate user A records; no direct reward writes",
+      "status": "passed"
+    },
+    {
+      "name": "Analytics event IDs deduplicate and test flags persist",
+      "status": "passed"
+    }
+  ],
+  "users": [
+    "6ac77c54-a315-4840-b55f-00a3db1310dc",
+    "41f47154-247e-4ed3-92a8-671e74941860"
+  ],
+  "limitations": [
+    "Dedicated test identities retained for reproducibility. Their session file is ignored by git. Cleanup must target only these exact user IDs."
+  ],
+  "finishedAt": "2026-10-17T12:44:48.058Z"
+}

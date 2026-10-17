@@ -1,0 +1,15 @@
+node_modules/
+dist/
+.tools/
+.env
+.env.*
+!.env.example
+supabase/.test-sessions.json
+supabase/.test-sessions/
+supabase/inspection/database.json
+supabase/inspection/*private*
+dist-live/
+verification-live/
+playwright-report/
+test-results/
+*.tsbuildinfo

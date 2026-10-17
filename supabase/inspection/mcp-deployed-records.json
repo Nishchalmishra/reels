@@ -1,0 +1,25 @@
+[
+  {
+    "deployment": {
+      "lessons": 10,
+      "chapters": 4,
+      "products": 3,
+      "questions": 10,
+      "historical": {
+        "reels": 0,
+        "ledger": 0,
+        "attempts": 0,
+        "profiles": 0,
+        "questions": 0
+      },
+      "migrations": [
+        "202610170001_reels.sql",
+        "202610170002_demo_content.sql",
+        "202610170003_public_security.sql"
+      ],
+      "test_profiles": 8,
+      "normal_profiles": 0,
+      "challenge_mappings": 10
+    }
+  }
+]

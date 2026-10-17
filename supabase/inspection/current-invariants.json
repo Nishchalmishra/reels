@@ -1,0 +1,22 @@
+{
+  "at": "2026-10-17T16:45:09.126Z",
+  "access": [
+    {
+      "unprotected_tables": 0,
+      "private_schema_access": false,
+      "answer_key_access": false,
+      "direct_reward_insert": false,
+      "direct_progress_update": false,
+      "anonymous_finish": false,
+      "authenticated_finish": true
+    }
+  ],
+  "invariants": [
+    {
+      "duplicate_rewards": 0,
+      "invalid_rewards": 0,
+      "negative_wallets": 0,
+      "duplicate_orders": 0
+    }
+  ]
+}

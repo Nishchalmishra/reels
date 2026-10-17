@@ -1,0 +1,15 @@
+{
+  "at": "2026-10-17T16:43:30.295Z",
+  "project": "pbaegeqjargtsfortsyh",
+  "server": "supabase",
+  "tool": "get_project_url",
+  "toolCallVerified": true,
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"url\":\"https://pbaegeqjargtsfortsyh.supabase.co\"}"
+      }
+    ]
+  }
+}

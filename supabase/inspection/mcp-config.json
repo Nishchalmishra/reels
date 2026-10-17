@@ -1,0 +1,10 @@
+{
+  "checkedAt": "2026-10-17T12:34:49.689Z",
+  "server": "supabase",
+  "project": "pbaegeqjargtsfortsyh",
+  "enabled": true,
+  "transport": "streamable_http",
+  "authMethod": "o_auth",
+  "toolCallVerified": false,
+  "note": "Configuration/OAuth method only. A successful project MCP tool call is still required."
+}

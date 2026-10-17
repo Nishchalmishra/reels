@@ -1,0 +1,90 @@
+{
+  "project": "pbaegeqjargtsfortsyh",
+  "checkedAt": "2026-10-17T12:43:08.759Z",
+  "endpoints": {
+    "auth-settings": {
+      "status": 200,
+      "body": {
+        "anonymous_users_enabled": true,
+        "disable_signup": false,
+        "external": {
+          "anonymous_users": true,
+          "apple": false,
+          "azure": false,
+          "bitbucket": false,
+          "discord": false,
+          "facebook": false,
+          "snapchat": false,
+          "figma": false,
+          "fly": false,
+          "github": false,
+          "gitlab": false,
+          "google": false,
+          "keycloak": false,
+          "kakao": false,
+          "linkedin": false,
+          "linkedin_oidc": false,
+          "notion": false,
+          "spotify": false,
+          "slack": false,
+          "slack_oidc": false,
+          "workos": false,
+          "twitch": false,
+          "twitter": false,
+          "email": true,
+          "phone": false,
+          "zoom": false
+        }
+      }
+    },
+    "catalogue-schema": {
+      "status": 401,
+      "body": {
+        "message": "Secret API key required",
+        "hint": "Only secret API keys can be used for this endpoint."
+      }
+    },
+    "storage-buckets": {
+      "status": 200,
+      "body": []
+    },
+    "profiles": {
+      "status": 200,
+      "count": "*/0"
+    },
+    "reels": {
+      "status": 200,
+      "count": "*/0"
+    },
+    "questions": {
+      "status": 200,
+      "count": "*/0"
+    },
+    "reel_events": {
+      "status": 200,
+      "count": "*/0"
+    },
+    "quiz_attempts": {
+      "status": 200,
+      "count": "*/0"
+    },
+    "coin_ledger": {
+      "status": 200,
+      "count": "*/0"
+    },
+    "leaderboard": {
+      "status": 200,
+      "count": "*/0"
+    },
+    "ar_reels_profiles": {
+      "status": 401,
+      "count": null,
+      "code": "42501",
+      "message": "permission denied for table ar_reels_profiles"
+    },
+    "ar_reels_chapters": {
+      "status": 206,
+      "count": "*/4"
+    }
+  }
+}
