@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="0dp">
+
+    <arivihan.technologies.doubtbuzzter2.customView.gradient.AnimatedBorderView
+        android:id="@+id/border_animation"
+        android:layout_width="188dp"
+        android:layout_height="119dp"
+        android:layout_marginHorizontal="7dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginBottom="7dp"
+        app:cornerRadius="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/main_card"
+        android:layout_width="182dp"
+        android:layout_height="113dp"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="10dp"
+        android:outlineSpotShadowColor="@color/grey_300"
+        app:cardBackgroundColor="@color/grey_300"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white">
+
+            <ImageView
+                android:id="@+id/iv_completed_status"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_alignParentRight="true"
+                android:layout_margin="4dp"
+                android:src="@drawable/today_class_complete_icon" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="28dp"
+                android:orientation="horizontal"
+                android:paddingHorizontal="6dp"
+                android:paddingVertical="7dp">
+
+                <ImageView
+                    android:id="@+id/iv_subject_icon_img"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="8dp"
+                    android:layout_marginTop="2dp"
+                    android:src="@drawable/img_file_edit" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="2dp">
+
+                    <TextView
+                        android:id="@+id/tv_text1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="11dp"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/urbanist_semi_bold"
+                        android:maxWidth="110dp"
+                        android:maxLines="1"
+                        android:text="Scientific Method"
+                        android:textColor="#26C6DA"
+                        android:textSize="12dp" />
+
+                    <TextView
+                        android:id="@+id/tv_text2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/urbanist_semi_bold"
+                        android:maxWidth="90dp"
+                        android:maxLines="1"
+                        android:text="Unit and Dimensions"
+                        android:textColor="#191919"
+                        android:textSize="10dp" />
+
+                    <TextView
+                        android:id="@+id/tv_text3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:fontFamily="@font/urbanist_medium"
+                        android:text="7 Practice Problems"
+                        android:textColor="#8A8A8A"
+                        android:textSize="9dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="38dp"
+                android:layout_alignParentBottom="true"
+                android:background="#E9FBFC">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:orientation="horizontal"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginTop="-2dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_bottom_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/urbanist_bold"
+                            android:maxWidth="90dp"
+                            android:maxLines="1"
+                            android:text="Know more"
+                            android:textColor="#26C6DA"
+                            android:textSize="11dp" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/arivihan_secondary_color" />
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/iv_bottom"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_gravity="center_vertical"
+                        android:padding="4dp"
+                        android:src="@drawable/arrow_forward_white_24"
+                        app:tint="#26C6DA" />
+
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="22dp"
+                android:layout_margin="3dp"
+                android:background="@drawable/today_task_current_item_badge"
+                android:paddingHorizontal="6dp">
+
+                <TextView
+                    android:id="@+id/tv_task_position"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="@font/urbanist_semi_bold"
+                    android:text="2/6"
+                    android:textColor="@color/arivihan_secondary_color"
+                    android:textSize="12sp" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/new_badge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:cardBackgroundColor="@color/streak_yellow"
+        app:cardCornerRadius="2dp"
+        app:cardElevation="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/urbanist_semi_bold"
+            android:gravity="center"
+            android:paddingHorizontal="4dp"
+            android:paddingVertical="2dp"
+            android:text="@string/New"
+            android:textColor="@color/black"
+            android:textSize="10sp" />
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

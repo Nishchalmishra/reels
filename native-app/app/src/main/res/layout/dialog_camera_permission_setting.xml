@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cv_parent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_marginHorizontal="24dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="5dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:minWidth="400dp"
+            android:orientation="vertical"
+            android:paddingHorizontal="12dp"
+            android:paddingTop="48dp"
+            android:paddingBottom="24dp"
+            >
+
+            <TextView
+                android:id="@+id/tv_header_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:fontFamily="@font/urbanist_semi_bold"
+                android:text="@string/camera_permission_zaruri_hai_upload_ke_liye"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/tv_body_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/urbanist_regular"
+                android:gravity="start"
+                android:text="@string/go_to_settings"
+                android:textColor="#000000"
+                android:textSize="14sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_skip"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:layout_marginHorizontal="12dp"
+                    app:cardBackgroundColor="@color/subscription_card_background"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="0dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/urbanist_semi_bold"
+                        android:gravity="center"
+                        android:paddingHorizontal="8dp"
+                        android:paddingVertical="12dp"
+                        android:text="@string/skip"
+                        android:textColor="@color/arivihan_secondary_color"
+                        android:textSize="14sp"
+                        android:layout_gravity="center"
+                        />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_settings"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:layout_marginHorizontal="12dp"
+                    app:cardBackgroundColor="@color/arivihan_secondary_color"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="0dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/urbanist_semi_bold"
+                        android:gravity="center"
+                        android:paddingHorizontal="8dp"
+                        android:paddingVertical="12dp"
+                        android:text="@string/go_to_settings"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        android:layout_gravity="center"
+                        />
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/iv_close"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_close_black"
+            android:scaleType="center"
+            app:tint="#191919"
+            android:padding="4dp"
+            android:layout_marginHorizontal="4dp"
+            android:layout_marginVertical="4dp"
+            android:layout_alignParentEnd="true"
+            />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
+

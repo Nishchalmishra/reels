@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="5dp"
+        app:cardElevation="0dp"
+        app:cardBackgroundColor="@color/white"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:background="@color/white"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:id="@+id/left"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="#9E9E9E"/>
+
+            <LinearLayout
+                android:id="@+id/right"
+                android:layout_width="1dp"
+                app:layout_constraintRight_toRightOf="parent"
+                android:orientation="vertical"
+                android:layout_alignParentRight="true"
+                android:layout_height="match_parent"
+                android:background="#9E9E9E"/>
+
+            <LinearLayout
+                android:id="@+id/top"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#9E9E9E"
+                android:orientation="vertical" />
+
+
+            <LinearLayout
+                android:id="@+id/down"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:background="#9E9E9E"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:id="@+id/icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="8dp"
+                >
+
+                <ImageView
+                    android:id="@+id/done"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:src="@drawable/ic_done_green"/>
+
+                <ImageView
+                    android:id="@+id/wrong"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:src="@drawable/ic_wrong_red" />
+
+
+            </RelativeLayout>
+
+
+            <TextView
+                android:id="@+id/Option"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:text="A."
+                android:textColor="#555555"
+                android:textSize="@dimen/primary_text_size" />
+
+            <TextView
+                android:id="@+id/OP"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_toLeftOf="@+id/icon"
+                android:layout_toRightOf="@+id/Option"
+                android:text="Here is Option A"
+                android:textColor="#555555"
+                android:textSize="@dimen/primary_text_size" />
+
+            <ImageView
+                android:id="@+id/OPImage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:visibility="gone"
+                android:src="@drawable/heart_like"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_toLeftOf="@+id/icon"
+                android:layout_toRightOf="@+id/Option"/>
+
+
+
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

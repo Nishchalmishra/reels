@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/exam_card"
+    android:layout_width="match_parent"
+    android:layout_height="52dp"
+    android:minWidth="160dp"
+    android:layout_gravity="center"
+    android:layout_marginHorizontal="10dp"
+    app:cardBackgroundColor="@android:color/transparent"
+    android:background="@drawable/card_outer_glow"
+    android:clickable="true"
+    android:focusable="true"
+    app:cardCornerRadius="26dp"
+    app:cardElevation="0dp"
+    app:rippleColor="@null"
+    app:strokeWidth="0dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:paddingHorizontal="20dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/exam_selection_item_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:fontFamily="@font/urbanist_semi_bold"
+            android:maxLines="1"
+            android:text="Board"
+            android:textColor="@color/arivihan_secondary_color"
+            android:textSize="19dp" />
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

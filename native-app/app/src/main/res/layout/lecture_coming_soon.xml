@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="20dp"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="8dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="5dp"
+            android:src="@drawable/ic_close_black" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cancel"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/animationView"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                android:layout_marginBottom="-30dp"
+                app:lottie_rawRes="@raw/lecture_coming_soon" />
+
+            <TextView
+                android:id="@id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:gravity="center"
+                android:layout_marginHorizontal="10dp"
+                android:fontFamily="@font/nunito_semibold"
+                android:text="@string/lecture_coming_soon"
+                android:textColor="#696969"
+                android:textSize="18sp"
+                android:layout_marginBottom="15dp"/>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/go_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/mock_primary_color"
+                app:cardCornerRadius="8dp"
+                android:layout_marginBottom="15dp"
+                app:cardElevation="0dp">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="25dp"
+                    android:paddingVertical="15dp"
+                    android:fontFamily="@font/urbanist_semi_bold"
+                    android:text="@string/go_back_to_lecture"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+
+            </androidx.cardview.widget.CardView>
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

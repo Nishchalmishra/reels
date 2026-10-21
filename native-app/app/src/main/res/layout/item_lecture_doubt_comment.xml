@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rl_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cv_parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="0dp"
+        app:cardBackgroundColor="@color/color_transparent"
+        app:strokeColor="@color/gray_e6"
+        app:strokeWidth="0.6dp"
+        android:layout_marginVertical="10dp"
+        android:layout_marginStart="78dp"
+        android:layout_marginEnd="16dp"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="6dp"
+            android:paddingHorizontal="14dp"
+            >
+            <TextView
+                android:id="@+id/tv_comment_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/urbanist_medium"
+                android:text="text here..."
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:textStyle="normal"
+                android:layout_gravity="center_vertical"
+                />
+        </RelativeLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_nested_comments"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:listitem="@layout/item_lecture_nested_doubt_comment"
+        tools:itemCount="1"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginTop="-4dp"
+        />
+
+</LinearLayout>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_marginHorizontal="32dp"
+    android:padding="16dp"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="1dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingBottom="20dp">
+
+            <!-- Title -->
+            <TextView
+                android:id="@+id/tv_pa_referral_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/urbanist_bold"
+                android:gravity="center"
+                android:lineSpacingExtra="4dp"
+                android:text="@string/pa_referral_title"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <!-- Illustration -->
+            <ImageView
+                android:id="@+id/iv_pa_referral_illustration"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="12dp"
+                android:src="@drawable/img_girl_refer"
+                android:layout_marginVertical="12dp"
+                android:scaleType="fitCenter" />
+
+            <!-- Description -->
+            <TextView
+                android:id="@+id/tv_pa_referral_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/urbanist_medium"
+                android:gravity="center"
+                android:lineSpacingExtra="4dp"
+                android:text="@string/pa_referral_description"
+                android:textColor="#696969"
+                android:textSize="15sp" />
+
+            <!-- CTA Button -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cv_pa_refer_cta"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="20dp"
+                app:cardBackgroundColor="@color/mock_primary_color"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="0dp">
+
+                <TextView
+                    android:id="@+id/tv_pa_refer_cta"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/urbanist_semi_bold"
+                    android:gravity="center"
+                    android:text="@string/pa_refer_cta"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+        <!-- Close (X) button -->
+        <ImageView
+            android:id="@+id/iv_pa_referral_close"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginVertical="12dp"
+            android:padding="1dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_close_black"
+            app:tint="#6D6D6D" />
+
+    </RelativeLayout>
+
+</com.google.android.material.card.MaterialCardView>

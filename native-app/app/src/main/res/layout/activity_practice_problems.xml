@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.PracticeProblemsActivity"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/back_button_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="20dp"
+            android:paddingEnd="17dp">
+
+            <ImageView
+                android:id="@+id/back_button"
+                android:layout_width="9dp"
+                android:layout_height="15dp"
+                android:layout_marginTop="1dp"
+                android:src="@drawable/arrow_icon" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nunito_regular"
+            android:text="Physics-Motion"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:layout_weight="1"/>
+
+        <ImageView
+            android:id="@+id/long_short_question_info_btn"
+            android:layout_width="17dp"
+            android:layout_height="17dp"
+            android:layout_marginLeft="6dp"
+            android:layout_marginTop="2dp"
+            android:src="@drawable/icon_sav_info"
+            android:visibility="gone" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/how_to_card"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="5dp"
+            android:layout_marginEnd="1dp">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginHorizontal="8dp"
+                android:layout_marginVertical="5dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/How_to_Use"
+                    android:fontFamily="@font/urbanist_medium"
+                    android:textSize="16dp"
+                    android:textColor="#99000000"/>
+
+                <ImageView
+                    android:id="@+id/how_to_video_icon"
+                    android:layout_width="18dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/how_to_question_mark" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:tabIndicatorColor="@color/arivihan_secondary_color"
+        app:tabIndicatorFullWidth="false"
+        app:tabMaxWidth="60dp"
+        app:tabMode="scrollable"
+        app:tabSelectedTextColor="@color/black" />
+
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/tabs"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_weight="1"
+        android:layout_marginTop="10dp"/>
+
+    <include
+        android:visibility="gone"
+        layout="@layout/continuity_layout"/>
+
+    <include
+        android:id="@+id/how_to_video_view"
+        layout="@layout/activity_mock_demo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

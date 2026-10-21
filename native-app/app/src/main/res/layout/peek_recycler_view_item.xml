@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/crop_layout"
+    android:background="@drawable/border_white"
+    android:layout_width="60dp"
+    android:layout_height="60dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ImageView
+        android:layout_margin="3dp"
+        android:id="@+id/peek_image_view"
+        android:layout_width="60dp"
+        android:layout_height="60dp"/>
+
+    <ImageView
+        android:id="@+id/peek_item_delete"
+        android:layout_centerInParent="true"
+        android:src="@drawable/ic_delete_teal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="delete icon" />
+
+</RelativeLayout>
+
+

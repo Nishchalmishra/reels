@@ -1,0 +1,116 @@
+[
+  {
+    "id": "lesson-c1f35ba60fdf6b04",
+    "file": "Concert and waves _ सुरजीत का concert.mp4",
+    "duration": 169.25,
+    "width": 720,
+    "height": 1280,
+    "sha256": "c1f35ba60fdf6b0417ffebc0f66b59c5fa5378847e90ae16392899e6035a7464",
+    "contentVersion": 1,
+    "reviewStatus": "visual-review-pending",
+    "poster": "lesson-c1f35ba60fdf6b04.jpg"
+  },
+  {
+    "id": "lesson-0ba81c055000009e",
+    "file": "Floating in space _ #momentum #conservationofmomentum #physics #jee #neet #space #education.mp4",
+    "duration": 120.733,
+    "width": 360,
+    "height": 640,
+    "sha256": "0ba81c055000009ec6e31e6e5c6feb67b587d3d890e4086054b69d8f16a31a09",
+    "contentVersion": 1,
+    "reviewStatus": "visual-review-pending",
+    "poster": "lesson-0ba81c055000009e.jpg"
+  },
+  {
+    "id": "lesson-21ec700c98e20ddc",
+    "file": "Newtons_Laws_Entertaining_Reel.mp4",
+    "duration": 86.333,
+    "width": 720,
+    "height": 1280,
+    "sha256": "21ec700c98e20ddccd6e7ce388a48b91cae10d34f202ca67284ec0ec5022aecf",
+    "contentVersion": 1,
+    "reviewStatus": "visual-review-pending",
+    "poster": "lesson-21ec700c98e20ddc.jpg"
+  },
+  {
+    "id": "lesson-22bcc41eece62149",
+    "file": "Pressure and height _ बांटी का पापा अलार्म.mp4",
+    "duration": 153.083,
+    "width": 720,
+    "height": 1280,
+    "sha256": "22bcc41eece6214910a81aa7ed87e021c79f4dc4c36b2bab950dcd1120c9314e",
+    "contentVersion": 1,
+    "reviewStatus": "visual-review-pending",
+    "poster": "lesson-22bcc41eece62149.jpg"
+  },
+  {
+    "id": "lesson-6cc9df849e4990a3",
+    "file": "Principle of moment _ तराजू में गड़बड़ #storywise.mp4",
+    "duration": 135.667,
+    "width": 720,
+    "height": 1280,
+    "sha256": "6cc9df849e4990a3fefd8d31f62015123bb87914c556c3a8a3ad1f5af89f440b",
+    "contentVersion": 1,
+    "reviewStatus": "visual-review-pending",
+    "poster": "lesson-6cc9df849e4990a3.jpg"
+  },
+  {
+    "id": "lesson-7e7d2dd1b05bdeec",
+    "file": "Rock painting ki age #storywise - Copy.mp4",
+    "duration": 175.5,
+    "width": 720,
+    "height": 1280,
+    "sha256": "7e7d2dd1b05bdeec4d668d0974e9ae978915287f18215cd303d7881756662d15",
+    "contentVersion": 1,
+    "reviewStatus": "visual-review-pending",
+    "poster": "lesson-7e7d2dd1b05bdeec.jpg"
+  },
+  {
+    "file": "Rock painting ki age #storywise.mp4",
+    "duplicateOf": "lesson-7e7d2dd1b05bdeec"
+  },
+  {
+    "id": "lesson-0ec8f943a53ccaf2",
+    "file": "videoplayback.mp4",
+    "duration": 173.333,
+    "width": 360,
+    "height": 640,
+    "sha256": "0ec8f943a53ccaf2c1e3e6f75b74b8d0c2a5631790edb623be84d9f48c52ea8f",
+    "contentVersion": 1,
+    "reviewStatus": "visual-review-pending",
+    "poster": "lesson-0ec8f943a53ccaf2.jpg"
+  },
+  {
+    "id": "lesson-8d664afc5b23fa13",
+    "file": "खजाने की खोज _ #physics #refraction #criticalangle #totalinternalreflection #jee #neet #education.mp4",
+    "duration": 100.467,
+    "width": 720,
+    "height": 1280,
+    "sha256": "8d664afc5b23fa1341065792365465707d168e2ce9bc329ef21f58b7f26b1790",
+    "contentVersion": 1,
+    "reviewStatus": "visual-review-pending",
+    "poster": "lesson-8d664afc5b23fa13.jpg"
+  },
+  {
+    "id": "lesson-203184a1fd21bfb8",
+    "file": "धूप वाली car _ #physics #solarcell #capacitor #dc #directcurrent #jee #neet #electricity.mp4",
+    "duration": 107.133,
+    "width": 360,
+    "height": 640,
+    "sha256": "203184a1fd21bfb8c0a2df3bafa1cf5100ddd0f2af9435c095ccd930416ed9a8",
+    "contentVersion": 1,
+    "reviewStatus": "visual-review-pending",
+    "poster": "lesson-203184a1fd21bfb8.jpg"
+  },
+  {
+    "id": "lesson-bee1037221c7d0eb",
+    "file": "रिंकी का mirror _ #physics #reflection #education #optics #jee #neet #cartoon #storywise.mp4",
+    "duration": 81.867,
+    "width": 720,
+    "height": 1280,
+    "sha256": "bee1037221c7d0eb2e28c52d2db36b74296570ecd8a8818ce38bc9cd9d21461f",
+    "contentVersion": 1,
+    "reviewStatus": "visual-review-pending",
+    "poster": "lesson-bee1037221c7d0eb.jpg"
+  }
+]

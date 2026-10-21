@@ -18,7 +18,7 @@
         "202610170003_public_security.sql"
       ],
       "test_profiles": 8,
-      "normal_profiles": 0,
+      "normal_profiles": 1,
       "challenge_mappings": 10
     }
   }

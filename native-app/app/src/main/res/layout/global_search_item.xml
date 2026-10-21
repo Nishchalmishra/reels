@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="18dp"
+        android:background="@color/grey_300"
+        android:orientation="horizontal" />
+
+    <LinearLayout
+        android:id="@+id/title_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="17dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginStart="8dp"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="#B3000000"
+            android:textSize="19sp"
+            android:text="Subjects"
+            android:visibility="visible"
+            android:fontFamily="@font/nunito_semibold" />
+
+        <LinearLayout
+            android:id="@+id/see_all_text"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/see_all"
+                android:textSize="10sp"
+                android:fontFamily="@font/nunito_semibold"
+                android:textColor="#CC000000"/>
+
+            <ImageView
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:src="@drawable/go_to"
+                android:layout_marginStart="6dp"
+                android:layout_marginEnd="28dp" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/search_recycler_item"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</LinearLayout>

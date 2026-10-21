@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    item_benefit_row.xml
+    One row in the Batch Benefits comparison table.
+    Bind data in CampaignSubscriptionActivity using BenefitRowBinding.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:paddingVertical="9dp">
+
+    <!-- Feature name -->
+    <TextView
+        android:id="@+id/tv_feature_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:fontFamily="@font/urbanist_regular"
+        android:textColor="#222222"
+        android:textSize="13sp"
+        android:text="Feature Name" />
+
+    <!-- Basic column tick / dash -->
+    <LinearLayout
+        android:layout_width="64dp"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <!-- Show this when basic = TRUE -->
+        <ImageView
+            android:id="@+id/iv_basic_check"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:src="@drawable/dash_box"
+            android:visibility="visible" />
+
+        <!-- Show this when basic = FALSE -->
+        <TextView
+            android:id="@+id/tv_basic_dash"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="—"
+            android:textColor="#AAAAAA"
+            android:textSize="16sp"
+            android:fontFamily="@font/urbanist_regular"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <!-- PRO column tick (always visible for all rows in this screen) -->
+    <LinearLayout
+        android:layout_width="64dp"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/iv_pro_check"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:src="@drawable/tick_mark"
+            android:visibility="visible" />
+    </LinearLayout>
+
+</LinearLayout>

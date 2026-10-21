@@ -1,0 +1,202 @@
+pipeline {
+    agent any
+
+    parameters {
+        choice(
+            name: 'BRANCH',
+            choices: ['main', 'develop', 'develop-stage'],
+            description: 'Select Git branch'
+        )
+        choice(
+            name: 'ENVIRONMENT',
+            choices: ['PROD', 'STAGE', 'STAGE2', 'DEV', 'DEV2'],
+            description: 'Select target environment'
+        )
+        choice(
+            name: 'BUILD_VARIANT',
+            choices: ['prodRelease', 'prodDebug', 'devRelease', 'devDebug', 'dev2Release', 'dev2Debug', 'stageRelease', 'stageDebug', 'stage2Release', 'stage2Debug', 'debug', 'release'],
+            description: 'Select Android build variant'
+        )
+        string(
+            name: 'VERSION_NAME',
+            defaultValue: '',
+            description: 'Optional. Leave empty to use current version'
+        )
+        string(
+            name: 'VERSION_CODE',
+            defaultValue: '',
+            description: 'Optional. Leave empty to use current version code'
+        )
+        booleanParam(
+            name: 'CLEAN_BUILD',
+            defaultValue: true,
+            description: 'Run clean build before compiling'
+        )
+        booleanParam(
+            name: 'RUN_TESTS',
+            defaultValue: false,
+            description: 'Run Android tests'
+        )
+    }
+
+    environment {
+        GIT_REPO_URL = 'https://github.com/arivihan/Arivihan.git'
+        GITHUB_TOKEN = credentials('GitHubAccessToken')
+        ANDROID_HOME = "${env.ANDROID_HOME ?: '/opt/android-sdk'}"
+    }
+
+    stages {
+        stage('Configuration') {
+            steps {
+                script {
+                    echo "======================================"
+                    echo "Git Repo: ${env.GIT_REPO_URL}"
+                    echo "Branch: ${params.BRANCH}"
+                    echo "Environment: ${params.ENVIRONMENT}"
+                    echo "Build Variant: ${params.BUILD_VARIANT}"
+                    echo "Version: ${params.VERSION_NAME ?: 'Keep current'} (${params.VERSION_CODE ?: 'Keep current'})"
+                    echo "Build Number: ${env.BUILD_NUMBER}"
+                    echo "======================================"
+                }
+            }
+        }
+
+        stage('Checkout from Git') {
+            steps {
+                script {
+                    echo "Cloning from Git..."
+                    git branch: "${params.BRANCH}",
+                        url: "${env.GIT_REPO_URL}",
+                        credentialsId: 'GitHubAccessToken'
+                    echo "✅ Code checked out from ${params.BRANCH}"
+                }
+            }
+        }
+
+        stage('Update Remote Config') {
+            steps {
+                script {
+                    sh """
+                        CONFIG_FILE="app/src/main/res/xml/remote_config_defaults.xml"
+                        if [ -f "\$CONFIG_FILE" ]; then
+                            sed -i '' 's/"ACTIVE":"[^"]*"/"ACTIVE":"${params.ENVIRONMENT}"/g' "\$CONFIG_FILE"
+                            echo "✅ Updated ACTIVE to: ${params.ENVIRONMENT}"
+                            grep "ACTIVE" "\$CONFIG_FILE" || true
+                        fi
+                    """
+                }
+            }
+        }
+
+        stage('Update Version') {
+            when {
+                expression { params.VERSION_NAME || params.VERSION_CODE }
+            }
+            steps {
+                script {
+                    sh """
+                        GRADLE_FILE="app/build.gradle"
+
+                        if [ -n "${params.VERSION_NAME}" ]; then
+                            sed -i '' 's/versionName "[^"]*"/versionName "${params.VERSION_NAME}"/g' "\$GRADLE_FILE"
+                            sed -i '' "s/versionName '[^']*'/versionName '${params.VERSION_NAME}'/g" "\$GRADLE_FILE"
+                            echo "✅ versionName updated to: ${params.VERSION_NAME}"
+                        fi
+
+                        if [ -n "${params.VERSION_CODE}" ]; then
+                            sed -i '' 's/versionCode [0-9]*/versionCode ${params.VERSION_CODE}/g' "\$GRADLE_FILE"
+                            echo "✅ versionCode updated to: ${params.VERSION_CODE}"
+                        fi
+
+                        grep -E "versionCode|versionName" "\$GRADLE_FILE" | head -4
+                    """
+                }
+            }
+        }
+
+        stage('Clean') {
+            when {
+                expression { params.CLEAN_BUILD == true }
+            }
+            steps {
+                script {
+                    sh 'chmod +x gradlew'
+                    sh './gradlew clean'
+                }
+            }
+        }
+
+        stage('Run Tests') {
+            when {
+                expression { params.RUN_TESTS == true }
+            }
+            steps {
+                script {
+                    catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
+                        sh './gradlew test'
+                    }
+                }
+            }
+        }
+
+        stage('Build APK') {
+            steps {
+                script {
+                    def taskName = "assemble${params.BUILD_VARIANT.capitalize()}"
+                    sh "./gradlew ${taskName} --stacktrace"
+                    echo "✅ APK Built"
+                }
+            }
+        }
+
+        stage('Archive APK') {
+            steps {
+                script {
+                    archiveArtifacts artifacts: 'app/build/outputs/apk/**/*.apk',
+                                   fingerprint: true,
+                                   allowEmptyArchive: false
+                    echo "✅ APK archived"
+                }
+            }
+        }
+
+        stage('Summary') {
+            steps {
+                script {
+                    sh """
+                        echo "======================================"
+                        echo "BUILD COMPLETE"
+                        echo "======================================"
+                        echo "Repository: ${env.GIT_REPO_URL}"
+                        echo "Branch: ${params.BRANCH}"
+                        echo "Environment: ${params.ENVIRONMENT}"
+                        echo "Variant: ${params.BUILD_VARIANT}"
+                        echo "Version: ${params.VERSION_NAME ?: 'Unchanged'} (${params.VERSION_CODE ?: 'Unchanged'})"
+                        echo ""
+                        echo "Built APK:"
+                        find app/build/outputs/apk -name "*.apk" -type f -exec basename {} \\;
+                        echo ""
+                        echo "Download from Build Artifacts"
+                        echo "======================================"
+                    """
+                }
+            }
+        }
+    }
+
+    post {
+        success {
+            script {
+                def apkFiles = sh(script: "find app/build/outputs/apk -name '*.apk' -type f -exec basename {} \\;", returnStdout: true).trim()
+                echo "✅ BUILD SUCCESS"
+                echo "📦 APK: ${apkFiles}"
+            }
+        }
+        failure {
+            echo "❌ BUILD FAILED"
+        }
+        always {
+            cleanWs()
+        }
+    }
+}

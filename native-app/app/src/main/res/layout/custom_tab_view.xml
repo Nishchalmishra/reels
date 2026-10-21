@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="5dp"
+    android:background="@color/white">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/tab_card"
+        android:layout_width="26dp"
+        android:layout_height="26dp"
+        app:cardCornerRadius="13dp"
+        app:cardElevation="0dp"
+        app:rippleColor="@android:color/transparent">
+
+        <TextView
+            android:id="@+id/tab_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1"
+            android:textSize="15sp"
+            android:fontFamily="@font/urbanist_medium"
+            android:layout_gravity="center"
+            android:textColor="@color/black"/>
+    </com.google.android.material.card.MaterialCardView>
+
+</LinearLayout>

@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_centerInParent="true"
+    android:layout_marginHorizontal="70dp"
+    android:layout_marginVertical="16dp"
+    android:background="@color/white"
+    android:theme="@style/Theme.MaterialComponents.Light.DarkActionBar"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="0dp">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#F2F2F2"
+                android:orientation="horizontal"
+                android:paddingTop="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginEnd="2dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/urbanist_bold"
+                        android:text="@string/Interactive_Question"
+                        android:textAllCaps="false"
+                        android:textColor="#F27B30"
+                        android:textSize="18sp"
+                        android:textStyle="normal"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="1dp"/>
+
+                    <TextView
+                        android:id="@+id/tv_subtitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:fontFamily="@font/urbanist_semi_bold"
+                        android:text="@string/please_sahi_option_select_karein"
+                        android:textAllCaps="false"
+                        android:textColor="#2B2829"
+                        android:textSize="16sp"
+                        android:textStyle="normal"
+                        android:layout_marginBottom="12dp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="96dp"
+                    android:layout_height="96dp"
+                    android:layout_gravity="center"
+                    android:visibility="visible"
+                    android:layout_marginHorizontal="18dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/iv_question_image"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/img_video_interactive_option_v2" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayoutNewInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="24dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="horizontal"
+                    android:layout_marginHorizontal="18dp"
+                    android:paddingHorizontal="6dp"
+                    android:weightSum="2"
+                    >
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cv_option_a"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:visibility="visible"
+                        android:layout_marginEnd="6dp"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="0dp"
+                        app:strokeColor="#F2F2F2"
+                        app:strokeWidth="1dp"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingHorizontal="12dp"
+                            android:paddingVertical="12dp"
+                            android:layout_gravity="center"
+                            >
+                            
+                            <ImageView
+                                android:id="@+id/iv_option_a"
+                                android:layout_width="22dp"
+                                android:layout_height="22dp"
+                                android:src="@drawable/img_video_options_unselected"
+                                android:scaleType="centerCrop"
+                                android:layout_gravity="center_vertical"
+                                />
+
+                            <TextView
+                                android:id="@+id/tv_option_a"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:fontFamily="@font/urbanist_bold"
+                                android:text="A"
+                                android:textAllCaps="false"
+                                android:textColor="#01828F"
+                                android:textSize="20sp"
+                                android:layout_marginStart="12dp"
+                                />
+
+                            <TextView
+                                android:id="@+id/tv_option_a_text"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:fontFamily="@font/urbanist_medium"
+                                android:text="Option A"
+                                android:textAllCaps="false"
+                                android:textColor="#2B2829"
+                                android:textSize="16sp"
+                                android:layout_marginStart="12dp"
+                                android:layout_marginEnd="8dp"
+                                />
+
+                        </LinearLayout>
+
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cv_option_b"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="6dp"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="0dp"
+                        app:strokeColor="#F2F2F2"
+                        app:strokeWidth="1dp"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingHorizontal="12dp"
+                            android:paddingVertical="12dp"
+                            android:layout_gravity="center"
+                            >
+
+                            <ImageView
+                                android:id="@+id/iv_option_b"
+                                android:layout_width="22dp"
+                                android:layout_height="22dp"
+                                android:src="@drawable/img_video_options_unselected"
+                                android:scaleType="centerCrop"
+                                android:layout_gravity="center_vertical"
+                                />
+
+                            <TextView
+                                android:id="@+id/tv_option_b"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:fontFamily="@font/urbanist_bold"
+                                android:text="B"
+                                android:textAllCaps="false"
+                                android:textColor="#01828F"
+                                android:textSize="20sp"
+                                android:layout_marginStart="12dp"
+                                />
+
+                            <TextView
+                                android:id="@+id/tv_option_b_text"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:fontFamily="@font/urbanist_medium"
+                                android:text="Option B"
+                                android:textAllCaps="false"
+                                android:textColor="#2B2829"
+                                android:textSize="16sp"
+                                android:layout_marginStart="12dp"
+                                android:layout_marginEnd="8dp"
+                                />
+
+                        </LinearLayout>
+
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="horizontal"
+                    android:layout_marginHorizontal="18dp"
+                    android:paddingHorizontal="6dp"
+                    android:weightSum="2"
+                    >
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cv_option_c"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="6dp"
+                        android:layout_weight="1"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="0dp"
+                        app:strokeColor="#F2F2F2"
+                        app:strokeWidth="1dp"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingHorizontal="12dp"
+                            android:paddingVertical="12dp"
+                            android:layout_gravity="center"
+                            >
+
+                            <ImageView
+                                android:id="@+id/iv_option_c"
+                                android:layout_width="22dp"
+                                android:layout_height="22dp"
+                                android:src="@drawable/img_video_options_unselected"
+                                android:scaleType="centerCrop"
+                                android:layout_gravity="center_vertical"
+                                />
+
+                            <TextView
+                                android:id="@+id/tv_option_c"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:fontFamily="@font/urbanist_bold"
+                                android:text="C"
+                                android:textAllCaps="false"
+                                android:textColor="#01828F"
+                                android:textSize="20sp"
+                                android:layout_marginStart="12dp"
+                                />
+
+                            <TextView
+                                android:id="@+id/tv_option_c_text"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:fontFamily="@font/urbanist_medium"
+                                android:text="Option C"
+                                android:textAllCaps="false"
+                                android:textColor="#2B2829"
+                                android:textSize="16sp"
+                                android:layout_marginStart="12dp"
+                                android:layout_marginEnd="8dp"
+                                />
+
+                        </LinearLayout>
+
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cv_option_d"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="6dp"
+                        android:layout_weight="1"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="0dp"
+                        app:strokeColor="#F2F2F2"
+                        app:strokeWidth="1dp"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingHorizontal="12dp"
+                            android:paddingVertical="12dp"
+                            android:layout_gravity="center"
+                            >
+
+                            <ImageView
+                                android:id="@+id/iv_option_d"
+                                android:layout_width="22dp"
+                                android:layout_height="22dp"
+                                android:src="@drawable/img_video_options_unselected"
+                                android:scaleType="centerCrop"
+                                android:layout_gravity="center_vertical"
+                                />
+
+                            <TextView
+                                android:id="@+id/tv_option_d"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:fontFamily="@font/urbanist_bold"
+                                android:text="D"
+                                android:textAllCaps="false"
+                                android:textColor="#01828F"
+                                android:textSize="20sp"
+                                android:layout_marginStart="12dp"
+                                />
+
+                            <TextView
+                                android:id="@+id/tv_option_d_text"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:fontFamily="@font/urbanist_medium"
+                                android:text="Option D"
+                                android:textAllCaps="false"
+                                android:textColor="#2B2829"
+                                android:textSize="16sp"
+                                android:layout_marginStart="12dp"
+                                android:layout_marginEnd="8dp"
+                                />
+
+                        </LinearLayout>
+
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.cardview.widget.CardView>

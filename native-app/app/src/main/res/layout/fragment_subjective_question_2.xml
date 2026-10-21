@@ -1,0 +1,860 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ParentLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="150dp">
+
+
+            <RelativeLayout
+                android:id="@+id/relative_layout_ques"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp">
+
+                <LinearLayout
+                    android:id="@+id/markLinearLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <LinearLayout
+                        android:id="@+id/mark"
+                        android:layout_width="111dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:layout_marginEnd="2dp"
+                        android:layout_weight="0.5"
+                        android:orientation="horizontal">
+
+                        <ToggleButton
+                            android:id="@+id/mark_button2"
+                            android:layout_width="20dp"
+                            android:layout_height="22dp"
+                            android:layout_marginRight="5dp"
+                            android:background="@drawable/bookmark_toggle"
+                            android:clickable="false"
+                            android:focusable="false"
+                            android:focusableInTouchMode="false"
+                            android:textOff=""
+                            android:textOn="" />
+
+                        <TextView
+                            android:id="@+id/markText"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/urbanist_regular"
+                            android:maxLines="1"
+                            android:text="@string/unmarked"
+                            android:textColor="#696969"
+                            android:textSize="14sp"
+                            tools:ignore="NestedWeights" />
+                    </LinearLayout>
+
+                    <HorizontalScrollView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:scrollbars="none">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end"
+                            android:layout_marginStart="2dp"
+                            android:gravity="end"
+                            android:orientation="horizontal">
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="10dp"
+                                android:paddingStart="0dp"
+                                android:paddingEnd="10dp"
+                                android:visibility="visible"
+                                app:cardBackgroundColor="#D3F8FA"
+                                app:cardCornerRadius="4dp"
+                                app:cardElevation="0dp">
+
+                                <TextView
+                                    android:id="@+id/questionType"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/urbanist_semi_bold"
+                                    android:paddingHorizontal="9dp"
+                                    android:paddingVertical="3dp"
+                                    android:text="Medium"
+                                    android:textColor="#02858D"
+                                    android:textSize="13sp" />
+                            </androidx.cardview.widget.CardView>
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/green_marks"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                app:cardBackgroundColor="#D3F8FA"
+                                app:cardCornerRadius="4dp"
+                                app:cardElevation="0dp">
+
+                                <TextView
+                                    android:id="@+id/green_marks_text"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:fontFamily="@font/urbanist_semi_bold"
+                                    android:paddingHorizontal="12dp"
+                                    android:text="+1"
+                                    android:textColor="@color/arivihan_primary_color"
+                                    android:textSize="12sp" />
+                            </androidx.cardview.widget.CardView>
+                        </LinearLayout>
+                    </HorizontalScrollView>
+
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/question_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/markLinearLayout"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="8dp"
+                    android:adjustViewBounds="true"
+                    android:maxHeight="100dp"
+                    android:src="@drawable/free_sample_by_wix"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/question"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/question_image"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginRight="15dp"
+                    android:fontFamily="@font/urbanist_medium"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <LinearLayout
+                    android:id="@+id/ll_tag_card"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingTop="8dp"
+                    android:layout_below="@+id/question"
+                    >
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/tag_card"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginEnd="2dp"
+                        android:visibility="gone"
+                        app:cardBackgroundColor="#333995E3"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="0dp"
+                        android:layout_gravity="center_vertical">
+
+                        <TextView
+                            android:id="@+id/tag_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/urbanist_semi_bold"
+                            android:paddingHorizontal="12dp"
+                            android:paddingVertical="5dp"
+                            android:text="JEE 21-2022"
+                            android:textColor="#3995E3"
+                            android:textSize="12sp" />
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/case_study_num"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginEnd="12dp"
+                        app:cardBackgroundColor="#D3F8FA"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="0dp">
+
+                        <TextView
+                            android:id="@+id/case_study_num_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="15dp"
+                            android:layout_marginVertical="5dp"
+                            android:fontFamily="@font/urbanist_bold"
+                            android:text="Case-study 1"
+                            android:textColor="#02858D"
+                            android:textSize="12sp" />
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/match_these_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/question"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/urbanist_regular"
+                    android:maxLines="3"
+                    android:text="@string/match_column_description"
+                    android:textSize="@dimen/secondary_text_size"
+                    android:textStyle="italic"
+                    android:visibility="gone" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/type_answer_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/relative_layout_ques"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/type_answer_status_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/urbanist_regular"
+                    android:text="@string/Option_1_Apna_answer_yha_type_karein"
+                    android:textColor="#CC000000"
+                    android:textSize="12sp"
+                    android:textStyle="italic"
+                    android:visibility="visible" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/type_answer_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="15dp"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="0dp"
+                    app:strokeColor="@color/mock_light_grey"
+                    app:strokeWidth="1dp">
+
+                    <EditText
+                        android:id="@+id/type_answer"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/question_option_border"
+                        android:fontFamily="@font/nunito_regular"
+                        android:hint="@string/enter"
+                        android:paddingHorizontal="20dp"
+                        android:paddingVertical="14dp"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/mock_grey"
+                        android:textSize="@dimen/primary_text_size" />
+                </com.google.android.material.card.MaterialCardView>
+
+                <TextView
+                    android:id="@+id/typed_answer_word_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:fontFamily="@font/urbanist_semi_bold"
+                    android:paddingEnd="10dp"
+                    android:text="92/100"
+                    android:textColor="@color/subscription_blue"
+                    android:textStyle="italic"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/uploaded_image_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/relative_layout_ques"
+                android:layout_marginHorizontal="20dp"
+                android:fontFamily="@font/urbanist_regular"
+                android:text="@string/Your_Uploaded_Answer_Image"
+                android:textSize="13sp"
+                android:textStyle="italic"
+                android:visibility="gone" />
+
+            <include
+                layout="@layout/activity_board_image_extraction"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/uploaded_image_text"
+                android:visibility="visible" />
+            <!--        android:visibility="visible"-->
+
+
+            <LinearLayout
+                android:id="@+id/upload_image_layout_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/type_answer_layout"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+
+                <TextView
+                    android:id="@+id/steps_guide"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:fontFamily="@font/urbanist_regular"
+                    android:text="@string/subjective_image_upload_steps"
+                    android:textSize="13sp"
+                    android:textStyle="italic"
+                    android:visibility="visible" />
+
+
+                <include
+                    layout="@layout/activity_board_subjective_upload_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="20dp" />
+            </LinearLayout>
+
+            <include
+                android:id="@+id/edit_text_layout"
+                layout="@layout/subjective_text_answer_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/relative_layout_ques"
+                android:visibility="gone" />
+
+            <include
+                android:id="@+id/solution_view"
+                layout="@layout/solution_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/relative_layout_ques"
+                android:layout_marginBottom="10dp"
+                android:visibility="gone" />
+        </RelativeLayout>
+    </ScrollView>
+
+    <ScrollView
+        android:id="@+id/scroll_bar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottom_card"
+        android:layout_below="@+id/scroll_view"
+        android:layout_marginTop="-150dp"
+        android:fillViewport="true"
+        android:scrollbars="none"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:id="@+id/match_column_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar">
+
+
+            <LinearLayout
+                android:id="@+id/tab_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/relative_layout_ques"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:id="@+id/my_answer_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/my_answer_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/nunito_semibold"
+                        android:gravity="center"
+                        android:text="@string/my_answer"
+                        android:textColor="#26C6DA"
+                        android:textSize="14sp" />
+
+                    <LinearLayout
+                        android:id="@+id/my_answer_underline"
+                        android:layout_width="match_parent"
+                        android:layout_height="3dp"
+                        android:layout_marginTop="10dp"
+                        android:background="#26C6DA"
+                        android:orientation="horizontal" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/correct_answer_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/correct_answer_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/nunito_semibold"
+                        android:gravity="center"
+                        android:text="@string/Correct_Answer"
+                        android:textColor="#999999"
+                        android:textSize="14sp" />
+
+                    <LinearLayout
+                        android:id="@+id/correct_answer_underline"
+                        android:layout_width="match_parent"
+                        android:layout_height="3dp"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/divider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/tab_view"
+                android:layout_marginHorizontal="20dp"
+                android:background="#E6E6E6"
+                android:orientation="horizontal"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/column_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/relative_layout_ques"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="8dp"
+                android:visibility="gone">
+
+                <TextView
+                    style="@style/secondaryText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/urbanist_semi_bold"
+                    android:text="@string/column_i"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <TextView
+                    style="@style/secondaryText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/urbanist_semi_bold"
+                    android:text="@string/column_ii"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/fakeLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone">
+
+                <include
+                    layout="@layout/match_these_item"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/optionRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="5dp"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/match_these_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingHorizontal="10dp"
+                android:visibility="gone">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_left_options"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_right_options"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/solution_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                android:paddingHorizontal="20dp"
+                android:paddingBottom="90dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="14dp"
+                    android:fontFamily="@font/urbanist_semi_bold"
+                    android:text="@string/Solution"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/difficulty_card"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="14dp"
+                    android:visibility="gone"
+                    app:cardBackgroundColor="#D3F8FA"
+                    app:cardCornerRadius="14dp"
+                    app:cardElevation="0dp">
+
+                    <TextView
+                        android:id="@+id/difficulty_type"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/urbanist_semi_bold"
+                        android:paddingHorizontal="9dp"
+                        android:paddingVertical="5dp"
+                        android:text="Medium"
+                        android:textColor="#02858D"
+                        android:textSize="10sp" />
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/solution_image_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="230dp"
+                    android:layout_marginBottom="16dp"
+                    android:visibility="gone"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="0dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/mock_test_video_player_image"
+
+                        />
+
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/solution_text_match_these"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:fontFamily="@font/nunito_regular"
+                    android:textColor="@color/black"
+                    android:textSize="16dp" />
+
+
+                <arivihan.technologies.doubtbuzzter2.helper.ImageLoaderUtil
+                    android:id="@+id/solution_image_match_these"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/bottom_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:paddingTop="5dp">
+
+
+        <com.github.ybq.android.spinkit.SpinKitView
+            android:id="@+id/progress"
+            style="@style/SpinKitView.FadingCircle"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="25dp"
+            android:visibility="gone"
+            app:SpinKit_Color="@color/Question_header" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/yourAttempt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="46dp"
+                android:layout_marginTop="10dp"
+                android:text="Your Attempt : a,b,c"
+                android:textColor="@color/black"
+                android:textSize="@dimen/primary_text_size"
+                android:textStyle="bold"
+                android:visibility="gone"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/Correctionpercentage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/yourAttempt"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="20dp"
+                android:drawablePadding="5dp"
+                android:text="27 % of students have given correct answer"
+                android:textColor="@color/green"
+                android:textSize="@dimen/secondary_text_size"
+                android:textStyle="bold"
+                android:visibility="gone"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/button_answer_save"
+            android:layout_width="120dp"
+            android:layout_height="44dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginVertical="20dp"
+            android:layout_marginEnd="20dp"
+            app:cardBackgroundColor="@color/subscription_blue"
+            app:cardCornerRadius="7dp"
+            app:cardElevation="0dp">
+
+            <TextView
+                android:id="@+id/button_answer_save_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:ellipsize="end"
+                android:fontFamily="@font/urbanist_semi_bold"
+                android:maxLines="1"
+                android:text="@string/save_and_continue"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/button_clear_answer"
+            android:layout_width="wrap_content"
+            android:layout_height="44dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginVertical="20dp"
+            android:layout_marginStart="20dp"
+            android:visibility="gone"
+            app:cardBackgroundColor="#E9FBFC"
+            app:cardCornerRadius="7dp"
+            app:cardElevation="0dp"
+            app:contentPaddingLeft="12dp"
+            app:contentPaddingRight="12dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <TextView
+                    android:id="@+id/btn_text_clear"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="@font/urbanist_semi_bold"
+                    android:text="@string/clear"
+                    android:textColor="@color/arivihan_secondary_color"
+                    android:textSize="14sp" />
+
+            </RelativeLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="86dp"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/case_study_fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="12dp"
+            android:visibility="gone">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_centerInParent="true"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/ring_waves" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/case_study_fab_card"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_centerInParent="true"
+                app:cardBackgroundColor="@color/subscription_blue"
+                app:cardCornerRadius="60dp"
+                app:cardElevation="0dp">
+
+                <TextView
+                    android:id="@+id/case_study_fab_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/rubik_semi_bold"
+                    android:gravity="center"
+                    android:text="@string/Case_Study"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+            </com.google.android.material.card.MaterialCardView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/ask_doubt_fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="12dp"
+            android:visibility="gone">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_centerInParent="true"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/ring_waves" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/ask_doubt_card"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_centerInParent="true"
+                android:backgroundTint="#26C6DA"
+                app:cardCornerRadius="30dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/rubik_semi_bold"
+                    android:gravity="center"
+                    android:text="@string/ask_more"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+            </com.google.android.material.card.MaterialCardView>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/view_solution_card"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/bottom_card"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        android:alpha="0.8"
+        android:visibility="gone"
+        app:cardBackgroundColor="#CC000000"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="0dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="5dp">
+
+            <TextView
+                android:id="@+id/view_solution_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunito_semibold"
+                android:text="@string/view_solution"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="10dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="5dp"
+                android:src="@drawable/arrow_down_white" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

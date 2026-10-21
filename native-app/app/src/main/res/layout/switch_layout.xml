@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:background="@drawable/background_switch"
+    android:layout_height="48dp"
+    android:padding="6dp">
+
+    <TextView
+        android:id="@+id/jee_Switch"
+        android:layout_margin="1dp"
+        android:padding="2dp"
+        android:gravity="center"
+        android:textColor="#888889"
+        android:fontFamily="@font/urbanist_semi_bold"
+        android:textSize="@dimen/tertiary_text_size"
+        android:layout_gravity="center"
+        android:textAlignment="center"
+        android:text=""
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"/>
+    <TextView
+        android:id="@+id/board_Switch"
+        android:textSize="@dimen/tertiary_text_size"
+        android:layout_margin="1dp"
+        android:gravity="center"
+        android:background="@drawable/background_switch_button"
+        android:textColor="@color/white"
+        android:fontFamily="@font/urbanist_semi_bold"
+        android:layout_gravity="center"
+        android:textAlignment="center"
+        android:text="@string/board"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"/>
+
+</LinearLayout>

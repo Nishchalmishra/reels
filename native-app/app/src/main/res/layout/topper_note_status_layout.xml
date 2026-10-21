@@ -1,0 +1,138 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/custom_home_status_main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/main_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginBottom="10dp"
+        android:backgroundTint="@color/subscription_blue"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="4dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+           android:paddingVertical="2dp"
+            android:paddingEnd="6dp">
+
+            <!-- Matches image width so text doesn't overlap book -->
+            <Space
+                android:layout_width="52dp"
+                android:layout_height="52dp" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="4dp">
+
+                <TextView
+                    android:id="@+id/test_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/urbanist_bold"
+                    android:text="Topper Ke Notes Ready Hai!!"
+                    android:textColor="@color/btn_enabled_text"
+                    android:textSize="15dp" />
+                <!-- Removed maxLines/ellipsize to match Figma full text -->
+
+                <TextView
+                    android:id="@+id/result_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:fontFamily="@font/urbanist_semi_bold"
+                    android:text="Abhi dekhein aur padhai start karein"
+                    android:textColor="#bdeaef"
+                    android:textSize="12dp" />
+            </LinearLayout>
+
+            <!-- Button — more padding, rounder corners -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btn_card"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="10dp"
+                android:layout_marginEnd="14dp"
+                app:cardElevation="0dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="12dp"
+                    android:paddingVertical="8dp"
+                    android:gravity="center_horizontal">
+
+                    <TextView
+                        android:id="@+id/text1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:fontFamily="@font/urbanist_bold"
+                        android:text="@string/view"
+                        android:textColor="@color/subscription_blue"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Book image: bigger, overflows more above card like Figma -->
+    <ImageView
+        android:id="@+id/img_home_status_view"
+        android:layout_width="48dp"
+        android:layout_height="66dp"
+        android:layout_marginStart="8dp"
+        android:src="@drawable/topper_notes"
+        android:layout_alignTop="@id/main_card"
+        android:layout_alignStart="@id/main_card"
+        android:translationY="-16dp"
+        android:elevation="8dp"
+        android:scaleType="fitXY" />
+
+    <!-- Stub views for ViewHolder (invisible) -->
+    <TextView
+        android:id="@+id/text2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animation"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone" />
+
+    <!-- Close button: smaller, lighter, floats top-right like Figma -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/close"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        app:cardCornerRadius="11dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardElevation="6dp">
+
+        <ImageView
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_gravity="center"
+            android:src="@drawable/close_dark_grey" />
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

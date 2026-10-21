@@ -1,0 +1,1146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color"
+    tools:context=".activity.ProPlanSubscriptionActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/bg_color"
+        android:elevation="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- Back Icon -->
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_gravity="start|center_vertical"
+            android:layout_marginStart="4dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:contentDescription="Back"
+            android:focusable="true"
+            android:padding="6dp"
+            android:src="@drawable/ic_baseline_arrow_back_ios_24" />
+
+        <!-- Title -->
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:fontFamily="@font/urbanist_semi_bold"
+            android:text="@string/arivihan_pro_plan_title"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp" />
+
+        <!-- Share Icon (pinned to end) -->
+        <ImageView
+            android:id="@+id/iv_share"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_gravity="end|center_vertical"
+            android:layout_marginEnd="15dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:contentDescription="Share"
+            android:focusable="true"
+            android:padding="6dp"
+            android:src="@drawable/share_grey" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/discount_layout"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintVertical_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!--            //video player-->
+            <arivihan.technologies.doubtbuzzter2.customView.RatioView.Ratio16x9CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="10dp"
+                app:cardBackgroundColor="@color/amp_transparent"
+                app:cardCornerRadius="0dp"
+                app:cardElevation="0dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <com.facebook.shimmer.ShimmerFrameLayout
+                        android:id="@+id/image_shimmer"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="visible">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:cardBackgroundColor="@color/mock_light_grey"
+                            app:cardCornerRadius="11dp" />
+                    </com.facebook.shimmer.ShimmerFrameLayout>
+
+                    <ImageView
+                        android:id="@+id/thumbnail_image"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitXY"
+                        android:visibility="gone" />
+
+                    <androidx.media3.ui.PlayerView
+                        android:id="@+id/player_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="gone"
+                        app:resize_mode="fill"
+                        app:use_controller="false" />
+
+                    <ImageView
+                        android:id="@+id/volume"
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:layout_gravity="center"
+                        android:layout_margin="15dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/volume"
+                        android:visibility="gone"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ProgressBar
+                        android:id="@+id/spinnerVideoDetails"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:indeterminate="true"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </arivihan.technologies.doubtbuzzter2.customView.RatioView.Ratio16x9CardView>
+
+
+            <!--            //shimmer layout-->
+            <com.facebook.shimmer.ShimmerFrameLayout
+                android:id="@+id/data_shimmer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="15dp"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_weight="1"
+                            app:cardBackgroundColor="@color/lighter_grey"
+                            app:cardUseCompatPadding="true" />
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_weight="1"
+                            app:cardBackgroundColor="@color/lighter_grey"
+                            app:cardUseCompatPadding="true" />
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_weight="1"
+                            app:cardBackgroundColor="@color/lighter_grey"
+                            app:cardUseCompatPadding="true" />
+                    </LinearLayout>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="400dp"
+                        android:layout_marginHorizontal="15dp"
+                        app:cardBackgroundColor="@color/lighter_grey"
+                        app:cardUseCompatPadding="true" />
+
+                </LinearLayout>
+            </com.facebook.shimmer.ShimmerFrameLayout>
+
+
+            <LinearLayout
+                android:id="@+id/data_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="20dp"
+                android:visibility="gone">
+
+
+                <!--                //tag line-->
+                <LinearLayout
+                    android:id="@+id/layout_pro_plan_tag_line"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@color/divider_color"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/pro_plan_tag_line"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/urbanist_semi_bold"
+                        android:text="@string/pro_plan_tag_line"
+                        android:textColor="@color/text_primary"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <!--
+                <!-                //batch ki jankari-->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cv_subscription_pdf"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginVertical="30dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="3dp"
+                    app:strokeColor="@color/divider_color"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:padding="10dp">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <!-- Image in front of title & subtitle -->
+                            <ImageView
+                                android:id="@+id/iv_icon"
+                                android:layout_width="34dp"
+                                android:layout_height="34dp"
+                                android:contentDescription="@string/app_name"
+                                android:src="@drawable/pdf_icon_yellow" />
+
+                            <!-- Title + Subtitle -->
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/tv_title"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:ellipsize="end"
+                                    android:fontFamily="@font/urbanist_semi_bold"
+                                    android:maxLines="1"
+                                    android:text="@string/batch_ki_jankari"
+                                    android:textColor="@color/text_primary"
+                                    android:textSize="18sp" />
+
+                                <TextView
+                                    android:id="@+id/tv_sub_title"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="2dp"
+                                    android:fontFamily="@font/urbanist_medium"
+                                    android:text="@string/pdf_sub_title"
+                                    android:textColor="@color/text_secondary"
+                                    android:textSize="13sp" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <!-- Button Card -->
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/cv_click_here"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:visibility="visible"
+                            app:cardBackgroundColor="#0F26C6DA"
+                            app:cardCornerRadius="18dp"
+                            app:cardElevation="0dp"
+                            app:strokeColor="#26C6DA"
+                            app:strokeWidth="2dp">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:fontFamily="@font/urbanist_semi_bold"
+                                android:gravity="center"
+                                android:paddingHorizontal="20dp"
+                                android:paddingVertical="10dp"
+                                android:text="@string/view"
+                                android:textColor="#26C6DA"
+                                android:textSize="14sp" />
+                        </com.google.android.material.card.MaterialCardView>
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <!--                //pro plan subscription&ndash;&gt;-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp">
+
+                    <ImageView
+                        android:id="@+id/pro_plan_subscription_com"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitCenter" />
+
+                </LinearLayout>
+
+                <!--                //plan validity-->
+                <LinearLayout
+                    android:id="@+id/layout_plan_validity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
+                    android:gravity="center"
+                    android:padding="10dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/todo"
+                        android:src="@drawable/ic_pro_plan_validity_left" />
+
+                    <TextView
+                        android:id="@+id/plan_validity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/urbanist_semi_bold"
+                        android:paddingHorizontal="10dp"
+                        android:text="@string/plan_validity"
+                        android:textSize="16sp" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/todo"
+                        android:src="@drawable/ic_pro_plan_validity_right" />
+
+                </LinearLayout>
+
+                <!--                //topers-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/toppers_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="20dp"
+                        android:layout_marginTop="5dp"
+                        android:fontFamily="@font/urbanist_semi_bold"
+                        android:text="@string/Champions_of_Arivihan"
+                        android:textColor="@color/text_primary"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/toppers_sub_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="20dp"
+                        android:layout_marginTop="4dp"
+                        android:fontFamily="@font/urbanist_regular"
+                        android:text="MP 12th Toppers ki Safalta ki Kahaniyaan..."
+                        android:textColor="@color/text_secondary"
+                        android:textSize="14sp" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/toppers_rv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="12dp"
+                        android:layout_marginTop="8dp"
+                        android:orientation="horizontal"
+                        tools:itemCount="1"
+                        tools:listitem="@layout/toppers_layout" />
+
+                    <!--                    //caupon code-->
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="15dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginBottom="6dp"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="3dp"
+                        app:strokeColor="@color/divider_color"
+                        app:strokeWidth="1dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:paddingHorizontal="12dp"
+                            android:paddingVertical="6dp">
+
+                            <EditText
+                                android:id="@+id/coupon_code"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="12dp"
+                                android:layout_marginVertical="12dp"
+                                android:layout_weight="1"
+                                android:background="@null"
+                                android:fontFamily="@font/urbanist_regular"
+                                android:hint="@string/enter_coupon_code"
+                                android:maxLines="1"
+                                android:textColor="@color/text_primary"
+                                android:textSize="18sp" />
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/cv_apply_card"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_margin="2dp"
+                                android:backgroundTint="#0F26C6DA"
+                                android:visibility="visible"
+                                app:cardCornerRadius="18dp"
+                                app:cardElevation="0dp"
+                                app:strokeColor="#26C6DA"
+                                app:strokeWidth="2dp">
+
+                                <TextView
+                                    android:id="@+id/apply_code_text"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:fontFamily="@font/urbanist_semi_bold"
+                                    android:gravity="center"
+                                    android:paddingHorizontal="20dp"
+                                    android:paddingVertical="10dp"
+                                    android:text="@string/apply_code"
+                                    android:textColor="#26C6DA"
+                                    android:textSize="14sp" />
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <ImageView
+                                android:id="@+id/remove_coupon"
+                                android:layout_width="22dp"
+                                android:layout_height="22dp"
+                                android:layout_margin="10dp"
+                                android:src="@drawable/search_close_btn"
+                                android:visibility="gone" />
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <TextView
+                        android:id="@+id/tv_coupon_code_applied"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="25dp"
+                        android:layout_marginBottom="8dp"
+                        android:fontFamily="@font/urbanist_semi_bold"
+                        android:text="Coupon Applied!"
+                        android:textColor="#189C4D"
+                        android:textSize="14sp"
+                        android:visibility="gone" />
+
+                    <!-- Payment Summary Card -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cv_payment_summary"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="15dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="6dp"
+                        android:visibility="visible"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="3dp"
+                        app:strokeColor="@color/divider_color"
+                        app:strokeWidth="1dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <!-- Header -->
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/urbanist_bold"
+                                android:paddingHorizontal="16dp"
+                                android:paddingTop="16dp"
+                                android:paddingBottom="14dp"
+                                android:text="@string/payment_summary_title"
+                                android:textColor="@color/text_primary"
+                                android:textSize="17sp" />
+
+                            <!-- Dashed grey divider -->
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginHorizontal="16dp"
+                                android:background="@drawable/horizontal_dotted_line"
+                                android:layerType="software" />
+
+                            <!-- Price rows -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:paddingHorizontal="16dp"
+                                android:paddingTop="14dp"
+                                android:paddingBottom="14dp">
+
+                                <!-- Total Price row -->
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center_vertical"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:fontFamily="@font/urbanist_regular"
+                                        android:text="@string/ps_total_price_label"
+                                        android:textColor="@color/text_secondary"
+                                        android:textSize="14sp" />
+
+                                    <TextView
+                                        android:id="@+id/tv_ps_total_price"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/urbanist_semi_bold"
+                                        android:textColor="@color/text_primary"
+                                        android:textSize="14sp" />
+
+                                </LinearLayout>
+
+                                <!-- Coupon Discount row (hidden until applied) -->
+                                <LinearLayout
+                                    android:id="@+id/ll_ps_coupon_row"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="10dp"
+                                    android:gravity="center_vertical"
+                                    android:orientation="horizontal"
+                                    android:visibility="gone">
+
+                                    <TextView
+                                        android:id="@+id/tv_ps_coupon_label"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:fontFamily="@font/urbanist_regular"
+                                        android:text="@string/ps_coupon_discount_label"
+                                        android:textColor="@color/text_secondary"
+                                        android:textSize="14sp" />
+
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center_vertical"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/urbanist_semi_bold"
+                                            android:text="- "
+                                            android:textColor="#189C4D"
+                                            android:textSize="14sp" />
+
+                                        <TextView
+                                            android:id="@+id/tv_ps_coupon_value"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/urbanist_semi_bold"
+                                            android:textColor="#189C4D"
+                                            android:textSize="14sp" />
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                                <!-- Coin Discount row (hidden until applicable) -->
+                                <LinearLayout
+                                    android:id="@+id/ll_ps_coin_row"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="10dp"
+                                    android:gravity="center_vertical"
+                                    android:orientation="horizontal"
+                                    android:visibility="gone">
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:fontFamily="@font/urbanist_regular"
+                                        android:text="@string/ps_coin_discount_label"
+                                        android:textColor="@color/text_secondary"
+                                        android:textSize="14sp" />
+
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center_vertical"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/urbanist_semi_bold"
+                                            android:text="- "
+                                            android:textColor="#189C4D"
+                                            android:textSize="14sp" />
+
+                                        <ImageView
+                                            android:layout_width="18dp"
+                                            android:layout_height="18dp"
+                                            android:layout_marginEnd="4dp"
+                                            android:scaleType="fitCenter"
+                                            android:src="@drawable/img_super_coin_golden" />
+
+                                        <TextView
+                                            android:id="@+id/tv_ps_coin_value"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/urbanist_semi_bold"
+                                            android:textColor="#189C4D"
+                                            android:textSize="14sp" />
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <!-- Perforated edge: on card surface so gaps reveal surface, circles blend into section below -->
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="12dp"
+                                android:contentDescription="@string/ps_total_price_label"
+                                android:src="@drawable/img_frame_circles_gray"
+                                android:scaleType="fitXY"
+                                app:tint="@color/payment_summary_total_bg" />
+
+                            <!-- Total Amount section wrapper -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@color/payment_summary_total_bg"
+                                android:orientation="vertical"
+                                android:layout_marginTop="-8dp">
+
+                                <!-- Total Amount row -->
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center_vertical"
+                                    android:orientation="horizontal"
+                                    android:paddingHorizontal="16dp"
+                                    android:paddingTop="12dp"
+                                    android:paddingBottom="16dp">
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:fontFamily="@font/urbanist_bold"
+                                        android:text="@string/ps_total_amount_label"
+                                        android:textColor="@color/text_primary"
+                                        android:textSize="16sp" />
+
+                                    <TextView
+                                        android:id="@+id/tv_ps_total_amount"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/urbanist_bold"
+                                        android:textColor="@color/text_primary"
+                                        android:textSize="18sp" />
+
+                                </LinearLayout>
+
+                            </LinearLayout> <!-- /total amount section wrapper -->
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!--                    //contact us-->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cv_contact_us"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="20dp"
+                        android:layout_marginVertical="20dp"
+                        android:visibility="gone"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="4dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:strokeColor="@color/divider_color"
+                        app:strokeWidth="1dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:id="@+id/iv_need_help"
+                                android:layout_width="130dp"
+                                android:layout_height="126dp"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginHorizontal="12dp"
+                                android:layout_marginVertical="12dp"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/talk_to_us_image"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <LinearLayout
+                                android:id="@+id/ll_need_help"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight="1"
+                                android:orientation="vertical"
+                                android:paddingVertical="10dp"
+                                android:paddingStart="0dp"
+                                android:paddingEnd="8dp">
+
+                                <TextView
+                                    android:id="@+id/text_1_need_help"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:autoSizeMaxTextSize="16sp"
+                                    android:autoSizeMinTextSize="12sp"
+                                    android:autoSizeStepGranularity="1sp"
+                                    android:autoSizeTextType="uniform"
+                                    android:ellipsize="end"
+                                    android:fontFamily="@font/nunito_bold"
+                                    android:maxLines="2"
+                                    android:text="@string/pro_plan_help_text_1"
+                                    android:textColor="@color/text_primary"
+                                    android:textSize="14sp" />
+
+                                <TextView
+                                    android:id="@+id/text_2_need_help"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="2dp"
+                                    android:autoSizeMaxTextSize="12sp"
+                                    android:autoSizeMinTextSize="9sp"
+                                    android:autoSizeStepGranularity="1sp"
+                                    android:autoSizeTextType="uniform"
+                                    android:ellipsize="end"
+                                    android:fontFamily="@font/nunito_medium"
+                                    android:maxLines="3"
+                                    android:text="@string/pro_plan_help_text_2"
+                                    android:textColor="@color/text_secondary"
+                                    android:textSize="11sp" />
+
+
+                                <com.google.android.material.card.MaterialCardView
+                                    android:id="@+id/mcv_contact_us"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    app:cardBackgroundColor="#0F26C6DA"
+                                    app:cardCornerRadius="18dp"
+                                    app:cardElevation="0dp"
+                                    app:strokeColor="#26C6DA"
+                                    app:strokeWidth="2dp">
+
+                                    <!-- Horizontal Container -->
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="match_parent"
+                                        android:gravity="center"
+                                        android:orientation="horizontal"
+                                        android:paddingHorizontal="16dp"
+                                        android:paddingVertical="8dp">
+
+                                        <ImageView
+                                            android:id="@+id/call_back_icon"
+                                            android:layout_width="12dp"
+                                            android:layout_height="12dp"
+                                            android:layout_marginEnd="6dp"
+                                            android:src="@drawable/call_back"
+                                            app:tint="#26C6DA" />
+
+                                        <TextView
+                                            android:id="@+id/tv_need_help"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/urbanist_semi_bold"
+                                            android:text="7879180741"
+                                            android:textColor="#26C6DA"
+                                            android:textSize="15sp" />
+
+                                    </LinearLayout>
+
+                                </com.google.android.material.card.MaterialCardView>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+    <FrameLayout
+        android:id="@+id/floating_call_button_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="100dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:id="@+id/floating_call_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:layout_gravity="center">
+
+                <!-- Glow Circle Perfect Center -->
+                <View
+                    android:layout_width="78dp"
+                    android:layout_height="78dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/glow_circle" />
+
+                <!-- Image Centered -->
+                <ImageView
+                    android:id="@+id/ritesh_image"
+                    android:layout_width="61dp"
+                    android:layout_height="92dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="16dp"
+                    android:contentDescription="Ritesh Sir"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ritesh_sir_conatct_image" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="-18dp"
+                android:background="@drawable/bg_glow"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                android:padding="4dp">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_call"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    app:cardBackgroundColor="#26C6DA"
+                    app:cardCornerRadius="24dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingHorizontal="16dp"
+                        android:paddingVertical="4dp">
+
+                        <ImageView
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:src="@drawable/call_back" />
+
+                        <TextView
+                            android:id="@+id/tv_call_to_sir"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:fontFamily="@font/urbanist_bold"
+                            android:text="Ritesh sir\nse baat karein"
+                            android:textColor="@android:color/white"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+
+    <LinearLayout
+        android:id="@+id/discount_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#2926C6DA"
+        android:gravity="center"
+        android:paddingVertical="4dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/bottom_layout">
+
+
+        <TextView
+            android:id="@+id/discount_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textColor="#26C6DA"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/renew_discount_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/yellow_gradient_4"
+        android:gravity="center"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/bottom_layout">
+
+        <TextView
+            android:id="@+id/renew_discount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:fontFamily="@font/urbanist_medium"
+            android:singleLine="true"
+            android:text="Discount"
+            android:textColor="@color/black"
+            android:textSize="11sp" />
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bottom_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/bg_color"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <!-- Single container for price + button -->
+        <LinearLayout
+            android:id="@+id/price_button_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="2dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <!-- Final Price Section -->
+            <LinearLayout
+                android:id="@+id/final_price_layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingVertical="5dp">
+
+                <!-- Row 1: Final price (large) -->
+                <TextView
+                    android:id="@+id/selected_discount_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/urbanist_bold"
+                    android:text="999"
+                    android:textColor="@color/white"
+                    android:textSize="22sp" />
+
+                <!-- Row 2: Cost price + coin breakdown OR discount badge -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <!-- Cost price (strikethrough) -->
+                    <TextView
+                        android:id="@+id/selected_cost_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/urbanist_medium"
+                        android:text="9999"
+                        android:textColor="#a1a1a1"
+                        android:textSize="14sp" />
+
+                    <!-- Coin breakdown: (₹999 - 🪙 750) — visible when coins available -->
+                    <LinearLayout
+                        android:id="@+id/ll_coin_breakdown"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="6dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/tv_coin_breakdown_prefix"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/urbanist_medium"
+                            android:textColor="#a1a1a1"
+                            android:textSize="13sp" />
+
+                        <ImageView
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:layout_marginHorizontal="3dp"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/img_super_coin_golden" />
+
+                        <TextView
+                            android:id="@+id/tv_coin_breakdown_value"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/urbanist_medium"
+                            android:textColor="#a1a1a1"
+                            android:textSize="13sp" />
+
+                    </LinearLayout>
+
+                    <!-- Discount percentage badge — visible when no coins -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cv_discount_badge"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:visibility="gone"
+                        app:cardBackgroundColor="#189C4D"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="0dp"
+                        app:strokeWidth="0dp">
+
+                        <TextView
+                            android:id="@+id/tv_discount_badge"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/urbanist_semi_bold"
+                            android:paddingHorizontal="8dp"
+                            android:paddingVertical="3dp"
+                            android:textColor="@color/white"
+                            android:textSize="9sp" />
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                </LinearLayout>
+
+                <!-- Hidden: plan name (no longer shown) -->
+                <TextView
+                    android:id="@+id/selected_subscription_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:fontFamily="@font/urbanist_medium"
+                    android:textColor="@color/text_primary"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+            <!-- Join Campaign Button -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/join_content_layout"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="10dp"
+                android:orientation="horizontal"
+                app:cardBackgroundColor="@android:color/transparent"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/join_now_pro_plus_gradient"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingVertical="10dp">
+
+                    <TextView
+                        android:id="@+id/join_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="6dp"
+                        android:fontFamily="@font/urbanist_semi_bold"
+                        android:text="@string/join_now_text_1"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

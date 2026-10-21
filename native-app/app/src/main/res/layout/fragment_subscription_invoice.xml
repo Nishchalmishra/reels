@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.github.ybq.android.spinkit.SpinKitView
+        android:id="@+id/progress_dataLoading"
+        style="@style/SpinKitView.FadingCircle"
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:layout_centerInParent="true"
+        app:SpinKit_Color="#19B0C1" />
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+<RelativeLayout xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:theme="@style/Theme.MaterialComponents.Light"
+    tools:context=".fragments.SubscriptionPaymentFragment">
+
+    <RelativeLayout
+        android:id="@+id/ParentRelativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="?android:actionBarSize"
+        app:cardBackgroundColor="@color/chapter_header"
+        app:cardElevation="0dp"
+        android:theme="@style/AppTheme.Toolbar"
+        tools:ignore="MissingConstraints">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            app:titleTextColor="@color/navy_blue"
+            app:title="."
+            android:layout_marginLeft="-20dp"
+            android:background="@drawable/theme_gradient_color"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+
+                <ImageView
+                    android:id="@+id/back_arrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:visibility="gone"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="8dp"
+                    android:src="@drawable/ic_baseline_arrow_back_ios_24" />
+
+                <TextView
+                    android:id="@+id/subject_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginLeft="20dp"
+                    android:drawableRight="@drawable/ic_mock_test"
+                    android:drawablePadding="10dp"
+                    android:fontFamily="@font/comfortaa"
+                    android:text="@string/details"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/primary_text_size"
+                    android:textStyle="bold" />
+
+
+            </RelativeLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </androidx.cardview.widget.CardView>
+
+    <RelativeLayout
+        android:id="@+id/data"
+        android:layout_width="match_parent"
+        android:visibility="gone"
+        android:layout_height="match_parent">
+    <com.google.android.material.card.MaterialCardView
+        android:layout_marginTop="80dp"
+        android:id="@+id/top_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        app:cardBackgroundColor="@color/lighter_navy_blue"
+        app:cardElevation="0dp"
+        android:layout_marginRight="20dp"
+        app:cardCornerRadius="8dp">
+
+        <LinearLayout
+            android:gravity="center_horizontal"
+            android:layout_gravity="center_horizontal"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:textAlignment="center"
+                android:id="@+id/transactionId"
+                android:textStyle="bold"
+                style="@style/primaryText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/tertiary_text_size"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/poppins_light"
+                android:text="Transaction Id"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:textAlignment="center"
+                android:id="@+id/date"
+                android:textStyle="bold"
+                style="@style/primaryText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/tertiary_text_size"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/poppins_light"
+                android:text="4 July"
+                android:textColor="@color/black" />
+            <TextView
+                android:textAlignment="center"
+                android:id="@+id/paid"
+                android:textStyle="bold"
+                style="@style/primaryText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/tertiary_text_size"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/poppins_light"
+                android:text="PAID"
+                android:textColor="@color/black" />
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_marginTop="10dp"
+        android:id="@+id/card"
+        android:layout_below="@+id/top_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        app:cardBackgroundColor="@color/lighter_navy_blue"
+        app:cardElevation="0dp"
+        android:layout_marginRight="20dp"
+        app:cardCornerRadius="8dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/duration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Two years"
+                android:textSize="@dimen/primary_text_size"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"/>
+
+            <TextView
+                android:id="@+id/course"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_below="@id/duration"
+                android:text="IIT-JEE"
+                android:textSize="@dimen/tertiary_text_size"
+                android:textColor="@color/album_title"
+                android:fontFamily="@font/poppins_light"/>
+
+            <TextView
+                android:id="@+id/payment_money"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:textStyle="bold"
+                android:textSize="@dimen/primary_text_size"
+                android:textColor="@color/navy_blue"
+                android:text="Rs. 60,000"/>
+
+            <TextView
+                android:id="@+id/internl_offer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/duration"
+                android:layout_alignParentRight="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:textSize="@dimen/tertiary_text_size"
+                android:layout_marginBottom="10dp"
+                android:text="1000 off"
+                android:textColor="@color/album_title" />
+
+        </RelativeLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/second_card"
+        android:layout_width="match_parent"
+        android:layout_margin="20dp"
+        app:cardElevation="0dp"
+        android:background="@color/lighter_navy_blue"
+        android:layout_below="@id/card"
+        android:layout_height="wrap_content">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/features_of_subscription"
+            android:layout_width="match_parent"
+            android:padding="8dp"
+            android:background="@color/lighter_navy_blue"
+            android:layout_height="wrap_content"/>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+    <RelativeLayout
+        android:background="@color/lighter_navy_blue"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:id="@+id/coupan"
+        android:layout_below="@id/second_card"
+        android:minHeight="50dp"
+        android:layout_marginTop="10dp"
+        android:padding="0dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_marginStart="8dp"
+            android:id="@+id/im1"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_free_ticket"
+            android:layout_width="20dp"
+            android:layout_height="20dp"/>
+
+        <TextView
+            android:id="@+id/apply"
+            android:layout_toRightOf="@+id/im1"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="15dp"
+            android:layout_gravity="center_vertical"
+            style="@style/secondaryText"
+            android:textColor="@color/black"
+            android:text="@string/apply_coupons"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            style="@style/primaryText"
+            android:visibility="gone"
+            android:layout_marginTop="30dp"
+            android:layout_below="@+id/apply"
+            android:id="@+id/coupon_saved"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Congratulation You have saved 1500 Rs"
+            android:textColor="@color/navy_blue"
+            android:layout_centerHorizontal="true"
+            android:textStyle="bold"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:id="@+id/arivihan_points_layout"
+        android:layout_below="@id/coupan"
+        android:minHeight="50dp"
+        android:layout_marginTop="20dp"
+        android:padding="0dp"
+        android:orientation="horizontal"
+        android:background="@color/lighter_navy_blue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <CheckBox
+            android:clickable="false"
+            android:id="@+id/use_points"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/use_arivihan_points"
+            android:layout_marginStart="0dp"
+            android:layout_toRightOf="@id/use_points"
+            style="@style/secondaryText"
+            android:textColor="@color/black"
+            android:layout_centerVertical="true"
+            android:text="@string/use_xx_arivihan_points"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:padding="5dp"
+        android:background="@color/lighter_navy_blue"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/arivihan_points_layout"
+        android:orientation="vertical"
+        android:id="@+id/billDetail"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:textColor="@color/black"
+            style="@style/tertiaryText"
+            android:text="@string/subscription_bill_details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <LinearLayout
+            android:background="@color/grey_500"
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+
+        <RelativeLayout
+            android:id="@+id/cost_price"
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textColor="@color/black"
+                style="@style/tertiaryText"
+                android:text="@string/amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:layout_marginEnd="10dp"
+                android:layout_alignParentRight="true"
+                android:id="@+id/cost_price_text"
+                android:textColor="@color/black"
+                style="@style/tertiaryText"
+                android:text="@string/hundred"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/internal_discount"
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textColor="@color/black"
+                style="@style/tertiaryText"
+                android:text="@string/discount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/internal_discount_text"
+                android:layout_marginEnd="10dp"
+                android:layout_alignParentRight="true"
+                android:textColor="@color/black"
+                style="@style/tertiaryText"
+                android:text="@string/hundred"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/coupon_applied"
+
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textColor="@color/black"
+                style="@style/tertiaryText"
+                android:text="@string/coupon_applied"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/coupon_applied_text"
+                android:layout_marginEnd="10dp"
+                android:layout_alignParentRight="true"
+                android:textColor="@color/black"
+                style="@style/tertiaryText"
+                android:text="@string/hundred"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/points_used"
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textColor="@color/black"
+                style="@style/tertiaryText"
+                android:text="@string/points_used"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/points_used_text"
+                android:layout_marginEnd="10dp"
+                android:layout_alignParentRight="true"
+                android:textColor="@color/black"
+                style="@style/tertiaryText"
+                android:text="@string/hundred"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:background="@color/grey_500"
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+
+        <RelativeLayout
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textColor="@color/black"
+                style="@style/tertiaryText"
+                android:text="@string/to_pay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:layout_marginEnd="10dp"
+                android:layout_alignParentRight="true"
+                android:id="@+id/total_amount"
+                android:textColor="@color/black"
+                style="@style/tertiaryText"
+                android:text="@string/hundred"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    </RelativeLayout>
+
+
+
+</RelativeLayout>
+</ScrollView>
+
+</RelativeLayout>

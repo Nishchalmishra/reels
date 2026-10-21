@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="182dp"
+    android:layout_height="113dp"
+    android:layout_marginHorizontal="10dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="10dp"
+    android:outlineSpotShadowColor="@color/grey_300"
+    app:cardBackgroundColor="@color/arivihan_secondary_color"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="12dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <ImageView
+            android:id="@+id/micro_lecture_thumbnail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/ai_tutor_resized2" />
+
+        <RelativeLayout
+            android:layout_width="30dp"
+            android:layout_height="22dp"
+            android:layout_margin="3dp"
+            android:background="@drawable/today_task_current_item_badge">
+
+            <TextView
+                android:id="@+id/task_position"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/urbanist_bold"
+                android:textSize="12sp"
+                android:text="2/6"
+                android:textColor="@color/arivihan_secondary_color" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/linearlayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="0dp"
+            android:background="@drawable/gradient_top_to_bottom_transparent_to_back"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="8dp">
+
+
+            <TextView
+                android:id="@+id/micro_lecture_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:fontFamily="@font/urbanist_medium"
+                android:maxLines="1"
+                android:text="Introduction of push down..."
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:layout_above="@id/watch_time"
+                android:layout_marginBottom="10dp"/>
+
+            <LinearLayout
+                android:id="@+id/watch_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="3dp"
+                android:gravity="center"
+                android:visibility="visible">
+
+                <ImageView
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:src="@drawable/today_class_play_icon" />
+
+                <TextView
+                    android:id="@+id/microlecture_duration"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:fontFamily="@font/urbanist_medium"
+                    android:text="8 Min"
+                    android:textColor="@color/white"
+                    android:textSize="12dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/view_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="3dp"
+                android:gravity="center"
+                android:visibility="visible">
+
+                <ImageView
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:src="@drawable/ic_baseline_view_white" />
+
+                <TextView
+                    android:id="@+id/view_count_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:fontFamily="@font/urbanist_medium"
+                    android:text="645 Views"
+                    android:textColor="@color/white"
+                    android:textSize="12dp" />
+            </LinearLayout>
+        </RelativeLayout>
+
+
+        <com.google.android.material.progressindicator.LinearProgressIndicator
+            android:id="@+id/micro_lecture_progress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:progress="35"
+            app:indicatorColor="@color/arivihan_secondary_color"
+            app:trackColor="#D9D9D9"
+            android:visibility="gone"/>
+
+        <ImageView
+            android:id="@+id/completed_status"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_alignParentRight="true"
+            android:layout_margin="4dp"
+            android:src="@drawable/today_class_complete_icon" />
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

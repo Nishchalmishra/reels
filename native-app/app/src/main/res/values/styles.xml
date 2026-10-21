@@ -1,0 +1,478 @@
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+<!--        <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>-->
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:headerBackground">@color/arivihan_primary_color</item>
+        <item name="android:windowAnimationStyle">@style/animation</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
+    </style>
+
+    <style name="NoRippleTabLayout" parent="Widget.MaterialComponents.TabLayout">
+        <item name="tabRippleColor">@android:color/transparent</item>
+    </style>
+
+    <style name="AlertDialogTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:colorBackground">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:backgroundDimAmount">0.8</item>
+        <item name="android:windowFrame">@null</item>
+<!--        <item name="android:windowIsFloating">true</item>-->
+        <item name="android:layout_gravity">center</item>
+
+    </style>
+
+    <style name="SheetDialog" parent="Theme.Design.Light.BottomSheetDialog">
+        <!--<item name="android:windowCloseOnTouchOutside">false</item>-->
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:colorBackground">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:backgroundDimAmount">0.8</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+    </style>
+
+    <style name="HomeSwitch" parent="Theme.AppCompat.Light">
+        <item name="colorControlActivated">@color/arivihan_secondary_color</item>
+
+        <!-- inactive thumb color -->
+        <item name="colorSwitchThumbNormal">#f1f1f1</item>
+
+        <!-- inactive track color (30% transparency) -->
+        <item name="android:colorForeground">#f1f1f1</item>
+    </style>
+
+    <style name="FullScreenBottomSheetDialog" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/FullScreenBottomSheet</item>
+    </style>
+
+    <style name="FullScreenBottomSheet" parent="Widget.Design.BottomSheet.Modal">
+        <item name="behavior_peekHeight">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="MyDatePickerStyle" parent="@android:style/Widget.Material.Light.DatePicker">
+        <item name="android:headerBackground">@color/arivihan_primary_color</item>
+    </style>
+
+    <style name="MyDatePickerDialogTheme" parent="android:Theme.Material.Light.Dialog">
+        <item name="android:datePickerStyle">@style/MyDatePickerStyle</item>
+    </style>
+
+    <style name="DialogTheme" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorAccent">@color/arivihan_primary_color</item>
+    </style>
+
+    <style name="BottomSheetDialog" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/BottomSheetStyle</item>
+    </style>
+
+
+    <style name="BottomSheetStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+
+    <style name="animation">
+        <item name="android:windowEnterAnimation">@anim/fade_in</item>
+        <item name="android:windowExitAnimation">@anim/fade_out</item>
+    </style>
+
+    <style name="BottomDialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/bottom_to_top_enter</item>
+        <item name="android:windowExitAnimation">@anim/top_to_bottom_exit</item>
+    </style>
+
+    <style name="StartActivityButton" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="cardBackgroundColor">#19B0C1</item>
+        <item name="cardCornerRadius">4dp</item>
+        <item name="android:clickable">true</item>
+        <item name="android:foreground">?android:attr/selectableItemBackground</item>
+    </style>
+
+    <style name="CardBorderWhite" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="cardBackgroundColor">@color/white</item>
+        <item name="cropBorderCornerColor">@color/white</item>
+        <item name="cropBorderCornerThickness">4dp</item>
+        <item name="cardCornerRadius">4dp</item>
+        <item name="android:clickable">true</item>
+        <item name="android:foreground">?android:attr/selectableItemBackground</item>
+    </style>
+
+    <style name="CardStyleInABoutUser" parent="Theme.MaterialComponents.Light">
+        <item name="cardCornerRadius">12dp</item>
+        <item name="cardElevation">8dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:layout_height">380dp</item>
+        <item name="android:layout_width">290dp</item>
+    </style>
+
+    <style name="CardTextInAboutUser">
+        <item name="android:layout_marginTop">25dp</item>
+        <item name="android:layout_marginLeft">15dp</item>
+        <item name="android:layout_marginRight">15dp</item>
+
+        <item name="android:textSize">@dimen/primary_text_size</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="buttonInAboutUser">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_marginLeft">15dp</item>
+        <item name="android:layout_marginRight">15dp</item>
+        <item name="cardElevation">0dp</item>
+        <item name="cardCornerRadius">4dp</item>
+        <item name="cardBackgroundColor">@color/white</item>
+    </style>
+
+    <style name="AppTheme.Toolbar" parent="AppTheme">
+        <!--This line changes the color of text in Toolbar-->
+        <item name="android:textColorPrimary">@color/grey_300</item>
+        <item name="android:textColorHint">@color/grey_300</item>
+        <!--This line changes the color of icons in toolbar (back, overflow menu icons)-->
+        <item name="android:textColorSecondary">@color/grey_300</item>
+        <item name="android:editTextColor">@color/black</item>
+
+    </style>
+
+    <style name="CustomToolbarTheme" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="colorControlNormal">@color/black</item>
+    </style>
+
+    <style name="CustomToolbarPopupTheme" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:colorControlNormal">@color/black</item>
+    </style>
+
+    <style name="Widget.BottomNavigationView" parent="Widget.Design.BottomNavigationView">
+        <item name="fontFamily">@font/opensans_bold</item>
+        <item name="android:textSize">12sp</item>
+        <item name="itemIconSize">16sp</item>
+    </style>
+
+    <!--  <style name="MyMaterialTheme" parent="MyMaterialTheme.Base">
+
+      </style>
+  -->
+    <style name="MyMaterialTheme.Base" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="MyMaterialTheme" parent="MyMaterialTheme.Base">
+        <item name="android:windowContentTransitions">true</item>
+        <item name="android:windowAllowEnterTransitionOverlap">true</item>
+        <item name="android:windowAllowReturnTransitionOverlap">true</item>
+        <item name="android:windowSharedElementEnterTransition">@android:transition/move</item>
+        <item name="android:windowSharedElementExitTransition">@android:transition/move</item>
+    </style>
+
+    <style name="RobotoBoldTextAppearance">
+        <item name="android:fontFamily">@font/opensans_regular</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">#fff</item>
+    </style>
+
+    <style name="ToolTitleTextAppearance">
+        <item name="android:fontFamily">@font/opensans_bold</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">#fff</item>
+        <item name="android:layout_marginLeft">20dp</item>
+    </style>
+
+    <!-- Variant of ArivihanTheme that opts out of edge-to-edge (pre-35 and 35+). -->
+    <style name="ArivihanTheme.NoEdgeToEdge" parent="ArivihanTheme">
+        <item name="enableEdgeToEdge">false</item>
+        <item name="android:windowOptOutEdgeToEdgeEnforcement" tools:targetApi="35">true</item>
+    </style>
+
+    <!-- New theme. -->
+    <style name="ArivihanTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Lets Material sheets and dialogs inset their own content, now that the app draws edge to edge. -->
+        <item name="enableEdgeToEdge">true</item>
+
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/arivihan_primary_color</item>
+        <item name="colorPrimaryDark">@color/arivihan_secondary_color</item>
+        <item name="colorAccent">@color/arivihan_primary_color</item>
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
+        <item name="android:statusBarColor" >@color/white</item>
+        <item name="colorOnPrimary">@color/black</item>
+
+        <item name="android:windowLightStatusBar" tools:targetApi="n">true</item>
+    </style>
+
+    <!-- For screens whose own artwork runs behind the status bar and needs light icons over it.
+         Only worth applying where the artwork is reliably dark: the subscription banners are
+         remote content and are often light, where white icons disappear. -->
+    <style name="ArivihanTheme.LightStatusBarIcons">
+        <item name="android:windowLightStatusBar" tools:targetApi="n">false</item>
+    </style>
+
+    <style name="primaryText">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/primary_text_size</item>
+    </style>
+
+    <style name="whiteBolText" parent="TextShadowStyle">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/bold_text_size</item>
+    </style>
+
+    <style name="blackBoldText" parent="TextShadowStyle">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/bold_text_size_1</item>
+    </style>
+
+    <style name="grey" parent="TextShadowStyle">
+        <item name="android:textColor">@color/dark_grey</item>
+        <item name="android:textSize">19sp</item>
+    </style>
+
+    <style name="greyBoldText" parent="TextShadowStyle">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/dark_grey</item>
+        <item name="android:textSize">@dimen/bold_text_size_1</item>
+        <item name="fontFamily">@font/opensans_bold</item>
+    </style>
+
+    <style name="TitleTextStyle" parent="whiteBolText">
+        <item name="android:focusable">true</item>
+        <item name="android:state_selected">true</item>
+        <item name="singleLine">false</item>
+        <item name="android:ellipsize">marquee</item>
+        <item name="android:marqueeRepeatLimit">marquee_forever</item>
+        <item name="android:scrollHorizontally">true</item>
+        <item name="android:focusableInTouchMode">true</item>
+        <item name="android:textSize">18sp</item>
+        <item name="fontFamily">@font/opensans_bold</item>
+    </style>
+
+    <style name="secondaryText">
+        <item name="android:textColor">@color/dark_grey</item>
+        <item name="android:textSize">@dimen/secondary_text_size</item>
+    </style>
+
+    <style name="tertiaryText">
+        <item name="android:textSize">@dimen/tertiary_text_size</item>
+    </style>
+
+    <style name="primaryButtonStyle">
+        <item name="android:clickable">true</item>
+        <item name="android:height">@dimen/button_size</item>
+        <item name="android:layout_height">@dimen/button_size</item>
+        <item name="android:elevation">@dimen/primary_button_elevation</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/secondary_text_size</item>
+    </style>
+
+    <style name="TextShadowStyle">
+        <item name="android:shadowColor">@color/grey_500</item>
+        <item name="android:shadowDx">0</item>
+        <item name="android:shadowDy">0</item>
+        <item name="android:shadowRadius">0</item>
+    </style>
+
+    <dimen name="bold_text_size">19sp</dimen>
+    <dimen name="bold_text_size_1">16sp</dimen>
+
+
+    <style name="Arivihan.Toolbar" parent="@style/Widget.AppCompat.Toolbar"></style>
+
+    <style name="TabsTextAppearance" parent="TextAppearance.Design.Tab">
+        <item name="textAllCaps">false</item>
+        <item name="android:textSize">@dimen/primary_text_size</item>
+    </style>
+
+    <style name="OfflineNotesTabLayout" parent="Widget.Design.TabLayout">
+        <item name="tabTextAppearance">@style/OfflineNotesTabTextAppearance</item>
+    </style>
+
+    <style name="OfflineNotesTabTextAppearance" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">20sp</item>
+        <item name="textAllCaps">false</item>
+        <item name="android:fontFamily">@font/urbanist_semi_bold</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="BottomNavigationView" parent="@style/TextAppearance.AppCompat.Caption">
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="MyMaterial" parent="Theme.MaterialComponents">
+        <item name="android:foregroundTint">@color/arivihan_primary_color</item>
+    </style>
+
+    <style name="BottomNavigationView.Active" parent="@style/TextAppearance.AppCompat.Caption">
+        <item name="android:textSize">11sp</item>
+    </style>
+
+    <style name="MyBottomNav" parent="@style/Widget.BottomNavigationView">
+        <item name="fontFamily">@font/opensans_bold</item>
+    </style>
+
+    <style name="Arivihan.BottomBar" parent="Widget.MaterialComponents.BottomAppBar.Colored">
+        <item name="android:backgroundTint">@color/arivihan_primary_color</item>
+    </style>
+
+    <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
+        <!-- Lets Material sheets and dialogs inset their own content, now that the app draws edge to edge. -->
+        <item name="enableEdgeToEdge">true</item>
+
+        <item name="android:windowDisablePreview">false</item>
+        <item name="android:windowBackground">@color/white</item>
+        <item name="android:statusBarColor" >@color/white</item>
+        <item name="android:navigationBarColor">@color/white</item>
+        <item name="colorOnPrimary">@color/black</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="n">true</item>
+        <item name="android:windowLightNavigationBar" tools:targetApi="o_mr1">true</item>
+    </style>
+
+    <style name="Color1SwitchStyle">
+        <item name="colorPrimary">@color/arivihan_primary_color</item>
+        <item name="colorPrimaryDark">@color/arivihan_primary_color</item>
+        <item name="colorControlActivated">@color/arivihan_primary_color</item>
+    </style>
+
+
+    <style name="WhiteSpinnerStyle" parent="Widget.AppCompat.Spinner">
+        <item name="android:tint">@android:color/white</item>
+        <item name="android:textColor">@android:color/white</item>
+
+    </style>
+    <style name="App.CustomActiveIndicator" parent="">
+        <item name="android:color">@color/doubt_highlight_blue</item>
+        <item name="android:width">48dp</item>
+        <item name="android:height">48dp</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.Material3.Corner.Full</item>
+    </style>
+
+
+    <style name="ThemeOverlay.App.BottomNavigationView" parent="">
+        <item name="colorSurface">@color/arivihan_secondary_color</item>
+        <item name="colorOnSurfaceVariant">@color/arivihan_primary_color</item>
+    </style>
+
+    <style name="App.ActiveIndicator" parent="@style/Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:width">55dp</item>
+        <item name="android:height">32dp</item>
+        <item name="marginHorizontal">4dp</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.Material3.Corner.Full</item>
+        <item name="android:color">@color/selected</item>
+    </style>
+
+    <style name="MediaPlayerRew" >
+        <item name="android:src">@drawable/my_exo_styled_controls_rewind</item>
+    </style>
+
+    <style name="CustomCardShape" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <!-- Apply radius only to the top-left and bottom-left corners -->
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopLeft">16dp</item>  <!-- Top-left corner radius -->
+        <item name="cornerSizeBottomLeft">16dp</item>  <!-- Bottom-left corner radius -->
+        <item name="cornerSizeTopRight">0dp</item>  <!-- No radius for top-right -->
+        <item name="cornerSizeBottomRight">0dp</item>  <!-- No radius for bottom-right -->
+    </style>
+
+    <style name="TrackSelectionDialogThemeOverlay" parent="ThemeOverlay.AppCompat.Dialog.Alert">
+        <item name="windowNoTitle">false</item>
+    </style>
+
+    <style name="CustomMaterialDatePickerTheme" parent="ThemeOverlay.MaterialComponents.MaterialCalendar">
+        <item name="materialCalendarStyle">@style/Widget.App.MaterialCalendar</item>
+        <item name="materialCalendarFullscreenTheme">@style/ThemeOverlay.App.MaterialCalendar.Fullscreen</item>
+        <item name="materialCalendarTheme">@style/ThemeOverlay.App.MaterialCalendar</item>
+
+        <item name="colorPrimary">@color/arivihan_secondary_color</item>
+        <item name="colorOnPrimary">@color/black</item>
+
+        <item name="colorSecondary">@color/arivihan_secondary_color</item>
+        <item name="colorOnSecondary">@color/black</item>
+
+        <item name="colorOnSurface">@color/black</item>
+        <item name="colorSurface">@color/white</item>
+        <item name="colorOnSurfaceVariant">@color/gray_d1</item>
+        <item name="colorOnSurfaceInverse">@color/arivihan_secondary_color</item>
+
+        <item name="colorOutline">@color/arivihan_secondary_color</item>
+
+<!--        <item name="materialCalendarSeparatorColor">@color/ar</item>-->
+<!--        <item name="android:buttonBarPositiveButtonStyle">@style/Widget.MaterialComponents.Button.TextButton.Dialog</item>-->
+<!--        <item name="android:buttonBarNegativeButtonStyle">@style/Widget.MaterialComponents.Button.TextButton.Dialog</item>-->
+        <item name="android:textColorPrimary">@color/black</item>
+
+        <item name="materialCalendarHeaderTitle">@style/TextAppearance.App.MaterialCalendar.HeaderTitle</item>
+<!--        <item name="materialCalendarHeaderSelection">@style/TextAppearance.App.MaterialCalendar.DayOfWeek</item>-->
+<!--        <item name="materialCalendarDayOfWeekLabel">@style/TextAppearance.App.MaterialCalendar.DayOfWeek</item>-->
+
+    </style>
+
+    <style name="Widget.App.MaterialCalendar" parent="Widget.MaterialComponents.MaterialCalendar">
+        <item name="android:textColorSecondary">@color/black</item>
+        <item name="cardCornerRadius">16dp</item>
+        <item name="cardElevation">1dp</item>
+    </style>
+
+    <style name="ThemeOverlay.App.MaterialCalendar" parent="ThemeOverlay.MaterialComponents.MaterialCalendar">
+    </style>
+
+    <style name="ThemeOverlay.App.MaterialCalendar.Fullscreen" parent="ThemeOverlay.MaterialComponents.MaterialCalendar.Fullscreen">
+    </style>
+
+    <style name="TextAppearance.App.MaterialCalendar.HeaderTitle" parent="TextAppearance.MaterialComponents.Headline6">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">normal</item>
+         <item name="android:fontFamily">@font/urbanist_semi_bold</item>
+        <item name="android:letterSpacing">0.05</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="TextAppearance.App.MaterialCalendar.DayOfWeek" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">28sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TopRoundedCard">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopLeft">22dp</item>
+        <item name="cornerSizeTopRight">22dp</item>
+        <item name="cornerSizeBottomLeft">0dp</item>
+        <item name="cornerSizeBottomRight">0dp</item>
+    </style>
+
+    <style name="CircleImage">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="TabTextAppearance" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/urbanist_semi_bold</item>
+        <item name="textAllCaps">false</item>
+    </style>
+
+
+</resources>

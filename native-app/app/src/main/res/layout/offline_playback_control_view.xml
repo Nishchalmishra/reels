@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/offline_controller_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#66000000">
+
+    <TextView
+        android:textAlignment="center"
+        android:drawableLeft="@drawable/arrow_back_white_24"
+        android:visibility="gone"
+        android:id="@+id/go_back_to_previous_media"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:text="@string/backToPreviousVideo"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/relativeLayout3"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.03" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layoutDirection="ltr"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="0dp">
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+
+            <ImageButton
+                android:id="@+id/rewind"
+                style="@android:style/MediaButton.Rew"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginRight="180dp"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/reverse"
+                android:scaleType="fitCenter"
+                android:src="@drawable/my_exo_styled_controls_rewind" />
+
+            <ImageButton
+                android:id="@+id/exo_play_pause"
+                style="@android:style/MediaButton.Pause"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/pause"
+                android:scaleType="fitCenter"/>
+
+
+            <ImageButton
+                android:id="@+id/forward"
+                style="@android:style/MediaButton.Ffwd"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="180dp"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/forward"
+                android:scaleType="fitCenter"
+                android:src="@drawable/forward" />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/setting_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="18dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/setting"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_gravity="end"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="18dp"
+                android:src="@drawable/settings_ic"
+                android:visibility="visible" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_speed_container"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="8dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/playback_speed_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:clipToPadding="false"
+            android:overScrollMode="never"/>
+
+    </androidx.cardview.widget.CardView>
+
+    <SeekBar
+        android:visibility="gone"
+        android:id="@+id/seekBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginBottom="15dp"
+        android:progressBackgroundTint="@color/subscription_blue"
+        android:progressTint="@color/subscription_blue"
+        android:thumbTint="@color/subscription_blue"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <arivihan.technologies.doubtbuzzter2.customView.CustomTimeBar
+        app:buffered_color="@color/exo_player_light_progress_blue"
+        app:played_color="@color/subscription_blue"
+        app:scrubber_color="@color/subscription_blue"
+        app:unplayed_color="@color/exo_player_light_progress_blue"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="100dp"
+        app:layout_constraintRight_toRightOf="@id/seekBar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/exo_progress"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
+
+    <LinearLayout
+        android:layout_marginHorizontal="7dp"
+        android:layout_marginBottom="36dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:textSize="12sp"
+            android:id="@+id/exo_position"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00:00"
+            android:textColor="@color/white"
+            />
+
+        <TextView
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:text=" / "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:textSize="12sp"
+            android:id="@+id/custom_exo_duration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00:00"
+            android:textColor="@color/white"
+            />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

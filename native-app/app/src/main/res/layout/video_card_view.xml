@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="230dp"
+    android:layout_height="160dp"
+    android:layout_marginHorizontal="5dp"
+    android:layout_marginVertical="5dp"
+    android:outlineSpotShadowColor="@color/grey_300"
+    app:cardBackgroundColor="@color/arivihan_secondary_color"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="12dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <ImageView
+            android:id="@+id/micro_lecture_thumbnail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/ai_tutor_resized2" />
+
+        <RelativeLayout
+            android:id="@+id/linearlayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="0dp"
+            android:background="@drawable/gradient_top_to_bottom_transparent_to_back"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="8dp">
+
+
+            <TextView
+                android:id="@+id/micro_lecture_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="34dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/urbanist_regular"
+                android:maxLines="2"
+                android:text="Introduction of push down..."
+                android:textColor="@color/white"
+                android:textSize="@dimen/tertiary_text_size" />
+
+            <LinearLayout
+                android:id="@+id/watch_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="3dp"
+                android:gravity="center"
+                android:visibility="visible">
+
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:src="@drawable/today_class_play_icon" />
+
+                <TextView
+                    android:id="@+id/microlecture_duration"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:fontFamily="@font/urbanist_regular"
+                    android:text="8 Min"
+                    android:textColor="@color/white"
+                    android:textSize="12dp" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

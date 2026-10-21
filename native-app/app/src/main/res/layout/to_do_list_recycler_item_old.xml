@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView android:id="@+id/cv_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:paddingTop="10dp"
+        android:id="@+id/ll_parent"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <LinearLayout
+            android:id="@+id/ll_time_layout"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:paddingVertical="2dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginEnd="8dp"
+            android:layout_gravity="center"
+            >
+
+            <TextView
+                android:id="@+id/tv_start_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/urbanist_semi_bold"
+                android:text="10:00 AM"
+                android:textColor="#000000"
+                android:textSize="12sp"
+                android:textStyle="normal"
+                android:layout_gravity="center_horizontal"/>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="10dp"
+                android:background="#5B5B5B"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginVertical="4dp"
+                />
+
+            <TextView
+                android:id="@+id/tv_end_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/urbanist_semi_bold"
+                android:text="10:30 AM"
+                android:textColor="#000000"
+                android:textSize="12sp"
+                android:textStyle="normal"
+                android:layout_gravity="center_horizontal"/>
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/view_marker"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/arivihan_secondary_color"
+            />
+
+        <RelativeLayout
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <ImageView
+                android:layout_marginStart="10dp"
+                android:id="@+id/iv_icon"
+                android:layout_marginTop="3dp"
+                android:src="@drawable/ic_done_blue"
+                android:layout_width="25dp"
+                android:layout_height="25dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="44dp"
+                android:layout_marginEnd="24dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Biology"
+                    android:textColor="@color/album_title"
+                    android:textSize="@dimen/secondary_text_size"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_sub_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:lineHeight="22dp"
+                    android:text="Chapter 3 : Anatomy of Flowering plant Anatomy of Flowering plant"
+                    android:textColor="@color/album_title"
+                    android:textSize="@dimen/secondary_text_size" />
+
+
+            </LinearLayout>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_task_status"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:cardElevation="3dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="10dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
+                >
+                <ImageView
+                    android:id="@+id/iv_task_status"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/img_cancel_close_red"
+                    android:layout_gravity="center" />
+
+            </androidx.cardview.widget.CardView>
+
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:layout_marginEnd="20dp"
+            android:layout_marginStart="58dp"
+            android:layout_marginTop="12dp"
+            android:background="@color/grey_300"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

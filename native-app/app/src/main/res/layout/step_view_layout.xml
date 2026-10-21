@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar"
+    android:orientation="horizontal">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/boundary"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:visibility="visible"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="0dp"
+            app:strokeColor="#D1D5DB"
+            app:strokeWidth="1dp">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/dot"
+                android:layout_width="5dp"
+                android:layout_height="5dp"
+                android:layout_gravity="center"
+                app:cardBackgroundColor="#D1D5DB"
+                android:visibility="gone"
+                app:cardCornerRadius="2.5dp"
+                app:cardElevation="0dp" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <ImageView
+            android:id="@+id/check"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/check"
+            android:visibility="gone" />
+
+</LinearLayout>

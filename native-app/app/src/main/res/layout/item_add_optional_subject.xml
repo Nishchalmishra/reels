@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card_add_subject"
+    android:layout_width="103dp"
+    android:layout_height="125dp"
+    android:layout_marginHorizontal="8dp"
+    android:layout_marginVertical="10dp"
+    android:outlineSpotShadowColor="@color/grey_300"
+    app:cardCornerRadius="7dp"
+    app:cardElevation="12dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/dotted_dash_card_teal"
+        >
+
+        <LinearLayout
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:id="@+id/add_icon_container"
+            android:background="@drawable/dotted_dash_circle"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_add_24"
+                app:tint="#2D4456"
+                android:layout_gravity="center"
+                android:padding="4dp"
+                />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/add_subject_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/add_icon_container"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/urbanist_regular"
+            android:paddingStart="7dp"
+            android:paddingEnd="7dp"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:autoSizeMaxTextSize="12sp"
+            android:autoSizeMinTextSize="8sp"
+            android:text="@string/add_optional_subject"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

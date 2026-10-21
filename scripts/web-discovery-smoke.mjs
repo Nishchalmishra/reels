@@ -1,0 +1,21 @@
+﻿import {chromium} from 'playwright';
+import fs from 'node:fs';
+const browser=await chromium.launch({channel:'chrome',headless:true});
+const page=await browser.newPage({viewport:{width:390,height:844}});
+page.on('pageerror',e=>console.log('PAGEERROR',e.message));
+await page.route('**/rest/v1/rpc/ar_reels_profile',r=>r.continue({postData:JSON.stringify({...r.request().postDataJSON(),p_test:true})}));
+await page.goto('http://127.0.0.1:5173',{waitUntil:'domcontentloaded',timeout:60000});
+await page.getByLabel('Your name').fill('TEST web discovery');
+await page.getByRole('button',{name:/start learning/}).click();
+await page.getByRole('link',{name:'Reels',exact:true}).click();
+await page.locator('.feed-slide video').first().waitFor();
+await page.waitForTimeout(4000);
+fs.mkdirSync('verification-live/web',{recursive:true});
+await page.screenshot({path:'verification-live/web/feed.png'});
+console.log(await page.locator('.feed-slide').first().getAttribute('aria-label'));
+console.log('Videos playing',await page.locator('video').evaluateAll(vs=>vs.filter(v=>!v.paused).length));
+await page.getByRole('button',{name:'Explore',exact:true}).click();
+await page.screenshot({path:'verification-live/web/explore.png'});
+console.log('Explore tiles',await page.locator('.lesson-tile').count());
+await browser.close();
+

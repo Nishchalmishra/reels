@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="20dp"
+    android:paddingTop="15dp"
+    android:id="@+id/option_layout"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/check_box"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            app:cardElevation="0dp"
+            app:strokeColor="@color/black"
+            app:strokeWidth="1dp"/>
+
+
+    <TextView
+        android:id="@+id/option_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="JEE Mains Subscription"
+        android:textSize="13sp"
+        android:fontFamily="@font/urbanist_medium"
+        android:textColor="@color/almost_black"
+        android:layout_marginHorizontal="10dp"/>
+
+    <TextView
+        android:id="@+id/option_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2499"
+        android:textSize="12sp"
+        android:fontFamily="@font/urbanist_medium"
+        android:textColor="@color/subscription_light_grey"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/subscription_type_divider"
+        android:orientation="horizontal"/>
+
+</LinearLayout>

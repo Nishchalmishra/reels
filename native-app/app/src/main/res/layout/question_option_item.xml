@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ File: question_option_item.xml Copyright 14/2/21 1:23 PM Arivihan technologies private limited. All rights reserved.
+  ~ <p>
+  ~ This software is the confidential and proprietary information of Arivihan technologies private limited.
+  ~ You shall not disclose such Confidential Information and shall use it
+  ~ only in accordance with the terms of the license agreement you entered into
+  ~ with Arivihan technologies private limited.
+  ~ <p>
+  ~ Created on: 14/2/21 1:23 PM
+  ~ Created by: Sonu Prashant
+  ~ Version: 1.0
+  ~ Project Name: Arivihan
+  ~ Last updated / updated by: Sonu Prashant
+  -->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/option_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:id="@+id/single_option_card_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="4dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/question_option_border"
+            android:paddingHorizontal="1dp"
+            android:paddingVertical="1dp">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/single_option_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="0dp">
+
+
+                <!--            <androidx.constraintlayout.widget.ConstraintLayout-->
+                <!--                android:layout_width="match_parent"-->
+                <!--                android:layout_height="match_parent">-->
+                <!--                <LinearLayout-->
+                <!--                    android:id="@+id/left"-->
+                <!--                    android:layout_width="2dp"-->
+                <!--                    android:layout_height="match_parent"-->
+                <!--                    android:background="#9E9E9E"/>-->
+
+                <!--                <LinearLayout-->
+                <!--                    android:id="@+id/right"-->
+                <!--                    android:layout_width="2dp"-->
+                <!--                    app:layout_constraintRight_toRightOf="parent"-->
+                <!--                    android:orientation="vertical"-->
+                <!--                    android:layout_alignParentRight="true"-->
+                <!--                    android:layout_height="match_parent"-->
+                <!--                    android:background="#9E9E9E"/>-->
+
+                <!--                <LinearLayout-->
+                <!--                    android:id="@+id/top"-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="2dp"-->
+                <!--                    android:background="#9E9E9E"-->
+                <!--                    android:orientation="vertical" />-->
+
+
+                <!--                <LinearLayout-->
+                <!--                    android:id="@+id/down"-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="2dp"-->
+                <!--                    android:orientation="vertical"-->
+                <!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+                <!--                    android:background="#9E9E9E"/>-->
+
+                <!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="2dp">
+
+                    <RelativeLayout
+                        android:id="@+id/icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="8dp">
+
+                        <ImageView
+                            android:id="@+id/done"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_done_green"
+                            android:visibility="gone" />
+
+                        <ImageView
+                            android:id="@+id/wrong"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_wrong_red"
+                            android:visibility="gone" />
+
+
+                    </RelativeLayout>
+
+
+                    <TextView
+                        android:id="@+id/Option"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:fontFamily="@font/nunito_regular"
+                        android:text="A."
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/primary_text_size" />
+
+                    <TextView
+                        android:id="@+id/OP"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_toLeftOf="@+id/icon"
+                        android:layout_toRightOf="@+id/Option"
+                        android:fontFamily="@font/nunito_regular"
+                        android:text="Here is Option A"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/primary_text_size" />
+
+                    <ImageView
+                        android:id="@+id/OPImage"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_toLeftOf="@+id/icon"
+                        android:layout_toRightOf="@+id/Option"
+                        android:maxHeight="300dp"
+                        android:minHeight="100dp"
+                        android:src="@drawable/heart_like"
+                        android:visibility="gone" />
+
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+
+    </LinearLayout>
+</RelativeLayout>

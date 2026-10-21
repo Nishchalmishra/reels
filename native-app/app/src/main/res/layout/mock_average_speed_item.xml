@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginStart="20dp"
+    android:layout_marginEnd="25dp">
+
+    <TextView
+        android:id="@+id/user_speed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="3 min"
+        android:textSize="@dimen/tertiary_text_size"
+        android:fontFamily="@font/nunito_bold"
+        android:textColor="@color/mock_red"/>
+    <TextView
+        android:id="@+id/average_speed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="vs 3.5 min"
+        android:textSize="13sp"
+        android:fontFamily="@font/nunito_regular"
+        android:textColor="@color/mock_dark_grey"/>
+    <TextView
+        android:id="@+id/difficulty_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hard"
+        android:textSize="@dimen/tertiary_text_size"
+        android:fontFamily="@font/nunito_bold"
+        android:textColor="@color/black"/>
+
+</LinearLayout>

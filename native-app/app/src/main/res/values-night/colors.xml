@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--    //new color - after 51 -->
+    <color name="bg_color">#141414</color>
+    <color name="text_primary">#E6FAFAFA</color>
+    <color name="text_secondary">#80FFFFFF</color>
+
+    <color name="card_color_secondary">#14FFFFFF</color>
+    <color name="status_bar_color">#141414</color>
+    <color name="navigation_bar_color">#141414</color>
+
+    <color name="control_normal">#666666</color>
+    <color name="divider_color">#14FFFFFF</color>
+    <color name="payment_summary_total_bg">#353535</color>
+    <color name="payment_summary_stroke">#303030</color>
+
+
+    <!--    //btn color-->
+    <color name="new_lecture_live_btn_text">#B226C6DA</color>
+    <color name="new_lecture_live_btn">#153539</color>
+    <color name="new_lecture_premium_btn">#121212</color>
+
+    <!--    //chapter name layout-->
+    <color name="chapter_name">#E5FFFFFF</color>
+    <color name="chapter_name_lock">#99FFFFFF</color>
+    <color name="lock_color">#99FFFFFF</color>
+
+    <color name="chapter_name_teacher">#99FFFFFF</color>
+    <color name="chapter_name_info">#888888</color>
+    <color name="bg_lock_icon">#BF000000</color>
+
+    <!--    //bg round card-->
+    <color name="card_top">#66000000</color>
+    <color name="card_shadow">#14FFFFFF</color>
+
+<!--    //contact us btn color-->
+    <color name="contact_us_primary_bg_color">#26C6DA</color>
+    <color name="contact_us_primary_text_color">#ffffff</color>
+    <color name="contact_us_secondary_bg_color">#2626C6DA</color>
+    <color name="contact_us_secondary_text_color">#26C6DA</color>
+
+    <color name="text_gray">#696969</color>
+
+    <!--    //notification custom RemoteViews text-->
+    <color name="notification_title_color">#E6FAFAFA</color>
+    <color name="notification_sub_title_color">#B3FFFFFF</color>
+
+    <!-- notification -->
+    <color name="notification_card_title">#FFFFFF</color>
+    <color name="notification_card_sub_title">#B3FFFFFF</color>
+    <color name="notification_live_badge_bg">#CB141C</color>
+    <color name="notification_card_bg">#2B2B2B</color>
+
+
+</resources>

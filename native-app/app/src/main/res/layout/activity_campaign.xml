@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="1"
+    tools:context=".activity.CampaignSubscriptionActivity"
+    android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintVertical_weight="1"
+        app:layout_constraintBottom_toTopOf="@id/discount_layout"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- ── Video / Thumbnail area ── -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="190dp">
+
+                <com.facebook.shimmer.ShimmerFrameLayout
+                    android:id="@+id/image_shimmer"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="gone">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:cardBackgroundColor="@color/mock_light_grey"
+                        app:cardCornerRadius="11dp" />
+                </com.facebook.shimmer.ShimmerFrameLayout>
+
+                <ImageView
+                    android:id="@+id/thumbnail_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    android:visibility="gone" />
+
+                <androidx.media3.ui.PlayerView
+                    android:id="@+id/player_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="gone"
+                    app:resize_mode="fill"
+                    app:use_controller="false" />
+
+                <ImageView
+                    android:id="@+id/volume"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_margin="15dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/volume"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ProgressBar
+                    android:id="@+id/spinnerVideoDetails"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:indeterminate="true"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- ── Shimmer placeholder ── -->
+            <com.facebook.shimmer.ShimmerFrameLayout
+                android:id="@+id/data_shimmer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="15dp"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_weight="1"
+                            app:cardBackgroundColor="@color/lighter_grey"
+                            app:cardUseCompatPadding="true" />
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_weight="1"
+                            app:cardBackgroundColor="@color/lighter_grey"
+                            app:cardUseCompatPadding="true" />
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_weight="1"
+                            app:cardBackgroundColor="@color/lighter_grey"
+                            app:cardUseCompatPadding="true" />
+                    </LinearLayout>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="400dp"
+                        android:layout_marginHorizontal="15dp"
+                        app:cardBackgroundColor="@color/lighter_grey"
+                        app:cardUseCompatPadding="true" />
+                </LinearLayout>
+            </com.facebook.shimmer.ShimmerFrameLayout>
+
+            <!-- ── Main content ── -->
+            <LinearLayout
+                android:id="@+id/data_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:paddingBottom="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/campaign_subscription_gradient_view"
+                    android:orientation="vertical">
+
+                    <!-- Title row -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="20dp"
+                        android:layout_marginTop="12dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/unnati_icon"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:layout_marginEnd="6dp"
+                            android:src="@drawable/trophy_icon" />
+
+                        <TextView
+                            android:id="@+id/unnati_titles"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/urbanist_bold"
+                            android:text="@string/Unnati_Batch"
+                            android:textColor="#80000000"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+
+                    <!-- Features card -->
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/feature_card"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="20dp"
+                        android:layout_marginVertical="10dp"
+                        app:cardCornerRadius="10dp">
+
+                        <HorizontalScrollView
+                            android:id="@+id/badge_slider_horizontal_scroll_view"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="12dp"
+                            android:layout_marginVertical="6dp"
+                            android:scrollbars="none">
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/feature_rv"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:nestedScrollingEnabled="false"
+                                android:orientation="horizontal"
+                                tools:itemCount="4"
+                                tools:listitem="@layout/campaign_subscription_feature" />
+                        </HorizontalScrollView>
+                    </androidx.cardview.widget.CardView>
+
+                    <!-- Toppers section -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/toppers_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="20dp"
+                            android:layout_marginTop="5dp"
+                            android:fontFamily="@font/urbanist_semi_bold"
+                            android:text="@string/Champions_of_Arivihan"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/toppers_sub_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="20dp"
+                            android:layout_marginTop="4dp"
+                            android:fontFamily="@font/urbanist_regular"
+                            android:text="MP 12th Toppers ki Safalta ki Kahaniyaan..."
+                            android:textColor="#555555"
+                            android:textSize="12sp" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rewards_performers_rv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="12dp"
+                            android:layout_marginTop="8dp"
+                            android:orientation="horizontal"
+                            tools:itemCount="1"
+                            tools:listitem="@layout/toppers_layout" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!-- Toppers section - leadership -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/leaderboard_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="20dp"
+                        android:layout_marginTop="20dp"
+                        android:fontFamily="@font/urbanist_semi_bold"
+                        android:text="@string/Champions_of_Arivihan"
+                        android:textColor="@color/black"
+                        android:textSize="14sp" />
+
+                    <FrameLayout
+                        android:id="@+id/toppers_fragment_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- Discount banners -->
+    <LinearLayout
+        android:id="@+id/discount_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/yellow_gradient_4"
+        android:gravity="center"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/bottom_layout">
+
+        <TextView
+            android:id="@+id/discount_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="@string/Discount_ARIVIHAN_Coupon_code_applied"
+            android:textColor="@color/black"
+            android:textSize="11sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/renew_discount_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/yellow_gradient_4"
+        android:gravity="center"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/bottom_layout">
+
+        <TextView
+            android:id="@+id/renew_discount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:fontFamily="@font/urbanist_medium"
+            android:singleLine="true"
+            android:text="Discount"
+            android:textColor="@color/black"
+            android:textSize="11sp" />
+    </LinearLayout>
+
+    <!-- Bottom bar: price + CTA -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bottom_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
+            android:id="@+id/price_button_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="2dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:id="@+id/final_price_layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingHorizontal="8dp"
+                android:orientation="vertical"
+                android:paddingVertical="5dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/selected_cost_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/urbanist_medium"
+                        android:text="3999"
+                        android:textColor="@color/black"
+                        android:textSize="10sp" />
+
+                    <TextView
+                        android:id="@+id/selected_discount_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:fontFamily="@font/urbanist_semi_bold"
+                        android:text="2999"
+                        android:textColor="@color/subscription_blue"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/selected_subscription_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/urbanist_medium"
+                    android:maxLines="2"
+                    android:text="Unnati Batch for Boards (6 Months)"
+                    android:textColor="#757575"
+                    android:textSize="11sp" />
+            </LinearLayout>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/join_campaign_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="8dp"
+                app:cardBackgroundColor="@android:color/transparent"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:id="@+id/join_content_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_campaign_join_btn"
+                    android:gravity="center"
+                    android:paddingHorizontal="12dp"
+                    android:paddingVertical="10dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/join_icon"
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"
+                        android:contentDescription="@string/Join_Now"
+                        android:src="@drawable/join_now_icon" />
+
+                    <TextView
+                        android:id="@+id/join_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="6dp"
+                        android:fontFamily="@font/urbanist_semi_bold"
+                        android:text="@string/join_now_text"
+                        android:textColor="@color/black"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

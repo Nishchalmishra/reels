@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card"
+    android:layout_width="103dp"
+    android:layout_height="125dp"
+    android:layout_marginHorizontal="8dp"
+    android:layout_marginVertical="10dp"
+    android:outlineSpotShadowColor="@color/grey_300"
+    app:cardCornerRadius="7dp"
+    app:cardElevation="12dp">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/badge"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:src="@drawable/triangle_badge"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/subject_icon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="12dp"
+            android:padding="2dp"
+            android:src="@drawable/ic_physics" />
+
+        <TextView
+            android:id="@+id/subject_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/subject_icon"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/urbanist_regular"
+            android:layout_marginTop="10dp"
+            android:paddingStart="7dp"
+            android:paddingEnd="7dp"
+            android:text="Physics"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/subject_chapters"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="8dp"
+            android:text="25 Chapters"
+            android:textColor="#443E73"
+            android:textSize="12sp"
+            android:visibility="gone" />
+
+
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>

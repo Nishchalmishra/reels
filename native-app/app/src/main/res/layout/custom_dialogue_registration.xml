@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/fui_transparent"
+    android:layout_marginBottom="5dp"
+    android:layout_marginTop="5dp">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_margin="7dp"
+        app:cardCornerRadius="24dp"
+        app:cardElevation="8dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_game_cross" />
+
+    </androidx.cardview.widget.CardView>
+
+
+    <RelativeLayout
+        android:id="@+id/relativeLayoutGame"
+        android:layout_width="match_parent"
+        android:background="@drawable/ic_game_dialogue_background"
+        android:layout_height="520dp"
+        android:gravity="center">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="35dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/LargeTitleSize"
+                android:textColor="#8AFCFD"
+                android:shadowDx="0.0"
+                android:padding="5dp"
+                android:shadowDy="0.0"
+                android:shadowRadius="8"
+                android:shadowColor="@color/navy_blue"
+                android:fontFamily="@font/comfortaa"
+                android:text="@string/terms_and_condition"
+                android:textAlignment="center"/>
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="280dp">
+                <TextView
+                    android:id="@+id/registrationMessage"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="5dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:text="Registration Message goes here "
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/tertiary_text_size" />
+
+
+            </ScrollView>
+
+            <CheckBox
+                android:buttonTint="@color/white"
+                android:layout_margin="2dp"
+                android:textColor="@color/white"
+                android:layout_gravity="center_horizontal"
+                android:id="@+id/checkbox"
+                android:text="@string/i_accept"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/register"
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginBottom="40dp"
+            android:background="@drawable/ic_game_card_disabled"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:id="@+id/register_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/comfortaa"
+                android:text="Register"
+                android:textColor="@color/grey_500"
+                android:textSize="@dimen/primary_text_size"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

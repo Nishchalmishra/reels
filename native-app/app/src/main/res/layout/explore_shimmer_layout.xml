@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/steps"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:layout_marginBottom="40dp"
+        android:layout_marginHorizontal="20dp"
+        android:weightSum="1"
+        android:layout_marginTop="50dp">
+
+        <TextView
+            android:layout_width="250dp"
+            android:layout_height="20dp"
+            android:fontFamily="@font/urbanist_medium"
+            android:background="@color/mock_lightest_grey"
+            android:layout_marginBottom="10dp"/>
+
+        <TextView
+            android:layout_width="230dp"
+            android:layout_height="50dp"
+            android:fontFamily="@font/urbanist_extra_bold"
+            android:gravity="center"
+            android:background="@color/mock_lightest_grey"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/step_text"/>
+
+        <TextView
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:fontFamily="@font/urbanist_medium"
+            android:gravity="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title_bold"
+            android:lineSpacingExtra="5dp"
+            android:layout_weight="0.1"
+            android:layout_marginVertical="10dp"
+            android:background="@color/mock_lightest_grey"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.85"
+            app:layout_constraintTop_toBottomOf="@id/title"
+            android:scaleType="fitXY"
+            android:background="@color/mock_lightest_grey"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/urbanist_bold"
+            android:gravity="center"
+            android:text="Dusre bhatke to bhatke, lekin aap humare sath \nroz apne goals ki taraf aage badhenge."
+            android:textColor="#25C6DA"
+            android:textSize="13sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/gif_image"
+            android:visibility="gone"
+            android:layout_marginTop="10dp"
+            android:lineSpacingExtra="5dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:fontFamily="@font/urbanist_medium"
+            android:gravity="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/subtitle_quote"
+            android:layout_marginTop="20dp"
+            android:lineSpacingExtra="5dp"
+            android:background="@color/mock_lightest_grey"/>
+
+    </LinearLayout>
+
+</LinearLayout>

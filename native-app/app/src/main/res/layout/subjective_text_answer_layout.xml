@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/extracted_text_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar">
+
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:text="@string/submit_karne_se_pehle_answer_check_krein"
+        android:textSize="13sp"
+        android:fontFamily="@font/urbanist_medium"
+        android:textColor="@color/check_text_color"
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="10dp"/>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/text_card"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="30dp"
+        app:cardCornerRadius="15dp"
+        app:strokeColor="@color/text_card_stroke"
+        app:strokeWidth="1dp"
+        app:cardElevation="4dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp"
+            android:id="@+id/text_card_layout">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/description_card"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:cardCornerRadius="10dp"
+                app:cardBackgroundColor="#D3F8FA"
+                app:cardElevation="0dp"
+                android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/your_submitted_answer"
+                android:textSize="14sp"
+                android:fontFamily="@font/urbanist_semi_bold"
+                android:textColor="#02858D"
+                android:layout_marginVertical="1dp"
+                android:layout_marginHorizontal="15dp"/>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/edit_text_back"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:backgroundTint="#4DD9D9D9"
+                app:cardCornerRadius="60dp"
+                app:cardElevation="0dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/back_arrow"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:src="@drawable/arrow_icon" />
+            </androidx.cardview.widget.CardView>
+
+            <EditText
+                android:id="@+id/extracted_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintVertical_weight="1"
+                android:layout_marginStart="5dp"
+                android:background="@null"
+                android:fontFamily="@font/nunito_regular"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintStart_toEndOf="@id/edit_text_back"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/description_card"
+                android:gravity="start"
+                android:inputType="textNoSuggestions|textMultiLine"
+                android:layout_marginTop="10dp"/>
+
+            <LinearLayout
+                android:id="@+id/text_bottom_layout"
+                android:layout_width="0dp"
+                app:layout_constraintHorizontal_weight="1"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/extracted_text"
+                app:layout_constraintStart_toStartOf="@id/extracted_text"
+                app:layout_constraintTop_toBottomOf="@id/extracted_text"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/count_text"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="15sp"
+                    android:textColor="#26C6DA"
+                    android:fontFamily="@font/roboto_medium_italic"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/read_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="@id/extracted_text"
+                        app:layout_constraintTop_toBottomOf="@id/extracted_text"
+                        android:text="@string/Read_More"
+                        android:fontFamily="@font/nunito_semibold"
+                        android:textColor="#26C6DA"
+                        android:textSize="15sp"
+                        android:visibility="gone"
+                        android:maxLines="15"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/subscription_blue"
+                        android:layout_marginTop="-3dp"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+
+</LinearLayout>

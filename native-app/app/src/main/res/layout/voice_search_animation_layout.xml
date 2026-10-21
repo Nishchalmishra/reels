@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/close"
+        android:layout_width="26dp"
+        android:layout_height="26dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:src="@drawable/close"
+        android:layout_marginBottom="240dp"
+        android:layout_marginEnd="10dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:background="@drawable/arced_rectangle" >
+
+        <TextView
+            android:textAlignment="center"
+            android:ellipsize="end"
+            android:maxLines="3"
+            android:id="@+id/txt_speech_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:textSize="@dimen/primary_text_size"
+            android:textColorHint="#B37C7C7C"
+            android:hint="@string/listening"
+            android:textColor="@color/white"
+            android:fontFamily="@font/nunito_semibold"
+            android:textStyle="italic"/>
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/voice_search_animation"
+            android:layout_width="160dp"
+            android:layout_height="120dp"
+            app:lottie_rawRes="@raw/voice_search_anim"
+            app:lottie_loop="true"/>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_marginTop="15dp"
+            android:id="@+id/fab_voice"
+            android:visibility="gone"
+            android:src="@drawable/ic_global_voice_search_black"
+            android:tint="@color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/white"
+            app:borderWidth="0dp"
+            app:elevation="6dp"
+            app:fabSize="normal"
+            android:contentDescription="voice search" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

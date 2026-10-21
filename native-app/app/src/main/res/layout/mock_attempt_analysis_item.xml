@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="20dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/color_tag"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:cardCornerRadius="60dp"
+        app:cardBackgroundColor="@color/mock_red"
+        android:layout_marginTop="8dp"
+        app:cardElevation="0dp"/>
+
+    <TextView
+        android:id="@+id/attempt_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@id/color_tag"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="Correct"
+        android:textSize="@dimen/tertiary_text_size"
+        android:fontFamily="@font/nunito_bold"
+        android:textColor="@color/black"
+        android:layout_marginStart="5dp"/>
+
+    <TextView
+        android:id="@+id/attempt_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@id/color_tag"
+        app:layout_constraintTop_toBottomOf="@id/attempt_status"
+        android:text="65/180"
+        android:textSize="13sp"
+        android:fontFamily="@font/nunito_semibold"
+        android:textColor="@color/mock_dark_grey"
+        android:layout_marginStart="5dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

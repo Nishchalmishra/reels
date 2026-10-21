@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/grey_300"
+    tools:context=".fragments.CouponFragment">
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:padding="5dp"
+        android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:background="@color/white"
+        android:id="@+id/coupon_code_layout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_width="0dp"
+        android:layout_weight="80"
+        android:layout_height="50dp"
+        android:layout_gravity="center_vertical"
+        android:hint="@string/enter_coupon_code"
+        android:textColor="#9E9E9E"
+        android:textColorHint="#9E9E9E"
+        app:boxStrokeColor="@color/navy_blue">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:textSize="14sp"
+            android:id="@+id/coupon_code"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:drawablePadding="6dp"
+            android:fontFamily="@font/poppins_light"
+            android:inputType="textEmailAddress"
+            android:maxLength="20"
+            android:textColor="@color/black" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+    <Button
+        android:id="@+id/apply_button"
+        android:textStyle="bold"
+        android:textColor="@color/arivihan_primary_color"
+        android:background="@color/fui_transparent"
+        android:text="@string/apply"
+        android:layout_centerVertical="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:minHeight="500dp"
+        android:background="@color/white"
+        android:padding="5dp"
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="5dp"
+            style="@style/primaryText"
+            android:text="@string/available_coupons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <LinearLayout
+            android:layout_marginTop="5dp"
+            android:background="@color/grey_500"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/couponlist"
+            tools:listitem="@layout/coupon_list_item"
+            android:layout_marginTop="5dp"
+            android:visibility="gone"
+            android:layout_marginBottom="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <com.github.ybq.android.spinkit.SpinKitView
+            android:id="@+id/progress_dataLoading"
+            style="@style/SpinKitView.FadingCircle"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:layout_marginTop="40dp"
+            app:SpinKit_Color="#19B0C1" />
+
+
+    </LinearLayout>
+
+</LinearLayout>

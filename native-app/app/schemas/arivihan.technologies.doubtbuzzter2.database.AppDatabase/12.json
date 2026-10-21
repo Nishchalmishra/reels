@@ -1,0 +1,279 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 12,
+    "identityHash": "c2ea1586a0bb9ec1da1d0c9b1c4b6be8",
+    "entities": [
+      {
+        "tableName": "media_table",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `url` TEXT, `title` TEXT, `chapterTitle` TEXT, `chapterId` TEXT, `microLectureTitle` TEXT, `microLectureId` TEXT, `duration` TEXT, `size` TEXT, `progress` INTEGER NOT NULL, `language` TEXT, `status` TEXT, `questionsAnsList` TEXT, `questionsAnsResponseList` TEXT, `startPos` INTEGER NOT NULL, `endPos` INTEGER NOT NULL, `userId` TEXT, `thumbnailUrl` TEXT, `thumbnailLoaded` INTEGER NOT NULL, `locked` INTEGER NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "url",
+            "columnName": "url",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "title",
+            "columnName": "title",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "chapterTitle",
+            "columnName": "chapterTitle",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "chapterId",
+            "columnName": "chapterId",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "microLectureTitle",
+            "columnName": "microLectureTitle",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "microLectureId",
+            "columnName": "microLectureId",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "duration",
+            "columnName": "duration",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "size",
+            "columnName": "size",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "progress",
+            "columnName": "progress",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "language",
+            "columnName": "language",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "status",
+            "columnName": "status",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "questionsAnsList",
+            "columnName": "questionsAnsList",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "questionsAnsResponseList",
+            "columnName": "questionsAnsResponseList",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "startPos",
+            "columnName": "startPos",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "endPos",
+            "columnName": "endPos",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "userId",
+            "columnName": "userId",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "thumbnailUrl",
+            "columnName": "thumbnailUrl",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "thumbnailLoaded",
+            "columnName": "thumbnailLoaded",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "locked",
+            "columnName": "locked",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        }
+      },
+      {
+        "tableName": "micro_lecture_new_table",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`chapterId` TEXT NOT NULL, `selectedMicroLectureId` TEXT, `userId` TEXT, `typeSelected` TEXT, `isLectureSelected` INTEGER NOT NULL, `isPracticeSelected` INTEGER NOT NULL, PRIMARY KEY(`chapterId`))",
+        "fields": [
+          {
+            "fieldPath": "chapterId",
+            "columnName": "chapterId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "selectedMicroLectureId",
+            "columnName": "selectedMicroLectureId",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "userId",
+            "columnName": "userId",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "typeSelected",
+            "columnName": "typeSelected",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "isLectureSelected",
+            "columnName": "isLectureSelected",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isPracticeSelected",
+            "columnName": "isPracticeSelected",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "chapterId"
+          ]
+        }
+      },
+      {
+        "tableName": "notes_table",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `subjectId` TEXT, `subjectName` TEXT, `chapterTitle` TEXT, `notesBy` TEXT, `notesUrl` TEXT, `locked` INTEGER NOT NULL, `pageCount` INTEGER NOT NULL, `fileSize` INTEGER NOT NULL, `fileType` TEXT, `status` TEXT, `progress` INTEGER NOT NULL, `userId` TEXT, `localPath` TEXT, `noteType` TEXT, `language` TEXT, `selected` INTEGER NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "subjectId",
+            "columnName": "subjectId",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "subjectName",
+            "columnName": "subjectName",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "chapterTitle",
+            "columnName": "chapterTitle",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "notesBy",
+            "columnName": "notesBy",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "notesUrl",
+            "columnName": "notesUrl",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "locked",
+            "columnName": "locked",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "pageCount",
+            "columnName": "pageCount",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "fileSize",
+            "columnName": "fileSize",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "fileType",
+            "columnName": "fileType",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "status",
+            "columnName": "status",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "progress",
+            "columnName": "progress",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "userId",
+            "columnName": "userId",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "localPath",
+            "columnName": "localPath",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "noteType",
+            "columnName": "noteType",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "language",
+            "columnName": "language",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "selected",
+            "columnName": "selected",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        }
+      }
+    ],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'c2ea1586a0bb9ec1da1d0c9b1c4b6be8')"
+    ]
+  }
+}

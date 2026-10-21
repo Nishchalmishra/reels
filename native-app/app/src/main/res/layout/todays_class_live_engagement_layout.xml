@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="0dp">
+
+    <arivihan.technologies.doubtbuzzter2.customView.gradient.AnimatedBorderView
+        android:id="@+id/border_animation"
+        android:layout_width="188dp"
+        android:layout_height="119dp"
+        android:layout_marginHorizontal="7dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginBottom="7dp"
+        app:cornerRadius="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/main_card"
+        android:layout_width="182dp"
+        android:layout_height="113dp"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="10dp"
+        android:outlineSpotShadowColor="@color/grey_300"
+        app:cardBackgroundColor="@color/arivihan_secondary_color"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!-- Background Image -->
+            <ImageView
+                android:id="@+id/micro_lecture_thumbnail"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/ai_tutor_resized2" />
+
+            <!-- New Badge INSIDE main_card -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_live_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-3dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                app:cardCornerRadius="4dp"
+                app:cardElevation="2dp">
+
+                <TextView
+                    android:id="@+id/tv_live_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/urbanist_extra_bold"
+                    android:gravity="center"
+                    android:paddingHorizontal="10dp"
+                    android:paddingVertical="4dp"
+                    android:text="10 Sep 2025"
+                    android:textColor="#FF4B4B"
+                    android:textSize="14dp" />
+            </androidx.cardview.widget.CardView>
+
+            <!-- Task Position Badge -->
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="22dp"
+                android:layout_margin="3dp"
+                android:background="@drawable/today_task_current_item_badge"
+                android:paddingHorizontal="6dp">
+
+                <TextView
+                    android:id="@+id/task_position"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="@font/urbanist_semi_bold"
+                    android:text="2/6"
+                    android:textColor="@color/arivihan_secondary_color"
+                    android:textSize="12sp" />
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/linearlayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="50dp"
+                android:layout_marginBottom="0dp"
+                android:background="@drawable/gradient_top_to_bottom_transparent_to_back"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="6dp">
+
+                <!-- Micro Lecture Title -->
+
+                <!-- Watch Time -->
+                <LinearLayout
+                    android:id="@+id/watch_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="3dp"
+                    android:gravity="center"
+                    android:visibility="visible">
+
+                    <ImageView
+                        android:layout_width="14dp"
+                        android:layout_height="14dp"
+                        android:src="@drawable/today_class_play_icon" />
+
+                    <TextView
+                        android:id="@+id/microlecture_duration"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dp"
+                        android:fontFamily="@font/urbanist_regular"
+                        android:text="8 Min"
+                        android:textColor="@color/white"
+                        android:textSize="11dp" />
+                </LinearLayout>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_live"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    app:cardBackgroundColor="@color/red"
+                    app:cardCornerRadius="4dp"
+                    app:cardElevation="2dp"
+                    tools:ignore="RelativeOverlap">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_gravity="center"
+                        android:paddingVertical="2dp"
+                        android:paddingHorizontal="6dp">
+
+                        <ImageView
+                            android:id="@+id/img_live"
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/stream" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
+                            android:fontFamily="@font/urbanist_semi_bold"
+                            android:text="@string/live"
+                            android:layout_gravity="center"
+                            android:textColor="@color/white"
+                            android:textSize="12dp" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </RelativeLayout>
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

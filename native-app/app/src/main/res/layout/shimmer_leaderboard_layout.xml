@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/otherCard"
+        android:layout_width="match_parent"
+        app:cardBackgroundColor="#E7E7E7"
+        app:cardCornerRadius="25dp"
+        android:layout_margin="8dp"
+        app:cardElevation="0dp"
+        android:layout_height="wrap_content">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/rank"
+                android:layout_width="8dp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:fontFamily="@font/poppins_light"
+                android:text=""
+                android:background="@color/white"
+                android:textColor="@color/black"
+                android:textSize="@dimen/primary_text_size"
+                android:textStyle="bold" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/image"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_toRightOf="@id/rank"
+                android:background="@color/white"/>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="10dp"
+                android:layout_toLeftOf="@+id/points"
+                android:layout_toRightOf="@id/image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_toLeftOf="@+id/points"
+                    android:layout_toRightOf="@id/image"
+                    android:fontFamily="@font/poppins_light"
+                    android:text=""
+                    android:background="@color/white"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/timeTaken"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="25dp"
+                    android:visibility="gone"
+                    android:layout_marginRight="10dp"
+                    android:layout_toLeftOf="@+id/points"
+                    android:layout_toRightOf="@id/image"
+                    android:fontFamily="@font/poppins_light"
+                    android:text="Time"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+
+
+
+
+            <TextView
+                android:id="@+id/points"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="25dp"
+                android:text=""
+                android:background="@color/white"
+                android:fontFamily="@font/poppins_light"
+                android:textColor="@color/arivihan_primary_color"
+                android:textSize="@dimen/primary_text_size"
+                android:textStyle="bold" />
+
+
+
+        </RelativeLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+
+</RelativeLayout>

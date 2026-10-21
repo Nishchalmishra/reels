@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="8dp"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp">
+
+        <ImageView
+            android:id="@+id/cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_close_black"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="0dp"/>
+
+        <LinearLayout
+            android:id="@+id/content_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:padding="16dp">
+            <TextView
+                android:id="@+id/header1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/urbanist_semi_bold"
+                android:gravity="center"
+                android:text="@string/appUpdate"
+                android:textColor="@color/black"
+                android:textSize="23sp"
+                android:lineSpacingExtra="5dp"
+                android:layout_marginBottom="10dp" />
+
+            <ImageView
+                android:id="@+id/gif_image"
+                android:layout_width="119dp"
+                android:layout_height="59dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="16dp"
+                android:layout_weight="7"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/bhangra" />
+
+            <com.facebook.shimmer.ShimmerFrameLayout
+                android:id="@+id/image_shimmer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:cardBackgroundColor="@color/mock_light_grey" />
+            </com.facebook.shimmer.ShimmerFrameLayout>
+
+            <TextView
+                android:id="@+id/newFeatureText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/urbanist_medium"
+                android:gravity="center"
+                android:text="Ab Arivihan pe hogi"
+                android:textColor="#696969"
+                android:textSize="18sp"
+                android:layout_marginBottom="16dp" />
+
+            <TextView
+                android:id="@+id/header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/urbanist_medium"
+                android:gravity="center"
+                android:text="@string/app_update_text"
+                android:textColor="#696969"
+                android:textSize="18sp"
+                android:layout_marginBottom="16dp"/>
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/UpdateApp"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                app:cardCornerRadius="40dp"
+                app:lottie_autoPlay="true"
+                app:lottie_speed="2"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/update_button"/>
+
+        </LinearLayout>
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

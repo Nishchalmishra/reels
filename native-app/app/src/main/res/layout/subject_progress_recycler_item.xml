@@ -1,0 +1,63 @@
+<androidx.cardview.widget.CardView android:id="@+id/bio"
+    android:layout_width="wrap_content"
+    android:minWidth="80dp"
+    android:layout_height="80dp"
+    app:cardElevation="0dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout
+        android:minWidth="80dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/progress_number"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:background="@drawable/circle_bio"
+                android:layout_centerInParent="true"/>
+
+            <com.google.android.material.progressindicator.CircularProgressIndicator
+                android:id="@+id/progress_bar"
+                app:indicatorColor="#FB8177"
+                app:trackColor="#FFDAD7"
+                android:layout_width="@dimen/progress_bar_size"
+                android:layout_height="@dimen/progress_bar_size"
+                android:layout_centerInParent="true"
+                android:indeterminate="false"
+                android:progress="20"
+                app:indicatorSize="38dp"/>
+
+
+            <TextView
+                android:id="@+id/progress_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="58"
+                android:textAlignment="center"
+                android:textColor="@color/black" />
+
+
+            <TextView
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:id="@+id/subject_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:text="Mathematics"
+                android:textColor="#333333"
+                android:textAlignment="center"
+                android:textSize="@dimen/tertiary_text_size" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

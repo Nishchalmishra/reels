@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="20dp">
+
+    <!-- Detail Layout with Thumbnail, Chapter Name, etc. -->
+    <LinearLayout
+        android:id="@+id/detail_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingTop="15dp"
+        app:layout_constraintBottom_toTopOf="@id/divider"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/thumbnail_card"
+            android:layout_width="100dp"
+            android:layout_height="70dp"
+            android:backgroundTint="@color/off_white_background"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="0dp">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <!-- Thumbnail image (base layer) -->
+                <ImageView
+                    android:id="@+id/thumbnail_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/mock_test_video_player_image" />
+
+                <LinearLayout
+                    android:id="@+id/thumbnail_locked_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/bg_lock_icon"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/ic_lock_chapter"/>
+
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/play"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="bottom|end"
+                    android:layout_margin="0dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/thumbnail_play" />
+
+            </FrameLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="12dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/chapter_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunito_bold"
+                android:text="First Law of Kinematics"
+                android:textColor="@color/black"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/mico_lecture_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scrollHorizontally="true"
+                android:text="First Law of Kinematics"
+                android:textColor="#8A8A8A"
+                android:textSize="11sp"
+                android:layout_marginVertical="3dp"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:layout_marginTop="2dp">
+
+                <TextView
+                    android:id="@+id/duration_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/urbanist_semi_bold"
+                    android:text="27 min"
+                    android:textColor="#8A8A8A"
+                    android:textSize="11sp" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="5dp"
+                    app:cardCornerRadius="2.5dp"
+                    android:layout_height="5dp"
+                    android:layout_marginHorizontal="7dp"
+                    app:cardElevation="0dp"
+                    android:fontFamily="@font/urbanist_semi_bold"
+                    app:cardBackgroundColor="#8A8A8A"
+                    android:layout_marginTop="1dp"/>
+
+                <TextView
+                    android:id="@+id/size_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/urbanist_semi_bold"
+                    android:text="40 mb"
+                    android:textColor="#8A8A8A"
+                    android:textSize="11sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/options"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/my_downlaod_options"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginEnd="5dp"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/download_progress_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
+
+            <ProgressBar
+                android:id="@+id/download_progress_bar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:background="@drawable/circle_shape_video_download"
+                android:indeterminate="false"
+                android:progressDrawable="@drawable/circle_progress_video_download"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/download_progress_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="0%"
+                android:fontFamily="@font/urbanist_semi_bold"
+                android:textColor="#3F3F3F"
+                android:textSize="9sp"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+    <!-- Divider Line -->
+    <LinearLayout
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginVertical="15dp"
+        android:background="@color/mock_light_grey"
+        android:orientation="horizontal"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/detail_layout" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

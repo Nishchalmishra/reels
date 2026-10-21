@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ll_parent_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+    <!-- Toolbar -->
+    <LinearLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/back_button_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="20dp"
+            android:paddingEnd="17dp">
+
+            <ImageView
+                android:id="@+id/back_arrow"
+                android:layout_width="13dp"
+                android:layout_height="15dp"
+                android:layout_marginTop="1dp"
+                android:src="@drawable/arrow_icon" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/activity_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/urbanist_semi_bold"
+            android:text="@string/lectures"
+            android:textColor="@color/black"
+            android:textSize="@dimen/toolbar_title_size" />
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/search_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            app:closeIcon="@drawable/search_close_btn"
+            app:searchHintIcon="@null"
+            app:searchIcon="@drawable/search_outline" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#FAFAFA" />
+
+    <!-- Wrapper LinearLayout with light blue background matching the image -->
+    <LinearLayout
+        android:id="@+id/ll_today_task_layout"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:background="@drawable/img_today_class_bg"
+        android:paddingBottom="12dp">
+
+        <!-- Today Task Fragment Container -->
+        <FrameLayout
+            android:id="@+id/today_task_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="visible" />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/today_task_divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#E0E0E0" />
+
+    <!-- Fragment container — OverallChapterListFragment is placed here -->
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/topic"
+        app:strokeWidth="1dp"
+        android:layout_marginBottom="10dp"
+        app:strokeColor="#E0E0E0"
+        android:theme="@style/Theme.MaterialComponents.Light"
+        style="@style/buttonInAboutUser">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/status1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp">
+
+                <ImageView
+                    android:id="@+id/status1_unselected"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="0dp"
+                    android:src="@drawable/ic_unselected" />
+
+                <ImageView
+                    android:id="@+id/status1_selected"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="0dp"
+                    android:visibility="gone"
+                    android:src="@drawable/ic_selected"/>
+
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:paddingHorizontal="20dp"
+                android:layout_marginBottom="11dp"
+                android:layout_marginTop="11dp"
+                android:layout_toRightOf="@+id/status1"
+                android:text="@string/large_text"
+                android:textColor="#555555"
+                android:textSize="@dimen/secondary_text_size" />
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</RelativeLayout>

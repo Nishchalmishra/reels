@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    android:id="@+id/card"
+    android:layout_gravity="center"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_margin="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/vernacular_background"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="10dp"
+    app:cardCornerRadius="15dp"
+    >
+
+    <RelativeLayout
+        android:layout_margin="10dp"
+        android:id="@+id/linear_layout"
+        android:background="@color/white"
+        android:layout_gravity="center"
+        android:layout_width="90dp"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:scaleType="fitXY"
+            android:id="@+id/langImage"
+            android:layout_margin="5dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/avatar"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="75dp"
+            android:layout_height="75dp"/>
+
+        <TextView
+            android:id="@+id/langText"
+            android:layout_marginTop="5dp"
+            android:textSize="17sp"
+            android:layout_below="@id/langImage"
+            android:textColor="@color/black"
+            style="@style/whiteBolText"
+            android:textAlignment="center"
+            android:text="Language selected here"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </TextView>
+
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

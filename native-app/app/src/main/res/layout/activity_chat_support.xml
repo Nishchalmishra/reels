@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".activity.ChatSupportActivity">
+
+
+    <!--    HEADER-->
+    <RelativeLayout
+        android:id="@+id/screen_header"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:paddingHorizontal="18dp"
+        tools:ignore="MissingConstraints">
+
+        <ImageView
+            android:id="@+id/back_arrow"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/arrow_back_ios_black" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="12dp"
+            android:layout_toRightOf="@id/back_arrow"
+            android:fontFamily="@font/urbanist_semi_bold"
+            android:text="@string/instant_guru"
+            android:textColor="@color/black"
+            android:textSize="18dp" />
+
+
+    </RelativeLayout>
+    <!--    END HEADER -->
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/screen_header">
+
+        <ScrollView
+            android:id="@+id/chat_scroll_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/chat_box">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="14dp">
+
+                <LinearLayout
+                    android:id="@+id/chat_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" />
+
+                <LinearLayout
+                    android:id="@+id/chat_response_loader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="6dp"
+                    android:visibility="gone">
+
+                    <com.github.ybq.android.spinkit.SpinKitView
+                        style="@style/SpinKitView.ThreeBounce"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        app:SpinKit_Color="@color/grey_500" />
+
+                    <!--                    <androidx.cardview.widget.CardView-->
+                    <!--                        android:layout_width="10dp"-->
+                    <!--                        android:layout_height="10dp"-->
+                    <!--                        app:cardBackgroundColor="#525252"-->
+                    <!--                        app:cardCornerRadius="20dp"-->
+                    <!--                        app:cardElevation="0dp" />-->
+
+                    <!--                    <androidx.cardview.widget.CardView-->
+                    <!--                        android:layout_width="10dp"-->
+                    <!--                        android:layout_height="10dp"-->
+                    <!--                        android:layout_marginLeft="8dp"-->
+                    <!--                        app:cardBackgroundColor="#979797"-->
+                    <!--                        app:cardCornerRadius="20dp"-->
+                    <!--                        app:cardElevation="0dp" />-->
+
+                    <!--                    <androidx.cardview.widget.CardView-->
+                    <!--                        android:layout_width="10dp"-->
+                    <!--                        android:layout_height="10dp"-->
+                    <!--                        android:layout_marginLeft="8dp"-->
+                    <!--                        app:cardBackgroundColor="#C5C5C5"-->
+                    <!--                        app:cardCornerRadius="20dp"-->
+                    <!--                        app:cardElevation="0dp" />-->
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </ScrollView>
+
+
+        <RelativeLayout
+            android:id="@+id/doubt_resolved"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:layout_alignParentBottom="true"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:background="#FFFEEF"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingVertical="6dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/checkbox_selected_green" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:fontFamily="@font/opensans_bold"
+                    android:gravity="center"
+                    android:text="@string/chat_session_doubt_resolved"
+                    android:textColor="#764E45"
+                    android:textFontWeight="700"
+                    android:textSize="14dp" />
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/chat_box"
+            android:layout_width="match_parent"
+            android:layout_height="82dp"
+            android:layout_alignParentBottom="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="18dp"
+                android:layout_marginTop="14dp"
+                android:background="@drawable/doubt_chat_input_border"
+                android:gravity="center"
+                android:paddingHorizontal="18dp"
+                android:paddingVertical="10dp">
+
+                <EditText
+                    android:id="@+id/my_question"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:fontFamily="@font/urbanist_regular"
+                    android:hint="@string/ask_anything"
+                    android:inputType="text|textNoSuggestions"
+                    android:paddingVertical="4dp"
+                    android:textSize="14dp" />
+
+                <ImageView
+                    android:id="@+id/open_mic_btn"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/icon_mic_black" />
+
+
+                <ImageView
+                    android:id="@+id/send_question_btn"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginLeft="12dp"
+                    android:src="@drawable/icon_send_msg_teal" />
+            </LinearLayout>
+
+        </RelativeLayout>
+        <!--    END CHAT INPUT CONTAINER-->
+
+        <!--        <RelativeLayout-->
+        <!--            android:visibility="gone"-->
+        <!--            android:id="@+id/chat_box"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="64dp"-->
+        <!--            android:layout_alignParentBottom="true"-->
+        <!--            android:layout_margin="14dp">-->
+
+        <!--            <androidx.cardview.widget.CardView-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_alignParentStart="true"-->
+        <!--                android:layout_centerVertical="true"-->
+        <!--                android:layout_marginEnd="8dp"-->
+        <!--                android:layout_toStartOf="@+id/send_question_btn"-->
+        <!--                app:cardCornerRadius="60dp"-->
+        <!--                app:contentPadding="13dp">-->
+
+        <!--                <EditText-->
+        <!--                    android:id="@+id/my_questiond"-->
+        <!--                    android:layout_width="match_parent"-->
+        <!--                    android:layout_height="match_parent"-->
+        <!--                    android:background="@null"-->
+        <!--                    android:hint="@string/type_your_query"-->
+        <!--                    android:textSize="14dp" />-->
+
+        <!--            </androidx.cardview.widget.CardView>-->
+
+        <!--            <androidx.cardview.widget.CardView-->
+        <!--                android:id="@+id/send_question_btnt"-->
+        <!--                android:layout_width="46dp"-->
+        <!--                android:layout_height="46dp"-->
+        <!--                android:layout_alignParentEnd="true"-->
+        <!--                android:layout_centerVertical="true"-->
+        <!--                app:cardBackgroundColor="@color/arivihan_secondary_color"-->
+        <!--                app:cardCornerRadius="46dp"-->
+        <!--                app:cardElevation="1dp">-->
+
+        <!--                <ImageView-->
+        <!--                    android:layout_width="24dp"-->
+        <!--                    android:layout_height="24dp"-->
+        <!--                    android:layout_gravity="center"-->
+        <!--                    android:src="@drawable/sendmsg" />-->
+
+        <!--            </androidx.cardview.widget.CardView>-->
+        <!--        </RelativeLayout>-->
+
+    </RelativeLayout>
+
+</RelativeLayout>

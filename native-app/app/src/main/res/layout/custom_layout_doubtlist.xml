@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:elevation="0dp"
+    android:layout_marginTop="0dp"
+    android:layout_height="wrap_content"
+    android:paddingBottom="6dp">
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        app:cardElevation="5dp"
+        android:layout_marginLeft="8dp"
+        app:strokeWidth="1sp"
+        app:strokeColor="@color/light_navy_blue"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="10dp"
+        android:theme="@style/Theme.MaterialComponents.Light"
+        android:layout_marginBottom="5dp"
+        app:cardCornerRadius="8dp"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/SubName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="5dp"
+                android:fontFamily="@font/poppins_light"
+                android:text="Subject Name"
+                android:textColor="@color/black"
+                android:textSize="@dimen/LargeTitleSize"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/badge"
+                android:visibility="gone"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/triangle_badge" />
+
+            <ImageView
+                android:id="@+id/chat_history_btn"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="16dp"
+                android:src="@drawable/icon_chat_doubt_list"
+                android:layout_alignParentRight="true"/>
+
+
+            <TextView
+                android:id="@+id/doubtStatus1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/poppins_light"
+                android:text="Published"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/doubtStatus2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:visibility="gone"
+                android:layout_margin="10dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/poppins_light"
+                android:textColor="@color/green"
+                android:text="Taken"/>
+
+
+            <TextView
+                android:id="@+id/question"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/date_layout"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="10dp"
+                android:text="Your Doubt"
+                android:textColor="@color/red"
+                android:textSize="@dimen/tertiary_text_size" />
+
+            <LinearLayout
+                android:id="@+id/DoubtLayout"
+                android:layout_width="match_parent"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="10dp"
+                android:layout_below="@id/question"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/doubtImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"/>
+
+                <TextView
+                    android:id="@+id/doubtText"
+                    android:layout_width="wrap_content"
+                    android:textColor="@color/black"
+                    android:layout_height="wrap_content"
+                    android:text="Here is my doubt about the random topic in my syllabus.Hypnotic, the way you move"
+                    android:textSize="18sp" />
+
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/desc_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/DoubtLayout"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/Descrip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Description"
+                    android:visibility="gone"
+                    android:layout_marginLeft="8dp"
+                    android:textColor="@color/navy_blue"
+                    android:layout_marginTop="8dp"
+                    android:textSize="@dimen/tertiary_text_size"
+                    android:layout_below="@id/DoubtLayout"/>
+
+                <TextView
+                    android:id="@+id/descriptionText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/Descrip"
+                    android:visibility="gone"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="3dp"
+                    android:textColor="@color/black"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginBottom="8dp"
+                    android:text=""
+                    android:textSize="@dimen/secondary_text_size" />
+
+            </LinearLayout>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:orientation="vertical"
+                android:id="@+id/date_layout"
+                android:layout_below="@id/SubName"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/chapName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:text="Chapter Name"
+                    android:textColor="@color/navy_blue"
+                    android:textSize="@dimen/primary_text_size" />
+                <TextView
+                    android:id="@+id/date"
+                    android:text="Date : 20:10:2023"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+
+            <TextView
+                android:id="@+id/formatRequired"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/date_layout"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="5dp"
+                android:fontFamily="@font/poppins_light"
+                android:paddingRight="2dp"
+                android:text="Format Required  "
+                android:textColor="@color/navy_blue"
+                android:textSize="@dimen/tertiary_text_size" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/solution_card"
+                android:layout_below="@id/desc_layout"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                style="@style/StartActivityButton"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:visibility="gone"
+                android:layout_marginBottom="15dp"
+                app:cardElevation="0dp"
+                >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="View Solution"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/primary_text_size" />
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+        </RelativeLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+</LinearLayout>
+
+    <!--android:layout_below="@+id/textView"-->

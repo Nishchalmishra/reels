@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card"
+        android:layout_width="match_parent"
+        app:cardBackgroundColor="@color/white"
+        android:layout_marginTop="2dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginBottom="12dp"
+        app:cardElevation="8dp"
+        app:cardCornerRadius="10dp"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/topic_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginBottom="5dp"
+                android:fontFamily="@font/comfortaa"
+                android:text="Topic Name is too big to fit here as oer my knowledge"
+                android:textColor="@color/black"
+                android:textSize="@dimen/primary_text_size" />
+
+            <TextView
+                android:id="@+id/progress_text2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/topic_name"
+                android:layout_marginTop="10dp"
+                android:layout_toLeftOf="@+id/ll"
+                android:fontFamily="@font/comfortaa"
+                android:text="78"
+                android:textColor="@color/red"
+                android:textSize="@dimen/small_chapter_number" />
+
+            <TextView
+                android:id="@+id/ll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/topic_name"
+                android:layout_marginLeft="5dp"
+                android:fontFamily="@font/comfortaa"
+                android:layout_marginTop="12dp"
+                android:layout_marginRight="15dp"
+                android:text="@string/Wrong"
+                android:layout_alignParentRight="true"
+                android:textColor="@color/red"
+                android:textSize="@dimen/smallest" />
+
+            <TextView
+                android:id="@+id/progress_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/topic_name"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/comfortaa"
+                android:text="78"
+                android:textColor="@color/green"
+                android:textSize="@dimen/small_chapter_number" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/topic_name"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginRight="15dp"
+                android:layout_toRightOf="@id/progress_text"
+                android:fontFamily="@font/comfortaa"
+                android:text="@string/correct"
+                android:textColor="@color/green"
+                android:textSize="@dimen/smallest" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/topic_name"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/progress_text_unattempted"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:fontFamily="@font/comfortaa"
+                android:text="78"
+                android:textColor="@color/grey_500"
+                android:textSize="@dimen/small_chapter_number" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/topic_name"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@id/progress_text_unattempted"
+                    android:fontFamily="@font/comfortaa"
+                    android:text="@string/Unattempted"
+                    android:textColor="@color/grey_500"
+                    android:textSize="@dimen/smallest" />
+
+
+            </LinearLayout>
+
+
+            <ProgressBar
+                android:id="@+id/progressBarWrong"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:layout_below="@id/progress_text"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="8dp"
+                android:progress="12"
+                android:progressDrawable="@drawable/custom_progress_analytics_wrong" />
+
+            <ProgressBar
+                android:id="@+id/progressBarCorrect"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:layout_below="@id/progress_text"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="10dp"
+                android:progress="78"
+                android:progressDrawable="@drawable/custom_progress_analytics_correct" />
+
+
+        </RelativeLayout>
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+</RelativeLayout>

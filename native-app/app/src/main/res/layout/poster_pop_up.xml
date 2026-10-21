@@ -1,0 +1,101 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="15dp"
+    android:layout_marginRight="15dp"
+    android:layout_marginTop="5dp"
+    android:background="@color/fui_transparent">
+
+    <!-- Main content container -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cancel_poster_popup"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="2dp"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="8dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="4dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_close_black" />
+        </androidx.cardview.widget.CardView>
+
+        <com.google.android.material.progressindicator.LinearProgressIndicator
+            android:id="@+id/progress_indicator"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="3dp"
+            android:indeterminate="false"
+            android:layout_marginHorizontal="8dp"
+            app:indicatorColor="#26C6DA"
+            app:trackColor="#FFFFFF"
+            app:trackCornerRadius="4dp"
+            app:trackThickness="4dp" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/poster_card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/progress_indicator"
+            android:layout_marginHorizontal="8dp"
+            app:cardBackgroundColor="@color/white">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_title_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Aapki Live Class – 10 Sep 2025!"
+                    android:textSize="18sp"
+                    android:textColor="@android:color/black"
+                    android:fontFamily="@font/urbanist_semi_bold"
+                    android:gravity="center"
+                    android:padding="8dp" />
+
+                <ImageView
+                    android:id="@+id/poster_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitCenter" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+
+    <!-- Confetti overlays -->
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/confetti_1"
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:layout_marginTop="-200dp"
+        android:layout_gravity="center"
+        app:lottie_rawRes="@raw/confetti"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/confetti_2"
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:layout_marginTop="-200dp"
+        android:layout_gravity="center"
+        app:lottie_rawRes="@raw/confetti"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true" />
+
+</FrameLayout>

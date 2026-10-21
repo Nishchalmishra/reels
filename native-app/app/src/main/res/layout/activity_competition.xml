@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_img"
+    tools:context=".activity.CompetitionActivity">
+
+    <RelativeLayout
+        android:layout_marginTop="50dp"
+        android:id="@+id/ParentRelativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/comfortaa"
+            android:text="@string/ReadyForCompetition"
+            android:textAlignment="center"
+            android:textColor="@color/purple_700"
+            android:textStyle="bold"
+            android:textSize="@dimen/LargeTitleSize"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:visibility="visible"
+            android:id="@+id/prizeInfo"
+            android:layout_marginTop="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/comfortaa"
+            android:text="@string/prize"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/LargeTitleSize"
+            android:textStyle="bold"
+            android:layout_below="@+id/header" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout40"
+        android:layout_width="300dp"
+        android:layout_height="280dp"
+        android:layout_marginBottom="180dp"
+        app:layout_constraintBottom_toBottomOf="@+id/ParentRelativeLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/game_particle" />
+
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_marginTop="12dp"
+        android:id="@+id/relativeLayout5"
+        android:layout_width="230dp"
+        android:layout_height="220dp"
+        app:layout_constraintBottom_toBottomOf="@+id/ParentRelativeLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="180dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/ic_compete" />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout4"
+        android:layout_width="230dp"
+        android:layout_height="220dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/ParentRelativeLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="80dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginLeft="120dp"
+            android:src="@drawable/ic_game_star" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_game_star" />
+
+
+        <ImageView
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:src="@drawable/ic_game_star" />
+
+
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginLeft="35dp"
+            android:layout_marginTop="25dp"
+            android:src="@drawable/ic_game_star" />
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="50dp"
+            android:src="@drawable/ic_game_star" />
+
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="10dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="50dp"
+            android:layout_marginBottom="15dp"
+            android:src="@drawable/ic_game_star" />
+
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="25dp"
+            android:layout_marginLeft="50dp"
+            android:src="@drawable/ic_game_star" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:src="@drawable/ic_game_small_star" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="50dp"
+            android:src="@drawable/ic_game_small_star" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="50dp"
+            android:src="@drawable/ic_game_circle" />
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="50dp"
+            android:layout_marginRight="60dp"
+            android:src="@drawable/ic_game_circle" />
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="10dp"
+            android:src="@drawable/ic_game_small_star" />
+
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="10dp"
+            android:layout_alignParentRight="true"
+            android:layout_margin="25dp"
+            android:src="@drawable/ic_game_small_star" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_marginEnd="15dp"
+        android:layout_marginStart="15dp"
+        android:textColor="@color/purple_700"
+        android:visibility="gone"
+        android:id="@+id/participant"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/register"
+        android:fontFamily="@font/poppins_light"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:textSize="@dimen/LargeTitleSize"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout40"
+        android:shadowRadius="8"
+        android:layout_marginTop="0dp"
+         />
+
+
+
+   <RelativeLayout
+       android:visibility="visible"
+       android:layout_width="match_parent"
+       android:layout_height="130dp"
+       app:layout_constraintTop_toBottomOf="@+id/participant">
+
+
+       <LinearLayout
+           android:layout_marginStart="10dp"
+           android:layout_marginEnd="10dp"
+           android:layout_alignParentBottom="true"
+           android:layout_width="match_parent"
+           android:layout_height="120dp">
+
+
+           <LinearLayout
+               android:id="@+id/history"
+               android:layout_gravity="center_vertical"
+               android:gravity="center_horizontal"
+               android:orientation="vertical"
+               android:layout_weight="1"
+               android:layout_width="0dp"
+               android:layout_height="match_parent">
+
+               <ImageView
+                   android:src="@drawable/ic_history_icon"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"/>
+
+               <TextView
+                   android:textColor="@color/white"
+                   style="@style/secondaryText"
+                   android:text="@string/history"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"/>
+
+
+           </LinearLayout>
+
+           <LinearLayout
+               android:id="@+id/syllabus"
+               android:layout_gravity="bottom"
+               android:gravity="center"
+               android:orientation="vertical"
+               android:layout_weight="1"
+               android:layout_width="0dp"
+               android:layout_height="wrap_content">
+
+               <ImageView
+                   android:src="@drawable/ic_syllabus_icon"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"/>
+
+               <TextView
+                   android:textColor="@color/white"
+                   style="@style/secondaryText"
+                   android:text="@string/syllabus"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"/>
+
+
+           </LinearLayout>
+
+           <LinearLayout
+               android:id="@+id/help"
+               android:layout_gravity="top"
+               android:gravity="center_horizontal"
+               android:orientation="vertical"
+               android:layout_weight="1"
+               android:layout_width="0dp"
+               android:layout_height="wrap_content">
+
+               <ImageView
+                   android:src="@drawable/ic_instructin_icon_filled"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"/>
+
+               <TextView
+                   android:textColor="@color/white"
+                   style="@style/secondaryText"
+                   android:text="@string/instructions"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"/>
+
+
+           </LinearLayout>
+
+
+       </LinearLayout>
+
+
+   </RelativeLayout>
+
+
+
+    <RelativeLayout
+        android:visibility="visible"
+        android:id="@+id/play"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/ic_game_card"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="50dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <TextView
+            android:id="@+id/btn_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:fontFamily="@font/comfortaa"
+            android:text="@string/register_to_unlock"
+            android:textColor="@color/white"
+            android:textSize="@dimen/LargeTitleSize"
+            android:textStyle="bold" />
+
+
+    </RelativeLayout>
+
+    <com.github.ybq.android.spinkit.SpinKitView
+        android:id="@+id/progressbar"
+        style="@style/SpinKitView.FadingCircle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="25dp"
+        app:SpinKit_Color="#19B0C1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="80dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="25dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

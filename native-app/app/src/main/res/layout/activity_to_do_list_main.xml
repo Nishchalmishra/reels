@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FDFDFD">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FDFDFD">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/app_bar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:showDividers="none"
+            android:elevation="0dp"
+            android:stateListAnimator="@null"
+            android:background="#FDFDFD">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:id="@+id/toolbar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="0dp"
+                        android:paddingEnd="0dp"
+                        android:minHeight="60dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="0dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <LinearLayout
+                            android:id="@+id/back_button_layout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingStart="20dp"
+                            android:paddingEnd="8dp">
+
+                            <ImageView
+                                android:id="@+id/back_button"
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:layout_marginTop="1dp"
+                                android:scaleType="centerCrop"
+                                android:padding="4dp"
+                                android:src="@drawable/baseline_arrow_back_ios_new_24" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/tv_title"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/urbanist_bold"
+                            android:text=""
+                            android:textColor="@color/black"
+                            android:textSize="18sp"
+                            android:ellipsize="end"
+                            android:maxLines="1"
+                            android:layout_weight="1"
+                            />
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cv_info"
+                            android:layout_width="33dp"
+                            android:layout_height="33dp"
+                            app:cardCornerRadius="20dp"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardElevation="3dp"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginEnd="10dp"
+                            >
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:src="@drawable/how_to_question_white"
+                                app:tint="@color/arivihan_secondary_color"
+                                android:padding="8dp"
+                                android:layout_gravity="center"
+                                />
+
+                        </androidx.cardview.widget.CardView>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/cv_download_timetable"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:cardBackgroundColor="#FFFFFFFF"
+                            app:cardCornerRadius="10dp"
+                            app:cardElevation="3dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="0dp"
+                            android:layout_marginEnd="12dp"
+                            android:layout_marginVertical="12dp"
+                            >
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:paddingHorizontal="16dp"
+                                android:paddingVertical="6dp"
+                                >
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/urbanist_medium"
+                                    android:text="@string/Download_Timetable"
+                                    android:textColor="@color/black"
+                                    android:textSize="12sp" />
+
+                                <ImageView
+                                    android:layout_width="18dp"
+                                    android:layout_height="18dp"
+                                    android:src="@drawable/download_dark"
+                                    android:scaleType="centerCrop"
+                                    android:layout_marginStart="12dp"
+                                    android:layout_marginEnd="0dp"
+                                    android:layout_gravity="center"
+                                    />
+
+                            </LinearLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/spinnerRelativeLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="10dp">
+
+                        <LinearLayout
+                            android:id="@+id/spinner"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:visibility="gone"
+                            >
+
+                            <TextView
+                                android:id="@+id/type"
+                                android:layout_width="wrap_content"
+                                android:layout_height="40dp"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:text="@string/daily"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/secondary_text_size" />
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginStart="8dp"
+                                android:src="@drawable/todolist_spinner_arrow_down" />
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="70dp"
+                            android:layout_height="5dp"
+                            android:layout_below="@+id/spinner"
+                            android:layout_marginTop="0dp"
+                            android:background="@drawable/dashed_line"
+                            android:visibility="gone"
+                            />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_daily_progress_marker"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    >
+                    <TextView
+                        android:id="@+id/tv_daily_progress"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/today_task_completed_0_1"
+                        android:textSize="14sp"
+                        android:textStyle="normal"
+                        android:textAlignment="center"
+                        android:fontFamily="@font/urbanist_bold"
+                        android:textColor="@android:color/black"
+                        android:paddingHorizontal="8dp"
+                        android:paddingVertical="4dp" />
+
+                    <LinearLayout
+                        android:id="@+id/ll_progress_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginHorizontal="16dp"
+                        android:layout_marginBottom="8dp"/>
+
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_date_range"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:clipToPadding="false"
+                    android:paddingVertical="2dp"
+                    android:layout_marginTop="6dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    android:orientation="horizontal"
+                    tools:listitem="@layout/item_todo_tab_layout" />
+
+            </LinearLayout>
+
+            <!--        <com.google.android.material.tabs.TabLayout-->
+            <!--            android:id="@+id/tabs"-->
+            <!--            android:layout_width="match_parent"-->
+            <!--            android:layout_height="80dp"-->
+            <!--            app:tabIndicatorColor="@android:color/black"-->
+            <!--            app:tabMode="scrollable"-->
+            <!--            android:visibility="visible"-->
+            <!--            app:tabIndicatorHeight="0dp"-->
+            <!--            app:tabSelectedTextColor="@color/black"-->
+            <!--            app:tabTextAppearance="@style/TabsTextAppearance"-->
+            <!--            app:tabRippleColor="@null"-->
+            <!--            android:background="@color/color_transparent"/>-->
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/view_pager_todo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/color_transparent"
+            android:visibility="visible"
+            android:overScrollMode="never"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/to_do_list_shimmer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible"
+            android:layout_marginTop="120dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <include layout="@layout/shimmer_todo" />
+                <include layout="@layout/shimmer_todo" />
+                <include layout="@layout/shimmer_todo" />
+                <include layout="@layout/shimmer_todo" />
+                <include layout="@layout/shimmer_todo" />
+            </LinearLayout>
+
+        </com.facebook.shimmer.ShimmerFrameLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <LinearLayout
+                android:id="@+id/ll_no_data"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_centerInParent="true"
+                android:gravity="center">
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/lottie_no_data"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_weight="1"
+                    android:visibility="visible"
+                    app:lottie_autoPlay="true"
+                    app:lottie_loop="true"
+                    app:lottie_rawRes="@raw/to_do_empty"/>
+
+                <TextView
+                    android:id="@+id/tv_no_data_header"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/time_table_not_created"
+                    android:textSize="20sp"
+                    android:textStyle="normal"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/urbanist_semi_bold"
+                    android:textColor="@android:color/black"
+                    android:paddingHorizontal="8dp"
+                    android:paddingVertical="4dp" />
+
+                <TextView
+                    android:id="@+id/tv_no_data_body"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/aapka_time_table_abhi_nai_bana_he"
+                    android:textSize="16sp"
+                    android:textStyle="normal"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/urbanist_medium"
+                    android:textColor="#696969"
+                    android:paddingHorizontal="8dp"
+                    android:paddingVertical="4dp" />
+
+            </LinearLayout>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:visibility="gone"
+                android:id="@+id/load_prev"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/arrow_back_white_24"
+                app:tint="@color/white"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="24dp"
+                android:layout_marginBottom="24dp"
+                android:background="@color/arivihan_primary_color"
+                app:backgroundTint="@color/arivihan_secondary_color"
+                />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:visibility="gone"
+                android:id="@+id/load_next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/arrow_forward_white_24"
+                app:tint="@color/white"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="24dp"
+                android:layout_marginBottom="24dp"
+                android:background="@color/arivihan_primary_color"
+                android:backgroundTint="@color/arivihan_secondary_color"
+                app:borderWidth="0dp"
+                />
+
+        </RelativeLayout>
+
+        <!--    <RelativeLayout-->
+        <!--        android:layout_width="match_parent"-->
+        <!--        android:layout_height="match_parent">-->
+
+        <!--        -->
+        <!--    </RelativeLayout>-->
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        >
+        <include
+            android:id="@+id/how_to_video_view"
+            layout="@layout/activity_mock_demo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="@drawable/gradient_navy_blue"
+    android:gravity="center_horizontal">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter User Phone Number"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:layout_marginBottom="16dp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:maxLength="10"
+        android:id="@+id/editTextPhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Phone number"
+        android:inputType="phone"
+        android:padding="12dp"
+        android:background="@drawable/button_border"
+        android:textColor="@color/black"
+        android:layout_marginBottom="16dp"
+        android:textSize="16sp" />
+
+</LinearLayout>

@@ -23,7 +23,11 @@
     "db:migrate:mcp": "node scripts/supabase-mcp.mjs --apply-migrations",
     "test:live:browser": "node scripts/browser-live-journey.mjs",
     "test:live:onboarding": "node scripts/browser-live-onboarding.mjs",
-    "test:live:restore": "node scripts/verify-live-restoration.mjs"
+    "test:live:restore": "node scripts/verify-live-restoration.mjs",
+    "test:discovery:live": "node scripts/verify-discovery-live.mjs",
+    "test:discovery:lifecycle": "node scripts/verify-discovery-lifecycle-live.mjs",
+    "preview:live": "node scripts/run-mode.mjs supabase preview --outDir dist-live --port 4173",
+    "test:web:discovery": "node scripts/web-discovery-journey.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.118.0",

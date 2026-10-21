@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="26dp"
+    android:background="@color/fui_transparent">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardCornerRadius="12dp"
+        app:cardBackgroundColor="#F6F6F6"
+        app:cardElevation="0dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/close_dialog_button"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/search_close_btn"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                />
+
+            <RelativeLayout
+                android:layout_below="@id/close_dialog_button"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp">
+                <WebView
+                    android:background="@color/white"
+                    android:id="@+id/dialog_chat_receive_webview"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    />
+            </RelativeLayout>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

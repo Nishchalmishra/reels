@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar">
+
+    <LinearLayout
+        android:id="@+id/doubt_card_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/doubt_card"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:cardBackgroundColor="@color/mock_light_blue"
+            app:cardCornerRadius="10dp"
+            app:strokeColor="@color/doubt_background_blue"
+            app:strokeWidth="1dp"
+            android:layout_marginVertical="10dp"
+            android:layout_marginHorizontal="20dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="15dp"
+                    android:layout_marginTop="30dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/doubt_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:fontFamily="@font/urbanist_medium"
+                        android:text="What is the difference between Momentum and Impulse? What is the difference"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        android:maxLines="2"
+                        android:ellipsize="end"/>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/doubt_image_card"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:strokeWidth="1dp"
+                        app:strokeColor="#8014C8CF"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="0dp"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:id="@+id/doubt_image"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:maxHeight="300dp"
+                            android:minHeight="120dp"
+                            android:scaleType="fitXY"/>
+                    </com.google.android.material.card.MaterialCardView>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="10dp"
+                        android:gravity="center_vertical">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/subject_tag"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:strokeColor="@color/doubt_green"
+                            app:cardCornerRadius="10dp"
+                            app:cardElevation="0dp"
+                            android:backgroundTint="@color/doubt_background_green">
+
+                            <TextView
+                                android:id="@+id/subject_tag_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Physics"
+                                android:layout_marginVertical="1dp"
+                                android:layout_marginHorizontal="7dp"
+                                android:textSize="9sp"
+                                android:textColor="@color/doubt_green"
+                                android:fontFamily="@font/urbanist_semi_bold"/>
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <TextView
+                            android:id="@+id/date"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="29/03/24"
+                            android:layout_weight="1"
+                            android:gravity="end"
+                            android:textSize="10sp"
+                            android:textColor="@color/doubt_date_grey"
+                            android:fontFamily="@font/urbanist_semi_bold"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/status_tag_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible"
+                    android:paddingHorizontal="10dp"
+                    android:paddingVertical="2dp"
+                    android:background="@drawable/best_value_card_drawable"
+                    >
+
+<!--                    <ImageView-->
+<!--                        android:id="@+id/status_tag"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        android:scaleType="fitXY"/>-->
+
+                    <TextView
+                        android:id="@+id/status_tag_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/urbanist_semi_bold"
+                        android:gravity="center_vertical"
+                        android:text="Solution In Progress"
+                        android:textColor="@color/white"
+                        android:textSize="10sp"
+                        />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

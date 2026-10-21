@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="0dp"
+    app:cardBackgroundColor="#EBFBFC">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="20dp">
+
+        <ImageView
+            android:id="@+id/close_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="8dp"
+            android:src="@drawable/search_close_btn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@id/close_btn">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/urbanist_semi_bold"
+                android:text="@string/Important_Updates_Miss_Na_Ho"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:gravity="center"/>
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/animation"
+                android:layout_width="250dp"
+                android:layout_height="220dp"
+                android:visibility="visible"
+                app:lottie_rawRes="@raw/notification_animation"/>
+
+            <ImageView
+                android:id="@+id/selection_image"
+                android:layout_width="150dp"
+                android:layout_height="160dp"
+                android:src="@drawable/selection_image"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/subtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
+                android:fontFamily="@font/urbanist_medium"
+                android:gravity="center"
+                android:text="@string/Isliye_hume_notifications_bhejne_ki_permission_dein"
+                android:textColor="#696969"
+                android:textSize="14sp"
+                android:layout_marginTop="-10dp"/>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="30dp">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/btn_No"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="0dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="15dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/urbanist_semi_bold"
+                        android:gravity="center"
+                        android:paddingVertical="6dp"
+                        android:text="@string/No_emoji"
+                        android:textColor="#26C6DA"
+                        android:textSize="13sp" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/btn_Yes"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:cardBackgroundColor="#26C6DA"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="0dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="15dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/urbanist_semi_bold"
+                        android:gravity="center"
+                        android:paddingVertical="6dp"
+                        android:text="@string/Yes_emoji"
+                        android:textColor="@color/white"
+                        android:textSize="13sp" />
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

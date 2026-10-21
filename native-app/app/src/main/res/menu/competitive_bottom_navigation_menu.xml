@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/item_home"
+        android:enabled="true"
+        android:icon="@drawable/bottom_nav_home_icon_selection"
+        android:title="@string/home"/>
+    <item
+        android:id="@+id/item_learn"
+        android:enabled="true"
+        android:icon="@drawable/learn_icon_selection"
+        android:title="@string/learn"/>
+    <item
+        android:id="@+id/item_analytics"
+        android:enabled="true"
+        android:icon="@drawable/bottom_nav_analytics_icon_selection"
+        android:title="@string/analytics_home"/>
+    <item
+        android:id="@+id/item_reel"
+        android:enabled="true"
+        android:icon="@drawable/bottom_nav_reel_icon_selection"
+        android:title="@string/reels_home"/>
+    <item
+        android:id="@+id/item_profile"
+        android:enabled="true"
+        android:icon="@drawable/bottom_nav_profile_icon_selection"
+        android:title="@string/profile_home"/>
+</menu>

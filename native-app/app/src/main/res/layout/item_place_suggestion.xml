@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cv_item_parent_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="0dp"
+    app:cardBackgroundColor="@color/white"
+    android:layout_marginHorizontal="4dp"
+    android:layout_marginVertical="2dp"
+    app:strokeWidth="0dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:paddingStart="16dp"
+            android:paddingEnd="2dp"
+            android:paddingVertical="4dp"
+            >
+
+            <TextView
+                android:id="@+id/tv_header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:fontFamily="@font/urbanist_medium"
+                android:maxLines="1"
+                android:text="Indore "
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                />
+
+            <TextView
+                android:id="@+id/tv_sub_header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:fontFamily="@font/urbanist_regular"
+                android:maxLines="1"
+                android:text="Indore, MP "
+                android:textColor="@color/black"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/view_bottom_bar"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/grey_100"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="2dp"
+            />
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar">
+
+    <TextView
+        android:id="@+id/solution_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:fontFamily="@font/nunito_semibold"
+        android:text="@string/Solution"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@id/card_layout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/card_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@id/analysis_card"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/solution_title"
+        android:layout_marginTop="10dp">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/marks_card"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:visibility="gone"
+            app:cardBackgroundColor="#1A189C4D"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="0dp">
+
+            <TextView
+                android:id="@+id/marks_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/urbanist_semi_bold"
+                android:paddingHorizontal="9dp"
+                android:paddingVertical="3dp"
+                android:text="Marks:2/5"
+                android:textColor="#189C4D"
+                android:textSize="13sp" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/difficulty_card"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:cardBackgroundColor="#D3F8FA"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="0dp">
+
+            <TextView
+                android:id="@+id/difficulty_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/urbanist_semi_bold"
+                android:paddingHorizontal="9dp"
+                android:paddingVertical="3dp"
+                android:text="Medium"
+                android:textColor="#02858D"
+                android:textSize="13sp" />
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/analysis_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="12dp"
+        android:layout_marginTop="10dp"
+        android:visibility="gone"
+        app:cardCornerRadius="15dp"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/card_layout"
+        app:cardElevation="4dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="#D3F8FA"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="0dp">
+
+                <TextView
+                    android:id="@+id/analysis_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="15dp"
+                    android:layout_marginVertical="1dp"
+                    android:fontFamily="@font/urbanist_semi_bold"
+                    android:text="@string/analysis"
+                    android:textColor="#02858D"
+                    android:textSize="14sp" />
+            </androidx.cardview.widget.CardView>
+
+
+            <TextView
+                android:id="@+id/analysis_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="16dp"
+                android:fontFamily="@font/nunito_regular"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="16dp" />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/ideal_solution_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="12dp"
+        android:visibility="gone"
+        app:cardCornerRadius="15dp"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/analysis_card"
+        app:cardElevation="4dp">
+
+        <LinearLayout
+            android:id="@+id/solutionBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="#1A189C4D"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="0dp">
+
+                <TextView
+                    android:id="@+id/ideal_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="15dp"
+                    android:layout_marginVertical="1dp"
+                    android:fontFamily="@font/urbanist_semi_bold"
+                    android:text="@string/ideal_solution"
+                    android:textColor="#189C4D"
+                    android:textSize="14sp" />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/solution_text_sav"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="16dp"
+                android:fontFamily="@font/nunito_regular"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="16dp" />
+
+            <arivihan.technologies.doubtbuzzter2.helper.ImageLoaderUtil
+                android:id="@+id/solution_image_sav"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:adjustViewBounds="true"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/card_layout" />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+
+    <arivihan.technologies.doubtbuzzter2.helper.ImageLoaderUtil
+        android:id="@+id/solution_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:adjustViewBounds="true"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/card_layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:paddingHorizontal="20dp"
+        android:layout_marginVertical="10dp"/>
+
+    <TextView
+        android:id="@+id/solution_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/nunito_regular"
+        android:text="Magnetic field at the center of a circular coil of radius R due to current I flowing through it is B. The magnetic field at a point along the axis at distance R from the center is"
+        android:textColor="#191919"
+        android:textSize="16dp"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/solution_image"
+        android:paddingHorizontal="20dp"
+        android:layout_marginVertical="10dp"/>
+
+
+    <ImageView
+        android:id="@+id/report_question"
+        android:layout_width="35dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="20dp"
+        android:src="@drawable/warning"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

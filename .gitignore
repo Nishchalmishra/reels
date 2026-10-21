@@ -13,3 +13,14 @@ verification-live/
 playwright-report/
 test-results/
 *.tsbuildinfo
+
+# Native source demo: credentials and generated artifacts stay local.
+native-app/demo.properties
+native-app/secrete.properties
+native-app/local.properties
+native-app/.gradle/
+native-app/**/build/
+verification-native/
+
+native-app/hs_err_pid*.log
+native-app/*.hprof

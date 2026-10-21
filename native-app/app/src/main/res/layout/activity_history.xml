@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".activity.HistoryActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+
+        <ImageView
+            android:id="@+id/back_arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="18dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/ic_baseline_arrow_back_purple" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/back_arrow"
+            android:fontFamily="@font/comfortaa"
+            android:text="@string/history"
+            android:textColor="@color/purple_card"
+            android:textSize="@dimen/LargeTitleSize"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/history"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <TextView
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/purple_card"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginTop="50dp"
+            android:text="Last Game"
+            android:id="@+id/last_game_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <include
+            android:layout_below="@+id/last_game_text"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:id="@+id/last_game_card"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginTop="15dp"
+            layout="@layout/last_game_card"/>
+
+        <TextView
+            android:visibility="gone"
+            android:layout_below="@id/last_game_card"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/purple_card"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/previous_games"
+            android:id="@+id/previous_game"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_below="@id/previous_game"
+            android:id="@+id/recyclerViewHistory"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"/>
+    </RelativeLayout>
+
+
+</RelativeLayout>

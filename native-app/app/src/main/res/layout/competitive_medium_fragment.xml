@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="24dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".fragments.todo.create_todo.ToDoStepSubjectSelectionFragment"
+    android:orientation="vertical">
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginVertical="40dp"
+        android:layout_marginHorizontal="20dp"
+        android:visibility="gone"
+        app:layout_constraintVertical_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <include layout="@layout/onboarding_shimmer_layout"/>
+        </LinearLayout>
+
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:paddingBottom="24dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/content_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:visibility="visible">
+
+            <TextView
+                android:id="@+id/step_text_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/urbanist_semi_bold"
+                android:text="@string/subject_selection_text"
+                android:textColor="#191919"
+                android:textSize="22sp"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginHorizontal="38dp"/>
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/animation"
+                android:layout_width="146dp"
+                android:layout_height="146dp"
+                android:layout_marginBottom="-10dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="30dp"
+                app:lottie_autoPlay="true"
+                app:lottie_rawRes="@raw/subject_fragment_animation_neet"
+                app:lottie_loop="true"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/step_text_1"
+                app:layout_constraintBottom_toTopOf="@+id/card_layout"/>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/step_text_1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:cardCornerRadius="20dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardElevation="1dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="130dp"
+                android:layout_marginBottom="8dp">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/medium_selection_rv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false"
+                    tools:listitem="@layout/class_item"
+                    tools:itemCount="3"
+                    android:layout_marginVertical="10dp"/>
+
+            </androidx.cardview.widget.CardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

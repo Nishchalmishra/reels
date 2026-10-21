@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:theme="@style/Theme.MaterialComponents.Light"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="0dp"
+    app:cardBackgroundColor="@color/white">
+
+    <ImageView
+        android:id="@+id/cancel_pop_up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_margin="10dp"
+        android:src="@drawable/ic_close_black" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp"
+        android:gravity="center">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            app:lottie_rawRes="@raw/pdf"
+            app:lottie_loop="true"
+            app:lottie_autoPlay="true"
+            android:layout_marginTop="10dp"
+            app:lottie_speed="1"/>
+
+        <TextView
+            android:id="@+id/header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/urbanist_semi_bold"
+            android:gravity="center"
+            android:hint="@string/no_pdf_viewer"
+            android:textColor="@color/mock_darker_grey"
+            android:textSize="16sp"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="20dp"
+            android:lineSpacingExtra="5dp"/>
+
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/playStoreLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/mock_primary_color"
+            app:cardCornerRadius="8dp"
+            android:layout_marginVertical="25dp"
+            app:cardElevation="0dp"
+            android:layout_marginHorizontal="20dp">
+
+
+            <TextView
+                android:id="@+id/subs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="10dp"
+                android:layout_marginHorizontal="20dp"
+                android:fontFamily="@font/urbanist_semi_bold"
+                android:text="@string/go_to_play_store"
+                android:textColor="@color/white"
+                android:textSize="14sp"/>
+
+        </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
+
+
+</com.google.android.material.card.MaterialCardView>

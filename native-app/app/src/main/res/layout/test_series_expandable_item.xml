@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    app:cardBackgroundColor="@color/white"
+    android:layout_marginTop="10dp"
+    app:cardElevation="5dp"
+    android:layout_marginLeft="20dp"
+    app:cardCornerRadius="10dp"
+    android:layout_marginRight="20dp"
+    android:layout_marginBottom="10dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <FrameLayout
+        android:id="@+id/mock_given"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#E2F1D1"/>
+
+    <FrameLayout
+        android:id="@+id/lock_Frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:background="@color/grey_100">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/lockImage"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:padding="10dp"
+                android:layout_alignParentRight="true"
+                android:background="@color/grey_100"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_baseline_lock_24_black"/>
+
+        </RelativeLayout>
+
+    </FrameLayout>
+
+    <RelativeLayout
+        android:id="@+id/nonLockFrame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/first"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:background="@color/first"/>
+
+
+
+        <TextView
+            android:layout_below="@+id/Score"
+            android:id="@+id/mockTestName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="80dp"
+            android:gravity="center_vertical"
+            android:text="@string/mock_test_1"
+            android:textColor="@color/black"
+            android:textSize="@dimen/primary_text_size"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/first_place"
+            android:layout_width="20sp"
+            android:layout_height="18dp"
+            android:scaleType="fitXY"
+            android:visibility="gone"
+            android:layout_toRightOf="@id/mockTestName"
+            android:layout_marginTop="12dp"
+            android:src="@drawable/first_place"/>
+
+        <TextView
+            android:id="@+id/Score"
+            android:layout_width="wrap_content"
+            android:textStyle="bold"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:visibility="gone"
+            android:layout_marginBottom="10dp"
+            android:text="Total Score : 115/360"
+            android:textColor="@color/navy_blue"
+            android:textSize="@dimen/tertiary_text_size" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardElevation="0dp"
+            android:layout_alignParentRight="true">
+
+            <RelativeLayout
+                android:id="@+id/NotCompleted"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <ProgressBar
+                    android:id="@+id/progress"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/circle_shape_coloured"
+                    android:indeterminate="false"
+                    android:progressDrawable="@drawable/circle_progress_bar_maths"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:id="@+id/progress_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="75"
+                    android:textColor="#454440"
+                    android:textSize="@dimen/small_subject_name"
+                    android:textStyle="bold" />
+
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+        <ImageView
+            android:id="@+id/done"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/mockTestName"
+            android:visibility="gone"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/ic_done_green" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/test_series_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/RelativeLayout22"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="13dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="1dp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/test_series_recycler"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp">
+
+            <ImageView
+                android:id="@+id/tag"
+                android:layout_width="17dp"
+                android:layout_height="17dp"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@+id/syllabus"
+                android:scaleType="centerCrop"
+                android:src="@drawable/syllabus_image" />
+
+            <TextView
+                android:id="@+id/syllabus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="15dp"
+                android:text="Full Syllabus"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/small_chapter_number" />
+
+            <TextView
+                android:id="@+id/rank"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="15dp"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold"
+                android:textSize="@dimen/tertiary_text_size"
+                android:text="Rank : 784"/>
+
+        </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/RelativeLayout22"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_below="@+id/mockTestName">
+
+        <TextView
+            android:id="@+id/questions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:text="30 Questions"
+            android:textColor="@color/black"
+            android:textSize="@dimen/tertiary_text_size" />
+
+        <ImageView
+            android:id="@+id/dot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/questions"
+            android:src="@drawable/ic_mock_test_ellipse" />
+
+        <TextView
+            android:id="@+id/Time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/dot"
+            android:text="45 minutes"
+            android:textColor="@color/black"
+            android:textSize="@dimen/tertiary_text_size" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        android:id="@+id/mockTestNameLock"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_margin="10dp"
+        android:gravity="center_vertical"
+        android:fontFamily="@font/opensans_regular"
+        android:textStyle="bold"
+        android:visibility="gone"
+        android:drawableRight="@drawable/ic_baseline_lock_24_black"
+        android:text="@string/mock_test_1"
+        android:textColor="#ffffff"
+        android:background="@color/grey_500"/>
+
+
+    <LinearLayout
+        android:id="@+id/expand"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/mjb"
+        tools:listitem="@layout/test_series_subtopics"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_width="match_parent"
+        tools:itemCount="3"
+        android:layout_height="wrap_content"/>
+
+    <TableLayout
+        android:id="@+id/table_layout1"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fff"
+        >
+
+
+        <TableRow
+            android:id="@+id/table_row14"
+            android:gravity="center"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#fff"
+                android:textSize="20sp"
+                android:textColor="#008080"
+                android:textStyle="bold"
+                android:layout_marginRight="30dp"
+                android:fontFamily="@font/opensans_regular"
+                android:text="@string/final_score"
+
+                />
+
+            <TextView
+                android:id="@+id/finalScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#fff"
+                android:textSize="20sp"
+                android:textColor="#008080"
+                android:textStyle="bold"
+                android:layout_marginRight="30dp"
+                android:fontFamily="@font/opensans_regular"
+                android:text="0/54"
+
+                />
+
+        </TableRow>
+
+
+    </TableLayout>
+    </LinearLayout>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar"
+    app:cardCornerRadius="10dp"
+    android:layout_marginVertical="10dp"
+    app:strokeWidth="1dp"
+    app:cardElevation="0dp"
+    app:strokeColor="@color/mock_light_grey"
+    android:id="@+id/parent_card">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/mock_light_grey">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/top_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="15dp">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/availability_status_card"
+                android:layout_marginRight="40dp"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:textSize="18sp"
+                android:fontFamily="@font/nunito_semibold"
+                android:background="@color/white"/>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/availability_status_card"
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="0dp">
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/number_of_question"
+                android:layout_width="50dp"
+                android:layout_height="20dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/title"
+                android:textSize="14sp"
+                android:background="@color/white"
+                android:fontFamily="@font/nunito_semibold"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="15dp"/>
+
+            <TextView
+                android:id="@+id/test_time"
+                android:layout_width="50dp"
+                android:layout_height="20dp"
+                app:layout_constraintLeft_toRightOf="@id/number_of_question"
+                app:layout_constraintTop_toBottomOf="@id/title"
+                android:textSize="14sp"
+                android:background="@color/white"
+                android:fontFamily="@font/nunito_semibold"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="15dp"
+                android:layout_marginStart="15dp"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginHorizontal="20dp"
+            android:background="@color/mock_light_grey"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="20dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp">
+
+            <TextView
+                android:id="@+id/score_text"
+                android:layout_width="50dp"
+                android:layout_height="20dp"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:textSize="14sp"
+                android:fontFamily="@font/nunito_semibold"
+                android:background="@color/white"/>
+
+            <TextView
+                android:id="@+id/score_value"
+                android:layout_width="40dp"
+                android:layout_height="20dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/score_text"
+                android:textSize="18sp"
+                android:background="@color/white"
+                android:fontFamily="@font/nunito_bold"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:id="@+id/rank_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent "
+                app:layout_constraintRight_toLeftOf="@id/attempt_status_card"
+                android:text="Average Score"
+                android:textSize="12sp"
+                android:textColor="@color/mock_dark_grey"
+                android:fontFamily="@font/nunito_semibold"
+                android:layout_marginEnd="20dp"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/rank"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toRightOf="@id/score_value"
+                app:layout_constraintTop_toBottomOf="@id/rank_text"
+                app:layout_constraintStart_toStartOf="@id/rank_text"
+                android:text="200"
+                android:textSize="18sp"
+                android:textColor="@color/mock_light_grey"
+                android:fontFamily="@font/nunito_semibold"
+                android:visibility="gone"/>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/attempt_status_card"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toRightOf="@id/rank_text"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="0dp"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <TextView
+                    android:id="@+id/attempt_status"
+                    android:layout_width="50dp"
+                    android:layout_height="20dp"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:textColor="@color/mock_primary_color"
+                    android:paddingVertical="5dp"
+                    android:paddingHorizontal="15dp"
+                    android:background="@color/white"/>
+            </com.google.android.material.card.MaterialCardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:id="@+id/bottom_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/mock_light_blue2"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Wanna improve your Test Result?"
+                android:textColor="@color/mock_primary_color"
+                android:layout_marginStart="20dp"
+                android:layout_marginVertical="5dp"
+                android:textSize="12sp"
+                android:fontFamily="@font/nunito_semibold"/>
+        </LinearLayout>
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

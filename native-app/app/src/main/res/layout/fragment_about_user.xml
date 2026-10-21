@@ -1,0 +1,657 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.AboutUserFragment">
+
+    <RelativeLayout
+        android:id="@+id/ParentRelativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/gradient_navy_blue" />
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="15dp"
+            tools:ignore="MissingConstraints">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:src="@drawable/arivihan_logo" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="15dp"
+                android:drawableLeft="@drawable/ic_help"
+                android:drawablePadding="3dp"
+                android:text="@string/Help"
+                android:textColor="@color/white"
+                android:textSize="@dimen/secondary_text_size"
+                android:visibility="gone" />
+
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/poppins_light"
+            android:text="Aspirant"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/primary_text_size"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/horizontalScrollView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/Please_answer_these"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/secondary_text_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/name" />
+
+        <HorizontalScrollView
+            android:id="@+id/horizontalScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:scrollbars="none"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:id="@+id/container_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.cardview.widget.CardView
+                    style="@style/CardStyleInABoutUser"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginRight="25dp"
+                    android:visibility="gone">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/text1"
+                            style="@style/CardTextInAboutUser"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="You are a"
+                            android:textColor="@color/black" />
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/student"
+                            style="@style/buttonInAboutUser"
+                            android:layout_marginTop="70dp"
+                            android:theme="@style/Theme.MaterialComponents.Light"
+                            app:strokeColor="#E0E0E0"
+                            app:strokeWidth="1dp">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <RelativeLayout
+                                    android:id="@+id/status1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginLeft="10dp">
+
+                                    <ImageView
+                                        android:id="@+id/status1_unselected"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginLeft="0dp"
+                                        android:src="@drawable/ic_unselected" />
+
+                                    <ImageView
+                                        android:id="@+id/status1_selected"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginLeft="0dp"
+                                        android:src="@drawable/ic_selected"
+                                        android:visibility="gone" />
+
+
+                                </RelativeLayout>
+
+                                <TextView
+                                    android:id="@+id/student_option"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginLeft="20dp"
+                                    android:layout_toRightOf="@+id/status1"
+                                    android:text="@string/Student"
+                                    android:textColor="#555555"
+                                    android:textSize="@dimen/secondary_text_size" />
+
+                            </RelativeLayout>
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/parent"
+                            style="@style/buttonInAboutUser"
+                            android:layout_below="@id/student"
+                            android:layout_marginTop="15dp"
+                            android:theme="@style/Theme.MaterialComponents.Light"
+                            app:strokeColor="#E0E0E0"
+                            app:strokeWidth="1dp">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <RelativeLayout
+                                    android:id="@+id/status2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginLeft="10dp">
+
+                                    <ImageView
+                                        android:id="@+id/status2_unselected"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginLeft="0dp"
+                                        android:src="@drawable/ic_unselected" />
+
+                                    <ImageView
+                                        android:id="@+id/status2_selected"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginLeft="0dp"
+                                        android:src="@drawable/ic_selected"
+                                        android:visibility="gone" />
+
+
+                                </RelativeLayout>
+
+                                <TextView
+                                    android:id="@+id/parent_option"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginLeft="20dp"
+                                    android:layout_toRightOf="@+id/status2"
+                                    android:text="@string/Parent"
+                                    android:textColor="#555555"
+                                    android:textSize="@dimen/secondary_text_size" />
+
+                            </RelativeLayout>
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                    </RelativeLayout>
+
+
+                </androidx.cardview.widget.CardView>
+
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card2"
+                    android:layout_width="290dp"
+                    android:layout_height="390dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginRight="25dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@color/white"
+                    android:theme="@style/Theme.MaterialComponents.Light"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="8dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            style="@style/CardTextInAboutUser"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/currenctly_enrolled_in"
+                            android:textColor="@color/black" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/class_recyclerview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="70dp" />
+
+                        <com.github.ybq.android.spinkit.SpinKitView
+                            android:id="@+id/progress_class"
+                            style="@style/SpinKitView.FadingCircle"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_centerInParent="true"
+                            android:visibility="visible"
+                            app:SpinKit_Color="#19B0C1"
+                            tools:ignore="MissingClass" />
+
+
+                    </RelativeLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card3"
+                    android:layout_width="290dp"
+                    android:layout_height="390dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginRight="25dp"
+                    android:layout_marginBottom="10dp"
+                    android:theme="@style/Theme.MaterialComponents.Light"
+                    android:visibility="gone"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="8dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/text12"
+                            style="@style/CardTextInAboutUser"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/apna_board_exam_choose_karein"
+                            android:textColor="@color/black" />
+
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/preparation_recyclerview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="70dp" />
+
+                        <com.github.ybq.android.spinkit.SpinKitView
+                            android:id="@+id/progress_preparation"
+                            style="@style/SpinKitView.FadingCircle"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_centerInParent="true"
+                            android:visibility="visible"
+                            app:SpinKit_Color="#19B0C1" />
+
+                    </RelativeLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card7"
+                    android:layout_width="290dp"
+                    android:layout_height="390dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginRight="25dp"
+                    android:layout_marginBottom="10dp"
+                    android:theme="@style/Theme.MaterialComponents.Light"
+                    android:visibility="gone"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="8dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            style="@style/CardTextInAboutUser"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/aap_kis_competitive_exam_ki_taiyari_krna_chahte_ho"
+                            android:textColor="@color/black" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/secondary_exam_recycler_view"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="70dp" />
+
+                        <com.github.ybq.android.spinkit.SpinKitView
+                            android:id="@+id/progress_secondary_exam"
+                            style="@style/SpinKitView.FadingCircle"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_centerInParent="true"
+                            android:visibility="visible"
+                            app:SpinKit_Color="#19B0C1" />
+
+
+                    </RelativeLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+
+                <com.google.android.material.card.MaterialCardView
+
+                    android:id="@+id/card_target_percentage"
+                    android:layout_width="290dp"
+                    android:layout_height="390dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginRight="25dp"
+                    android:layout_marginBottom="10dp"
+                    android:theme="@style/Theme.MaterialComponents.Light"
+                    android:visibility="gone"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="8dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/text_target_percentage"
+                            style="@style/CardTextInAboutUser"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/your_target_percentage_for_boards"
+                            android:textColor="@color/black" />
+
+
+                        <LinearLayout
+                            android:layout_marginTop="10dp"
+                            android:layout_below="@id/text_target_percentage"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:foregroundGravity="center"
+                            android:gravity="center"
+                            android:paddingHorizontal="16dp">
+
+                            <TextView
+                                android:layout_marginTop="15dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/urbanist_semi_bold"
+                                android:text="50%" />
+
+                            <com.google.android.material.slider.Slider
+                                android:id="@+id/target_percentage_slider"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:stepSize="5"
+                                android:valueFrom="50"
+                                android:value="85"
+                                android:valueTo="100"
+                                app:labelBehavior="visible"
+                                app:haloColor="@color/arivihan_secondary_color"
+                                app:thumbColor="@color/arivihan_secondary_color"
+                                app:tickColor="@color/white"
+                                app:trackColor="@color/arivihan_secondary_color" />
+
+                            <TextView
+                                android:layout_marginTop="15dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/urbanist_semi_bold"
+                                android:text="100%" />
+
+                        </LinearLayout>
+
+                    </RelativeLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card6"
+                    android:layout_width="290dp"
+                    android:layout_height="390dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginRight="25dp"
+                    android:layout_marginBottom="10dp"
+                    android:theme="@style/Theme.MaterialComponents.Light"
+                    android:visibility="gone"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="8dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            style="@style/CardTextInAboutUser"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/select_board"
+                            android:textColor="@color/black" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/board_recyclerview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="70dp" />
+
+                        <com.github.ybq.android.spinkit.SpinKitView
+                            android:id="@+id/progress_board"
+                            style="@style/SpinKitView.FadingCircle"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_centerInParent="true"
+                            android:visibility="visible"
+                            app:SpinKit_Color="#19B0C1" />
+
+
+                    </RelativeLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card4"
+                    android:layout_width="290dp"
+                    android:layout_height="390dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginRight="25dp"
+                    android:layout_marginBottom="10dp"
+                    android:theme="@style/Theme.MaterialComponents.Light"
+                    android:visibility="gone"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="8dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            style="@style/CardTextInAboutUser"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/AddMoreSubejct"
+                            android:textColor="@color/black" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/subject_recyclerview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="70dp" />
+
+                        <com.github.ybq.android.spinkit.SpinKitView
+                            android:id="@+id/progress_subject"
+                            style="@style/SpinKitView.FadingCircle"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_centerInParent="true"
+                            android:visibility="visible"
+                            app:SpinKit_Color="#19B0C1" />
+
+
+                    </RelativeLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card5"
+                    android:layout_width="290dp"
+                    android:layout_height="390dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginRight="25dp"
+                    android:layout_marginBottom="10dp"
+                    android:theme="@style/Theme.MaterialComponents.Light"
+                    android:visibility="gone"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="8dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            style="@style/CardTextInAboutUser"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/ArrangeSubject"
+                            android:textColor="@color/black" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/toughness_recyclerview"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="70dp" />
+
+
+                        <com.github.ybq.android.spinkit.SpinKitView
+                            android:id="@+id/progress_toughness"
+                            style="@style/SpinKitView.FadingCircle"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_centerInParent="true"
+                            android:visibility="visible"
+                            app:SpinKit_Color="#19B0C1" />
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginBottom="10dp"
+                            android:text="@string/holdanddrag"
+                            android:textAlignment="center"
+                            android:textSize="@dimen/tertiary_text_size" />
+
+                    </RelativeLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+
+
+        </HorizontalScrollView>
+
+        <com.github.ybq.android.spinkit.SpinKitView
+            android:id="@+id/progress"
+            style="@style/SpinKitView.FadingCircle"
+            android:layout_width="70dp"
+            android:layout_height="30dp"
+            android:layout_margin="25dp"
+            android:visibility="gone"
+            app:SpinKit_Color="#19B0C1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/skip"
+                android:layout_width="70dp"
+                android:layout_height="35dp"
+                android:layout_margin="25dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:theme="@style/Theme.MaterialComponents.Light"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:strokeColor="#19B0C1"
+                app:strokeWidth="1dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/text_change"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="@string/skip"
+                        android:textColor="#19B0C1"
+                        android:textSize="@dimen/primary_text_size"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/next"
+                android:layout_width="70dp"
+                android:layout_height="35dp"
+                android:layout_margin="25dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:theme="@style/Theme.MaterialComponents.Light"
+                android:visibility="gone"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:strokeColor="#19B0C1"
+                app:strokeWidth="1dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/text_next"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="@string/next"
+                        android:textColor="#19B0C1"
+                        android:textSize="@dimen/primary_text_size"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Outermost glow — mimics blur spread (4.5dp blur, 2dp spread) -->
+    <item>
+        <shape android:shape="rectangle">
+            <corners android:radius="30dp" />
+            <solid android:color="#00000000" />
+            <stroke
+                android:width="5dp"
+                android:color="#2026C6DA" />
+        </shape>
+    </item>
+
+    <!-- Mid glow layer -->
+    <item android:top="2dp" android:bottom="2dp" android:left="2dp" android:right="2dp">
+        <shape android:shape="rectangle">
+            <corners android:radius="28dp" />
+            <solid android:color="#00000000" />
+            <stroke
+                android:width="5dp"
+                android:color="#5526C6DA" />
+        </shape>
+    </item>
+
+    <!-- Inner glow — closest to card, brightest (69% opacity = #B0) -->
+    <item android:top="4dp" android:bottom="4dp" android:left="4dp" android:right="4dp">
+        <shape android:shape="rectangle">
+            <corners android:radius="26dp" />
+            <solid android:color="#00000000" />
+            <stroke
+                android:width="2dp"
+                android:color="#B026C6DA" />
+        </shape>
+    </item>
+
+</layer-list>

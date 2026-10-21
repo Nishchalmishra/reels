@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/upload_image_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="19dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginEnd="19dp"
+    tools:context=".activity.BoardSubjectiveUploadImageActivity">
+
+    <TextView
+        android:id="@+id/status_text1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Option_2_Ya_photo_click_krke_upload_karein"
+        android:fontFamily="@font/urbanist_regular"
+        android:textStyle="italic"
+        android:textColor="#CC000000"
+        android:textSize="12sp"
+        android:layout_marginBottom="20dp"
+        android:visibility="gone"/>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="0dp"
+        android:layout_below="@id/status_text1">
+
+        <RelativeLayout
+            android:id="@+id/upload_file_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/dash_box"
+            android:padding="5dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="#EFFEFF"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="0dp">
+
+
+                <RelativeLayout
+                    android:id="@+id/upload_button_relative_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingHorizontal="24dp"
+                    android:paddingVertical="20dp">
+
+
+                    <ImageView
+                        android:id="@+id/cloud_image"
+                        android:layout_width="55dp"
+                        android:layout_height="55dp"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/upload_cloud" />
+
+                    <LinearLayout
+                        android:id="@+id/upload_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/cloud_image">
+
+
+                        <TextView
+                            android:id="@+id/upload_image_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/urbanist_medium"
+                            android:text="@string/upload_answer_aur_board_expert"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+
+
+                        <!--                <TextView-->
+                        <!--                    android:id="@+id/text_centre"-->
+                        <!--                    android:layout_width="wrap_content"-->
+                        <!--                    android:layout_height="wrap_content"-->
+                        <!--                    android:fontFamily="@font/nunito_semibold"-->
+                        <!--                    android:text="karein aur board exam experts se check karwaayein"-->
+                        <!--                    android:textColor="@color/black"-->
+                        <!--                    android:textSize="18sp"-->
+                        <!--                    android:textStyle="bold" />-->
+
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/max_file_size_limit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/upload_text"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginVertical="8dp"
+                        android:fontFamily="@font/urbanist_regular"
+                        android:text="@string/maximum_file_size_15_mb"
+                        android:textColor="#140C0C"
+                        android:textSize="12sp" />
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/upload_solution_btn"
+                        android:layout_width="120dp"
+                        android:layout_height="40dp"
+                        android:layout_below="@id/max_file_size_limit"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="8dp"
+                        app:cardBackgroundColor="@color/subscription_blue"
+                        app:cardCornerRadius="7dp"
+                        app:cardElevation="0dp">
+
+                        <RelativeLayout
+                            android:id="@+id/upload_button_relative"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:id="@+id/btn_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:fontFamily="@font/nunito_semibold"
+                                android:text="@string/upload"
+                                android:textColor="@color/white"
+                                android:textSize="14sp" />
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </RelativeLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

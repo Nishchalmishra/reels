@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.ChatSupportHistoryActivity">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="?android:actionBarSize"
+        android:theme="@style/AppTheme.Toolbar"
+        app:cardBackgroundColor="@color/chapter_header"
+        app:cardElevation="0dp"
+        tools:ignore="MissingConstraints">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="-10dp"
+            android:background="@drawable/theme_gradient_color"
+            app:title="."
+            app:titleTextColor="@color/arivihan_secondary_color">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/back_arrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="8dp"
+                    android:src="@drawable/ic_baseline_arrow_back_ios_24" />
+
+                <TextView
+                    android:id="@+id/subject_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/comfortaa"
+                    android:text="@string/ChatSupportHistory"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/primary_text_size"
+                    android:textStyle="bold" />
+
+
+            </RelativeLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </androidx.cardview.widget.CardView>
+
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?android:actionBarSize"
+        android:background="@color/white">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerview_chat_support_history"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:listitem="@layout/chat_support_history_recyclerview_item"/>
+
+
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/chat_support_history_shimmer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <include layout="@layout/shimmer_mock_tests" />
+                <include layout="@layout/shimmer_mock_tests" />
+                <include layout="@layout/shimmer_mock_tests" />
+                <include layout="@layout/shimmer_mock_tests" />
+                <include layout="@layout/shimmer_mock_tests" />
+                <include layout="@layout/shimmer_mock_tests" />
+            </LinearLayout>
+
+        </com.facebook.shimmer.ShimmerFrameLayout>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

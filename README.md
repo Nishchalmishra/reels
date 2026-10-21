@@ -1,8 +1,12 @@
-# Arivihan Reels
+# Arivihan Reels - web demo
 
-React + TypeScript + Vite frontend with two explicit service modes. Existing mobile UI, routes, educational animations, quizzes, wallet, simulated checkout, notes and presenter tools are preserved.
+The active demo is now the responsive **React/TypeScript web application**. No APK or Android emulator is required. Existing web onboarding creates one persistent Supabase guest identity, then Home to Reels opens the playing **Feed**. **Explore** searches the supplied lesson videos; mapped quizzes connect to the existing wallet and simulated store checkout. The native source is preserved in `native-app/` as a separate, paused implementation.
 
-**Live Supabase integration is deployed and verified** against project `pbaegeqjargtsfortsyh`. Official MCP calls, real hosted API/concurrency tests, and the complete mobile student journey passed. See [SUPABASE_VERIFICATION.md](SUPABASE_VERIFICATION.md) for evidence and limits.
+Start with `npm run live`, then open **http://127.0.0.1:5173**. Your workspace `.env` already selects the live project. See [DISCOVERY_HANDOFF.md](DISCOVERY_HANDOFF.md) for architecture and verification details. The separate `npm run demo` mode retains the older local chapter demo; it does not pretend to provide live discovery success.
+
+The revised discovery backend is deployed on project `pbaegeqjargtsfortsyh`. The earlier [SUPABASE_VERIFICATION.md](SUPABASE_VERIFICATION.md) describes the original chapter-based web journey. Current web discovery evidence is documented separately in the handoff and `verification-live/web/`.
+
+The mobile web journey is verified: real video qualification, deferred quiz restoration, persisted answers, 4/5 zero, perfect retry five coins, duplicate reward protection, wallet, cancelled quote and simulated redemption. Build and 31 tests pass. Open the running production preview at **http://127.0.0.1:4173**. Verification details and remaining limits are in the handoff.
 
 ## Run
 
@@ -25,7 +29,7 @@ VITE_DEMO_TOOLS=false
 VITE_INTEGRATION_TEST=false
 ```
 
-Only the URL/publishable key belong in public configuration. Privileged keys, database URLs and management tokens must never have a `VITE_` prefix. Vite rejects unsafe key configuration and blocks backend seeds/tooling/mock-key source in live dev mode. Production serves only `dist-live/`.
+Only the URL/publishable key belong in public configuration. Privileged keys, database URLs and management tokens must never have a `VITE_` prefix. Vite rejects unsafe key configuration and blocks backend seeds/tooling/mock-key source in live dev mode. The build outputs frontend assets to `dist-live/`. For a local production preview use `npm run preview:live`: its whitelist media handler streams the supplied `videos/` files with byte-range support. Publishing only `dist-live/` to a static host will not include these clips; a hosted deployment must provide matching `/media/<lesson-id>` URLs. No AWS/S3 integration or upload was added.
 
 ## Database deployment and verification
 

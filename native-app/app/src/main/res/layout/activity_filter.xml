@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:elevation="7dp">
+
+    <LinearLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:layout_marginVertical="10dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/back_arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="25dp"
+            android:paddingEnd="17dp">
+
+            <ImageView
+                android:layout_width="13dp"
+                android:layout_height="15dp"
+                android:layout_marginTop="1dp"
+                android:src="@drawable/arrow_icon" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/urbanist_semi_bold"
+            android:text="@string/Filter"
+            android:textColor="@color/black"
+            android:textSize="22sp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar"
+        android:layout_marginStart="30dp"
+        android:fontFamily="@font/nunito_bold"
+        android:text="@string/Status"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+    <RadioGroup
+        android:id="@+id/radio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/status"
+        android:layout_marginStart="30dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/status">
+
+        <RadioButton
+            android:id="@+id/unattempted"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/nunito_regular"
+            android:scaleX="0.95"
+            android:scaleY="0.95"
+            android:text="@string/Unattempted"
+            android:textSize="16sp" />
+
+        <LinearLayout
+            android:id="@+id/partition"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/radio"
+            android:layout_marginVertical="5dp"
+            android:layout_marginEnd="20dp"
+            android:background="@color/mock_light_grey"
+            android:orientation="horizontal" />
+
+        <RadioButton
+            android:id="@+id/attempted"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/unattempted"
+            android:layout_marginTop="3dp"
+            android:fontFamily="@font/nunito_regular"
+            android:scaleX="0.95"
+            android:scaleY="0.95"
+            android:text="@string/Attempted"
+            android:textSize="16sp" />
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/other"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/nunito_bold"
+        android:text="@string/other"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/radio" />
+
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/clear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/other"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="20dp"
+        android:fontFamily="@font/nunito_regular"
+        android:scaleX="0.95"
+        android:scaleY="0.95"
+        android:text="@string/ClearFilter"
+        android:textSize="16sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/other" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/Apply_Filter_Card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginBottom="30dp"
+        android:backgroundTint="@color/mock_primary_color"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:background="@color/mock_primary_color"
+            android:fontFamily="@font/nunito_semibold"
+            android:gravity="center"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="10dp"
+            android:text="@string/apply"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

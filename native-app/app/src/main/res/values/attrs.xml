@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ResponsiveTextView">
+        <attr name="baseTextSize" format="dimension" />
+    </declare-styleable>
+    <declare-styleable name="AnimatedBorderView">
+        <attr name="borderWidth" format="dimension"/>
+        <attr name="cornerRadius" format="dimension"/>
+    </declare-styleable>
+</resources>

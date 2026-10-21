@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/ParentRelativeLayout"
+    android:layout_height="match_parent"
+    tools:context=".activity.MockTestDetailActivity">
+
+    <RelativeLayout
+        android:id="@+id/TopHead"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/Toolbar_Mock"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:background="@color/white">
+
+            <LinearLayout
+                android:id="@+id/back_arrow"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="20dp"
+                android:paddingEnd="17dp">
+
+                <ImageView
+                    android:id="@+id/back_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:src="@drawable/arrow_left" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/MockTextName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/back_arrow"
+                android:fontFamily="@font/urbanist_semi_bold"
+                android:text="Mock Test"
+                android:textColor="@color/black"
+                android:textSize="@dimen/toolbar_title_size"/>
+
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/Info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/Toolbar_Mock"
+            android:layout_centerHorizontal="true"
+            android:text=""
+            android:textColor="@color/black"
+            android:textSize="@dimen/secondary_text_size" />
+
+
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/TopHead"
+        android:layout_marginTop="-20dp"
+        android:paddingBottom="10dp" />
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/rank_card"
+        android:layout_width="match_parent"
+        app:cardBackgroundColor="#FED874"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="20dp"
+        app:cardCornerRadius="10dp"
+        android:visibility="gone"
+        android:layout_below="@id/recyclerview"
+        app:cardElevation="10dp"
+        android:layout_marginBottom="20dp"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content"
+            >
+
+
+            <TextView
+                android:visibility="gone"
+                android:textStyle="bold"
+                style="@style/primaryText"
+                android:id="@+id/rank"
+                android:layout_marginTop="15dp"
+                android:textAlignment="center"
+                android:textColor="@color/game_status_bar"
+                android:fontFamily="@font/poppins_light"
+                android:text="@string/your_rank"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+
+            <LinearLayout
+                android:id="@+id/subject_score_layout"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="10dp"
+                android:visibility="visible">
+
+                <TextView
+                    android:textAlignment="center"
+                    android:textSize="@dimen/primary_text_size"
+                    android:textColor="@color/game_status_bar"
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/poppins_light"
+                    android:text="@string/subject"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"/>
+
+
+                <TextView
+                    android:textAlignment="center"
+                    android:textSize="@dimen/primary_text_size"
+                    android:textColor="@color/game_status_bar"
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/poppins_light"
+                    android:text="@string/your_score"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"/>
+
+
+
+            </LinearLayout>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/subject_score_recycler"
+                tools:listitem="@layout/subject_score_layout"
+                android:layout_marginStart="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+
+
+
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/Syllabus"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:cardCornerRadius="8dp"
+        android:layout_marginRight="20dp"
+        android:visibility="gone"
+        android:layout_marginLeft="20dp"
+        android:layout_above="@+id/leaderboard"
+        app:cardElevation="0dp"
+        android:layout_marginBottom="20dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="View Syllabus"
+                android:textStyle="bold"
+                android:textSize="@dimen/primary_text_size"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/black"
+                android:layout_marginBottom="8dp"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/ic_baseline_arrow_forward_ios_24"/>
+
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/leaderboard"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:visibility="gone"
+        app:cardCornerRadius="8dp"
+        android:layout_alignParentBottom="true"
+        app:cardElevation="0dp"
+        android:layout_marginBottom="20dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_mock_test_trophy"
+                android:layout_marginLeft="10dp"
+                android:layout_centerVertical="true"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="Leaderboard"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textSize="@dimen/primary_text_size" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/ic_baseline_arrow_forward_ios_24"/>
+
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <com.github.ybq.android.spinkit.SpinKitView
+        android:id="@+id/progress"
+        style="@style/SpinKitView.FadingCircle"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_centerInParent="true"
+        android:visibility="visible"
+        app:SpinKit_Color="#19B0C1" />
+
+</RelativeLayout>

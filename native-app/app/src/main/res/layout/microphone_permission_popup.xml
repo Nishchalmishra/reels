@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="0dp"
+    android:layout_gravity="center_horizontal">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/dialog_close_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_margin="10dp"
+            android:src="@drawable/ic_close_grey"
+            app:tint="#333333"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="20dp"
+            android:paddingHorizontal="15dp"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <TextView
+                android:id="@+id/dialog_title"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/urbanist_bold"
+                android:textSize="21sp"
+                android:text="@string/mic_permission_popup_title"
+                android:textColor="@color/black_12"/>
+
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="220dp"
+                android:layout_margin="18dp"
+                android:layout_gravity="center_horizontal">
+
+                <ImageView
+                    android:id="@+id/center_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="220dp"
+                    android:scaleType="fitCenter"
+                    android:adjustViewBounds="false"
+                    android:layout_gravity="center_horizontal"
+                    android:contentDescription="@string/mic_permission_popup_title" />
+
+            </FrameLayout>
+
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/go_to_settings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                app:cardBackgroundColor="@color/arivihan_secondary_color"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="0dp">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:layout_gravity="center_vertical"
+                    android:paddingVertical="8dp"
+                    android:paddingHorizontal="10dp">
+
+                    <TextView
+                        android:id="@+id/button_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/urbanist_bold"
+                        android:paddingHorizontal="10dp"
+                        android:text="Go To Settings"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:gravity="center"/>
+
+                    <ImageView
+                        android:id="@+id/arrow_icon"
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:layout_marginHorizontal="10dp"
+                        android:src="@drawable/arrow_forward_white_24"
+                        app:tint="@color/white"
+                        tools:ignore="ContentDescription" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
+

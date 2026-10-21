@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Icon for the selected state (filled icon) -->
+    <item android:drawable="@drawable/img_lecture_navigation" android:state_checked="true" />
+    <!-- Icon for the default (unselected) state (outline icon) -->
+    <item android:drawable="@drawable/img_lecture_navigation" />
+</selector>

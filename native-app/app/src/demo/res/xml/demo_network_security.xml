@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <!-- No production host is trusted in this demo. Only the explicit demo project is allowed. -->
+    <base-config cleartextTrafficPermitted="false"><trust-anchors /></base-config>
+    <domain-config cleartextTrafficPermitted="false">
+        <domain includeSubdomains="false">pbaegeqjargtsfortsyh.supabase.co</domain>
+        <trust-anchors><certificates src="system" /></trust-anchors>
+    </domain-config>
+    <!-- Explicit loopback development media only; adb reverse maps this to the local workspace. -->
+    <domain-config cleartextTrafficPermitted="true"><domain includeSubdomains="false">127.0.0.1</domain></domain-config>
+</network-security-config>

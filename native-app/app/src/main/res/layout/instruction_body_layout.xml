@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <View
+                android:id="@+id/dotview"
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:background="@drawable/filled_circle_dot"
+                android:visibility="gone"
+                android:layout_marginHorizontal="12dp"
+                android:layout_marginTop="16dp"/>
+
+            <TextView
+                android:id="@+id/body"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Here it is the body of the text"
+                android:fontFamily="@font/nunito_semibold"
+                android:textColor="@color/black"
+                android:textSize="13sp"
+                android:layout_marginVertical="10dp"
+                android:lineSpacingExtra="2dp"/>
+
+        </LinearLayout>
+
+
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lottie_animation"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_marginTop="10dp"
+            app:lottie_loop="true"
+            android:visibility="gone" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginHorizontal="30dp"
+        android:background="@color/mock_dark_grey"
+        android:visibility="gone"
+        android:layout_marginVertical="5dp"/>
+</LinearLayout>

@@ -10,7 +10,74 @@ import type {
   Order,
 } from "./contracts";
 import { emptySnapshot, balance } from "./state";
-export class SupabaseAdapter implements DemoService {
+import type {
+  DiscoveryService,
+  DiscoveryAttempt,
+  DiscoveryState,
+  Lesson,
+} from "./discovery";
+export class SupabaseAdapter implements DemoService, DiscoveryService {
+  discoveryCatalogue() {
+    return this.rpc<Lesson[]>("ar_reels_discovery_catalogue").then((rows) =>
+      rows.map((l) => ({
+        ...l,
+        source: `/media/${l.id}`,
+        poster: `/posters/${l.id}.jpg`,
+      })),
+    );
+  }
+  discoveryState() {
+    return this.rpc<DiscoveryState>("ar_reels_discovery_state");
+  }
+  async discoveryProgress(
+    id: string,
+    from: number,
+    to: number,
+    wall: number,
+    speed: number,
+    visible: boolean,
+    playing: boolean,
+  ) {
+    await this.rpc("ar_reels_discovery_progress", {
+      p_reel: id,
+      p_from: from,
+      p_to: to,
+      p_wall: wall,
+      p_speed: speed,
+      p_visible: visible,
+      p_playing: playing,
+    });
+  }
+  discoveryOffer() {
+    return this.rpc<{ ready: boolean; id?: string; diagnostic?: string }>(
+      "ar_reels_discovery_offer",
+    );
+  }
+  async discoveryDefer(id: string) {
+    await this.rpc("ar_reels_discovery_defer", { p_batch: id });
+  }
+  discoveryStart(id: string) {
+    return this.rpc<DiscoveryAttempt>("ar_reels_discovery_start", {
+      p_batch: id,
+    });
+  }
+  discoveryReview(id: string) {
+    return this.rpc<DiscoveryAttempt>("ar_reels_discovery_review", {
+      p_attempt: id,
+    });
+  }
+  discoverySubmit(id: string, index: number, selected: number) {
+    return this.rpc<DiscoveryAttempt>("ar_reels_discovery_submit", {
+      p_attempt: id,
+      p_index: index,
+      p_selected: selected,
+    });
+  }
+  discoveryFinish(id: string) {
+    return this.rpc<DiscoveryAttempt>("ar_reels_discovery_finish", {
+      p_attempt: id,
+    });
+  }
   readonly client: SupabaseClient;
   private sessionId: string = crypto.randomUUID();
   private test: boolean;

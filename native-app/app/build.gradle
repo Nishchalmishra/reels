@@ -1,0 +1,532 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'org.jetbrains.kotlin.plugin.compose'
+    id 'com.google.devtools.ksp'
+    id 'com.google.dagger.hilt.android'
+    id 'org.jetbrains.kotlin.plugin.parcelize'
+    id 'androidx.room'
+    id 'androidx.baselineprofile'
+}
+
+android {
+    def enableCrashlyticsInDebugBuild = false
+    def enableCrashlyticsInReleaseBuild = true
+
+    // ── Environment URLs ────────────────────────────────────────────────
+    def devBaseUrl = '"https://backend-dev.arivihan.com/arivihan-platform"'
+    def dev2BaseUrl = '"https://backend-dev2.arivihan.com/arivihan-platform"'
+    def stageBaseUrl = '"https://backend-stage.arivihan.com/arivihan-platform"'
+    def stage2BaseUrl = '"https://backend-stage2.arivihan.com/arivihan-platform"'
+    def prodBaseUrl = '"https://platform-prod.arivihan.com/arivihan-platform"'
+
+    // secret properties
+    def secretPropsFile = rootProject.file("secrete.properties")
+    def secretProps = new Properties()
+    if (secretPropsFile.exists()) {
+        secretProps.load(new FileInputStream(secretPropsFile))
+    } else {
+        throw new GradleException("Missing secrete.properties file in project root!")
+    }
+
+    flavorDimensions += "env"
+    defaultConfig {
+        applicationId "arivihan.technologies.doubtbuzzter2"
+        minSdkVersion 23
+        //noinspection OldTargetApi later
+        targetSdkVersion 36
+        compileSdk 36
+
+        versionCode 637
+        versionName "2.23.66"
+
+        multiDexEnabled = true
+        buildConfigField 'boolean', 'REELS_DEMO', 'false'
+        def demoProps = new Properties()
+        def demoConfig = rootProject.file('demo.properties')
+        if (demoConfig.exists()) demoProps.load(new FileInputStream(demoConfig))
+        buildConfigField 'String', 'REELS_SUPABASE_URL', '"' + demoProps.getProperty('SUPABASE_URL', '') + '"'
+        buildConfigField 'String', 'REELS_SUPABASE_KEY', '"' + demoProps.getProperty('SUPABASE_PUBLISHABLE_KEY', '') + '"'
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        manifestPlaceholders = [
+                SECREAT_KEY    : 'SECREAT_KEY',
+                SECRET_KEY_PROD: 'SECRET_KEY_PROD',
+                API_KEY        : 'API_KEY',
+                CLARITY_ID     : 'CLARITY_ID'
+        ]
+        resourceConfigurations += ['en', 'hi']
+
+        vectorDrawables.useSupportLibrary = false
+
+        resValue "string", "facebook_app_id", "\"" + getFacebookAppId() + "\""
+        resValue "string", "facebook_client_token", "\"" + getFacebookClientToken() + "\""
+        resValue "string", "true_caller_client_id", "\"" + getTrueCallerClientId() + "\""
+        resValue "string", "branch_key_live", "\"" + getBranchKeyLive() + "\""
+        resValue "string", "branch_key_test", "\"" + getBranchKeyTest() + "\""
+
+    }
+    buildTypes {
+        release {
+            manifestPlaceholders += [crashlyticsEnabled: "${enableCrashlyticsInReleaseBuild}"]
+            minifyEnabled = true
+            shrinkResources = true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+
+            buildConfigField('String', "CLARITY_ID", "\"" + getClarityId() + "\"");
+            buildConfigField("String", "Secreat_Key", "\"" + getSecreatKey() + "\"");
+            buildConfigField("String", "API_KEY", "\"" + getApiKey() + "\"");
+            buildConfigField("String", "PLACES_API_KEY", "\"" + getMapPlacesApiKey() + "\"");
+            buildConfigField("String", "EVENT_SECRET_KEY", "\"" + getEventSecretKey() + "\"");
+            buildConfigField("String", "RAZORPAY_KEY_ID", "\"" + getRazorpayKeyId() + "\"");
+        }
+        debug {
+            manifestPlaceholders += [crashlyticsEnabled: "${enableCrashlyticsInDebugBuild}"]
+
+            buildConfigField("String", "Secreat_Key", "\"" + getSecreatKey() + "\"");
+            buildConfigField("String", "API_KEY", "\"" + getApiKey() + "\"");
+            buildConfigField("String", "PLACES_API_KEY", "\"" + getMapPlacesApiKey() + "\"");
+            buildConfigField("String", "EVENT_SECRET_KEY", "\"" + getEventSecretKey() + "\"");
+            buildConfigField("String", "RAZORPAY_KEY_ID", "\"" + getRazorpayKeyId() + "\"");
+            buildConfigField("String", "Secreat_Key_Prod", "\"" + getSecretKeyProd() + "\"");
+            buildConfigField('String', "CLARITY_ID", "\"" + getClarityId() + "\"");
+        }
+        configureEach {
+            crunchPngs = false
+        }
+
+    }
+
+    productFlavors {
+        demo {
+            dimension "env"
+            applicationIdSuffix ".reelsdemo"
+            versionNameSuffix "-isolated-demo"
+            buildConfigField 'String', 'BASE_URL', '"https://demo.invalid"'
+            buildConfigField 'boolean', 'APP_UPDATE_POPUP', 'false'
+            buildConfigField 'String', 'BASE_URL_DEV', '"https://demo.invalid"'
+            buildConfigField 'String', 'BASE_URL_STAGE', '"https://demo.invalid"'
+            buildConfigField 'String', 'BASE_URL_PROD', '"https://demo.invalid"'
+            buildConfigField 'boolean', 'REELS_DEMO', 'true'
+        }
+        prod {
+            dimension "env"
+            applicationId "arivihan.technologies.doubtbuzzter2"
+            buildConfigField 'String', 'BASE_URL', prodBaseUrl
+            buildConfigField "boolean", "APP_UPDATE_POPUP", "true"
+            buildConfigField 'String', 'BASE_URL_DEV', devBaseUrl
+            buildConfigField 'String', 'BASE_URL_STAGE', stageBaseUrl
+            buildConfigField 'String', 'BASE_URL_PROD', prodBaseUrl
+        }
+        dev {
+            dimension "env"
+            applicationId "arivihan.technologies.doubtbuzzter2"
+//            applicationIdSuffix ".dev"
+            versionNameSuffix "-dev"
+            buildConfigField 'String', 'BASE_URL', devBaseUrl
+            buildConfigField "boolean", "APP_UPDATE_POPUP", "false"
+            buildConfigField 'String', 'BASE_URL_DEV', devBaseUrl
+            buildConfigField 'String', 'BASE_URL_STAGE', stageBaseUrl
+            buildConfigField 'String', 'BASE_URL_PROD', prodBaseUrl
+        }
+        dev2 {
+            dimension "env"
+            applicationId "arivihan.technologies.doubtbuzzter2"
+//            applicationIdSuffix ".dev2"
+            versionNameSuffix "-dev2"
+            buildConfigField 'String', 'BASE_URL', dev2BaseUrl
+            buildConfigField "boolean", "APP_UPDATE_POPUP", "false"
+            buildConfigField 'String', 'BASE_URL_DEV', devBaseUrl
+            buildConfigField 'String', 'BASE_URL_STAGE', stageBaseUrl
+            buildConfigField 'String', 'BASE_URL_PROD', prodBaseUrl
+        }
+        stage {
+            dimension "env"
+            applicationId "arivihan.technologies.doubtbuzzter2"
+//            applicationIdSuffix ".stage"
+            versionNameSuffix "-stage"
+            buildConfigField 'String', 'BASE_URL', stageBaseUrl
+            buildConfigField "boolean", "APP_UPDATE_POPUP", "false"
+            buildConfigField 'String', 'BASE_URL_DEV', devBaseUrl
+            buildConfigField 'String', 'BASE_URL_STAGE', stageBaseUrl
+            buildConfigField 'String', 'BASE_URL_PROD', prodBaseUrl
+        }
+        stage2 {
+            dimension "env"
+            applicationId "arivihan.technologies.doubtbuzzter2"
+//            applicationIdSuffix ".stage2"
+            versionNameSuffix "-stage2"
+            buildConfigField 'String', 'BASE_URL', stage2BaseUrl
+            buildConfigField "boolean", "APP_UPDATE_POPUP", "false"
+            buildConfigField 'String', 'BASE_URL_DEV', devBaseUrl
+            buildConfigField 'String', 'BASE_URL_STAGE', stageBaseUrl
+            buildConfigField 'String', 'BASE_URL_PROD', prodBaseUrl
+        }
+    }
+    packagingOptions {
+        resources {
+            excludes += ['/META-INF/{AL2.0,LGPL2.1}', 'META-INF/DEPENDENCIES', 'META-INF/LICENSE', 'META-INF/LICENSE.txt', 'META-INF/license.txt', 'META-INF/NOTICE', 'META-INF/NOTICE.txt', 'META-INF/notice.txt', 'META-INF/ASL2.0']
+        }
+    }
+
+
+    compileOptions {
+        coreLibraryDesugaringEnabled = true
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = '17'
+    }
+
+
+    buildFeatures {
+        buildConfig = true
+        viewBinding = true
+        dataBinding = true
+        compose = true
+    }
+
+    room {
+        schemaDirectory "$projectDir/schemas"
+    }
+
+    namespace = 'arivihan.technologies.doubtbuzzter2'
+    lint {
+        abortOnError = false
+    }
+
+    applicationVariants.all { variant ->
+        variant.outputs.all {
+            def date = new Date().format('dd-MM-YYYY-HHmm')
+            def formattedVersion = variant.versionName.replaceAll('\\.', '')
+            outputFileName = "arivihan_${formattedVersion}_${date}-${variant.name}.apk"
+        }
+    }
+}
+
+static def getClarityId() {
+    def Properties props = new Properties()
+    props.load(new FileInputStream(new File('secrete.properties')))
+    return props['CLARITY_ID']
+}
+
+static def getSecreatKey() {
+    def Properties props = new Properties()
+    props.load(new FileInputStream(new File('secrete.properties')))
+    return props['SECREAT_KEY']
+}
+
+static def getSecretKeyProd() {
+    def Properties props = new Properties()
+    props.load(new FileInputStream(new File('secrete.properties')))
+    return props['SECRET_KEY_PROD']
+}
+
+
+static def getApiKey() {
+    def Properties props = new Properties()
+    props.load(new FileInputStream(new File('secrete.properties')))
+    return props['API_KEY']
+}
+
+static def getMapPlacesApiKey() {
+    def Properties props = new Properties()
+    props.load(new FileInputStream(new File('secrete.properties')))
+    return props['PLACES_API_KEY']
+}
+
+static def getFacebookAppId() {
+    def props = new Properties()
+    props.load(new FileInputStream(new File('secrete.properties')))
+    return props['FACEBOOK_APP_ID']
+}
+
+static def getFacebookClientToken() {
+    def props = new Properties()
+    props.load(new FileInputStream(new File('secrete.properties')))
+    return props['FACEBOOK_CLIENT_TOKEN']
+}
+
+static def getEventSecretKey() {
+    def props = new Properties()
+    props.load(new FileInputStream(new File('secrete.properties')))
+    return props['EVENT_SECRET_KEY']
+}
+
+static def getTrueCallerClientId() {
+    def props = new Properties()
+    props.load(new FileInputStream(new File('secrete.properties')))
+    return props['TRUE_CALLER_CLIENT_ID']
+}
+
+static def getBranchKeyLive() {
+    def props = new Properties()
+    props.load(new FileInputStream(new File('secrete.properties')))
+    return props['BRANCH_KEY_LIVE']
+}
+
+static def getBranchKeyTest() {
+    def props = new Properties()
+    props.load(new FileInputStream(new File('secrete.properties')))
+    return props['BRANCH_KEY_TEST']
+}
+
+static def getRazorpayKeyId() {
+    def props = new Properties()
+    props.load(new FileInputStream(new File('secrete.properties')))
+    return props['RAZORPAY_KEY_ID']
+}
+
+//repositories {
+//    flatDir {
+//        dirs 'libs'
+//    }
+//}
+
+//dependencies {
+//    implementation files('libs/android-image-cropper-2.8.0.aar')
+//    implementation files('libs/pageindicatorview-1.0.2.aar')
+//}
+
+dependencies {
+    implementation 'androidx.compose.foundation:foundation-layout:1.11.4'
+    implementation 'androidx.compose.foundation:foundation:1.11.4'
+    implementation 'androidx.compose.ui:ui-graphics:1.11.4'
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+//    implementation 'androidx.core:core-ktx:1.19.0'
+//    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
+//    implementation fileTree(dir: 'libs', include: ['*.jar', '*.aar'])
+    testImplementation 'org.assertj:assertj-core:3.27.4'
+    testImplementation 'org.testng:testng:7.11.0'
+    implementation 'androidx.appcompat:appcompat:1.7.1'
+    // Installs the packaged Baseline Profile on API 28-30, where the platform does not do it
+    // itself. Required for a Baseline Profile to actually take effect on those releases.
+    implementation 'androidx.profileinstaller:profileinstaller:1.4.1'
+    // Points the generate*BaselineProfile tasks at the generator module. Without this the tasks
+    // succeed silently without producing a profile.
+    if (rootProject.findProject(':baselineprofile') != null) baselineProfile(project(':baselineprofile'))
+    implementation 'com.google.android.material:material:1.13.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.2.1'
+    implementation "androidx.viewpager2:viewpager2:1.1.0"
+    implementation 'com.karumi:dexter:6.2.3'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test:runner:1.7.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.7.0'
+    implementation 'com.github.bumptech.glide:glide:4.16.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.16.0'
+    implementation 'com.google.firebase:firebase-database:22.0.0'
+    implementation 'com.firebase:firebase-client-android:2.5.2'
+    implementation 'com.google.firebase:firebase-firestore:26.0.0'
+    implementation 'androidx.multidex:multidex:2.0.1'
+    implementation 'com.google.firebase:firebase-auth:24.0.1'
+    implementation 'com.google.android.gms:play-services-auth:21.4.0'
+    implementation 'com.google.firebase:firebase-auth:24.0.1'
+    implementation 'com.google.firebase:firebase-storage:22.0.0'
+    implementation 'com.firebaseui:firebase-ui-auth:9.0.0'
+    implementation 'com.google.firebase:firebase-core:21.1.1'
+    implementation 'com.google.firebase:firebase-messaging:25.0.0'
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    implementation 'com.google.android.gms:play-services-auth-api-phone:18.2.0'
+    implementation 'com.github.chrisbanes:PhotoView:2.0.0'
+    implementation 'com.firebaseui:firebase-ui-database:9.0.0'
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+    implementation 'com.github.TutorialsAndroid:VSpot:v2.2.19'
+    annotationProcessor 'org.projectlombok:lombok:1.18.38'
+    implementation 'com.android.volley:volley:1.2.1'
+    //noinspection GradleDynamicVersion
+    implementation platform('com.google.firebase:firebase-bom:34.2.0')
+    // Declare the dependencies for the Crashlytics and Analytics libraries
+    // When using the BoM, you don't specify versions in Firebase library dependencies
+    implementation 'com.google.firebase:firebase-crashlytics'
+    implementation 'com.google.firebase:firebase-analytics'
+    implementation 'com.google.firebase:firebase-config'
+    implementation "androidx.media3:media3-exoplayer:1.8.0"
+    implementation "androidx.media3:media3-exoplayer-dash:1.8.0"
+    implementation "androidx.media3:media3-ui:1.8.0"
+    implementation 'androidx.media3:media3-exoplayer-hls:1.8.0'
+    implementation "androidx.media3:media3-session:1.8.0"
+    implementation 'androidx.media3:media3-datasource-cronet:1.8.0'
+    implementation 'org.jsoup:jsoup:1.21.2'
+
+    //Lottie
+    implementation "com.airbnb.android:lottie:6.6.7"
+    implementation "com.airbnb.android:lottie-compose:6.6.7"
+
+    implementation 'com.google.firebase:firebase-inappmessaging-display'
+
+    //added by Raj Kishan
+    implementation 'com.facebook.shimmer:shimmer:0.5.0'
+    //noinspection PlaySdkIndexNonCompliant will check later
+    implementation "com.facebook.android:facebook-common:18.0.3"
+    implementation 'com.github.fornewid:neumorphism:0.2.1'
+    implementation 'com.github.ybq:Android-SpinKit:1.4.0'
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+    implementation 'com.github.MikeOrtiz:TouchImageView:3.6'
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+    implementation 'com.github.shts:StoriesProgressView:2.0.0'
+    implementation 'com.google.firebase:firebase-perf'
+
+    implementation "androidx.room:room-runtime:2.7.2"
+    annotationProcessor "androidx.room:room-compiler:2.7.2"
+    implementation 'com.gu.android:toolargetool:0.3.2'
+    //noinspection NewerVersionAvailable failing with new version
+    implementation 'com.razorpay:checkout:1.6.40'
+
+    implementation 'androidx.work:work-runtime:2.10.3'
+    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:2.1.5'
+
+    implementation 'com.github.mancj:SlimChart:0.1.2'
+    implementation 'com.github.denzcoskun:ImageSlideshow:0.1.2'
+    implementation("com.google.firebase:firebase-appcheck-playintegrity")
+    implementation 'com.google.code.gson:gson:2.13.1'
+    implementation 'org.apache.commons:commons-text:1.14.0'
+    implementation 'com.davemorrissey.labs:subsampling-scale-image-view:3.10.0'
+
+    // Google's Flexbox - for wrapping ui elements
+    implementation 'com.google.android.flexbox:flexbox:3.0.0'
+    implementation 'io.github.afreakyelf:Pdf-Viewer:2.4.0'
+
+    implementation "com.android.installreferrer:installreferrer:2.2"
+
+    // Google Places API
+    implementation 'com.google.android.libraries.places:places:3.5.0'
+
+    implementation files('libs/android-image-cropper-2.8.0.aar')
+    implementation files('libs/pageindicatorview-1.0.2.aar')
+
+    implementation('de.keyboardsurfer.android.widget:crouton:1.8.5@aar') {
+        // exclusion is not necessary, but generally a good idea.
+        exclude group: 'com.google.android', module: 'support-v4'
+    }
+
+    testImplementation 'org.codehaus.groovy:groovy-all:3.0.25'
+
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'androidx.activity:activity:1.10.1'
+    implementation 'androidx.activity:activity-compose:1.10.1'
+    implementation 'androidx.compose.runtime:runtime-livedata'
+
+    compileOnly 'org.projectlombok:lombok:1.18.38'
+    annotationProcessor 'org.projectlombok:lombok:1.18.38'
+
+//    annotationProcessor 'org.projectlombok:lombok:1.18.38'
+//    implementation 'org.projectlombok:lombok:1.18.38'
+
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    implementation 'androidx.navigation:navigation-fragment:2.9.3'
+    implementation 'androidx.navigation:navigation-ui:2.9.3'
+    //noinspection Aligned16KB will do later
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'com.google.android.play:review:2.0.2'
+    implementation 'com.google.android.play:app-update:2.1.0'
+    implementation 'com.github.douglasjunior:android-simple-tooltip:1.1.0'
+    implementation 'com.facebook.android:facebook-android-sdk:18.0.3'
+
+    implementation 'com.google.android.gms:play-services-location:21.0.1'
+
+    implementation 'com.truecaller.android.sdk:truecaller-sdk:3.2.1'
+
+
+    implementation 'com.google.android.gms:play-services-ads-identifier:18.3.0'
+    implementation 'io.branch.sdk.android:library:5.21.1'
+    implementation 'store.galaxy.samsung.installreferrer:samsung_galaxystore_install_referrer:4.0.0'
+
+    // Hilt.
+    // hilt-compiler runs through KSP, NOT kapt: kapt compiles Java with -proc:none,
+    // which stops Lombok / Room / Glide from running and breaks the data binding
+    // processor. KSP leaves javac's annotation processors alone, but it only sees
+    // Kotlin sources — so @HiltAndroidApp / @Module / @AndroidEntryPoint / @Inject
+    // must sit on Kotlin classes. Java classes can still consume the graph through
+    // NetworkEntryPoint (see di/).
+    implementation 'com.google.dagger:hilt-android:2.56.2'
+    ksp 'com.google.dagger:hilt-compiler:2.56.2'
+
+    // required by Retrofit's suspend support
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.10.2'
+
+    // Jetpack Compose (used by the topper notes screen)
+    implementation platform('androidx.compose:compose-bom:2025.01.00')
+    implementation 'androidx.compose.ui:ui'
+    implementation 'androidx.compose.ui:ui-tooling-preview'
+    implementation 'androidx.compose.material3:material3'
+    // material-icons-core (included with material3) already has Check, CheckCircle,
+    // Close, Share, PlayArrow — no need for the extended set which adds thousands
+    // of icons and massively slows KSP/Compose compilation
+    implementation 'androidx.activity:activity-compose:1.10.1'
+    implementation 'androidx.fragment:fragment-ktx:1.8.6'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-compose:2.8.7'
+    implementation 'androidx.lifecycle:lifecycle-runtime-compose:2.8.7'
+    debugImplementation 'androidx.compose.ui:ui-tooling'
+    implementation 'io.coil-kt:coil-compose:2.7.0'
+
+    // Retrofit + OkHttp (see arivihan.technologies.doubtbuzzter2.network)
+    implementation platform('com.squareup.okhttp3:okhttp-bom:4.12.0')
+    implementation 'com.squareup.okhttp3:okhttp'
+    implementation 'com.squareup.okhttp3:logging-interceptor'
+    implementation 'com.squareup.retrofit2:retrofit:2.11.0'
+    implementation('com.squareup.retrofit2:converter-gson:2.11.0') {
+        // project already pins its own Gson version above
+        exclude group: 'com.google.code.gson', module: 'gson'
+    }
+
+}
+
+//dependencies {
+//    implementation('de.keyboardsurfer.android.widget:crouton:1.8.5@aar') {
+//        // exclusion is not necessary, but generally a good idea.
+//        exclude group: 'com.google.android', module: 'support-v4'
+//    }
+//}
+
+
+configurations {
+    all*.exclude group: 'cglib', module: 'cglib'
+}
+
+configurations {
+    all*.exclude group: 'commons-collections', module: 'commons-collections'
+}
+
+//configurations.configureEach {
+//    resolutionStrategy {
+//        force 'androidx.core:core:1.15.0'
+//        force 'androidx.core:core-ktx:1.15.0'
+//    }
+//}
+
+//Forcing 1.6.0 instead of 1.7.0-alpha02
+//configurations.configureEach {
+//    resolutionStrategy {
+//        force 'androidx.core:core:1.13.1'
+//    }
+//}
+
+//configurations.configureEach {
+//    resolutionStrategy.eachDependency { details ->
+//        def requested = details.requested
+//
+//        if (requested.group == "androidx.appcompat") {
+//            if (requested.name == "appcompat") {
+//                details.useVersion "1.3.1"
+//            }
+//        }
+//
+//
+//    }
+//}
+
+if (!providers.gradleProperty('demoOnly').getOrElse('true').toBoolean()) apply plugin: 'com.google.gms.google-services'
+if (!providers.gradleProperty('demoOnly').getOrElse('true').toBoolean()) apply plugin: 'com.google.firebase.crashlytics'
+if (!providers.gradleProperty('demoOnly').getOrElse('true').toBoolean()) apply plugin: 'com.google.firebase.firebase-perf'
+
+// This workspace copy is demo-only; production signing/services are intentionally unavailable.
+androidComponents {
+    beforeVariants(selector().all()) { variant ->
+        if (providers.gradleProperty('demoOnly').getOrElse('true').toBoolean())
+            variant.enable = variant.productFlavors.any { it.second == 'demo' } && variant.buildType == 'debug'
+    }
+}
+
+tasks.withType(JavaCompile).configureEach { options.encoding = "UTF-8" }

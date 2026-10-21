@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="44dp"
+    android:layout_gravity="center"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="5dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/iv_close_pop_up"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginVertical="12dp"
+            android:padding="1dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/iv_close_grey" />
+
+
+        <!-- Content without ScrollView -->
+        <LinearLayout
+            android:id="@+id/ll_logout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp">
+
+            <TextView
+                android:id="@+id/tv_logout_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="12dp"
+                android:fontFamily="@font/urbanist_bold"
+                android:text="@string/class_confirmation"
+                android:textAlignment="center"
+                android:textColor="#121212"
+                android:textSize="18sp"
+                android:letterSpacing="0.05"/>
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:layout_width="140dp"
+                android:layout_height="134dp"
+                android:layout_gravity="center"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                android:layout_marginVertical="10dp"
+                app:lottie_rawRes="@raw/on_boarding"/>
+
+            <TextView
+                android:id="@+id/tv_logout_body"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:fontFamily="@font/urbanist_medium"
+                android:text="Aapne 12th 2026 select kiya hai iska matlab aap 07 May se shuru ho rahi 12th Second Exam ki taiyari karna chahte hai?"
+                android:textAlignment="center"
+                android:textColor="#696969"
+                android:textSize="16sp"
+                android:letterSpacing="0.05"/>
+
+        </LinearLayout>
+
+        <!-- Buttons -->
+        <LinearLayout
+            android:id="@+id/ll_buttons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ll_logout"
+            android:layout_marginVertical="12dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="4dp">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cv_no"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:layout_marginStart="10dp"
+                android:backgroundTint="#E9FBFC"
+                android:layout_marginEnd="10dp"
+                android:layout_marginVertical="2dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                app:cardBackgroundColor="#FFFFFF"
+                app:cardCornerRadius="8dp">
+
+                <TextView
+                    android:id="@+id/tv_no"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/urbanist_extra_bold"
+                    android:text="@string/No"
+                    android:textColor="#1EA2B2"
+                    android:textSize="16sp"/>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cv_yes"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginVertical="2dp"
+                android:layout_weight="1"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                app:cardBackgroundColor="@color/navy_blue"
+                app:cardCornerRadius="8dp">
+
+                <TextView
+                    android:id="@+id/tv_yes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/urbanist_semi_bold"
+                    android:text="@string/Yes"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"/>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

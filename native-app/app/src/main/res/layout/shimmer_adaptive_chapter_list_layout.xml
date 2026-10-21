@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.facebook.shimmer.ShimmerFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/shimmer"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="12dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+            <include
+                layout="@layout/item_shimmer_practise_card"/>
+            <include
+                layout="@layout/item_shimmer_practise_card"/>
+            <include
+                layout="@layout/item_shimmer_practise_card"/>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="12dp"
+            android:layout_marginTop="12dp"/>
+
+        <include
+            layout="@layout/item_shimmer_chapter_card" />
+        <include
+            layout="@layout/item_shimmer_chapter_card" />
+        <include
+            layout="@layout/item_shimmer_chapter_card" />
+        <include
+            layout="@layout/item_shimmer_chapter_card" />
+        <include
+            layout="@layout/item_shimmer_chapter_card" />
+    </LinearLayout>
+
+</com.facebook.shimmer.ShimmerFrameLayout>

@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/bg_color_light">
+
+    <LinearLayout
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginBottom="20dp"
+        android:background="@color/divider_color_light"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@id/detail_layout"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <LinearLayout
+        android:id="@+id/detail_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/thumbnail_card"
+                android:layout_width="90dp"
+                android:layout_height="65dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="14dp"
+                android:backgroundTint="@color/mock_lightest_grey"
+                android:theme="@style/Theme.MaterialComponents.Light"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="0dp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/thumbnail_image"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/demo_thumbnail" />
+
+                    <LinearLayout
+                        android:id="@+id/thumbnail_locked_image"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/lock_color_light"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/ic_lock_chapter"/>
+
+                    </LinearLayout>
+
+                </FrameLayout>
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/img_live"
+                    android:layout_width="wrap_content"
+                    android:layout_height="18dp"
+                    android:layout_gravity="bottom"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginBottom="3dp"
+                    app:cardBackgroundColor="#E20000"
+                    app:cardCornerRadius="9dp"
+                    app:cardElevation="0dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/urbanist_semi_bold"
+                        android:gravity="center"
+                        android:paddingHorizontal="8dp"
+                        android:paddingVertical="2dp"
+                        android:text="@string/live"
+                        android:textColor="#ffffff"
+                        android:textSize="11sp"/>
+                    />
+                </androidx.cardview.widget.CardView>
+
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/dialog_animation"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="bottom"
+                    android:layout_marginStart="2dp"
+                    android:layout_marginBottom="-4dp"
+                    android:visibility="gone"
+                    app:lottie_autoPlay="true"
+                    app:lottie_loop="true"
+                    app:lottie_rawRes="@raw/lecture_live_animation" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_upcoming"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginStart="4dp"
+                    android:visibility="gone"
+                    android:layout_marginBottom="3dp"
+                    app:cardBackgroundColor="@color/streak_yellow"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="2dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/urbanist_semi_bold"
+                        android:gravity="center"
+                        android:paddingHorizontal="8dp"
+                        android:paddingVertical="2dp"
+                        android:text="@string/upcoming"
+                        android:textColor="@color/black"
+                        android:textSize="11sp"/>
+                        />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_rescheduled"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginStart="4dp"
+                    android:visibility="gone"
+                    android:layout_marginBottom="3dp"
+                    app:cardBackgroundColor="@color/medium_text_color"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="2dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/urbanist_semi_bold"
+                        android:gravity="center"
+                        android:paddingHorizontal="8dp"
+                        android:paddingVertical="2dp"
+                        android:text="@string/reschedule"
+                        android:textColor="@color/btn_enabled_text"
+                        android:textSize="11sp"/>
+                    />
+                </androidx.cardview.widget.CardView>
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/new_badge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|end"
+                app:cardBackgroundColor="@color/streak_yellow"
+                app:cardCornerRadius="2dp"
+                app:cardElevation="2dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/urbanist_semi_bold"
+                    android:gravity="center"
+                    android:paddingHorizontal="4dp"
+                    android:text="@string/New"
+                    android:textColor="@color/black"
+                    android:textSize="10sp" />
+            </androidx.cardview.widget.CardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/chapter_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/urbanist_semi_bold"
+                android:text="1. Physics Syllabus"
+                android:textColor="@color/chapter_name_light"
+                android:textSize="14sp" />
+
+            <LinearLayout
+                android:id="@+id/info_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:paddingVertical="5dp"
+                android:paddingEnd="10dp">
+`
+                <TextView
+                    android:id="@+id/chapter_teacher"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="1dp"
+                    android:fontFamily="@font/urbanist_medium"
+                    android:text="By Ritesh sir"
+                    android:textColor="@color/chapter_name_light"
+                    android:textSize="11sp" />
+
+                <ImageView
+                    android:id="@+id/info_button"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_marginStart="8dp"
+                    android:src="@drawable/ic_info_24"
+                    app:tint="@color/arivihan_secondary_color"
+                    />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_live_rescheduled"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/urbanist_semi_bold"
+                android:maxLines="1"
+                android:text="@string/rescheduled_message"
+                android:textColor="@color/chapter_name_info"
+                android:textSize="10sp"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/tv_live_information"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/urbanist_semi_bold"
+                android:maxLines="1"
+                android:text="5 Nov को शाम 07:00 बजे लाइव"
+                android:textColor="@color/chapter_name_info_light"
+                android:textSize="10sp"
+                android:visibility="visible" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

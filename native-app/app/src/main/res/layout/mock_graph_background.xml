@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="350dp"
+    android:orientation="horizontal">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/x_axis_scales_recyler_view"
+        android:layout_width="45dp"
+        android:layout_height="match_parent"
+        tools:itemCount="5"
+        tools:listitem="@layout/vertical_number_item"
+        android:nestedScrollingEnabled="false"/>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:layout_marginTop="10dp">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/x_axis_dots_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_marginEnd="10dp"
+            android:layout_height="350dp"
+            tools:itemCount="5"
+            tools:listitem="@layout/dot_view"
+            android:nestedScrollingEnabled="false"/>
+
+        <LinearLayout
+            android:id="@+id/graph_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:paddingHorizontal="5dp"
+            android:weightSum="3">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:gravity="center_horizontal"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <ProgressBar
+                    android:id="@+id/your_score_progress"
+                    style="@android:style/Widget.ProgressBar.Horizontal"
+                    android:layout_width="45dp"
+                    android:layout_height="282dp"
+                    android:progress="50"
+                    android:progressDrawable="@drawable/progress_bar_vertical_drawable_blue" />
+
+                <TextView
+                    android:textSize="13sp"
+                    android:gravity="center"
+                    android:text="@string/You"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/nunito_bold"
+                    android:textColor="@color/black"/>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_horizontal">
+
+                <ProgressBar
+                    android:id="@+id/topper_score_progress"
+                    style="@android:style/Widget.ProgressBar.Horizontal"
+                    android:layout_width="45dp"
+                    android:layout_height="282dp"
+                    android:progress="78"
+                    android:progressDrawable="@drawable/progress_bar_vertical_drawable_green" />
+
+                <TextView
+                    android:gravity="center"
+                    android:textSize="13sp"
+                    android:text="@string/Topper"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/nunito_bold"
+                    android:textColor="@color/black"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_horizontal">
+
+                <ProgressBar
+                    android:id="@+id/average_score_progress"
+                    style="@android:style/Widget.ProgressBar.Horizontal"
+                    android:layout_width="45dp"
+                    android:layout_height="282dp"
+                    android:progress="25"
+                    android:progressDrawable="@drawable/progress_bar_vertical_drawable_red" />
+
+                <TextView
+                    android:gravity="center"
+                    android:textSize="13sp"
+                    android:text="@string/Average"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/nunito_bold"
+                    android:textColor="@color/black"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+</LinearLayout>

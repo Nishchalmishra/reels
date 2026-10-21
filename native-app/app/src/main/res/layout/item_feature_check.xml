@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    item_feature_check.xml
+    Reusable row: green circle check icon + feature label text.
+    Usage: <include layout="@layout/item_feature_check" … />
+    Then in Activity: itemView.findViewById(R.id.feature_label).setText("LIVE Classes")
+-->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+    <!-- Green circle with tick -->
+    <ImageView
+        android:layout_width="17dp"
+        android:layout_height="17dp"
+        android:layout_marginEnd="7dp"
+        android:src="@drawable/tick_mark"
+        android:scaleType="centerInside" />
+
+    <!-- Feature label — set text programmatically -->
+    <TextView
+        android:id="@+id/feature_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/urbanist_medium"
+        android:textColor="#1A2D3D"
+        android:textSize="13.5sp"
+        android:lineSpacingMultiplier="1.2" />
+
+</LinearLayout>

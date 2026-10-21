@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/fui_transparent"
+    android:layout_marginLeft="25dp"
+    android:layout_marginRight="25dp"
+    android:maxHeight="320dp"
+    android:layout_marginBottom="5dp"
+    android:layout_marginTop="5dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        app:cardCornerRadius="24dp"
+        app:cardElevation="8dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:src="@drawable/ic_close_black" />
+
+    </androidx.cardview.widget.CardView>
+
+
+    <RelativeLayout
+        android:id="@+id/relativeLayoutDoubt"
+        android:layout_width="match_parent"
+        android:layout_margin="15dp"
+        android:maxHeight="320dp"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/linearLayoutDoubt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/container_border"
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/doubt_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginBottom="5dp"
+                    android:paddingLeft="0dp"
+                    android:paddingTop="0dp"
+                    android:paddingEnd="0dp"
+                    android:paddingBottom="0dp"
+                    android:textAlignment="center"
+                    app:cardBackgroundColor="@color/navy_blue"
+                    app:cardCornerRadius="5dp"
+                    app:cardElevation="5dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:text="@string/doubt_ready_for_publishing"
+                            android:textAlignment="center"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/primary_text_size" />
+
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+
+                <TextView
+                    android:id="@+id/doubt_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="10dp"
+                    android:fontFamily="@font/poppins_light"
+                    android:text="@string/select_your_publishing_method"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textIsSelectable="true"
+                    android:textSize="18sp" />
+
+                <RelativeLayout
+                    android:id="@+id/progress"
+                    android:layout_width="wrap_content"
+                    android:visibility="gone"
+                    android:layout_height="match_parent">
+
+                    <com.github.ybq.android.spinkit.SpinKitView
+                        android:id="@+id/progress_dataLoading"
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
+                        style="@style/SpinKitView.FadingCircle"
+                        app:SpinKit_Color="#19B0C1"
+                        android:layout_margin="25dp"/>
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/migration_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="10dp"
+                    android:text="@string/select_your_publishing_method"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:visibility="gone"
+                    android:textIsSelectable="true"
+                    android:textSize="@dimen/secondary_text_size" />
+
+
+
+                <LinearLayout
+                    android:id="@+id/linear_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/ask_points"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:theme="@style/Theme.MaterialComponents.Light"
+                        app:cardBackgroundColor="@color/navy_blue"
+                        app:cardCornerRadius="5dp"
+                        app:strokeWidth="1dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+
+                            <TextView
+                                android:id="@+id/cancel_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:fontFamily="@font/poppins_light"
+                                android:text="@string/use_points"
+                                android:textAlignment="center"
+                                android:textColor="@color/white"
+                                android:textStyle="bold" />
+
+                        </RelativeLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/revise_concept"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:theme="@style/Theme.MaterialComponents.Light"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="5dp"
+                        app:strokeColor="@color/navy_blue"
+                        app:strokeWidth="1dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+
+                            <TextView
+                                android:textAlignment="center"
+                                android:id="@+id/confirm_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:fontFamily="@font/poppins_light"
+                                android:text="@string/select_your_publishing_method"
+                                android:textColor="@color/navy_blue"
+                                android:textStyle="bold" />
+
+                        </RelativeLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
+    </RelativeLayout>
+
+</RelativeLayout>

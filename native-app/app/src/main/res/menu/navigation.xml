@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/outline_backup_24"
+        android:title="@string/upload" />
+
+    <item
+        android:id="@+id/navigation_dashboard"
+        android:checked="true"
+        android:icon="@drawable/outline_add_a_photo_24"
+        android:title="@string/click" />
+
+    <item
+        android:id="@+id/navigation_reels"
+        android:checked="true"
+        android:icon="@drawable/ic_baseline_smart_display_24"
+        android:title="@string/shots" />
+
+    <item
+        android:id="@+id/navigation_type_doubt"
+        android:icon="@drawable/outline_keyboard_24"
+        android:title="@string/type" />
+
+
+    <item
+        android:id="@+id/navigation_notifications"
+        android:icon="@drawable/outline_perm_identity_24"
+        android:title="@string/profile" />
+
+</menu>

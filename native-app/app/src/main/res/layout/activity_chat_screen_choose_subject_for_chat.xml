@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.ChatScreenChooseSubjectForChat">
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/choose_subject_background" />
+
+            <!--    HEADER-->
+            <RelativeLayout
+                android:id="@+id/screen_header"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:paddingHorizontal="18dp">
+
+                <ImageView
+                    android:id="@+id/hamburg_icon"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/icon_menu_home" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="12dp"
+                    android:layout_toRightOf="@id/hamburg_icon"
+                    android:fontFamily="@font/urbanist_medium"
+                    android:text="@string/instant_guru"
+                    android:textColor="@color/black"
+                    android:textSize="18dp" />
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="12dp"
+                    android:layout_toStartOf="@id/new_chat_btn"
+                    android:src="@drawable/icon_share"
+                    android:visibility="gone"/>
+
+                <LinearLayout
+                    android:id="@+id/new_chat_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/finish_button_border"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="6dp"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/urbanist_semi_bold"
+                        android:text="@string/new_chat"
+                        android:textColor="@color/black"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/how_to_card"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="5dp"
+                    android:layout_marginEnd="1dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginHorizontal="8dp"
+                        android:layout_marginVertical="5dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/How_to_Ask"
+                            android:fontFamily="@font/urbanist_medium"
+                            android:textSize="16dp"
+                            android:textColor="#99000000"/>
+
+                        <ImageView
+                            android:id="@+id/how_to_video_icon"
+                            android:layout_width="18dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/how_to_question_mark" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+            </RelativeLayout>
+            <!--    HEADER END-->
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/screen_header"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingBottom="60dp">
+
+                <!--            <com.airbnb.lottie.LottieAnimationView-->
+                <!--                android:layout_width="wrap_content"-->
+                <!--                android:layout_height="200dp"-->
+                <!--                app:lottie_rawRes="@raw/choose_subject_thumb"-->
+                <!--                app:lottie_autoPlay="true"-->
+                <!--                app:lottie_loop="true"/>-->
+                <androidx.core.widget.NestedScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fillViewport="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center_horizontal">
+
+
+                        <ImageView
+                            android:layout_width="200dp"
+                            android:layout_height="200dp"
+                            android:src="@drawable/choose_subject_thumb" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/urbanist_semi_bold"
+                            android:text="@string/got_a_doubt"
+                            android:textColor="@color/black"
+                            android:textSize="18dp" />
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/urbanist_bold"
+                            android:text="@string/got_all_the_answers"
+                            android:textColor="@color/black"
+                            android:textSize="22dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="50dp"
+                            android:fontFamily="@font/urbanist_bold"
+                            android:text="@string/choose_your_subject"
+                            android:textColor="#5D5D5D"
+                            android:textSize="16dp" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/doubt_chat_recycler_view"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginVertical="8dp"
+                            android:nestedScrollingEnabled="false"
+                            android:focusableInTouchMode="false"
+                            android:gravity="center_horizontal"
+                            android:paddingVertical="0dp"
+                            tools:itemCount="2"
+                            tools:listitem="@layout/doubt_subject_selection" />
+                    </LinearLayout>
+
+                </androidx.core.widget.NestedScrollView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/instant_guru_disclaimer_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="20dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:visibility="gone"
+                tools:ignore="UseCompoundDrawables">
+
+                <ImageView
+                    android:id="@+id/info_button"
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:src="@drawable/ic_info_24"/>
+
+                <TextView
+                    android:id="@+id/instant_guru_disclaimer_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="2dp"
+                    android:fontFamily="@font/urbanist_semi_bold"
+                    android:textSize="12sp"
+                    android:textColor="#8D8D8D"
+                    android:text="@string/disclaimer_text"/>
+            </LinearLayout>
+
+
+            <include
+                android:id="@+id/how_to_video_view"
+                layout="@layout/activity_mock_demo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"/>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start">
+
+            <include layout="@layout/layout_doubt_chat_drawer" />
+        </LinearLayout>
+
+    </androidx.drawerlayout.widget.DrawerLayout>
+
+</RelativeLayout>

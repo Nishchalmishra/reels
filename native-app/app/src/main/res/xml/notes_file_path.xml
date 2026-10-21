@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <!-- Allow sharing files from app-specific Downloads dir -->
+    <external-files-path
+        name="downloads"
+        path="Download/" />
+</paths>

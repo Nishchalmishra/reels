@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<!--    Very small phones   -->
+
+    <dimen name="text_sp_09">9sp</dimen> <!-- 9 * 0.95 = 8.55 -> 9 -->
+    <dimen name="text_sp_10">10sp</dimen> <!-- 10 * 0.95 = 9.5 -> 10 -->
+    <dimen name="text_sp_11">10sp</dimen> <!-- 11 * 0.95 = 10.45 -> 10 -->
+    <dimen name="text_sp_12">11sp</dimen> <!-- 12 * 0.95 = 11.4 -> 11 -->
+    <dimen name="text_sp_13">12sp</dimen> <!-- 13 * 0.95 = 12.35 -> 12 -->
+    <dimen name="text_sp_14">13sp</dimen> <!-- 14 * 0.95 = 13.3 -> 13 -->
+    <dimen name="text_sp_15">14sp</dimen> <!-- 15 * 0.95 = 14.25 -> 14 -->
+    <dimen name="text_sp_16">15sp</dimen> <!-- 16 * 0.95 = 15.2 -> 15 -->
+    <dimen name="text_sp_17">16sp</dimen> <!-- 17 * 0.95 = 16.15 -> 16 -->
+    <dimen name="text_sp_18">17sp</dimen> <!-- 18 * 0.95 = 17.1 -> 17 -->
+    <dimen name="text_sp_19">18sp</dimen> <!-- 19 * 0.95 = 18.05 -> 18 -->
+    <dimen name="text_sp_20">19sp</dimen> <!-- 20 * 0.95 = 19 -> 19 -->
+    <dimen name="text_sp_21">20sp</dimen> <!-- 21 * 0.95 = 19.95 -> 20 -->
+    <dimen name="text_sp_22">21sp</dimen> <!-- 22 * 0.95 = 20.9 -> 21 -->
+    <dimen name="text_sp_23">22sp</dimen> <!-- 23 * 0.95 = 21.85 -> 22 -->
+    <dimen name="text_sp_24">23sp</dimen> <!-- 24 * 0.95 = 22.8 -> 23 -->
+    <dimen name="text_sp_25">23sp</dimen> <!-- 25 * 0.95 = 23.75 -> 24 -->
+    <dimen name="text_sp_26">24sp</dimen> <!-- 26 * 0.95 = 24.7 -> 25 -->
+    <dimen name="text_sp_27">25sp</dimen> <!-- 27 * 0.95 = 25.65 -> 26 -->
+    <dimen name="text_sp_28">26sp</dimen> <!-- 28 * 0.95 = 26.6 -> 27 -->
+    <dimen name="text_sp_29">27sp</dimen> <!-- 29 * 0.95 = 27.55 -> 28 -->
+    <dimen name="text_sp_30">28sp</dimen> <!-- 30 * 0.95 = 28.5 -> 29 -->
+    <dimen name="text_sp_31">29sp</dimen> <!-- 31 * 0.95 = 29.45 -> 30 -->
+    <dimen name="text_sp_32">30sp</dimen> <!-- 32 * 0.95 = 30.4 -> 31 -->
+    <dimen name="text_sp_33">31sp</dimen> <!-- 33 * 0.95 = 31.35 -> 32 -->
+    <dimen name="text_sp_34">31sp</dimen> <!-- 34 * 0.95 = 32.3 -> 33 -->
+    <dimen name="text_sp_35">32sp</dimen> <!-- 35 * 0.95 = 33.25 -> 34 -->
+    <dimen name="text_sp_36">33sp</dimen> <!-- 36 * 0.95 = 34.2 -> 35 -->
+    <dimen name="text_sp_37">34sp</dimen> <!-- 37 * 0.95 = 35.15 -> 36 -->
+    <dimen name="text_sp_38">35sp</dimen> <!-- 38 * 0.95 = 36.1 -> 37 -->
+    <dimen name="text_sp_39">36sp</dimen> <!-- 39 * 0.95 = 37.05 -> 38 -->
+    <dimen name="text_sp_40">36sp</dimen>
+
+</resources>

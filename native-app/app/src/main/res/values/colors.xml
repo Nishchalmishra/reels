@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+<!--    //primary-->
+    <color name="colorPrimary">#008080</color>
+    <color name="colorPrimaryDark">#00574B</color>
+
+<!--    //error-->
+    <color name="error_btn_primary_bg">#FF5065</color>
+    <color name="error_btn_primary_tx">#FFFFFF</color>
+
+    <color name="error_btn_secondary_bg">#1AFD0006</color>
+    <color name="error_btn_secondary_tx">#FD0006</color>
+
+    <color name="error_btn_secondary_bg_disable">#FFF7F7</color>
+    <color name="error_btn_secondary_tx_disable">#FEB2B4</color>
+
+
+    <!--    //new color - after 51-->
+    <color name="bg_color">#FFFFFF</color>
+    <color name="text_primary">@color/black</color>
+    <color name="text_secondary">#747474</color>
+
+    <color name="card_color_secondary">#FFFFFF</color>
+
+    <color name="status_bar_color">#FFFFFF</color>
+    <color name="navigation_bar_color">#FFFFFF</color>
+
+    <color name="control_normal">#666666</color>
+    <color name="divider_color">#E2E2E2</color>
+    <color name="payment_summary_total_bg">@android:color/transparent</color>
+    <color name="payment_summary_stroke">@android:color/transparent</color>
+
+<!--    //pro plan sub-->
+    <color name="bg_layout_por_plan_tag_line">#1e1e1e</color>
+
+<!--    //btn color-->
+    <color name="new_lecture_live_btn_text">#26C6DA</color>
+    <color name="new_lecture_live_btn">#D4F4F8</color>
+    <color name="new_lecture_premium_btn">#121212</color>
+
+<!--    //chapter name layout-->
+    <color name="chapter_name">@color/black</color>
+    <color name="chapter_name_lock">@color/mock_dark_grey</color>
+    <color name="lock_color">#99FFFFFF</color>
+    <color name="chapter_name_teacher">@color/black</color>
+    <color name="chapter_name_info">#888888</color>
+    <color name="bg_lock_icon">#BFFFFFFF</color>
+
+<!--    //light-->
+    <color name="bg_color_light">#FFFFFF</color>
+    <color name="chapter_name_light">@color/black</color>
+    <color name="chapter_name_lock_light">@color/mock_dark_grey</color>
+    <color name="chapter_name_info_light">#888888</color>
+    <color name="divider_color_light">#E2E2E2</color>
+    <color name="lock_color_light">#99FFFFFF</color>
+
+<!--    //dark-->
+    <color name="bg_color_dark">#141414</color>
+    <color name="chapter_name_dark">#E5FFFFFF</color>
+    <color name="chapter_name_lock_dark">#99FFFFFF</color>
+    <color name="divider_color_dark">#14FFFFFF</color>
+    <color name="lock_color_dark">#99FFFFFF</color>
+
+
+    <!--    //bg round card-->
+    <color name="card_top">#FFFFFF</color>
+    <color name="card_shadow">#22000000</color>
+
+    <!--    //contact us btn color-->
+    <color name="contact_us_primary_bg_color">#26C6DA</color>
+    <color name="contact_us_primary_text_color">#ffffff</color>
+    <color name="contact_us_secondary_bg_color">#D7FDFF</color>
+    <color name="contact_us_secondary_text_color">@color/arivihan_secondary_color</color>
+
+
+<!--    //color-->
+    <color name="green">#4CAF50</color>
+    <color name="lightGreen">#E1FAE2</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="viewBg">#f1f5f8</color>
+    <color name="colorAccent2">#FDE6EE</color>
+    <color name="album_title">#4c4c4c</color>
+    <color name="grey_100">#F5F5F5</color>
+    <color name="grey_00">#FAF7F7</color>
+    <color name="white">#FFF</color>
+    <color name="black">#000</color>
+    <color name="grey_300">#E0E0E0</color>
+    <color name="grey_400">#BDBDBD</color>
+    <color name="grey_500">#9E9E9E</color>
+    <color name="grey_light">#F1F0F0</color>
+    <color name="grey_transparent">#C9141313</color>
+    <color name="bg_gradient_start">#31244e</color>
+
+    <color name="tablayout_tab_inactive">#e4e4e4</color>
+
+    <!-- ── Leaderboard ──────────────────────────────────── -->
+    <!-- Podium block colour -->
+    <color name="podium_teal">#7DD8E8</color>
+
+    <!-- Rank text colours -->
+    <color name="rank_top3">#5CC8D8</color>
+    <color name="rank_default">#333333</color>
+
+    <!-- Reward icon tints -->
+    <color name="reward_book_tint">#5CC8D8</color>
+    <color name="reward_headphone_tint">#FF8C69</color>
+
+    <!-- Avatar ring colours (used in bg_avatar_*.xml) -->
+    <color name="ring_gold">#F5C518</color>
+    <color name="ring_silver">#C0C0C0</color>
+    <color name="ring_bronze">#EEC573</color>
+
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="purple_card">#9F59AE</color>
+
+    <color name="bg_gradient_end">#6b394c</color>
+    <color name="not_selected">#9E9E9E</color>
+    <color name="selected">#E9FBFC</color>
+    <color name="snackbar_action_text_color">#fff</color>
+    <color name="dark_grey">#676666</color>
+    <color name="arivihan_primary_color">#00838f</color>
+    <color name="arivihan_secondary_color">#26c6da</color>
+    <color name="golden">#F2C044</color>
+    <color name="off_white">#FAF9F6</color>
+    <color name="white_transparent">#AEFFFFFF</color>
+    <color name="background">#E9E9E9</color>
+    <color name="off_white_background">#F7F7F7</color>
+    <color name="streak_yellow">#FCC53C</color>
+    <color name="red">#F44336</color>
+    <color name="navy_blue">#19B0C1</color>
+    <color name="light_navy_blue">#3326C6DA</color>
+    <color name="lighter_navy_blue">#1426C6DA</color>
+    <color name="chapter_header">#A19BDA</color>
+    <color name="Question_header">#26C6DA</color>
+    <color name="main_status_bar">#F757C0CC</color>
+    <color name="game_status_bar">#7100CD</color>
+    <color name="compete_status_bar">#DDB6F3</color>
+    <color name="game_ques_status_bar">#552F85</color>
+
+    <color name="first">#F3E888</color>
+    <color name="second">#7A918E71</color>
+    <color name="third">#F1E578</color>
+
+    <color name="match_green">#4CAF50</color>
+    <color name="match_red">#AA1616</color>
+    <color name="Profile_header">#26C6DA</color>
+    <color name="chapter_header_light">#E4E3EC</color>
+    <color name="orange">#FFA500</color>
+    <color name="todolist_dialog_background">#FF303030</color>
+    <color name="grey_extracted_layout" >#F2F1F1</color>
+    <color name="marks_color">#3B92A0</color>
+    <color name="primary_icon_color">#3B92A0</color>
+    <color name="check_text_color">#80000000</color>
+
+
+    <color name="dark_blue">#02858D</color>
+    <color name="light_blue">#D3F8FA</color>
+    <color name="mock_mark">#FEDAB8</color>
+    <color name="mock_green">#84DCC6</color>
+    <color name="mock_light_green">#E0F6F1</color>
+    <color name="mock_red">#FF9CA8</color>
+    <color name="locked_red">#A90202</color>
+    <color name="mock_light_red">#FFEBEE</color>
+    <color name="light_red">#FADFE6</color>
+    <color name="mock_light_grey">#E2E2E2</color>
+    <color name="mock_darker_grey">#9905040E</color>
+    <color name="mock_blue">#6625C6DA</color>
+    <color name="mock_light_blue">#E9FBFC</color>
+    <color name="mock_light_blue2">#D4F4F8</color>
+    <color name="mock_dark_grey">#8005040E</color>
+    <color name="mock_grey">#5005040E</color>
+    <color name="mock_lightest_grey">#F6F6F6</color>
+    <color name="mock_card_boundary">#2605040E</color>
+    <color name="mock_primary_color">#25C6DA</color>
+    <color name="highlight_color">#2494A3</color>
+    <color name="locked_text_color">#929292</color>
+    <color name="locked_background_color">#F2F2F2</color>
+    <color name="video_layout_background_color">#1F25C6DA</color>
+
+    <color name="subscription_blue">#26C6DA</color>
+    <color name="exo_player_progress_blue">#26C6DA</color>
+    <color name="exo_player_light_progress_blue">#3B26C6DA</color>
+    <color name="subscription_highlight_color">#14C8CF</color>
+    <color name="doubt_progress_color">#f7b140</color>
+    <color name="subscription_green">#189C4D</color>
+    <color name="subscription_light_green">#1A189C4D</color>
+    <color name="lighter_grey">#F5F5FA</color>
+    <color name="subscription_light_grey">#919191</color>
+    <color name="almost_black">#222121</color>
+    <color name="subscription_type_grey">#808080</color>
+    <color name="subscription_type_divider">#EFEFEF</color>
+    <color name="subscription_price_grey">#99000000</color>
+    <color name="subscription_card_background">#E9FBFC</color>
+    <color name="subscription_questions">#515151</color>
+
+
+
+    <color name="background_youtube">#FC3D3D3D</color>
+    <color name="mock_title_color">#B305040E</color>
+    <color name="title_color">#CC05040E</color>
+    <color name="title_color_light">#6605040E</color>
+    <color name="practice_partial_completed">#78DCE8</color>
+    <color name="dot_color">#9B9B9F</color>
+
+    <!--doubt-chat-->
+    <color name="doubt_background_blue">#E9FBFC</color>
+    <color name="doubt_highlight_blue">#14C8CF</color>
+    <color name="doubt_image_highlight_blue">#8014C8CF</color>
+    <color name="doubt_image_highlight_grey">#80000000</color>
+    <color name="doubt_green">#189C4D</color>
+    <color name="doubt_background_green">#1A189C4D</color>
+    <color name="doubt_date_grey">#808080</color>
+    <color name="step_view_dot">#9CA3AF</color>
+    <color name="button_light">#80CCCCCC</color>
+    <color name="button_dark">#CCCCCCCC</color>
+    <color name="step_dot">#D1D5DB</color>
+
+    <!--practice-problem-->
+    <color name="right_tab">#A8E0BE</color>
+    <color name="wrong_tab">#F8DDE4</color>
+    <color name="selected_tab_match_these">#26C6DA</color>
+    <color name="not_selected_tab_match_these">#999999</color>
+    <color name="medium_marks_text">#F7B141</color>
+    <color name="medium_marks_card">#1AF7B141</color>
+    <color name="text_background">#F6F6F6</color>
+    <color name="text_card_stroke">#26000000</color>
+    <color name="bottom_layout_color">#CCE9FBFC</color>
+
+    <!--mockTest-->
+    <color name="tab_not_selected_text">#9905040E</color>
+    <color name="tab_not_selected_text_boundary">#2605040E</color>
+
+    <color name="context_data_recommended_button_color">#D7F4F7</color>
+    <color name="accuracy_yellow">#FABC4B</color>
+    <color name="my_subscriptions_lightest_blue">#E9F9FB</color>
+    <color name="my_subscriptions_dark_red">#FC4250</color>
+    <color name="my_subscriptions_red">#FADFE6</color>
+
+
+    <color name="unselected_step_blue">#6626C6DA</color>
+    <color name="medium_text_color">#5A5A5A</color>
+    <color name="disabled_next_color">#D9D9D9</color>
+    <color name="amp_transparent">#00000000</color>
+
+    <color name="lecture_feature_card_background">#F2F2F2</color>
+    <color name="lecture_like_active_color">#25c4d9</color>
+    <color name="lecture_dislike_active_color">#99999e</color>
+    <color name="color_transparent">#00000000</color>
+    <color name="gray_e5">#E5E5E5</color>
+    <color name="gray_d1">#D1D1D1</color>
+    <color name="gray_e6">#E6E6E6</color>
+    <color name="gray_8a">#8A8A8A</color>
+    <color name="gray_8e">#8E8E8E</color>
+    <color name="gray_88">#888888</color>
+
+    <color name="black_12">#121212</color>
+    <color name="dark_theme_secondary_color">#8f8f8f</color>
+
+    <color name="dark_theme_card_bg_color">#1e2829</color>
+
+
+    <color name="video_player_setting_text_unselected">#B22B2829</color>
+
+
+
+    <color name="btn_disabled_bg">#E5F8FB</color>
+    <color name="btn_enabled_bg">#26C6DA</color>
+
+    <color name="btn_disabled_text">#26C6DA</color>
+    <color name="btn_enabled_text">#FFFFFF</color>
+
+    <color name="input_name_stroke_default">#ebebeb</color>
+    <color name="input_name_stroke_error">#FF5065</color>
+
+    <color name="input_name_bg_default">#FFFFFF</color>
+    <color name="input_name_bg_error">#FFF3F4</color>
+
+    <color name="gray_f6">#F6F7F9</color>
+    <color name="teal_v2">#CEEBF1</color>
+    <color name="teal_light">#E5F8FB</color>
+
+    <color name="delete_verify_btn_bg">#1A000000</color>
+    <color name="delete_verify_btn_tx">#4D000000</color>
+
+    <!-- shimmer skeleton -->
+    <color name="shimmer_base_color">#F3F3F3</color>
+    <color name="shimmer_highlight_color">#E7E7E7</color>
+
+    <!-- correct / wrong answer states -->
+    <color name="correct_answer_text_color">#375C0E</color>
+    <color name="wrong_answer_text_color">#C01414</color>
+    <color name="correct_option_card_bg">#DAF2E4</color>
+    <color name="wrong_option_card_bg">#FFF0F0</color>
+
+    <!-- error / destructive button -->
+    <color name="error_button_color">#F36359</color>
+
+    <!-- grid state backgrounds -->
+    <color name="grid_selected_bg">#B1EEF5</color>
+    <color name="grid_disabled_bg">#D9DADC</color>
+    <color name="grid_wrong_bg">#FFBCB8</color>
+
+    <!-- timetable -->
+    <color name="timetable_today_bg">#00BCD4</color>
+    <color name="timetable_normal_bg">#F4F5F9</color>
+    <color name="dark_text_color">#1A1A1A</color>
+
+    <!-- misc text / ui -->
+    <color name="medium_grey_text">#555555</color>
+    <color name="comment_divider_color">#EBEBEB</color>
+    <color name="feature_badge_yellow">#FFE26D</color>
+    <color name="mock_chapter_card_bg">#FED874</color>
+    <color name="dislike_card_bg">#FFE1E5</color>
+    <color name="board_question_highlight">#CDEDF3</color>
+    <color name="profile_badge_stroke">#13737F</color>
+    <color name="profile_batch_name">#D8FBFF</color>
+    <color name="spannable_teal_color">#1D919E</color>
+    <color name="personalized_subject_fallback_bg">#EDFFEC</color>
+    <color name="timer_marker_yellow">#C39504</color>
+    <color name="material_blue">#2196F3</color>
+    <color name="download_note_selected_bg">#1E25C6DA</color>
+    <color name="video_quality_selected_bg">#1A26C6DA</color>
+
+    <!-- notification -->
+    <color name="notification_btn_blue">#1E88E5</color>
+    <color name="notification_mini_title_orange">#FF9800</color>
+    <color name="notification_title_dark">#212121</color>
+    <!-- custom RemoteViews text — night variant in values-night/colors.xml -->
+    <color name="notification_title_color">#212121</color>
+    <color name="notification_sub_title_color">#757575</color>
+
+    <!-- notification -->
+    <color name="notification_card_title">#070607</color>
+    <color name="notification_card_sub_title">#313131</color>
+    <color name="notification_live_badge_bg">#CB141C</color>
+    <color name="notification_card_bg">#F5F5F5</color>
+
+    <!-- streak question screen -->
+    <color name="streak_correct_option_color">#87F9F0</color>
+    <color name="streak_points_color">#EB5D60</color>
+    <color name="competition_register_text">#8AFCFD</color>
+
+    <!-- to-do / status states -->
+    <color name="todo_incomplete_color">#E0F8F9</color>
+    <color name="status_pink_text">#ED5588</color>
+    <color name="status_pink_bg">#FBDDE7</color>
+    <color name="status_yellow_bg">#FEF2DB</color>
+    <color name="status_green_text">#28BC84</color>
+    <color name="status_green_bg">#D4F1E6</color>
+
+    <!-- Refer and Earn -->
+    <color name="refer_and_earn_accent">#1493B0</color>
+
+    <!-- Book Order -->
+    <color name="book_order_accent_color">#1493B0</color>
+    <color name="book_order_teal_light">#E6F9F7</color>
+    <color name="book_order_card_bg">#F2FBFD</color>
+    <color name="book_order_card_border">#DCEFEC</color>
+    <color name="book_order_title_teal">#1493B0</color>
+    <color name="book_order_green_badge">#2D9250</color>
+    <color name="book_order_red_discount">#E53935</color>
+    <color name="book_order_delivery_orange">#FF6D24</color>
+    <color name="book_order_text_secondary">#757575</color>
+    <color name="book_order_divider">#EEEEEE</color>
+    <color name="book_order_placeholder_bg">#F0F0F0</color>
+
+    <!-- Order Success -->
+    <color name="order_success_bg">#EAF8F5</color>
+    <color name="order_success_green">#4CAF50</color>
+    <color name="order_success_green_dark">#4BB543</color>
+    <color name="order_success_whatsapp_text">#1B5E20</color>
+
+    <color name="text_gray">#696969</color>
+
+</resources>

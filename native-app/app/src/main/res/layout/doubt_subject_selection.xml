@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_gravity="center_horizontal"
+    android:id="@+id/subject_selection_layout"
+    android:layout_width="260dp"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="8dp"
+    android:background="@drawable/border_chat_choose_subject_teal"
+    android:gravity="center"
+    android:paddingVertical="12dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        android:id="@+id/subject_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/urbanist_semi_bold"
+        android:text="Physics"
+        android:textColor="@color/black"
+        android:textSize="16dp" />
+</LinearLayout>

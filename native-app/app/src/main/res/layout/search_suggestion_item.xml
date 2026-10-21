@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingHorizontal="28dp"
+    android:paddingVertical="8dp"
+    android:orientation="horizontal"
+    android:gravity="center_vertical">
+
+    <ImageView
+        android:id="@+id/ig_search"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/search" />
+
+    <TextView
+        android:id="@+id/suggestion_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        app:layout_constraintLeft_toRightOf="@id/ig_search"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/ig_goTo"
+        android:textSize="@dimen/primary_text_size"
+        android:hint=""
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:textColor="#B3000000"
+        android:fontFamily="@font/nunito_regular"
+        android:maxLines="2"
+        android:ellipsize="end"/>
+
+    <ImageView
+        android:id="@+id/ig_goTo"
+        android:layout_width="15dp"
+        android:layout_height="16dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/arrow_up"/>
+
+</LinearLayout>

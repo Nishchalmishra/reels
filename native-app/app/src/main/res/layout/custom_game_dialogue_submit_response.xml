@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/fui_transparent"
+    android:layout_marginLeft="40dp"
+    android:layout_marginRight="40dp"
+    android:layout_marginBottom="5dp"
+    android:layout_marginTop="5dp">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayoutGame"
+        android:layout_width="match_parent"
+        android:background="@drawable/ic_game_correct_border"
+        android:layout_height="400dp"
+        android:gravity="center">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="28dp"
+            android:layout_marginBottom="28dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginLeft="25dp"
+            app:cardCornerRadius="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:background="@color/game_status_bar"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:textSize="@dimen/LargeTitleSize"
+                android:textAlignment="center"
+                android:text="Well done!"
+                android:fontFamily="@font/comfortaa"
+                android:textColor="#87F9F0"/>
+
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/trophy"
+                android:layout_width="match_parent"
+                android:layout_height="190dp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:lottie_rawRes="@raw/game_winner"
+                app:lottie_loop="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:lottie_autoPlay="true"/>
+
+
+
+
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/wrong_ans"
+                android:layout_width="match_parent"
+                android:layout_height="190dp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:lottie_rawRes="@raw/fail_animation"
+                app:lottie_loop="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:lottie_autoPlay="true"/>
+
+            <TextView
+                android:id="@+id/sub_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textSize="@dimen/primary_text_size"
+                android:textColor="#87F9F0"
+                android:layout_marginTop="15dp"
+                android:text="You have earned"/>
+
+            <TextView
+                android:id="@+id/points"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/LargeTitleSize"
+                android:textColor="#F6D83E"
+                android:text="10 Points"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:layout_marginTop="15dp"/>
+
+
+        </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+    </RelativeLayout>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/celebration"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:lottie_autoPlay="false"
+        app:lottie_repeatCount="0"
+        app:lottie_loop="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:lottie_rawRes="@raw/celebration" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="182dp"
+    android:layout_height="113dp"
+    android:layout_marginHorizontal="10dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="10dp"
+    android:outlineSpotShadowColor="@color/grey_300"
+    app:cardBackgroundColor="@color/grey_300"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="12dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:id="@+id/task_position_layout"
+            android:layout_width="30dp"
+            android:layout_height="22dp"
+            android:layout_margin="3dp"
+            android:background="@drawable/today_task_current_item_badge"
+            android:gravity="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/task_position"
+                android:layout_width="30dp"
+                android:layout_height="22dp"
+                android:fontFamily="@font/urbanist_bold"
+                android:gravity="center"
+                android:text="2/6"
+                android:textColor="@color/arivihan_secondary_color"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/completed_status"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_margin="4dp"
+            android:src="@drawable/today_class_complete_icon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+
+        <LinearLayout
+            android:id="@+id/detail_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="28dp"
+            android:orientation="horizontal"
+            android:paddingHorizontal="6dp"
+            android:paddingBottom="7dp"
+            app:layout_constraintTop_toBottomOf="@id/task_position_layout">
+
+            <ImageView
+                android:id="@+id/subject_icon_img"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="8dp"
+                android:src="@drawable/lecture_default" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="2dp">
+
+                <TextView
+                    android:id="@+id/chapter_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/urbanist_semi_bold"
+                    android:text="Scientific Method"
+                    android:textColor="@color/arivihan_secondary_color"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/micro_lecture_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:text="Unit and Dimensions"
+                    android:textColor="@color/black"
+                    android:textSize="10dp"
+                    android:maxWidth="90dp"
+                    android:maxLines="1"
+                    android:ellipsize="end"/>
+
+                <TextView
+                    android:id="@+id/no_of_question"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/urbanist_medium"
+                    android:maxLines="1"
+                    android:text="50 Practice Questions"
+                    android:textColor="#8A8A8A"
+                    android:textSize="10sp" />
+
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="#E9FBFC"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/detail_layout"
+            app:layout_constraintVertical_weight="1" />
+
+        <TextView
+            android:id="@+id/done_mark_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/urbanist_bold"
+            android:text="Completed..."
+            android:textColor="@color/subscription_blue"
+            android:textSize="10sp"
+            app:layout_constraintTop_toBottomOf="@id/detail_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginEnd="10dp"
+            android:visibility="visible"/>
+
+        <LinearLayout
+            android:id="@+id/arrow_text_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:background="#E9FBFC"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/detail_layout"
+            app:layout_constraintVertical_weight="1"
+            android:layout_marginEnd="5dp"
+            android:visibility="visible">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/arrow_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/urbanist_bold"
+                    android:text="Read Now"
+                    android:textColor="@color/subscription_blue"
+                    android:textSize="10sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/subscription_blue"
+                    android:layout_marginTop="1dp"/>
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/arrow_icon"
+                android:layout_width="15dp"
+                android:layout_height="13dp"
+                android:layout_marginTop="2dp"
+                android:src="@drawable/arrow_right_blue" />
+
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

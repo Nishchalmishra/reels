@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- res/layout/item_timetable.xml -->
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="4dp"
+    app:cardCornerRadius="14dp"
+    app:cardElevation="4dp"
+    app:cardBackgroundColor="#FFFFFF">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- ── Date block (fixed width, full height) ── -->
+        <LinearLayout
+            android:id="@+id/layoutDate"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="top|center_horizontal"
+            android:paddingTop="18dp"
+            android:paddingBottom="18dp">
+
+            <TextView
+                android:id="@+id/tvDayNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                android:textColor="#1A1A1A"
+                android:fontFamily="@font/urbanist_semi_bold" />
+
+            <TextView
+                android:id="@+id/tvDayName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="#1A1A1A"
+                android:fontFamily="@font/urbanist_regular" />
+        </LinearLayout>
+
+        <!-- ── Classes container (dynamically populated) ── -->
+        <LinearLayout
+            android:id="@+id/layoutClasses"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical" />
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

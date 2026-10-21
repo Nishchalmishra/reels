@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item>
+        <shape>
+            <solid android:color="#F6E1AC" />
+        </shape>
+    </item>
+
+    <item>
+        <shape>
+            <gradient
+                android:type="linear"
+                android:angle="0"
+                android:startColor="#FFCACA"
+                android:centerColor="#D10000"
+                android:endColor="#FFC4C4"
+                android:centerY="0.50"
+                android:useLevel="false"
+                android:centerX="0.50"
+                />
+        </shape>
+    </item>
+
+</layer-list>

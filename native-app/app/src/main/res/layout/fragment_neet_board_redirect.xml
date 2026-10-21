@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:clipChildren="false"
+    android:clipToPadding="false">
+
+    <!-- Top: Image anchored to bottom of container so gradient aligns with image edge -->
+    <FrameLayout
+        android:id="@+id/fl_illustration_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipChildren="false"
+        android:clipToPadding="false">
+
+        <ImageView
+            android:id="@+id/iv_illustration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_marginHorizontal="92dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/img_ritesh_sir_portrait" />
+
+        <!-- Gradient fades image bottom edge into background — sits on top of image bottom -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="bottom"
+            android:layout_marginHorizontal="92dp"
+            android:background="@drawable/gradient_white_bottom_fade" />
+
+    </FrameLayout>
+
+    <!-- Bottom group: texts + divider + board section — always together, pinned to bottom -->
+    <LinearLayout
+        android:id="@+id/ll_bottom_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="8dp">
+
+        <!-- text1: Heading (20+4 = 24sp) -->
+        <TextView
+            android:id="@+id/tv_heading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="32dp"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/urbanist_bold"
+            android:gravity="center"
+            android:textColor="#191919"
+            android:textSize="24sp" />
+
+        <!-- 28dp gap: text1 → text2 -->
+        <!-- text2: Supporting text (15+4 = 19sp) -->
+        <TextView
+            android:id="@+id/tv_subtext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="32dp"
+            android:layout_marginTop="28dp"
+            android:fontFamily="@font/urbanist_medium"
+            android:gravity="center"
+            android:textColor="#5A5A5A"
+            android:textSize="19sp" />
+
+        <!-- Divider: line ── star ── line (between text2 and text3) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginHorizontal="74dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <!-- Left line -->
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1"
+                android:background="@color/arivihan_secondary_color" />
+
+            <!-- Star icon -->
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_marginHorizontal="24dp"
+                android:src="@drawable/img_teal_star_filled"
+                android:scaleType="fitCenter" />
+
+            <!-- Right line -->
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1"
+                android:background="@color/arivihan_secondary_color" />
+
+        </LinearLayout>
+
+        <!-- text3: Section title (18+4 = 22sp) -->
+        <TextView
+            android:id="@+id/tv_section_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="32dp"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/urbanist_semi_bold"
+            android:gravity="center"
+            android:textColor="#191919"
+            android:textSize="22sp" />
+
+        <!-- 24dp gap: text3 → list -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_board_options"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginHorizontal="8dp"
+            android:nestedScrollingEnabled="false" />
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fl_parent_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Shimmer while API loads -->
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmer_chapters"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <!-- Reuse your existing shimmer placeholder layout -->
+        <include layout="@layout/shimmer_chapter_by_subject" />
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+    <!-- No data state -->
+    <LinearLayout
+        android:id="@+id/no_result_found_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+    </LinearLayout>
+
+    <!-- GROUPED MODE: TabLayout + ViewPager2 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+    <!-- FLAT MODE: hosts ChaptersBySubjectFragment directly -->
+    <FrameLayout
+        android:id="@+id/fl_flat_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+</FrameLayout>

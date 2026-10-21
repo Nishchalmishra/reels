@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/player_controller_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#66000000">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/loading"
+        android:src="@drawable/sign_in_gradient_logo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/go_back_to_previous_media"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:drawableLeft="@drawable/arrow_back_white_24"
+        android:text="@string/backToPreviousVideo"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/relativeLayout3"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.03" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layoutDirection="ltr"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="0dp">
+
+        <LinearLayout
+            android:id="@+id/exoplayer_control_layout"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <FrameLayout
+                android:id="@+id/rewind_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="180dp">
+
+                <ImageButton
+                    android:id="@+id/rewind"
+                    style="@android:style/MediaButton.Rew"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="end"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="@string/reverse"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/backward" />
+
+            </FrameLayout>
+
+            <ImageButton
+                android:id="@+id/exo_play_pause"
+                style="@android:style/MediaButton.Pause"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/pause"
+                android:scaleType="fitCenter" />
+
+            <FrameLayout
+                android:id="@+id/forward_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="180dp">
+
+                <ImageButton
+                    android:id="@+id/forward"
+                    style="@android:style/MediaButton.Ffwd"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="start"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="@string/forward"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/forward" />
+
+            </FrameLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/how_to_video_icon"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="8dp"
+        android:src="@drawable/how_to_question_white"
+        android:visibility="visible"
+        app:layout_constraintRight_toLeftOf="@id/ll_like_dislike"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/ll_like_dislike"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingStart="2dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="2dp"
+        android:paddingBottom="8dp"
+        android:visibility="gone"
+        app:layout_constraintRight_toLeftOf="@id/relativeLayout3"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:layout_width="32dp"
+            android:layout_height="46dp"
+            android:layout_gravity="center">
+
+            <ImageView
+                android:id="@+id/iv_like"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="6dp"
+                android:scaleX="0.8"
+                android:scaleY="0.8"
+                android:src="@drawable/img_like_video_outline"
+                android:visibility="visible"
+                app:tint="@color/white" />
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/lottie_like"
+                android:layout_width="32dp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="0dp"
+                android:scaleX="2.0"
+                android:scaleY="2.0"
+                android:visibility="gone"
+                app:lottie_autoPlay="false"
+                app:lottie_loop="false"
+                app:lottie_rawRes="@raw/anim_like_2" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="32dp"
+            android:layout_height="46dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="0dp">
+
+            <ImageView
+                android:id="@+id/iv_dislike"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"
+                android:scaleX="0.8"
+                android:scaleY="0.8"
+                android:src="@drawable/img_dislike_video_outline"
+                android:visibility="visible"
+                app:tint="@color/white" />
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/lottie_dislike"
+                android:layout_width="32dp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="-9dp"
+                android:scaleX="2.0"
+                android:scaleY="2.0"
+                android:visibility="gone"
+                app:lottie_autoPlay="false"
+                app:lottie_loop="false"
+                app:lottie_rawRes="@raw/dislike_animation" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/setting_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="18dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/setting"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_gravity="end"
+                android:src="@drawable/settings_ic"
+                android:visibility="visible" />
+
+            <!--            <include-->
+            <!--                layout="@layout/video_settings_layout"-->
+            <!--                android:layout_width="230dp"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginTop="10dp"-->
+            <!--                android:layout_marginBottom="100dp"-->
+            <!--                android:visibility="gone" />-->
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center">
+
+        <include
+            layout="@layout/video_settings_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </LinearLayout>
+
+
+    <SeekBar
+        android:id="@+id/seekBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginBottom="15dp"
+        android:progressBackgroundTint="@color/subscription_blue"
+        android:progressTint="@color/subscription_blue"
+        android:thumbTint="@color/subscription_blue"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_skip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="48dp"
+        android:visibility="gone"
+        app:cardBackgroundColor="#8331373A"
+        app:cardCornerRadius="25dp"
+        app:cardElevation="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="4dp">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:padding="2dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/img_video_skip_white"
+                app:tint="@color/white" />
+
+            <TextView
+                android:id="@+id/tv_skip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="2dp"
+                android:layout_marginEnd="4dp"
+                android:fontFamily="@font/urbanist_semi_bold"
+                android:text="@string/skip"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:textStyle="normal" />
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <arivihan.technologies.doubtbuzzter2.customView.CustomTimeBar
+        android:id="@+id/exo_progress"
+        android:layout_width="0dp"
+        android:layout_height="66dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="0dp"
+        app:bar_height="7dp"
+        app:buffered_color="@color/exo_player_light_progress_blue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/exoplayer_duration_layout"
+        app:played_color="@color/arivihan_secondary_color"
+        app:scrubber_color="@color/arivihan_secondary_color"
+        app:unplayed_color="@color/exo_player_light_progress_blue" />
+
+    <LinearLayout
+        android:id="@+id/exoplayer_duration_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="7dp"
+        android:layout_marginBottom="36dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/rl_buy_batch">
+
+        <TextView
+            android:id="@+id/exo_position"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00:00"
+            android:textColor="@color/white"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" / "
+            android:textColor="@color/white"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/custom_exo_duration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00:00"
+            android:textColor="@color/white"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_buy_batch"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="4dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="-24dp"
+        >
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lottie_buy_batch"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            android:scaleX="1.1"
+            android:scaleY="1.1"
+            android:elevation="1dp"
+            app:lottie_rawRes="@raw/anim_golden_rays" />
+
+        <ImageView
+            android:id="@+id/iv_buy_batch"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/img_join_now_51_en"
+            android:padding="24dp"
+            android:elevation="2dp"
+            />
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

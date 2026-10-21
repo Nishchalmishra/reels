@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayoutBackground"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:paddingBottom="7dp">
+
+
+        <TextView
+            android:id="@+id/subjectName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:text="Phy"
+            android:textColor="#333333"
+            android:textSize="@dimen/primary_text_size" />
+
+
+        <TextView
+            android:id="@+id/completionPercentage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="42%"
+            android:textColor="#333333"
+            android:textSize="@dimen/secondary_text_size" />
+
+
+        <TextView
+            android:id="@+id/topicCovered"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="35dp"
+            android:text="13/25"
+            android:textColor="#333333"
+            android:textSize="@dimen/secondary_text_size" />
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

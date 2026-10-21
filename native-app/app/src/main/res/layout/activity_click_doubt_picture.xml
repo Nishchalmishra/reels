@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="match_parent"
+    tools:context=".activity.ClickDoubtPictureActivity">
+
+    <RelativeLayout
+        android:id="@+id/ParentRelativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="?android:actionBarSize"
+        app:cardBackgroundColor="@color/chapter_header"
+        app:cardElevation="0dp"
+        android:theme="@style/AppTheme.Toolbar"
+        tools:ignore="MissingConstraints">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            app:titleTextColor="@color/chapter_header"
+            app:title="."
+            android:background="@drawable/theme_gradient_color"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/Points"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Points : 20"
+                    android:layout_marginTop="8dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="20dp"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/comfortaa"
+                    android:textSize="@dimen/secondary_text_size"/>
+
+
+                <ImageView
+                    android:id="@+id/back_arrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="0dp"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:src="@drawable/ic_baseline_arrow_back_ios_24" />
+
+                <TextView
+                    android:id="@+id/topic"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@id/Points"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginLeft="35dp"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/comfortaa"
+                    android:text="@string/AskDoubt"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/primary_text_size"
+                    android:textStyle="bold" />
+
+
+            </RelativeLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </androidx.cardview.widget.CardView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_marginLeft="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="70dp"
+        android:scrollbars="none"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar"
+    android:layout_height="match_parent">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/capture_card"
+            android:layout_width="match_parent"
+            android:layout_height="480dp"
+            app:cardCornerRadius="5dp"
+            app:strokeWidth="1dp"
+            app:strokeColor="#9E9E9E"
+            android:theme="@style/Theme.MaterialComponents.Light"
+            app:cardElevation="0dp">
+
+            <RelativeLayout
+                android:background="@color/dark_grey"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:text="@string/please_click_to_upload"
+                    android:layout_centerInParent="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            <com.ortiz.touchview.TouchImageView
+                android:id="@+id/doubt_image"
+                android:scaleType="fitCenter"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+                <ImageView
+                    android:id="@+id/capture_Image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"
+                    android:src="@drawable/ic_ar_camera"
+                    android:layout_margin="15dp"
+                    android:padding="5dp"/>
+
+            </RelativeLayout>
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="10dp"
+            android:theme="@style/Theme.MaterialComponents.Light"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="0dp"
+            app:strokeColor="#9E9E9E"
+            app:strokeWidth="1dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Spinner
+                    android:id="@+id/subject"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:spinnerMode="dropdown"
+                    android:tag="@string/select_class"
+                    android:text="@string/select_chapter" />
+
+            </RelativeLayout>
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/chapter_card"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="10dp"
+            android:theme="@style/Theme.MaterialComponents.Light"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="0dp"
+            app:strokeColor="#9E9E9E"
+            app:strokeWidth="1dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Spinner
+                    android:id="@+id/chapter"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:spinnerMode="dropdown"
+                    android:tag="@string/select_class"
+                    android:text="@string/select_chapter" />
+
+            </RelativeLayout>
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="10dp"
+            android:text="@string/PleaseAddTheRequirement"
+            android:textColor="#555555"
+            android:textSize="@dimen/secondary_text_size" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/descriptionnn"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_login"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:textColor="@color/black"
+            app:boxCornerRadiusBottomEnd="10dp"
+            android:hint="@string/description"
+            app:boxCornerRadiusBottomStart="10dp"
+            app:boxCornerRadiusTopEnd="10dp"
+            app:boxCornerRadiusTopStart="10dp"
+            app:boxStrokeColor="@color/navy_blue">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/description"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:drawablePadding="6dp"
+                android:fontFamily="@font/poppins_light"
+                android:inputType="textMultiLine"
+                android:textColor="@color/black" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.github.ybq.android.spinkit.SpinKitView
+            android:id="@+id/progress_dataLoading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_marginBottom="30dp"
+            android:layout_marginTop="40dp"
+            style="@style/SpinKitView.FadingCircle"
+            app:SpinKit_Color="#19B0C1"/>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/ask"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginBottom="30dp"
+            app:cardElevation="8dp"
+            android:layout_marginRight="50dp"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            app:cardBackgroundColor="#19B0C1"
+            app:cardCornerRadius="8dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="@font/poppins_light"
+                    android:text="@string/ask"
+                    android:textSize="@dimen/primary_text_size"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+    </LinearLayout>
+
+
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

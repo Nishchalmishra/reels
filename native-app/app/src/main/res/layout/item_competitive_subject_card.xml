@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="103dp"
+    android:layout_height="140dp"
+    android:id="@+id/cv_parent_layout"
+    android:layout_marginHorizontal="8dp"
+    android:layout_marginVertical="10dp"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="12dp"
+    android:outlineSpotShadowColor="@color/grey_500">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingVertical="12dp"
+        android:paddingHorizontal="12dp"
+        >
+
+        <ImageView
+            android:id="@+id/iv_image"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:src="@drawable/ic_physics"
+            android:scaleType="centerInside"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="12dp"
+            />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:fontFamily="@font/urbanist_medium"
+            android:maxLines="1"
+            android:text="Physics"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="14dp"
+            />
+
+        <TextView
+            android:id="@+id/tv_sub_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:fontFamily="@font/urbanist_semi_bold"
+            android:maxLines="1"
+            android:text="12 Chapters"
+            android:textColor="#8E8E8E"
+            android:textSize="11sp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="3dp"
+            />
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

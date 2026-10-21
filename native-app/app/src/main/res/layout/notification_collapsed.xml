@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="4dp">
+
+    <LinearLayout
+        android:id="@+id/textContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_toStartOf="@id/imgCollapsed"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp">
+
+        <TextView
+            android:id="@+id/txtMiniTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🔥 Mini"
+            android:visibility="gone"
+            android:ellipsize="end"
+            android:textSize="11dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txtMain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Main Title Main TitleMain TitleMain TitleMain TitleMain TitleMain Title"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:textStyle="bold"
+            android:textSize="14dp" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imgCollapsed"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="10dp"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
+        android:src="@drawable/notification_logo" />
+</RelativeLayout>

@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frame"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F3FFFF"
+    tools:context=".fragments.authentication.VerifyNumberFragment">
+
+    <!-- Snackbar anchor -->
+    <RelativeLayout
+        android:id="@+id/ParentRelativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="#F3FFFF"
+        android:orientation="vertical">
+
+        <!-- ── OTP form content ── -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="bottom"
+            android:orientation="vertical"
+            android:paddingBottom="16dp">
+
+            <LinearLayout
+                android:id="@+id/ll_otp_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="25dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_marginBottom="8dp"
+                    android:visibility="gone"
+                    android:src="@drawable/verify_otp_no" />
+
+                <TextView
+                    android:id="@+id/tv_enter_your_phone_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:fontFamily="@font/urbanist_bold"
+                    android:text="Verify OTP"
+                    android:textColor="#121212"
+                    android:textSize="20sp" />
+
+                <LinearLayout
+                    android:id="@+id/ll_edit_phone_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_otp_sent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="none"
+                        android:fontFamily="@font/urbanist_regular"
+                        android:maxLines="1"
+                        android:text="OTP Sent to "
+                        android:textColor="#777777"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/tv_user_number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="none"
+                        android:fontFamily="@font/urbanist_regular"
+                        android:maxLines="1"
+                        android:text="7879180741"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <LinearLayout
+                        android:id="@+id/ll_edit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="4dp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/iv_edit_icon"
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:layout_gravity="center"
+                            android:layout_marginEnd="5dp"
+                            android:src="@drawable/edit_you_number" />
+
+                        <TextView
+                            android:id="@+id/edit_number"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:ellipsize="none"
+                            android:fontFamily="@font/urbanist_semi_bold"
+                            android:maxLines="1"
+                            android:text="Edit number"
+                            android:textColor="@color/arivihan_secondary_color"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_marginRight="5dp" android:layout_weight="1" android:orientation="horizontal">
+                        <com.google.android.material.card.MaterialCardView android:layout_width="wrap_content" android:layout_height="50dp" android:layout_weight="3" android:theme="@style/Theme.MaterialComponents.Light" app:cardCornerRadius="12dp" app:cardElevation="0dp" app:strokeColor="#f0f0f0" app:strokeWidth="1dp">
+                            <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent">
+                                <EditText android:id="@+id/text1" android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_centerInParent="true" android:background="@color/white" android:fontFamily="@font/urbanist_medium" android:hint="1" android:imeOptions="actionNext" android:importantForAutofill="no" android:inputType="number" android:nextFocusForward="@id/text2" android:padding="10dp" android:textColor="@color/black" android:textColorHint="@color/grey_300" android:textSize="20dp" />
+                            </RelativeLayout>
+                        </com.google.android.material.card.MaterialCardView>
+                    </LinearLayout>
+
+                    <LinearLayout android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_marginRight="5dp" android:layout_weight="1" android:orientation="horizontal">
+                        <com.google.android.material.card.MaterialCardView android:layout_width="wrap_content" android:layout_height="50dp" android:layout_weight="3" android:theme="@style/Theme.MaterialComponents.Light" app:cardCornerRadius="12dp" app:cardElevation="0dp" app:strokeColor="#f0f0f0" app:strokeWidth="1dp">
+                            <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent">
+                                <EditText android:id="@+id/text2" android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_centerInParent="true" android:background="@color/white" android:fontFamily="@font/urbanist_medium" android:hint="2" android:imeOptions="actionNext" android:importantForAutofill="no" android:inputType="number" android:nextFocusForward="@id/text3" android:padding="10dp" android:textColor="@color/black" android:textColorHint="@color/grey_300" android:textSize="20dp" />
+                            </RelativeLayout>
+                        </com.google.android.material.card.MaterialCardView>
+                    </LinearLayout>
+
+                    <LinearLayout android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_marginRight="5dp" android:layout_weight="1" android:orientation="horizontal">
+                        <com.google.android.material.card.MaterialCardView android:layout_width="wrap_content" android:layout_height="50dp" android:layout_weight="3" android:theme="@style/Theme.MaterialComponents.Light" app:cardCornerRadius="12dp" app:cardElevation="0dp" app:strokeColor="#f0f0f0" app:strokeWidth="1dp">
+                            <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent">
+                                <EditText android:id="@+id/text3" android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_centerInParent="true" android:background="@color/white" android:fontFamily="@font/urbanist_medium" android:hint="3" android:imeOptions="actionNext" android:importantForAutofill="no" android:inputType="number" android:nextFocusForward="@id/text4" android:padding="10dp" android:textColor="@color/black" android:textColorHint="@color/grey_300" android:textSize="20dp" />
+                            </RelativeLayout>
+                        </com.google.android.material.card.MaterialCardView>
+                    </LinearLayout>
+
+                    <LinearLayout android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_marginRight="5dp" android:layout_weight="1" android:orientation="horizontal">
+                        <com.google.android.material.card.MaterialCardView android:layout_width="wrap_content" android:layout_height="50dp" android:layout_weight="3" android:theme="@style/Theme.MaterialComponents.Light" app:cardCornerRadius="12dp" app:cardElevation="0dp" app:strokeColor="#f0f0f0" app:strokeWidth="1dp">
+                            <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent">
+                                <EditText android:id="@+id/text4" android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_centerInParent="true" android:background="@color/white" android:fontFamily="@font/urbanist_medium" android:hint="4" android:imeOptions="actionNext" android:importantForAutofill="no" android:inputType="number" android:nextFocusForward="@id/text5" android:padding="10dp" android:textColor="@color/black" android:textColorHint="@color/grey_300" android:textSize="20dp" />
+                            </RelativeLayout>
+                        </com.google.android.material.card.MaterialCardView>
+                    </LinearLayout>
+
+                    <LinearLayout android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_marginRight="5dp" android:layout_weight="1" android:orientation="horizontal">
+                        <com.google.android.material.card.MaterialCardView android:layout_width="wrap_content" android:layout_height="50dp" android:layout_weight="3" android:theme="@style/Theme.MaterialComponents.Light" app:cardCornerRadius="12dp" app:cardElevation="0dp" app:strokeColor="#f0f0f0" app:strokeWidth="1dp">
+                            <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent">
+                                <EditText android:id="@+id/text5" android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_centerInParent="true" android:background="@color/white" android:fontFamily="@font/urbanist_medium" android:hint="5" android:imeOptions="actionNext" android:importantForAutofill="no" android:inputType="number" android:nextFocusForward="@id/text6" android:padding="10dp" android:textColor="@color/black" android:textColorHint="@color/grey_300" android:textSize="20dp" />
+                            </RelativeLayout>
+                        </com.google.android.material.card.MaterialCardView>
+                    </LinearLayout>
+
+                    <LinearLayout android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_weight="1" android:orientation="horizontal">
+                        <com.google.android.material.card.MaterialCardView android:layout_width="wrap_content" android:layout_height="50dp" android:layout_weight="3" android:theme="@style/Theme.MaterialComponents.Light" app:cardCornerRadius="12dp" app:cardElevation="0dp" app:strokeColor="#f0f0f0" app:strokeWidth="1dp">
+                            <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent">
+                                <EditText android:id="@+id/text6" android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_centerInParent="true" android:background="@color/white" android:fontFamily="@font/urbanist_medium" android:hint="6" android:imeOptions="actionDone" android:importantForAutofill="no" android:inputType="number" android:maxLength="1" android:padding="10dp" android:textColor="@color/black" android:textColorHint="@color/grey_300" android:textSize="20dp" />
+                            </RelativeLayout>
+                        </com.google.android.material.card.MaterialCardView>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_resend_otp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/Resend_Text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/urbanist_regular"
+                    android:text="Didn\'t receive OTP"
+                    android:textColor="#777777"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/resend_otp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:fontFamily="@font/urbanist_semi_bold"
+                    android:text="@string/resendotp"
+                    android:textColor="#19B0C1"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- ── Bottom nav: Back + Forward ── -->
+        <LinearLayout
+            android:id="@+id/ll_bottom_nav"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginBottom="12dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <!-- Back → Phone Number screen -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btn_back"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="6dp"
+                app:cardBackgroundColor="@color/subscription_blue"
+                app:cardCornerRadius="25dp"
+                app:cardElevation="3dp">
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/previous" />
+            </androidx.cardview.widget.CardView>
+
+            <!-- Loader + OTP support card (stacked vertically, centered between buttons) -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <!-- Loader above support card -->
+                <com.github.ybq.android.spinkit.SpinKitView
+                    android:id="@+id/progress"
+                    style="@style/SpinKitView.FadingCircle"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:visibility="gone"
+                    app:SpinKit_Color="#19B0C1" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardOtpSupport"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="4dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:visibility="gone"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="0dp"
+                    app:strokeColor="#F2D3C5"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingHorizontal="8dp">
+
+                        <ImageView
+                            android:id="@+id/ivSupport"
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:src="@drawable/ic_support_question" />
+
+                        <TextView
+                            android:id="@+id/otp_support_text"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="6dp"
+                            android:layout_weight="1"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/urbanist_medium"
+                            android:maxLines="1"
+                            android:text="@string/otp_support_text"
+                            android:textColor="#4A4A4A"
+                            android:textSize="11sp" />
+
+                        <ImageView
+                            android:id="@+id/ivArrow"
+                            android:layout_width="14dp"
+                            android:layout_height="14dp"
+                            android:src="@drawable/back_arrow_orange" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+
+            <!-- Forward → verify OTP (disabled until 6 digits) -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btn_forward"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="6dp"
+                app:cardBackgroundColor="@color/disabled_next_color"
+                app:cardCornerRadius="25dp"
+                app:cardElevation="3dp">
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/next" />
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</FrameLayout>

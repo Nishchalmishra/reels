@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/ParentRelativeLayout"
+    android:layout_height="match_parent"
+    android:theme="@style/Theme.MaterialComponents.Light"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.MySubscriptionFragment">
+
+
+        <include android:id="@+id/toolbar"
+            layout="@layout/activity_custom_toolbar_layout"/>
+
+    <com.github.ybq.android.spinkit.SpinKitView
+        android:id="@+id/progress_dataLoading"
+        style="@style/SpinKitView.FadingCircle"
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:layout_centerInParent="true"
+        app:SpinKit_Color="#19B0C1" />
+
+    <ScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/noSubscription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:visibility="gone"
+                app:cardBackgroundColor="#FFEB3B"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="0dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="@font/poppins_light"
+                    android:text="Currently No Active Subscription is Running on your Account"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/primary_text_size" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/second_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/toolbar"
+                android:layout_marginLeft="20dp"
+                android:visibility="gone"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/navy_blue"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                app:cardElevation="0dp"
+                app:cardCornerRadius="8dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/lighter_navy_blue">
+
+                    <TextView
+                        android:id="@+id/subscription_plan"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toLeftOf="@id/payment_money"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginTop="10dp"
+                        android:text="Two years"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/secondary_text_size"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/course"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/subscription_plan"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:fontFamily="@font/poppins_light"
+                        android:text="IIT-JEE"
+                        android:textColor="@color/album_title"
+                        android:textSize="@dimen/tertiary_text_size" />
+
+                    <TextView
+                        android:id="@+id/payment_money"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10dp"
+                        android:text="Rs. 60,000"
+                        android:textColor="@color/navy_blue"
+                        android:textSize="@dimen/primary_text_size"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/paymet_monthly"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/subscription_plan"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:fontFamily="@font/poppins_light"
+                        android:text="Rs. 2500/monthly"
+                        android:textColor="@color/album_title"
+                        android:textSize="@dimen/tertiary_text_size" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/features_of_subscription"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/paymet_monthly"
+                        android:visibility="gone"
+                        android:background="@color/fui_transparent"
+                        android:padding="8dp" />
+
+                    <TextView
+                        android:id="@+id/validity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/features_of_subscription"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:fontFamily="@font/poppins_light"
+                        android:text="Valid upto 23 April 2024"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/LargeTitleSize"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_toLeftOf="@id/filter"
+                    android:layout_marginRight="10dp"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="20dp"
+                        app:cardCornerRadius="5dp"
+                        app:strokeColor="@color/navy_blue"
+                        app:strokeWidth="2dp">
+
+                        <TextView
+                            android:id="@+id/add_Subscription"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/second_card"
+                            android:layout_marginLeft="4dp"
+                            android:layout_marginRight="4dp"
+                            android:clickable="true"
+                            android:fontFamily="@font/poppins_light"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:padding="5dp"
+                            android:text="@string/AddNewPlan"
+                            android:textColor="@color/navy_blue"
+                            android:textSize="@dimen/primary_text_size"
+                            android:textStyle="bold" />
+
+                    </com.google.android.material.card.MaterialCardView>
+
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@drawable/container_border"
+                    android:clickable="true"
+                    android:foreground="?android:attr/selectableItemBackground">
+
+                    <ImageView
+                        android:id="@+id/fil"
+                        android:layout_width="wrap_content"
+                        android:layout_height="18dp"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_baseline_filter_alt_24" />
+
+                    <TextView
+                        android:id="@+id/filter_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_toRightOf="@id/fil"
+                        android:text="@string/Filter"
+                        android:textColor="@color/navy_blue"
+                        android:textSize="@dimen/tertiary_text_size" />
+
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+
+
+            <TextView
+                android:id="@+id/transaction"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/add_Subscription"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/poppins_light"
+                android:text="@string/Transactions"
+                android:textColor="@color/black"
+                android:textSize="@dimen/secondary_text_size"
+                android:textStyle="bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewTransaction"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="15dp"
+                android:visibility="gone" />
+
+            <RelativeLayout
+                android:id="@+id/noData"
+                android:layout_width="match_parent"
+                android:visibility="gone"
+                android:layout_height="wrap_content">
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:layout_width="250dp"
+                    android:layout_height="250dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_centerHorizontal="true"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:lottie_rawRes="@raw/more_chap_comingsoon"
+                    app:lottie_loop="true"
+                    app:lottie_autoPlay="true"/>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

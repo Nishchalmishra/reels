@@ -1,0 +1,848 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="1"
+    tools:context=".activity.CampaignSubscriptionActivity"
+    android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintVertical_weight="1"
+        app:layout_constraintBottom_toTopOf="@id/discount_layout"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="NotSibling">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="190dp">
+
+                <com.facebook.shimmer.ShimmerFrameLayout
+                    android:id="@+id/image_shimmer"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="visible">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:cardBackgroundColor="@color/mock_light_grey"
+                        app:cardCornerRadius="11dp" />
+                </com.facebook.shimmer.ShimmerFrameLayout>
+
+                <ImageView
+                    android:id="@+id/thumbnail_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    android:visibility="gone" />
+
+                <androidx.media3.ui.PlayerView
+                    android:id="@+id/player_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="gone"
+                    app:resize_mode="fill"
+                    app:use_controller="false" />
+
+                <ImageView
+                    android:id="@+id/volume"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="15dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/volume"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ProgressBar
+                    android:id="@+id/spinnerVideoDetails"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:indeterminate="true"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.facebook.shimmer.ShimmerFrameLayout
+                android:id="@+id/data_shimmer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="15dp"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_weight="1"
+                            app:cardBackgroundColor="@color/lighter_grey"
+                            app:cardUseCompatPadding="true" />
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_weight="1"
+                            app:cardBackgroundColor="@color/lighter_grey"
+                            app:cardUseCompatPadding="true" />
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_weight="1"
+                            app:cardBackgroundColor="@color/lighter_grey"
+                            app:cardUseCompatPadding="true" />
+                    </LinearLayout>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="400dp"
+                        android:layout_marginHorizontal="15dp"
+                        app:cardBackgroundColor="@color/lighter_grey"
+                        app:cardUseCompatPadding="true" />
+
+                </LinearLayout>
+            </com.facebook.shimmer.ShimmerFrameLayout>
+
+            <LinearLayout
+                android:id="@+id/data_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/campaign_subscription_gradient_view"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:paddingBottom="20dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="12dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/unnati_titles"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/urbanist_medium"
+                        android:text="@string/Unnati_Batch"
+                        android:textColor="#80000000"
+                        android:textSize="13sp" />
+                </LinearLayout>
+
+
+                <!--                &lt;!&ndash; Second Section with Text Views &ndash;&gt;-->
+                <!--                <LinearLayout-->
+                <!--                    android:layout_width="wrap_content"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:layout_marginHorizontal="20dp"-->
+                <!--                    android:layout_marginTop="2dp"-->
+                <!--                    android:orientation="vertical">-->
+
+                <!--                    <TextView-->
+                <!--                        android:id="@+id/batch_name"-->
+                <!--                        android:layout_width="wrap_content"-->
+                <!--                        android:layout_height="wrap_content"-->
+                <!--                        android:fontFamily="@font/urbanist_semi_bold"-->
+                <!--                        android:text="@string/Unnati_Batch"-->
+                <!--                        android:textColor="@color/subscription_blue"-->
+                <!--                        android:textSize="14sp" />-->
+
+                <!--                    <TextView-->
+                <!--                        android:id="@+id/campaign_title"-->
+                <!--                        android:layout_width="wrap_content"-->
+                <!--                        android:layout_height="wrap_content"-->
+                <!--                        android:fontFamily="@font/urbanist_regular"-->
+                <!--                        android:text="@string/for_MP_Boards_Includes"-->
+                <!--                        android:textColor="@color/black"-->
+                <!--                        android:textSize="14sp"-->
+                <!--                        android:ellipsize="end"-->
+                <!--                        android:singleLine="true"/>-->
+                <!--                </LinearLayout>-->
+
+                <!-- Horizontal ScrollView Section for Cards -->
+                <LinearLayout
+                    android:id="@+id/subscription_plans_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="15dp"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <androidx.core.widget.NestedScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fillViewport="true">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/subscription_cards_rv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            tools:listitem="@layout/campaign_subscription_card" />
+                    </androidx.core.widget.NestedScrollView>
+                </LinearLayout>
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/feature_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginVertical="10dp"
+                    app:cardCornerRadius="10dp">
+
+                    <HorizontalScrollView
+                        android:id="@+id/badge_slider_horizontal_scroll_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="12dp"
+                        android:layout_marginVertical="6dp"
+                        android:scrollbars="none">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/feature_rv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:nestedScrollingEnabled="false"
+                            android:orientation="horizontal"
+                            tools:itemCount="4"
+                            tools:listitem="@layout/campaign_subscription_feature" />
+                    </HorizontalScrollView>
+
+                </androidx.cardview.widget.CardView>
+
+                <FrameLayout
+                    android:id="@+id/fl_limited_time_offer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:layout_marginVertical="8dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/limited_time_offer"
+                        android:scaleType="fitXY"
+                        android:adjustViewBounds="true" />
+
+                    <TextView
+                        android:id="@+id/tv_limited_time_offer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:text="Pehle 1000 Bachon Ke\nLiye ₹4999 Sirf ₹2499 Mein !!"
+                        android:textColor="#1A1A1A"
+                        android:textSize="14sp" />
+
+                </FrameLayout>
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/toppers_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="20dp"
+                        android:layout_marginTop="5dp"
+                        android:fontFamily="@font/urbanist_semi_bold"
+                        android:text="@string/Champions_of_Arivihan"
+                        android:textColor="@color/black"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/toppers_sub_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="20dp"
+                        android:layout_marginTop="4dp"
+                        android:fontFamily="@font/urbanist_regular"
+                        android:text="MP 12th Toppers ki Safalta ki Kahaniyaan..."
+                        android:textColor="#555555"
+                        android:textSize="12sp" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/toppers_rv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="12dp"
+                        android:layout_marginTop="8dp"
+                        android:orientation="horizontal"
+                        tools:itemCount="1"
+                        tools:listitem="@layout/toppers_layout" />
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="15dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginBottom="6dp"
+                        android:backgroundTint="#FFFFFF"
+                        app:cardCornerRadius="18dp"
+                        app:cardElevation="3dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <EditText
+                                android:id="@+id/coupon_code"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="20dp"
+                                android:layout_marginVertical="12dp"
+                                android:layout_weight="1"
+                                android:background="@null"
+                                android:fontFamily="@font/urbanist_regular"
+                                android:hint="@string/enter_coupon_code"
+                                android:maxLines="1"
+                                android:textColor="@color/subscription_blue"
+                                android:textSize="16sp" />
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/cv_apply_card"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_margin="2dp"
+                                android:backgroundTint="#FFF8DE"
+                                android:visibility="visible"
+                                app:cardCornerRadius="18dp"
+                                app:cardElevation="0dp"
+                                app:strokeColor="#FCE3AA"
+                                app:strokeWidth="2dp">
+
+                                <TextView
+                                    android:id="@+id/apply_code_text"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:fontFamily="@font/urbanist_semi_bold"
+                                    android:gravity="center"
+                                    android:paddingHorizontal="20dp"
+                                    android:paddingVertical="10dp"
+                                    android:text="@string/apply_code"
+                                    android:textColor="@color/black"
+                                    android:textSize="12sp" />
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <ImageView
+                                android:id="@+id/remove_coupon"
+                                android:layout_width="22dp"
+                                android:layout_height="22dp"
+                                android:layout_margin="10dp"
+                                android:src="@drawable/search_close_btn"
+                                android:visibility="gone" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <TextView
+                        android:id="@+id/tv_coupon_code_applied"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="25dp"
+                        android:layout_marginBottom="8dp"
+                        android:fontFamily="@font/urbanist_semi_bold"
+                        android:text="Coupon Applied!"
+                        android:textColor="#189C4D"
+                        android:textSize="14sp"
+                        android:visibility="gone" />
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cv_subscription_pdf"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="18dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="3dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:padding="2dp">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <!-- Image in front of title & subtitle -->
+                                <ImageView
+                                    android:id="@+id/iv_icon"
+                                    android:layout_width="34dp"
+                                    android:layout_height="34dp"
+                                    android:contentDescription="@string/app_name"
+                                    android:src="@drawable/pdf_icon_yellow" />
+
+                                <!-- Title + Subtitle -->
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="8dp"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/tv_title"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:ellipsize="end"
+                                        android:fontFamily="@font/urbanist_semi_bold"
+                                        android:maxLines="1"
+                                        android:text="@string/batch_ki_jankari"
+                                        android:textColor="@color/black"
+                                        android:textSize="18sp" />
+
+                                    <TextView
+                                        android:id="@+id/tv_sub_title"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="2dp"
+                                        android:fontFamily="@font/urbanist_medium"
+                                        android:text="@string/pdf_sub_title"
+                                        android:textColor="#B3000000"
+                                        android:textSize="13sp" />
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <!-- Button Card -->
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/cv_click_here"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:backgroundTint="#FFF8DE"
+                                android:visibility="visible"
+                                app:cardCornerRadius="18dp"
+                                app:cardElevation="0dp"
+                                app:strokeColor="#FCE3AA"
+                                app:strokeWidth="2dp">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:fontFamily="@font/urbanist_semi_bold"
+                                    android:gravity="center"
+                                    android:paddingHorizontal="20dp"
+                                    android:paddingVertical="10dp"
+                                    android:text="@string/click_here"
+                                    android:textColor="@color/black"
+                                    android:textSize="12sp" />
+                            </com.google.android.material.card.MaterialCardView>
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:id="@+id/cv_contact_us"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="20dp"
+                        android:layout_marginVertical="20dp"
+                        android:theme="@style/Theme.MaterialComponents.Light"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="4dp"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:id="@+id/iv_need_help"
+                                android:layout_width="130dp"
+                                android:layout_height="126dp"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/talk_to_us_image"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginHorizontal="12dp"
+                                android:layout_marginVertical="12dp"
+                                />
+
+                            <LinearLayout
+                                android:id="@+id/ll_need_help"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical"
+                                android:paddingStart="0dp"
+                                android:paddingEnd="8dp"
+                                android:paddingVertical="10dp"
+                                android:layout_gravity="center_vertical"
+                                >
+
+                                <TextView
+                                    android:id="@+id/text_1_need_help"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/nunito_bold"
+                                    android:text="Chhalaang se judna chahte hain, par kaise?"
+                                    android:textColor="@color/black"
+                                    android:maxLines="2"
+                                    android:ellipsize="end"
+                                    android:textSize="14sp"
+                                    android:autoSizeTextType="uniform"
+                                    android:autoSizeMinTextSize="12sp"
+                                    android:autoSizeMaxTextSize="16sp"
+                                    android:autoSizeStepGranularity="1sp" />
+
+                                <TextView
+                                    android:id="@+id/text_2_need_help"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/nunito_medium"
+                                    android:text="Humare experts se baat karein aur batch ki puri jaankari paayein!"
+                                    android:textColor="#515151"
+                                    android:layout_marginTop="2dp"
+                                    android:maxLines="3"
+                                    android:ellipsize="end"
+                                    android:textSize="11sp"
+                                    android:autoSizeTextType="uniform"
+                                    android:autoSizeMinTextSize="9sp"
+                                    android:autoSizeMaxTextSize="12sp"
+                                    android:autoSizeStepGranularity="1sp" />
+
+
+                                <com.google.android.material.card.MaterialCardView
+                                    android:id="@+id/mcv_contact_us"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="30dp"
+                                    android:layout_marginTop="8dp"
+                                    android:theme="@style/Theme.MaterialComponents.Light"
+                                    app:cardBackgroundColor="#26C6DA"
+                                    app:cardCornerRadius="6dp"
+                                    app:cardElevation="0dp">
+
+                                    <!-- Horizontal Container -->
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="match_parent"
+                                        android:orientation="horizontal"
+                                        android:gravity="center"
+                                        android:paddingHorizontal="14dp">
+
+                                        <ImageView
+                                            android:id="@+id/call_back_icon"
+                                            android:layout_width="12dp"
+                                            android:layout_height="12dp"
+                                            android:src="@drawable/call_back"
+                                            android:layout_marginEnd="6dp" />
+
+                                        <TextView
+                                            android:id="@+id/tv_need_help"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/urbanist_semi_bold"
+                                            android:text="7879180741"
+                                            android:textColor="@color/white"
+                                            android:textSize="15sp" />
+
+                                    </LinearLayout>
+
+                                </com.google.android.material.card.MaterialCardView>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+    <FrameLayout
+        android:id="@+id/floating_call_button_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
+        android:visibility="gone"
+        android:layout_marginBottom="80dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:id="@+id/floating_call_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:clickable="true"
+            android:focusable="true">
+
+            <FrameLayout
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:layout_gravity="center">
+
+                <!-- Glow Circle Perfect Center -->
+                <View
+                    android:layout_width="78dp"
+                    android:layout_height="78dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/glow_circle"/>
+
+                <!-- Image Centered -->
+                <ImageView
+                    android:id="@+id/ritesh_image"
+                    android:layout_width="61dp"
+                    android:layout_height="92dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_gravity="center_horizontal"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ritesh_sir_conatct_image"
+                    android:contentDescription="Ritesh Sir"/>
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_glow"
+                android:padding="4dp"
+                android:clipToPadding="false"
+                android:clipChildren="false"
+                android:layout_marginTop="-18dp"
+                android:layout_gravity="center">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_call"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="24dp"
+                    android:layout_marginBottom="2dp"
+                    app:cardBackgroundColor="#26C6DA">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingHorizontal="16dp"
+                        android:paddingVertical="4dp">
+
+                        <ImageView
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:src="@drawable/call_back"/>
+
+                        <TextView
+                            android:id="@+id/tv_call_to_sir"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:fontFamily="@font/urbanist_bold"
+                            android:text="Ritesh sir\nse baat karein"
+                            android:textColor="@android:color/white"
+                            android:textSize="14sp"
+                            android:textStyle="bold"/>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+    </FrameLayout>
+    <LinearLayout
+        android:id="@+id/discount_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/yellow_gradient_4"
+        android:gravity="center"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/bottom_layout">
+
+
+        <TextView
+            android:id="@+id/discount_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="@string/Discount_ARIVIHAN_Coupon_code_applied"
+            android:textColor="@color/black"
+            android:textSize="11sp" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/renew_discount_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/yellow_gradient_4"
+        android:gravity="center"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/bottom_layout">
+
+        <TextView
+            android:id="@+id/renew_discount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:fontFamily="@font/urbanist_medium"
+            android:singleLine="true"
+            android:text="Discount"
+            android:textColor="@color/black"
+            android:textSize="11sp" />
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bottom_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <!-- Single container for price + button -->
+        <LinearLayout
+            android:id="@+id/price_button_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="2dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <!-- Final Price Section -->
+            <LinearLayout
+                android:id="@+id/final_price_layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingVertical="5dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/selected_cost_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/urbanist_medium"
+                        android:text="3999"
+                        android:textColor="#F2C044"
+                        android:textSize="10sp" />
+
+                    <TextView
+                        android:id="@+id/selected_discount_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:fontFamily="@font/urbanist_semi_bold"
+                        android:text="2999"
+                        android:textColor="@color/subscription_blue"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/selected_subscription_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/urbanist_medium"
+                    android:maxLines="2"
+                    android:text="Unnati Batch for Boards (6 Months)"
+                    android:textColor="#757575"
+                    android:textSize="11sp" />
+            </LinearLayout>
+
+            <!-- Join Campaign Button -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/join_campaign_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/join_now_gradient_forward">
+
+                <LinearLayout
+                    android:id="@+id/join_content_layout"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_marginVertical="10dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent">
+
+                    <ImageView
+                        android:id="@+id/join_icon"
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"
+                        android:src="@drawable/join_now_icon"
+                        android:contentDescription="@string/Join_Now" />
+
+                    <TextView
+                        android:id="@+id/join_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="6dp"
+                        android:fontFamily="@font/urbanist_semi_bold"
+                        android:text="@string/join_now_text_1"
+                        android:textColor="@color/black"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

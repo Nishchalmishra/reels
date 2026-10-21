@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rl_parent_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.competitive.subject.chapter.ChapterListByTypeActivity">
+
+    <!-- Toolbar -->
+    <LinearLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:layout_marginVertical="10dp"
+        android:layout_marginEnd="20dp"
+        android:elevation="2dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/back_button_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="20dp"
+            android:paddingEnd="17dp">
+
+            <ImageView
+                android:id="@+id/back_arrow"
+                android:layout_width="13dp"
+                android:layout_height="15dp"
+                android:layout_marginTop="1dp"
+                android:src="@drawable/arrow_icon" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/activity_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/urbanist_semi_bold"
+            android:text="@string/lectures"
+            android:textColor="@color/black"
+            android:textSize="@dimen/toolbar_title_size" />
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/search_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            app:closeIcon="@drawable/search_close_btn"
+            app:searchHintIcon="@null"
+            app:searchIcon="@drawable/search_outline" />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view_grey_bar"
+        android:layout_width="match_parent"
+        android:layout_height="1.5dp"
+        android:background="@color/gray_f6"
+        android:layout_below="@id/toolbar"
+        />
+
+    <!-- Type tabs row (hidden when single tab) -->
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/view_grey_bar"
+        android:visibility="gone"
+        app:tabIndicatorColor="#1E9EAE"
+        app:tabTextColor="#747474"
+        app:tabSelectedTextColor="#121212"
+        android:layout_marginBottom="2dp"/>
+
+    <!-- ViewPager2 hosting ChapterListByTypeFragment per type tab -->
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/tabs"
+        android:background="@color/white" />
+
+</RelativeLayout>

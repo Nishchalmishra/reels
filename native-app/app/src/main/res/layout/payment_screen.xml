@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    
+    <TextView
+        android:textSize="20sp"
+        style="@style/blackBoldText"
+        android:layout_marginTop="60dp"
+        android:textAlignment="center"
+        android:text="@string/please_don_t_refresh_or_go_back_n_while_making_a_payment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottie"
+        app:lottie_rawRes="@raw/processing"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true" />
+
+</RelativeLayout>

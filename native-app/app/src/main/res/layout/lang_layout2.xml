@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    android:id="@+id/card"
+    android:layout_gravity="center"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_margin="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/vernacular_background"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="10dp"
+    app:cardCornerRadius="15dp"
+    >
+
+    <RelativeLayout
+        android:layout_margin="10dp"
+        android:id="@+id/linear_layout"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/langImage"
+            android:layout_width="55dp"
+            android:elevation="0dp"
+            android:layout_height="55dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/avatar"/>
+
+        <TextView
+            android:id="@+id/langText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/langImage"
+            android:textColor="@color/black"
+            android:textSize="@dimen/secondary_text_size"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
+            android:text="Board_Name"/>
+
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

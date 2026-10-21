@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="20dp"
+    android:theme="@style/AppTheme.Toolbar"
+    app:contentInsetStart="0dp"
+    app:popupTheme="@style/CustomToolbarPopupTheme"
+    app:theme="@style/CustomToolbarTheme">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:layout_marginTop="10dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/back_arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="20dp"
+            android:paddingEnd="17dp">
+
+            <ImageView
+                android:id="@+id/back_button"
+                android:layout_width="13dp"
+                android:layout_height="15dp"
+                android:layout_marginTop="1dp"
+                android:src="@drawable/arrow_icon" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/activity_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/urbanist_semi_bold"
+            android:textColor="@color/black"
+            android:textSize="@dimen/toolbar_title_size"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/back_arrow"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </LinearLayout>
+
+</androidx.appcompat.widget.Toolbar>

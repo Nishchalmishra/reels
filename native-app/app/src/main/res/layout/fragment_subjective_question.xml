@@ -1,0 +1,399 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/ParentRelativeLayout"
+    android:background="@color/off_white"
+    tools:context=".MCQAndSubjectiveQuestionFragment">
+
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:scrollbars="none"
+        tools:ignore="UselessParent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:id="@+id/mark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:orientation="horizontal">
+
+
+            </LinearLayout>
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="20dp"
+                android:foregroundGravity="center_horizontal"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:paddingBottom="15dp"
+                app:cardCornerRadius="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar">
+
+
+                    <RelativeLayout
+                        android:id="@+id/relative_layout_ques"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/question_background">
+
+                        <LinearLayout
+                            android:id="@+id/markLinearLayout"
+                            android:layout_width="match_parent"
+                            android:orientation="horizontal"
+                            android:layout_marginLeft="15dp"
+                            android:layout_height="wrap_content">
+
+                            <ToggleButton
+                                android:id="@+id/mark_button2"
+                                android:layout_width="20dp"
+                                android:layout_height="24dp"
+                                android:layout_toLeftOf="@+id/markText"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginRight="5dp"
+                                android:background="@drawable/bookmark_toggle"
+                                android:clickable="false"
+                                android:focusable="false"
+                                android:focusableInTouchMode="false"
+                                android:textOff=""
+                                android:textOn="" />
+
+                            <TextView
+                                android:id="@+id/markText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:textSize="@dimen/primary_text_size"
+                                android:text="@string/unmarked"
+                                android:textColor="@color/white"/>
+
+                            <TextView
+                                android:textColor="@color/white"
+                                android:text="Italic"
+                                style="@style/tertiaryText"
+                                android:id="@+id/questionType"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginRight="15dp"
+                                android:paddingRight="10dp"
+                                android:textAlignment="textEnd"
+                                android:textSize="@dimen/tertiary_text_size"
+                                android:textStyle="italic" />
+
+
+                        </LinearLayout>
+
+
+                        <ImageView
+                            android:id="@+id/question_image"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginLeft="5dp"
+                            android:layout_below="@+id/markLinearLayout"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginRight="8dp"
+                            android:layout_marginBottom="10dp"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/free_sample_by_wix"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/question"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/question_image"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginTop="12dp"
+                            android:layout_marginRight="15dp"
+                            android:layout_marginBottom="20dp"
+                            android:fontFamily="@font/opensans_regular"
+                            android:text="How many sticks are there in Ashok Chakra ?"
+                            android:textColor="@color/white"
+                            android:textSize="18sp" />
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/subText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginTop="5dp"
+                            android:fontFamily="@font/opensans_light"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="2dp"
+                            android:paddingRight="10dp"
+                            android:paddingBottom="2dp"
+                            android:text="You can Maximum Attempt 5 Question"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/tertiary_text_size"
+                            android:textStyle="bold|italic" />
+
+                    </RelativeLayout>
+
+
+                    <TextView
+                        android:id="@+id/YourResponse"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/your_response"
+                        android:textStyle="bold"
+                        android:visibility="gone"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:textSize="@dimen/primary_text_size"
+                        android:fontFamily="@font/poppins_light"/>
+
+                    <TextView
+                        android:id="@+id/CorrectAnswer"
+                        android:layout_width="match_parent"
+                        android:visibility="gone"
+                        android:layout_height="wrap_content"
+                        android:text="@string/correct_answer_1"
+                        android:layout_marginBottom="15dp"
+                        android:textColor="@color/navy_blue"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="18dp"
+                        android:textSize="@dimen/tertiary_text_size"
+                        android:fontFamily="@font/poppins_light"/>
+
+
+
+                    <include
+                        layout="@layout/activity_board_subjective_upload_image"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="40dp"
+                        android:layout_marginEnd="20dp"
+                        android:visibility="visible" />
+
+                    <include
+                        layout="@layout/activity_board_image_extraction"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="gone"
+                        />
+
+                    <include
+                        android:id="@+id/edit_text_layout"
+                        layout="@layout/activity_extracted_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="600dp"
+                        android:visibility="gone" />
+                    <LinearLayout
+                        android:layout_marginTop="30dp"
+                        android:id="@+id/extracting_text_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:orientation="vertical"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent">
+
+                        <TextView
+                            android:id="@+id/extracting_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="0dp"
+                            android:textAlignment="center"
+                            android:layout_marginTop="30dp"
+                            android:layout_marginBottom="20dp"
+                            android:fontFamily="@font/nunito_regular"
+                            android:text="@string/extracting_text_from_image"
+                            android:textColor="#247380"
+                            android:textSize="23sp" />
+
+                        <com.google.android.material.progressindicator.LinearProgressIndicator
+                            android:id="@+id/extract_progress"
+                            android:layout_width="match_parent"
+                            android:layout_height="6.6dp"
+                            android:layout_marginStart="30dp"
+                            android:layout_marginEnd="30dp"
+                            android:layout_marginBottom="30dp"
+                            android:indeterminate="true"
+                            />
+                    </LinearLayout>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/yourAttempt"
+                            android:visibility="gone"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/green"
+                            android:textSize="@dimen/tertiary_text_size"
+                            android:layout_marginBottom="5dp"
+                            android:text="Your Attempt : a,b,c"
+                            android:textStyle="bold"
+                            android:layout_marginRight="30dp"
+                            android:layout_marginLeft="30dp"
+                            />
+
+                        <TextView
+                            android:id="@+id/explanation"
+                            android:visibility="gone"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/navy_blue"
+                            android:textStyle="bold"
+                            android:textSize="@dimen/secondary_text_size"
+                            android:layout_below="@id/Correctionpercentage"
+                            android:layout_marginLeft="30dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="15dp"
+                            android:text="@string/see_explanation"
+                            android:drawableRight="@drawable/ic_explanation"
+                            android:drawablePadding="5dp"
+                            />
+
+                        <TextView
+                            android:id="@+id/Correctionpercentage"
+                            android:layout_width="wrap_content"
+                            android:visibility="gone"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/green"
+                            android:textStyle="bold"
+                            android:textSize="@dimen/secondary_text_size"
+                            android:layout_below="@id/yourAttempt"
+                            android:layout_marginLeft="30dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="15dp"
+                            android:text="27 % of students have given correct answer"
+                            android:drawablePadding="5dp"
+                            />
+
+
+                    </RelativeLayout>
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/button_answer_save"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="25dp"
+                        app:cardBackgroundColor="@color/navy_blue"
+                        app:cardCornerRadius="7dp"
+                        app:cardElevation="0dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+
+                            <TextView
+                                android:id="@+id/btn_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="@string/save"
+                                android:textColor="@color/white"
+                                android:textSize="20sp" />
+
+                        </RelativeLayout>
+
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/button_clear_answer"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="20dp"
+                        android:visibility="gone"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="25dp"
+                        app:cardBackgroundColor="@color/grey_500"
+                        app:cardCornerRadius="7dp"
+                        app:cardElevation="0dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+
+                            <TextView
+                                android:id="@+id/btn_text_clear"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="@string/clear"
+                                android:textColor="@color/black"
+                                android:textSize="20dp" />
+
+                        </RelativeLayout>
+
+
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/celebration"
+        android:layout_width="match_parent"
+        android:visibility="gone"
+        android:layout_height="350dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:lottie_rawRes="@raw/correct_answer"
+        app:lottie_loop="true"
+        app:lottie_repeatCount="0"
+        android:layout_centerInParent="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"/>
+
+
+</RelativeLayout>

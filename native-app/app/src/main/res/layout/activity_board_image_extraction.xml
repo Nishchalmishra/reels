@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/image_extraction_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        tools:itemCount="3"
+        android:id="@+id/uploaded_image_rv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="@+id/extracting_text_layout"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:listitem="@layout/board_extraction_image_item" />
+    <!--        app:layout_constraintBottom_toTopOf="@id/extracting_text_layout"-->
+
+    <LinearLayout
+        android:id="@+id/extracting_text_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <TextView
+            android:id="@+id/extracting_text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="0dp"
+            android:textAlignment="center"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="@font/nunito_regular"
+            android:text="@string/extracting_text_from_image"
+            android:textColor="#247380"
+            android:textSize="23sp" />
+
+        <com.google.android.material.progressindicator.LinearProgressIndicator
+            app:indicatorColor="@color/mock_primary_color"
+            android:id="@+id/extract_progress"
+            android:layout_width="match_parent"
+            android:layout_height="6.6dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="30dp"
+            android:indeterminate="true" />
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

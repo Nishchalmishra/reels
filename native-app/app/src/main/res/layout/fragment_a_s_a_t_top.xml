@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingTop="2dp"
+    android:paddingBottom="12dp"
+    android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar"
+    >
+
+    <TextView
+        android:id="@+id/titles"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:fontFamily="@font/urbanist_medium"
+        android:text="@string/ASAT_full_name"
+        android:textColor="#80000000"
+        android:textSize="13sp" />
+
+    <LinearLayout
+        android:id="@+id/ll_result_screen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:orientation="vertical"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="15"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="12dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="7"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/urbanist_medium"
+                    android:text="@string/Test_Score"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_user_score"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/urbanist_bold"
+                        android:text="355"
+                        android:textColor="@color/black"
+                        android:textSize="24sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/urbanist_regular"
+                        android:text=" / "
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/tv_total_score"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:alpha="0.7"
+                        android:fontFamily="@font/urbanist_regular"
+                        android:text="500"
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/tv_text_marks"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="6dp"
+                        android:alpha="0.7"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/urbanist_regular"
+                        android:text="@string/marks"
+                        android:textAllCaps="false"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="3dp"
+                android:layout_height="match_parent"
+                android:background="@color/subscription_blue"></LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="8"
+                android:orientation="vertical"
+                android:paddingStart="40dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/urbanist_medium"
+                    android:text="@string/Test_Percentage"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tv_user_percentage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/urbanist_bold"
+                    android:text="40%"
+                    android:textColor="@color/black"
+                    android:textSize="24sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_view_result"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="24dp"
+            android:paddingBottom="8dp"
+            android:weightSum="2">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_view_result"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:layout_marginEnd="16dp"
+                android:layout_weight="1"
+                app:cardBackgroundColor="@color/subscription_blue"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="1dp"
+                app:contentPadding="12dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/urbanist_semi_bold"
+                    android:text="@string/View_Full_Result"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_coupon_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="2dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="2dp">
+
+            <ImageView
+                android:id="@+id/iv_coupon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="centerInside" />
+
+            <!--            <TextView-->
+            <!--                android:id="@+id/tv_coupon_text"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:text="@string/Scholarship_Won_Ab_aapki_annual_fees_kam_ho_gyi_hai"-->
+            <!--                android:textColor="@color/white"-->
+            <!--                android:textSize="18sp"-->
+            <!--                android:fontFamily="@font/urbanist_bold"-->
+            <!--                android:layout_alignParentStart="true"-->
+            <!--                android:layout_marginTop="24dp"-->
+            <!--                android:paddingStart="32dp"-->
+            <!--                android:paddingEnd="24dp"-->
+            <!--                />-->
+
+            <TextView
+                android:id="@+id/tv_coupon_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/urbanist_bold"
+                android:paddingStart="32dp"
+                android:paddingEnd="24dp"
+                android:text="@string/Scholarship_Won_Ab_aapki_annual_fees_kam_ho_gyi_hai"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_sp_18" />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_main_screen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="24dp"
+        android:minHeight="400dp">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_step"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:nestedScrollingEnabled="false"
+            tools:itemCount="3"
+            tools:listitem="@layout/asat_item" />
+
+        <ImageView
+            android:id="@+id/iv_main_screen_scholarship_poster"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="50dp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerInside"
+            android:src="@drawable/img_asat_scholarship" />
+
+    </LinearLayout>
+
+</LinearLayout>

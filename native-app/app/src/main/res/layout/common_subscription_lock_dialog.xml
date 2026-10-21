@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="1dp"
+    android:layout_marginHorizontal="42dp"
+    android:padding="16dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <!-- Title -->
+            <TextView
+                android:id="@+id/dialog_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/urbanist_bold"
+                android:gravity="center"
+                android:text="@string/locked"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:layout_marginTop="16dp"
+                android:layout_marginHorizontal="16dp"
+                android:lineSpacingExtra="4dp"/>
+
+            <!-- Animation -->
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/dialog_animation"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                app:lottie_rawRes="@raw/lock_popup"
+                app:lottie_loop="true"
+                app:lottie_autoPlay="true"
+                android:layout_marginTop="2dp"/>
+
+            <!-- Description -->
+            <TextView
+                android:id="@+id/header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginBottom="20dp"
+                android:fontFamily="@font/urbanist_medium"
+                android:gravity="center"
+                android:layout_marginTop="-12dp"
+                android:lineSpacingExtra="4dp"
+                android:text="@string/OOpsThisMicroIsLocked"
+                android:textColor="#696969"
+                android:textSize="16sp" />
+
+            <!-- CTA Button Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/subscriptionLayout"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                app:cardBackgroundColor="@color/mock_primary_color"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="0dp"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginBottom="20dp">
+
+                <TextView
+                    android:id="@+id/subs"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:fontFamily="@font/urbanist_semi_bold"
+                    android:text="@string/view_plans"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"/>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/iv_close"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginVertical="12dp"
+            android:padding="1dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_close_black"
+            app:tint="#6D6D6D" />
+    </RelativeLayout>
+
+</com.google.android.material.card.MaterialCardView>

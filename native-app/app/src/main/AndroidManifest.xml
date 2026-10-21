@@ -1,0 +1,1863 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_NUMBERS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="com.google.android.gms.permission.AD_ID"/>
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32"
+        tools:ignore="ScopedStorage" />
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission
+        android:name="android.permission.WRITE_SETTINGS"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <queries>
+        <intent>
+            <action android:name="android.speech.RecognitionService" />
+        </intent>
+    </queries>
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+
+    <application
+        android:name=".ArivihanApp"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:hardwareAccelerated="true"
+        android:icon="@mipmap/ic_launcher_square"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:launchMode="singleInstance"
+        android:localeConfig="@xml/locale_config"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/ArivihanTheme"
+        android:usesCleartextTraffic="true"
+        android:enableOnBackInvokedCallback="true"
+        tools:ignore="LockedOrientationActivity"
+        tools:targetApi="33">
+        <activity
+            android:name=".activity.profile.AcademicDetailsActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/ArivihanTheme"
+            android:windowSoftInputMode="adjustResize"/>
+
+        <activity
+            android:name=".activity.video_screens.neet.FullScreenVideoActivity"
+            android:autoVerify="true"
+            android:configChanges="orientation|screenSize|keyboardHidden|smallestScreenSize|screenLayout|uiMode|fontScale"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:host="www.arivihan.com" />
+                <data android:pathPrefix="/demo/welcome/video" />
+                <data android:scheme="https" />
+                <data android:scheme="app" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.web_view.WebViewNeetWeakTopicSelectionActivity"
+            android:autoVerify="true"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/ArivihanTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:host="www.arivihan.com" />
+                <data android:pathPrefix="/web-view/neet/weak/topic/selection" />
+                <data android:scheme="https" />
+                <data android:scheme="app" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.competitive.subject.chapter.ChapterListByBatchActivity"
+            android:autoVerify="true"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/statusBarStyle">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:host="www.arivihan.com" />
+                <data android:pathPrefix="/chapter/batch/list" />
+                <data android:scheme="https" />
+                <data android:scheme="app" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.web_view.MicrolecturePractiseWebViewActivity"
+            android:autoVerify="true"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/ArivihanTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:host="www.arivihan.com" />
+                <data android:pathPrefix="/practise/web-view" />
+                <data android:scheme="https" />
+                <data android:scheme="app" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.competitive.subject.chapter.ChapterListBySubjectsActivity"
+            android:autoVerify="true"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/statusBarStyle">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:host="www.arivihan.com" />
+                <data android:pathPrefix="/adaptive/chapter/list" />
+                <data android:scheme="https" />
+                <data android:scheme="app" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.competitive.subject.chapter.ChapterListByTypeActivity"
+            android:autoVerify="true"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/statusBarStyle">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:host="www.arivihan.com" />
+                <data android:pathPrefix="/competitive/chapter/type" />
+                <data android:scheme="https" />
+                <data android:scheme="app" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.competitive.topic.AdaptiveTopicListActivity"
+            android:autoVerify="true"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/statusBarStyle">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:host="www.arivihan.com" />
+                <data android:pathPrefix="/adaptive/practise/topics" />
+                <data android:scheme="https" />
+                <data android:scheme="app" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.competitive.subject.AdaptiveSubjectPracticeActivity"
+            android:autoVerify="true"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/statusBarStyle">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:host="www.arivihan.com" />
+                <data android:pathPrefix="/adaptive/practise" />
+                <data android:scheme="https" />
+                <data android:scheme="app" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.competitive.CompetitiveHomeActivity"
+            android:autoVerify="true"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/statusBarStyle">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:host="www.arivihan.com" />
+                <data android:pathPrefix="/competitive/home" />
+                <data android:scheme="https" />
+                <data android:scheme="app" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.web_view.WebViewByUrlActivity"
+            android:autoVerify="true"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/ArivihanTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:host="www.arivihan.com" />
+                <data android:pathPrefix="/web-view/url" />
+                <data android:scheme="https" />
+                <data android:scheme="app" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.todo.TodoExamDateSelectionActivity"
+            android:autoVerify="true"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/ArivihanTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:host="www.arivihan.com" />
+                <data android:pathPrefix="/todo/exam/date" />
+                <data android:scheme="https" />
+                <data android:scheme="app" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.OnboardingActivityNew"
+            android:configChanges="orientation|screenSize|keyboardHidden|smallestScreenSize|screenLayout|uiMode|fontScale"
+            android:exported="false"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.asat.ASATActivity"
+            android:autoVerify="true"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/ArivihanTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:host="www.arivihan.com" />
+                <data android:pathPrefix="/asat/home" />
+                <data android:scheme="https" />
+                <data android:scheme="app" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.ToDoListSteps"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.MySubscriptions"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <receiver
+            android:name=".helper.OTPReceiver"
+            android:exported="true"
+            android:permission="com.google.android.gms.auth.api.phone.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.gms.auth.api.phone.SMS_RETRIEVED" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name=".activity.OfflinePlayerActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden|smallestScreenSize|screenLayout|uiMode|fontScale"
+            android:exported="false"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".activity.WebviewDoubtChatScreen"
+            android:autoVerify="true"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:host="www.arivihan.com" />
+                <data android:pathPrefix="/doubt/solution" />
+                <data android:scheme="https" />
+                <data android:scheme="app" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.PdfViewerActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.HalfYearlyActivity"
+            android:autoVerify="true"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:host="www.arivihan.com" />
+                <data android:pathPrefix="/half-year/activity" />
+                <data android:scheme="https" />
+                <data android:scheme="app" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.AnalyticsActivity"
+            android:autoVerify="true"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:host="www.arivihan.com" />
+                <data android:pathPrefix="/analytics" />
+                <data android:scheme="https" />
+                <data android:scheme="app" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id"
+            tools:replace="android:value" />
+        <meta-data
+            android:name="com.facebook.sdk.ClientToken"
+            android:value="@string/facebook_client_token"
+            tools:replace="android:value" />
+
+
+        <meta-data
+            android:name="io.branch.sdk.BranchKey"
+            android:value="@string/branch_key_live" />
+        <meta-data
+            android:name="io.branch.sdk.BranchKey.test"
+            android:value="@string/branch_key_test" />
+
+        <meta-data
+            android:name="io.branch.sdk.TestMode"
+            android:value="false" />
+
+        <activity
+            android:name=".activity.asat.UploadMarksheetActivity"
+            android:autoVerify="true"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:host="www.arivihan.com" />
+                <data android:pathPrefix="/asat/upload/marksheet" />
+                <data android:scheme="https" />
+                <data android:scheme="app" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.onboarding.NeetClassSelectionActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".toppernotes.presentation.TopperNotesActivity"
+            android:configChanges="uiMode"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:host="www.arivihan.com" />
+                <data android:pathPrefix="/subject/toppers/notes" />
+                <data android:scheme="https" />
+                <data android:scheme="app" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.ToppersNotesActivity"
+            android:autoVerify="true"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:host="www.arivihan.com" />
+                <data android:pathPrefix="/toppers/notes" />
+                <data android:scheme="https" />
+                <data android:scheme="app" />
+            </intent-filter>
+        </activity> <!-- <activity -->
+        <!-- android:name="com.facebook.CustomTabActivity" -->
+        <!-- android:exported="true" -->
+        <!-- android:autoVerify="true"> -->
+        <!-- <intent-filter> -->
+        <!-- <action android:name="android.intent.action.VIEW" /> -->
+        <!-- <category android:name="android.intent.category.DEFAULT" /> -->
+        <!-- <category android:name="android.intent.category.BROWSABLE" /> -->
+        <!-- <data android:scheme="https" /> -->
+        <!-- </intent-filter> -->
+        <!-- </activity> -->
+        <activity
+            android:name=".activity.VideoPlayerActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden|smallestScreenSize|screenLayout|uiMode|fontScale"
+            android:exported="true"
+            android:screenOrientation="sensorLandscape" />
+        <activity
+            android:name=".activity.CampaignSubscriptionActivity"
+            android:autoVerify="true"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:host="www.arivihan.com" />
+                <data android:pathPrefix="/campaign-subscription" />
+                <data android:scheme="https" />
+                <data android:scheme="app" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.QRCodePaymentActivity"
+            android:autoVerify="true"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/ArivihanTheme.NoEdgeToEdge">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:host="www.arivihan.com" />
+                <data android:pathPrefix="/qr/payment" />
+                <data android:scheme="https" />
+                <data android:scheme="app" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.SubscriptionCongatulationsActivity"
+            android:autoVerify="true"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:host="www.arivihan.com" />
+                <data android:pathPrefix="/subscription/congratulations" />
+                <data android:scheme="https" />
+                <data android:scheme="app" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.ImageCropperActivity"
+            android:autoVerify="true"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:host="www.arivihan.com" />
+                <data android:pathPrefix="/image/cropper" />
+                <data android:scheme="https" />
+                <data android:scheme="app" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.GameActivity"
+            android:autoVerify="true"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:host="www.arivihan.com" />
+                <data android:pathPrefix="/game" />
+                <data android:scheme="https" />
+                <data android:scheme="app" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.video_screens.pdf.MockDemoActivity"
+            android:autoVerify="true"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:host="www.arivihan.com" />
+                <data android:pathPrefix="/mock/demo" />
+                <data android:scheme="https" />
+                <data android:scheme="app" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.PracticeProblemsActivity"
+            android:autoVerify="true"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:host="www.arivihan.com" />
+                <data android:pathPrefix="/practice/problems" />
+                <data android:scheme="https" />
+                <data android:scheme="app" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.ExploreActivity"
+            android:autoVerify="true"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:host="www.arivihan.com" />
+                <data android:pathPrefix="/explore" />
+                <data android:scheme="https" />
+                <data android:scheme="app" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.DoubtHistoryActivity"
+            android:autoVerify="true"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:host="www.arivihan.com" />
+                <data android:pathPrefix="/doubt/history" />
+                <data android:scheme="https" />
+                <data android:scheme="app" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.ExceptionHandlingActivity"
+            android:autoVerify="true"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:host="www.arivihan.com" />
+                <data android:pathPrefix="/exception/handling" />
+                <data android:scheme="https" />
+                <data android:scheme="app" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.MicrolectureListActivity"
+            android:autoVerify="true"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:host="www.arivihan.com" />
+                <data android:pathPrefix="/micro/lecture" />
+                <data android:scheme="https" />
+                <data android:scheme="app" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.BuySubscriptionActivity"
+            android:autoVerify="true"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/statusBarStyle">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:host="www.arivihan.com" />
+                <data android:pathPrefix="/buy/subscription" />
+                <data android:scheme="https" />
+                <data android:scheme="app" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.SubscriptionActivityNew"
+            android:autoVerify="true"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/statusBarStyle">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:host="www.arivihan.com" />
+                <data android:pathPrefix="/subscription/new" />
+                <data android:scheme="https" />
+                <data android:scheme="app" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.DoubtChatHistoryActivity"
+            android:autoVerify="true"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:host="www.arivihan.com" />
+                <data android:pathPrefix="/doubt/chat/history" />
+                <data android:scheme="https" />
+                <data android:scheme="app" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.DoubtChatScreen"
+            android:autoVerify="true"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:host="www.arivihan.com" />
+                <data android:pathPrefix="/doubt/solution/old" />
+                <data android:scheme="https" />
+                <data android:scheme="app" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.ChatScreenChooseSubjectForChat"
+            android:autoVerify="true"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:host="www.arivihan.com" />
+                <data android:pathPrefix="/doubt/subjectslist" />
+                <data android:scheme="https" />
+                <data android:scheme="app" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.TestSeriesListActivity"
+            android:autoVerify="true"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/statusBarStyle">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:host="www.arivihan.com" />
+                <data android:pathPrefix="/testSeries/list" />
+                <data android:scheme="https" />
+                <data android:scheme="app" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.MockTestAnalysisActivity"
+            android:autoVerify="true"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/statusBarStyle">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:host="www.arivihan.com" />
+                <data android:pathPrefix="/test/analysis" />
+                <data android:scheme="https" />
+                <data android:scheme="app" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.FullScreenImageActivity"
+            android:autoVerify="true"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/statusBarStyle">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:host="www.arivihan.com" />
+                <data android:pathPrefix="/image/fullscreen" />
+                <data android:scheme="https" />
+                <data android:scheme="app" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.SeeAllActivity"
+            android:autoVerify="true"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:host="www.arivihan.com" />
+                <data android:pathPrefix="/see" />
+                <data android:scheme="https" />
+                <data android:scheme="app" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".RazorpayPaymentGatewayActivity"
+            android:autoVerify="true"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:host="www.arivihan.com" />
+                <data android:pathPrefix="/razorpay/payment" />
+                <data android:scheme="https" />
+                <data android:scheme="app" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.DeleteAccountActivity"
+            android:autoVerify="true"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="DELETE_ACCOUNT" />
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:host="www.arivihan.com" />
+                <data android:pathPrefix="/delete/account" />
+                <data android:scheme="https" />
+                <data android:scheme="app" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.TestSeriesSeeAllActivity"
+            android:autoVerify="true"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/statusBarStyle">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:host="www.arivihan.com" />
+                <data android:pathPrefix="/testseries/seall" />
+                <data android:scheme="https" />
+                <data android:scheme="app" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.GlobalSearchActivity"
+            android:autoVerify="true"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:host="www.arivihan.com" />
+                <data android:pathPrefix="/global/search" />
+                <data android:scheme="https" />
+                <data android:scheme="app" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.ChatSupportHistoryActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.BoardQuestionActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.ChatSupportActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.PersonalisedLecture"
+            android:autoVerify="true"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="OPEN_ACTIVITY_1" />
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:host="www.arivihan.com" />
+                <data android:pathPrefix="/personalise" />
+                <data android:scheme="https" />
+                <data android:scheme="app" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.AdminToDoListMain"
+            android:exported="false"
+            android:label="@string/title_activity_edit_routine"
+            android:screenOrientation="portrait"
+            android:theme="@style/ArivihanTheme.NoActionBar" />
+        <activity
+            android:name=".activity.AdminEditRoutineActivity"
+            android:autoVerify="true"
+            android:exported="true"
+            android:label="@string/title_activity_edit_routine"
+            android:screenOrientation="portrait"
+            android:theme="@style/ArivihanTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:host="www.arivihan.com" />
+                <data android:pathPrefix="/admin/edit/routine" />
+                <data android:scheme="https" />
+                <data android:scheme="app" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.EditRoutineActivity"
+            android:autoVerify="true"
+            android:exported="true"
+            android:label="@string/title_activity_edit_routine"
+            android:screenOrientation="portrait"
+            android:theme="@style/ArivihanTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:host="www.arivihan.com" />
+                <data android:pathPrefix="/edit/routine" />
+                <data android:scheme="https" />
+                <data android:scheme="app" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.ToDoListMain"
+            android:autoVerify="true"
+            android:exported="true"
+            android:label="@string/title_activity_to_do_list_main"
+            android:screenOrientation="portrait"
+            android:theme="@style/ArivihanTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:host="www.arivihan.com" />
+                <data android:pathPrefix="/routine" />
+                <data android:scheme="https" />
+                <data android:scheme="app" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.CustomFormActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.CustomChapterListActivity"
+            android:autoVerify="true"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:host="www.arivihan.com" />
+                <data android:pathPrefix="/custom/chapter" />
+                <data android:scheme="https" />
+                <data android:scheme="app" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.MockTestLeaderBoard"
+            android:autoVerify="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:host="www.arivihan.com" />
+                <data android:pathPrefix="/leaderboard" />
+                <data android:scheme="https" />
+                <data android:scheme="app" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.CompetitionQuestion"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.HistoryActivity"
+            android:autoVerify="true"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:host="www.arivihan.com" />
+                <data android:pathPrefix="/history/activity" />
+                <data android:scheme="https" />
+                <data android:scheme="app" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
+            android:autoVerify="true"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Base.Theme.AppCompat">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:host="www.arivihan.com" />
+                <data android:pathPrefix="/crop/image" />
+                <data android:scheme="https" />
+                <data android:scheme="app" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.CompetitionActivity"
+            android:autoVerify="true"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:host="www.arivihan.com" />
+                <data android:pathPrefix="/competition" />
+                <data android:scheme="https" />
+                <data android:scheme="app" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.LeaderboardActivity"
+            android:autoVerify="true"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:host="www.arivihan.com" />
+                <data android:pathPrefix="/leaderboard" />
+                <data android:scheme="https" />
+                <data android:scheme="app" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.TestSeriesAnalysisActivity"
+            android:autoVerify="true"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:host="www.arivihan.com" />
+                <data android:pathPrefix="/mock/test/analysis" />
+                <data android:scheme="https" />
+                <data android:scheme="app" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="firebase_crashlytics_collection_enabled"
+            android:value="${crashlyticsEnabled}" />
+
+        <activity
+            android:name=".activity.ViewNotesActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.SamplePapersActivity"
+            android:autoVerify="true"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:host="www.arivihan.com" />
+                <data android:pathPrefix="/sample/paper" />
+                <data android:scheme="https" />
+                <data android:scheme="app" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.QuickNotesActivity"
+            android:autoVerify="true"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:host="www.arivihan.com" />
+                <data android:pathPrefix="/quick/notes" />
+                <data android:scheme="https" />
+                <data android:scheme="app" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.MockTestDetailActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.CurrentDoubtActivity"
+            android:autoVerify="true"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:host="www.arivihan.com" />
+                <data android:pathPrefix="/profile/mydoubt" />
+                <data android:scheme="https" />
+                <data android:scheme="app" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.ActivityTestIntro"
+            android:autoVerify="true"
+            android:exported="true"
+            android:label="@string/title_activity_test_intro"
+            android:screenOrientation="portrait"
+            android:theme="@style/statusBarStyle">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:host="www.arivihan.com" />
+                <data android:pathPrefix="/open/test-series" />
+                <data android:scheme="https" />
+                <data android:scheme="app" />
+            </intent-filter>
+        </activity> <!-- <activity -->
+        <!-- android:name=".activity.ClickDoubtPictureActivity" -->
+        <!-- android:exported="false" -->
+        <!-- android:screenOrientation="portrait" /> -->
+        <activity
+            android:name=".activity.ZoomImageActivity"
+            android:autoVerify="true"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:host="www.arivihan.com" />
+                <data android:pathPrefix="/image/zoom" />
+                <data android:scheme="https" />
+                <data android:scheme="app" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.UserAuthenticationActivity"
+            android:autoVerify="true"
+            android:exported="true"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:host="www.arivihan.com" />
+                <data android:pathPrefix="/user/onboarding" />
+                <data android:scheme="https" />
+                <data android:scheme="app" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.StartActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden|smallestScreenSize|screenLayout|uiMode|fontScale"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="arivihan" android:host="open" />
+            </intent-filter>
+
+
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="https" android:host="0k1zh.app.link" />
+                <data android:scheme="https" android:host="0k1zh-alternate.app.link" />
+                <data android:scheme="https" android:host="0k1zh.test-app.link" />
+                <data android:scheme="https" android:host="0k1zh-alternate.test-app.link" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.refer.BookOrderActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden|smallestScreenSize|screenLayout|uiMode|fontScale"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/SplashTheme" />
+        <activity
+            android:name=".activity.refer.OrderHistoryActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden|smallestScreenSize|screenLayout|uiMode|fontScale"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/SplashTheme" />
+        <activity
+            android:name=".activity.refer.OrderSuccessActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden|smallestScreenSize|screenLayout|uiMode|fontScale"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/SplashTheme" />
+        <activity
+            android:name=".activity.refer.ReferAndEarnActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden|smallestScreenSize|screenLayout|uiMode|fontScale"
+            android:exported="true"
+            android:hardwareAccelerated="true"
+            android:launchMode="standard"
+            android:screenOrientation="portrait"
+            android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:host="www.arivihan.com" />
+                <data android:pathPrefix="/refer/win" />
+                <data android:scheme="https" />
+                <data android:scheme="app" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.refer.MonthlyWinnersActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden|smallestScreenSize|screenLayout|uiMode|fontScale"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.refer.ReferralInvitedFriendsActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden|smallestScreenSize|screenLayout|uiMode|fontScale"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.refer.UserAddressActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden|smallestScreenSize|screenLayout|uiMode|fontScale"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".activity.refer.ReferBookSelectionActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden|smallestScreenSize|screenLayout|uiMode|fontScale"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".activity.EditProfileActivity"
+            android:autoVerify="true"
+            android:exported="true"
+            android:hardwareAccelerated="false"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:host="www.arivihan.com" />
+                <data android:pathPrefix="/edit/profile" />
+                <data android:scheme="https" />
+                <data android:scheme="app" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.NotificationActivity"
+            android:autoVerify="true"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:host="www.arivihan.com" />
+                <data android:pathPrefix="/notification" />
+                <data android:scheme="https" />
+                <data android:scheme="app" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.QuestionActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.MicrolectureDetailActivity"
+            android:autoVerify="true"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:host="www.arivihan.com" />
+                <data android:pathPrefix="/micro/lecture/detail" />
+                <data android:scheme="https" />
+                <data android:scheme="app" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.ChapterListActivity"
+            android:autoVerify="true"
+            android:configChanges="orientation|screenLayout|screenSize"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/statusBarStyle">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:host="www.arivihan.com" />
+                <data android:pathPrefix="/chapter/list" />
+                <data android:scheme="https" />
+                <data android:scheme="app" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.HomeScreen"
+            android:autoVerify="true"
+            android:configChanges="orientation|screenSize|keyboardHidden|smallestScreenSize|screenLayout|uiMode|fontScale"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/statusBarStyle">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:host="www.arivihan.com" />
+                <data android:pathPrefix="/home" />
+                <data android:scheme="https" />
+                <data android:scheme="app" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.StreakQuestionActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.UnlockActivity"
+            android:autoVerify="true"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:host="www.arivihan.com" />
+                <data android:pathPrefix="/join/subscription" />
+                <data android:scheme="https" />
+                <data android:scheme="app" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.ProPlanSubscriptionActivity"
+            android:configChanges="uiMode"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Arivihan2">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:host="www.arivihan.com" />
+                <data android:pathPrefix="/subscription/pro" />
+                <data android:scheme="https" />
+                <data android:scheme="app" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.competitive.subject.chapter.ChapterListSubscribedActivity"
+            android:configChanges="uiMode"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Arivihan2">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:host="www.arivihan.com" />
+                <data android:pathPrefix="/chapter/list/premium/subscribed" />
+                <data android:scheme="https" />
+                <data android:scheme="app" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.StreakHomePage"
+            android:autoVerify="true"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:host="www.arivihan.com" />
+                <data android:pathPrefix="/streak/home/page" />
+                <data android:scheme="https" />
+                <data android:scheme="app" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ReelsActivity"
+            android:autoVerify="true"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:host="www.arivihan.com" />
+                <data android:pathPrefix="/reels" />
+                <data android:scheme="https" />
+                <data android:scheme="app" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.VernacularActivity"
+            android:autoVerify="true"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:host="www.arivihan.com" />
+                <data android:pathPrefix="/vernacular" />
+                <data android:scheme="https" />
+                <data android:scheme="app" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.MockQuestionFInal"
+            android:screenOrientation="portrait"
+            android:theme="@style/statusBarStyle" />
+        <activity
+            android:name=".ReferAndEarn"
+            android:autoVerify="true"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:host="www.arivihan.com" />
+                <data android:pathPrefix="/refer" />
+                <data android:scheme="https" />
+                <data android:scheme="app" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.ExoPlayerActivity"
+            android:autoVerify="true"
+            android:exported="true"
+            android:resizeableActivity="true"
+            android:screenOrientation="sensorLandscape"
+            tools:targetApi="n">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:host="www.arivihan.com" />
+                <data android:pathPrefix="/exoplayer" />
+                <data android:scheme="https" />
+                <data android:scheme="app" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.MyDownloadActivity"
+            android:autoVerify="true"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:host="www.arivihan.com" />
+                <data android:pathPrefix="/my-downloads" />
+                <data android:scheme="https" />
+                <data android:scheme="app" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.competitive.FeatureInfoVideoActivity"
+            android:autoVerify="true"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:host="www.arivihan.com" />
+                <data android:pathPrefix="/user/competitive/feature-video" />
+                <data android:scheme="https" />
+                <data android:scheme="app" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.competitive.TestSeries.CompetitiveTestAnalysisActivity"
+            android:autoVerify="true"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:host="www.arivihan.com" />
+                <data android:pathPrefix="/user/competitive/test/analysis" />
+                <data android:scheme="https" />
+                <data android:scheme="app" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.TestResultActivity"
+            android:autoVerify="true"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:host="www.arivihan.com" />
+                <data android:pathPrefix="/test/result" />
+                <data android:scheme="https" />
+                <data android:scheme="app" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.SettingsActivity"
+            android:autoVerify="true"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:host="www.arivihan.com" />
+                <data android:pathPrefix="/app/profile/settings" />
+                <data android:scheme="https" />
+                <data android:scheme="app" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.AdditionalSettingsActivity"
+            android:autoVerify="true"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:host="www.arivihan.com" />
+                <data android:pathPrefix="/app/profile/settings/additional" />
+                <data android:scheme="https" />
+                <data android:scheme="app" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.NewDeleteAccountActivity"
+            android:autoVerify="true"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="DELETE_ACCOUNT" />
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:host="www.arivihan.com" />
+                <data android:pathPrefix="/delete/account" />
+                <data android:scheme="https" />
+                <data android:scheme="app" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".common.NameInputActivity"
+            android:autoVerify="true"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:host="www.arivihan.com" />
+                <data android:pathPrefix="/app/enter/name" />
+                <data android:scheme="https" />
+                <data android:scheme="app" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.CampaignActivity"
+            android:autoVerify="true"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:host="www.arivihan.com" />
+                <data android:pathPrefix="/app/activity/campaign" />
+                <data android:scheme="https" />
+                <data android:scheme="app" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.WeeklyTimetableActivity"
+            android:autoVerify="true"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:host="www.arivihan.com" />
+                <data android:pathPrefix="/app/timetable/weekly" />
+                <data android:scheme="https" />
+                <data android:scheme="app" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.SubscriptionPaymentScreen"
+            android:autoVerify="true"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/ArivihanTheme.NoEdgeToEdge">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:host="www.arivihan.com" />
+                <data android:pathPrefix="/app/payment/subscription" />
+                <data android:scheme="https" />
+                <data android:scheme="app" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.NotificationHandlerActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.OverallChapterListActivity"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="doubtbuzzter.com"
+                    android:pathPrefix="/overAllChapterList/chapter-list"
+                    android:scheme="https" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name=".MyFirebaseMessagingService"
+            android:exported="true"
+            android:stopWithTask="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_channel_id"
+            android:value="app_notification_v2" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/magiclogo_min" />
+        <meta-data
+            android:name="firebase_messaging_auto_init_enabled"
+            android:value="false" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/filepaths" />
+        </provider>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+        <meta-data
+            android:name="com.truecaller.android.sdk.ClientId"
+            android:value="@string/true_caller_client_id" />
+
+        <service
+            android:name=".manager.OfflineVideoDownloadService"
+            android:exported="false"
+            android:foregroundServiceType="dataSync">
+            <intent-filter>
+                <action android:name="com.google.android.exoplayer.downloadService.action.RESTART" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </service>
+        <service
+            android:name="androidx.media3.exoplayer.scheduler.PlatformScheduler$PlatformSchedulerService"
+            android:exported="true"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+        <service
+            android:name=".manager.PdfDownloadService"
+            android:exported="false"
+            android:foregroundServiceType="dataSync" />
+
+        <receiver
+            android:name=".receiver.InstallReferrerReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".receiver.NotificationCountdownReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="arivihan.countdown.EXPIRE" />
+                <action android:name="arivihan.countdown.CLEAR" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".NotificationDismissReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="arivihan.intent.action.NOTIFICATION_DISMISSED" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".ChatNotificationTapReceiver"
+            android:exported="false" />
+    </application>
+
+</manifest>

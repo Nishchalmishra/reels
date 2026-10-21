@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:layout_marginEnd="20dp"
+        android:layout_marginVertical="10dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/back_button_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="20dp"
+            android:paddingEnd="17dp">
+
+        <ImageView
+                android:layout_width="13dp"
+                android:layout_height="15dp"
+                android:src="@drawable/arrow_icon"
+                android:id="@+id/back_arrow"
+                android:layout_marginTop="1dp"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/activity_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/urbanist_semi_bold"
+            android:text="Lectures"
+            android:textColor="@color/black"
+            android:textSize="@dimen/toolbar_title_size" />
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/search_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:searchIcon="@drawable/search_outline"
+            app:closeIcon="@drawable/search_close_btn"
+            app:searchHintIcon="@null"
+            android:visibility="visible"/>
+
+        <ImageView
+            android:id="@+id/filter_chapter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/options_outline"
+            android:visibility="visible" />
+    </LinearLayout>
+
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmer_chapters"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        android:visibility="visible"
+        android:layout_marginTop="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <include
+                layout="@layout/shimmer_chapter_name"/>
+            <include
+                layout="@layout/shimmer_chapter_name"/>
+            <include
+                layout="@layout/shimmer_chapter_name"/><include
+                layout="@layout/shimmer_chapter_name"/><include
+                layout="@layout/shimmer_chapter_name"/><include
+                layout="@layout/shimmer_chapter_name"/>
+
+        </LinearLayout>
+
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/chapter_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintVertical_weight="1"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:listitem="@layout/chapter_name_layout"
+        android:layout_marginHorizontal="20dp"
+        android:background="@color/white"
+        android:layout_marginVertical="10dp"
+        android:visibility="gone"/>
+
+    <LinearLayout
+        android:id="@+id/no_result_found_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:translationY="-65dp">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/no_results" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/search_no_result_found"
+            android:fontFamily="@font/urbanist_bold"
+            android:textSize="18dp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/change_the_search_item"
+            android:fontFamily="@font/urbanist_medium"
+            android:textSize="14dp"
+            android:layout_marginTop="4dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/live_class_empty_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="230dp"
+            android:layout_height="180dp"
+            android:src="@drawable/coming_soon_live_en"
+            android:scaleType="fitCenter"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/no_data_live_en"
+            android:textColor="@color/text_primary"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:fontFamily="@font/urbanist_semi_bold"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/filter_view_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:alpha="0.8"
+        android:background="@color/black"
+        android:orientation="horizontal" />
+
+    <include
+        android:id="@+id/filter_view_layout"
+        android:layout_width="250dp"
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        layout="@layout/chapter_list_filter"
+        android:visibility="gone"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

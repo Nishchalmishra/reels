@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:id="@+id/parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/loader_gradient_bg">
+
+    <LinearLayout
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <!-- Loader -->
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lottieAnimationView"
+            android:layout_width="113dp"
+            android:layout_height="113dp"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true" />
+
+        <TextView
+            android:id="@+id/tvLoaderText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:fontFamily="@font/urbanist_bold"
+            android:text="Switching to\n Board Mode..."
+            android:textColor="#2B2B2B"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+</FrameLayout>

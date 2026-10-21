@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Blur layer 1 (outermost) -->
+    <item>
+        <shape android:shape="oval">
+            <gradient
+                android:type="radial"
+                android:gradientRadius="252dp"
+                android:centerColor="#4026C6DA"
+                android:endColor="#00000000" />
+        </shape>
+    </item>
+
+    <!-- Blur layer 2 -->
+    <item android:top="1dp" android:bottom="1dp" android:left="1dp" android:right="1dp">
+        <shape android:shape="oval">
+            <gradient
+                android:type="radial"
+                android:gradientRadius="251dp"
+                android:centerColor="#7026C6DA"
+                android:endColor="#00000000" />
+        </shape>
+    </item>
+
+    <!-- Blur layer 3 (spread) -->
+    <item android:top="2dp" android:bottom="2dp" android:left="2dp" android:right="2dp">
+        <shape android:shape="oval">
+            <gradient
+                android:type="radial"
+                android:gradientRadius="250dp"
+                android:centerColor="#B026C6DA"
+                android:endColor="#5026C6DA" />
+        </shape>
+    </item>
+
+    <!-- Main circle -->
+    <item android:top="6dp" android:bottom="6dp" android:left="6dp" android:right="6dp">
+        <shape android:shape="oval">
+            <solid android:color="#26C6DA" />
+        </shape>
+    </item>
+
+</layer-list>

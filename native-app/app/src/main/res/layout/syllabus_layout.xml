@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        app:cardBackgroundColor="#CFD9FB"
+        app:cardCornerRadius="5dp"
+        android:layout_margin="8dp"
+        app:cardElevation="0dp"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/chapter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/poppins_light"
+                android:text="Chapter Name"
+                android:textColor="@color/black"
+                android:textSize="@dimen/primary_text_size"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:visibility="gone"
+                android:id="@+id/completed"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="8dp"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/ic_baseline_check_circle_24"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_below="@id/chapter"/>
+
+
+
+
+
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

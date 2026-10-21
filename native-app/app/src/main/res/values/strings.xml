@@ -1,0 +1,2386 @@
+<resources>
+    <string name="app_name">Arivihan</string>
+    <string name="title_home">Type it</string>
+    <string name="title_dashboard">Click it</string>
+    <string name="title_notifications">Trace it</string>
+    <string name="preview_description">Image and Video preview will appear here</string>
+    <string name="title_activity_you">YouActivity</string>
+    <string name="title_activity_type">TypeActivity</string>
+    <string name="title_activity_sign_in">SignInActivity</string>
+    <string name="action_add_favourite">Add to Favourites</string>
+    <string name="action_play_next">Play Next</string>
+    <string name="backdrop_title">LOVE MUSIC</string>
+    <string name="backdrop_subtitle">This season top 20 albums</string>
+    <string name="title_activity_form">FormActivity</string>
+    <string name="select_class">Select class</string>
+    <string name="title_activity_paytm_acitivity">PaytmAcitivity</string>
+    <string name="title_activity_gpay">GPayActivity</string>
+    <string-array name="select_class">
+        <item>Select Class</item>
+        <item>9th</item>
+        <item>10th</item>
+        <item>11th</item>
+        <item>12th</item>
+        <item>Dropper</item>
+    </string-array>
+
+    <string-array name="select_class_hindi">
+        <item>कक्षा चुनें</item>
+        <item>9वीं</item>
+        <item>10वीं</item>
+        <item>11वीं</item>
+        <item>12वीं</item>
+        <item>ड्रॉपर</item>
+    </string-array>
+
+    <string-array name="select_class_marathi">
+        <item>वर्ग निवडा</item>
+        <item>9वीं</item>
+        <item>10वीं</item>
+        <item>11वीं</item>
+        <item>12वीं</item>
+        <item>ड्रॉपर</item>
+    </string-array>
+
+    <string-array name="select_class_gujarati">
+        <item>વર્ગ પસંદ કરો</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>ड्रॉपर</item>
+    </string-array>
+
+    <string-array name="select_subject">
+        <item>Select Subject</item>
+        <item>Maths</item>
+        <item>Physics</item>
+        <item>Chemistry</item>
+        <item>Biology</item>
+    </string-array>
+
+    <string-array name="select_subject_hindi">
+        <item>विषय चुनें</item>
+        <item>गणित</item>
+        <item>भौतिक विज्ञान</item>
+        <item>रसायन शास्त्र</item>
+        <item>जीवविज्ञान</item>
+    </string-array>
+    <string-array name="select_subject_marathi">
+        <item>एक विषय निवडा</item>
+        <item>गणित</item>
+        <item>भौतिक विज्ञान</item>
+        <item>रसायन शास्त्र</item>
+        <item>जीवशास्त्र</item>
+    </string-array>
+    <string-array name="select_subject_gujarati">
+        <item>એક વિષય પસંદ કરો</item>
+        <item>ગણિત</item>
+        <item>ભૌતિકશાસ્ત્ર</item>
+        <item>રસાયણશાસ્ત્રर</item>
+        <item>બાયોલોજી</item>
+    </string-array>
+
+    <string-array name="select_points">
+        <item>Select Points</item>
+        <!--<item>2</item>-->
+        <item>5</item>
+        <item>8</item>
+    </string-array>
+
+    <string-array name="select_points_hindi">
+        <item>अंक चुनें</item>
+        <!--<item>2</item>-->
+        <item>5</item>
+        <item>8</item>
+    </string-array>
+
+    <string-array name="select_points_gujarati">
+        <item>સ્કોર પસંદ કરો</item>
+        <!--<item>2</item>-->
+        <item>5</item>
+        <item>8</item>
+    </string-array>
+
+
+    <string-array name="select_points_marathi">
+        <item>स्कोअर निवडा</item>
+        <!--<item>2</item>-->
+        <item>5</item>
+        <item>8</item>
+    </string-array>
+
+
+    <string-array name="select_preferred_points">
+        <item>Select Preferred Format</item>
+        <item>Image</item>
+        <item>Video</item>
+    </string-array>
+    <string-array name="select_preferred_points_hindi">
+        <item>पसंदीदा प्रारूप का चयन करें</item>
+        <item>इमेज</item>
+        <item>वीडियो</item>
+        <!--<item>Video</item>-->
+    </string-array>
+    <string-array name="select_preferred_points_marathi">
+        <item>प्राधान्यकृत स्वरूप निवडा</item>
+        <item>इमेज</item>
+        <item>व्हिडिओ</item>
+        <!--<item>Video</item>-->
+    </string-array>
+    <string-array name="select_preferred_points_gujarati">
+        <item>પસંદ કરેલ ફોર્મેટ પસંદ કરો</item>
+        <item>છબી</item>
+        <item>વિડિઓ</item>
+        <!--<item>Video</item>-->
+    </string-array>
+
+
+    <string-array name="select_physics_chapter">
+        <item>Laws of Motion</item>
+        <item>Work, Energy and Power</item>
+        <item>Kinematics</item>
+        <item>Waves and Sound</item>
+        <item>Modern Physics</item>
+    </string-array>
+    <string name="add_points">Select class</string>
+    <string-array name="add_points">
+        <item>1pts</item>
+        <item>2pts</item>
+        <item>3pts</item>
+    </string-array>
+    <string-array name="loosing_quotes">
+        <item>You learn more from losing than winning. You learn how to keep going.</item>
+        <item>The secret of genius is to carry the spirit of the child into old age, which means never losing your enthusiasm.</item>
+        <item>Your strength doesn\'t come from winning. It comes from struggles and hardship. Everything that you go through prepares you for the next level.</item>
+        <item>Success in life is not for those who run fast, but for those who keep running and always on the move.</item>
+        <item>Sometimes you win and sometimes you learn. It\'s a win-win.</item>
+    </string-array>
+    <string-array name="winner_quotes">
+        <item>A winner is someone who recognizes his God-given talents, works his tail off to develop them into skills, and uses these skills to accomplish his goals. Keep It Up. We are working on adding more levels. Please update your app regularly.</item>
+        <item>Attitude, the difference between winners and losers. Keep It Up. We are working on adding more levels. Please update your app regularly.</item>
+        <item>A winner never stops trying. Keep It Up. We are working on adding more levels. Please update your app regularly.</item>
+        <item>Winners train, losers complain.We are working on adding more levels. Please update your app regularly.</item>
+        <item>Congratulations and best wishes for your next adventure!. We are working on adding more levels. Please update your app regularly.</item>
+    </string-array>
+    <string name="select_sub">Select class</string>
+    <string-array name="select_sub">
+        <item>Physics</item>
+        <item>Chemistry</item>
+        <item>Maths</item>
+    </string-array>
+    <string name="select_topic">Select class</string>
+    <string-array name="select_topic">
+        <item>11th</item>
+        <item>12th</item>
+        <item>Dropper</item>
+    </string-array>
+    <string name="large_text">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n\nNullam ut metus nec eros imperdiet placerat non non lectus. Integer maximus, orci nec auctor cursus, ex felis ultricies libero, nec convallis lectus urna eget nisl. Aenean pharetra dui ut velit cursus, eget congue nulla interdum. Sed venenatis, ipsum eu sollicitudin vehicula, nisi lectus aliquam nisl, ac tempus nisl nisl ut turpis. Suspendisse potenti.\n\nVivamus at metus sapien. Quisque non tortor a lacus fermentum auctor ac eget ligula. Nulla at leo ut metus dignissim consectetur. Integer eu felis bibendum, euismod purus sit amet, dictum arcu. Curabitur cursus auctor nisl, vel lacinia ipsum interdum id. Donec dictum neque non nisl suscipit, et cursus nisl malesuada.\n\nProin suscipit ligula nec urna varius, id ultricies lectus condimentum. Cras eget vehicula ligula. Mauris eget odio vel justo vehicula aliquet. In malesuada est sit amet orci efficitur feugiat. Donec vitae ipsum vitae justo ultrices euismod vel non urna. Fusce in purus a augue auctor volutpat.\n\nMaecenas fermentum diam a lectus lacinia, vel viverra ex viverra. Integer scelerisque, sapien in malesuada sodales, lacus turpis laoreet nulla, id aliquet lacus dui ac turpis. Phasellus eget pharetra metus. Aenean sit amet risus leo.\n\nDonec ullamcorper lacus ac nisl euismod, nec convallis ex viverra. Ut fermentum libero vitae velit sollicitudin efficitur. Suspendisse potenti. Duis volutpat dolor sit amet metus pretium, non scelerisque lacus hendrerit. Fusce posuere urna orci, ac accumsan nisl accumsan id. Aenean posuere sem justo, in tristique lectus faucibus eget. Integer luctus semper enim, sit amet auctor mauris.
+    </string>
+    <string name="action_settings">Settings</string>
+    <string name="msg_subscribed">Subscribed to weather topic</string>
+    <string name="msg_token_fmt">InstanceID Token: %s</string>
+
+    <string name="default_notification_channel_id">fcm_default_channel</string>
+    <!--
+        This is the name that users will see when interacting with this channel.
+        It should describe the category of notifications that will be sent through this channel
+     -->
+    <string name="default_notification_channel_name">Weather</string>
+    <string name="msg_subscribe_failed">Failed to subscribe to weather topic</string>
+    <string name="fcm_message">FCM Message</string>
+    <string name="objective_string1">Let\'say if Your Answer for 1st Objective is A, for 2nd Answer is B, for 3rd it\'s C, for 4th D, 5th A, 6th B, 7th C, 8th D, 9th A and for 10th its\'s B\n</string>
+    <string name="objective_string2">Your Final 10 Digit String will be <b>ABCDABCDAB</b></string>
+    <string name="one_phy_1">What is Pseudoforce ?</string>
+    <string name="one_phy_2">What is Laws of Motion ?</string>
+    <string name="one_phy_3"><sup><small>2</small></sup></string>
+    <string name="hello_world">Hello world!</string>
+    <string name="speech_prompt">Ask Your Doubt..</string>
+    <string name="speech_not_supported">Sorry! Your device doesn\'t support speech input</string>
+    <string name="tap_on_mic">Tap on mic to speak</string>
+    <string name="internet_failure_error">Internet is not available</string>
+    <string name="server_error">Server error. Please try again.</string>
+    <string name="slow_internet_error">
+    <b>Apka internet slow ho skta hai.</b> Please <b>check</b>
+</string>
+    <string name="server_error_reels">We got some issue. You enjoy reels\nand we will resolve it in few minutes..</string>
+    <string name="server_error_later">Server error. Please try again.</string>
+    <string name="selected_chpter_id">selected_chapter_id</string>
+    <string name="passed_obj">Object</string>
+    <string name="position">position</string>
+    <string name="option">Option</string>
+    <string name="submit">Submit</string>
+    <string name="select_a_option">Select an option.</string>
+    <string name="reverse">reverse</string>
+    <string name="pause">pause</string>
+    <string name="forward">forward</string>
+    <string name="loader">loader</string>
+    <string name="exit">exit</string>
+    <string name="preview">preview</string>
+    <string name="endpoint">endpoint</string>
+    <string name="notes_will_be_mailed">Notes will be mailed to you on your registered gmail id.</string>
+    <string name="watch_video">Watch Video</string>
+    <string name="revise_concept_again">Revise concept again</string>
+    <string name="back_to_q">back to q</string>
+    <string name="q_recorded_will_get_back_to_u_soon">Your question has been recorded and our expert will get back to you soon.</string>
+    <string name="chapterCompletion">chapterCompletion</string>
+    <string name="dummy_description">dummy description</string>
+    <string name="creating">Creating</string>
+    <string name="sign_in">Sign In</string>
+    <string name="sign_in_to_continue">Please sign in to continue.</string>
+    <string name="title_activity_scrolling">ScrollingActivity</string>
+    <string name="referYourFriend">Refer And Earn!</string>
+    <string name="contactUs">Contact Us</string>
+    <string name="yourSolution">Your Solution</string>
+    <string name="doubtList">Solved Doubts</string>
+    <string name="buyPointsPlan">Invest In Yourself</string>
+    <string name="registrationForm">Register Here &amp; Get Free Doubts</string>
+    <string name="typeActivity">Type Your Doubt</string>
+    <string name="delete_lecture">Delete Lecture</string>
+    <string name="watch_lecture">Watch Lecture</string>
+    <string name="retry_download">Retry Download</string>
+    <string name="questionDetailActivity">Can you solve it?</string>
+    <string name="chapterDetailActivity">Your Chapter</string>
+    <string name="hi">Hi</string>
+    <string name="option_myDownload_text">What would you like to do?</string>
+    <string name="profile_completer">Thank you, your profile is already completed.</string>
+    <string name="type">Type</string>
+    <string name="click">Click</string>
+    <string name="upload">Upload</string>
+    <string name="please_update_the_app">Please Update the App..</string>
+    <string name="physics_pseudolive">Physics Pseudolive</string>
+    <string name="underline">--------------</string>
+    <string name="maths_pseudolive">Maths Pseudolive</string>
+    <string name="chemistry_pseudolive">Chemistry Pseudolive</string>
+    <string name="awesome_click">Awesome Click!</string>
+    <string name="more_video_lectures">Simple Video Lectures…</string>
+    <string name="_16_likes">16 Likes</string>
+    <string name="_16_views">20 Views</string>
+    <string name="dummy_lecture_description">Here you go with a new video to strengthen your knowledge</string>
+    <string name="moment_of_inertia_for_complex_objects">Moment of Inertia for Complex Objects</string>
+    <string name="arivihan_reels">Arivihan Video Shots</string>
+    <string name="shots">Shorts</string>
+    <string name="your_referral_score">Your Referral Score</string>
+    <string name="arivihan">Arivihan</string>
+    <string name="retry">retry</string>
+    <string name="no">no</string>
+    <string name="yes">yes</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="cont">continue</string>
+    <string name="let_s_start">Let\'s Start</string>
+    <string name="level">Level</string>
+    <string name="_02_10">02:10</string>
+    <string name="go_to_next_level">Go to Next Level</string>
+    <string name="you_have_nailed_iyt">You have nailed it.</string>
+    <string name="damn_good">Damn, you are good!</string>
+    <string name="winning_habit">Looks like winning is your habit.</string>
+    <string name="congratulation">Congratulations. </string>
+    <string name="oops_sorry">"Oops Sorry! "</string>
+    <string name="user_streak_data">UserStreakData</string>
+    <string name="level_data">level_data</string>
+    <string name="streak_question">streak_q</string>
+    <string name="locked">Locked</string>
+    <string name="unlocked">Unlocked</string>
+    <string name="review">Review</string>
+    <string name="got_some_issue">We got some issue. Please try later</string>
+    <string name="go_to_main_activity">Go To Main Screen</string>
+    <string name="total_score">Total Score</string>
+    <string name="point_to_earn">Points to Earn</string>
+    <string name="hundred">100</string>
+    <string name="reward">Reward</string>
+    <string name="rewards">To Win</string>
+    <string name="score">To Score</string>
+    <string name="complete_the_level">Please complete the level then go back.</string>
+    <string name="points">pts.</string>
+    <string name="win_streak"><![CDATA[Form A Streak Of 7 & Win Free Points]]></string>
+    <string name="level_is_locked">Level is Locked</string>
+    <string name="streak_reward">You will receive your reward in less than 24 hours.</string>
+    <string name="your_referral_code">Your Referral Code</string>
+    <string name="refer_a_friend">Refer a friend!</string>
+    <string name="mock_tests">Mock Tests</string>
+    <string name="refer_earn">Refer &amp; Learn</string>
+    <string name="profile">Profile</string>
+    <string name="your_points">Your Points</string>
+    <string name="your_free_doubts">Your Free Doubts</string>
+    <string name="current_doubts">Current Doubts</string>
+    <string name="solved_doubts">Solved Doubts</string>
+
+    <string name="mock_test">Mock Test</string>
+    <string name="buy_points">Buy Points</string>
+    <string name="logout">Logout</string>
+    <string name="contact_us">Contact Us</string>
+    <string name="getting_ready">Getting Ready...</string>
+    <string name="please_wait">Please Wait...</string>2
+    <string name="loading_data">Loading Data...</string>
+    <string name="loading">Loading..</string>
+    <string name="submitting">Submitting Details...</string>
+    <string name="referral_snackbar">Fill Form &amp; Complete Your Registration to Get Your Referral Code &amp; Earn Free Doubts</string>
+    <string name="refer_message_part_one">Hey, I am using Arivihan for my studies and it\'s really amazing. Install the app and use my referral code \'</string>
+    <string name="refer_message_part_two">\' to earn free credits.\n</string>
+    <string name="mock_test_1">Mock Test 1</string>
+    <string name="mock_test_2">Mock Test 2</string>
+    <string name="mock_test_3">Mock Test 3</string>
+    <string name="physics">Physics</string>
+    <string name="chemistry">Chemistry</string>
+    <string name="maths">Maths</string>
+    <string name="attempt">Attempt</string>
+    <string name="thanks_a_lot">Thanks a lot for referring Arivihan !</string>
+    <string name="congrats">Congrats! You can select your reward.</string>
+    <string name="free_doubts">7 Free Doubts</string>
+    <string name="are_you_sure">Are you sure ?</string>
+    <string name="go_back">Go Back</string>Upload Your Identity Proof
+    <string name="about_arivihan">Arivihan is building India\'s 1st ever fully automated \'Self Interactive + Adaptive\' online learning platform, providing 1on1, interactive and adaptive high quality learning at 10 times more affordable fee, specially design for 200 Million low-income/middle-class families’ young students in tier 2,3 cities. \n\nContact:\nSend a Mail at \ncontact.teamdoubtbuzzter@gmail.com\n Or Whatsapp @ 7060324201</string>
+    <string name="upload_card">Upload Your Identity Proof</string>
+    <string name="ready_lecture">Your lecture is ready and waiting for you !</string>
+    <string name="point_deduction">1 Point will be deducted for watching this micro lecture</string>
+    <string name="let_progress">Let\'s Progress</string>
+    <string name="leave_it">Leave it</string>
+    <string name="ask_tutor"><![CDATA[Ask Our Tutors & Increase Knowledge]]></string>
+    <string name="objective_answer">Objective Answer String Registered</string>
+    <string name="unlock_the_way_to_prizes">Unlock the Way to Prizes..</string>
+    <string name="enter">Enter</string>
+    <string name="type_your_text">Type your answer here</string>
+    <string name="upload_subjective">Upload Subjective Solution Here..</string>
+    <string name="final_score">Total Score</string>
+    <string name="are_you_ready_to_give_this_test">Are You ready to submit this test??</string>
+    <string name="mock_test_instruction">Make sure you are ready for solving this test\n\nOnce you start the mock test, TIMER will start for an hour\n\nThis mock contains 20 questions\n\nQ-1 to Q-10 question has SINGLE Option Correct\n\nQ-11 to Q-15 may have MULTIPLE options correct\n\nQ-16 to Q-20 have Integer answer, Enter your answer in Textbox\n\nSubmit your test only when you are done with all the questions\n\nBest of luck for the test…</string>
+    <string name="begin_mock">Begin Mock</string>
+    <string name="not_now">Not Now</string>
+    <string name="go_ahead">Go Ahead</string>
+    <string name="select_chapter">Select Chapter</string>
+    <string name="select_preferred_solution_format">Select Preferred Solution Format</string>
+    <string name="select_points">Select Points</string>
+    <string name="ask_now">Ask Now</string>
+    <string name="doubt_ready_for_publishing">Doubt Ready for Publishing!</string>
+    <string name="select_your_publishing_method">Choose Your Preferred Credit !!</string>
+    <string name="use_points">Use Points</string>
+    <string name="use_free_doubts">Use Free Doubts</string>
+    <string name="ask">Ask Doubt?</string>
+    <string name="play_default">Play default</string>
+    <string name="play_by_url">Play by URL</string>
+    <string name="welcome">Welcome to the Team!!</string>
+    <string name="approval_message">Our Team is Verifying Your Details.\nYou will be Approved Soon..!!</string>
+    <string name="send">SEND</string>
+    <string name="got_the_solution">Got the Solution!</string>
+    <string name="chat_with_tutor">Chat With Tutor!</string>
+    <string name="confirm_to_buy_points">Confirm to Buy Points</string>
+    <string name="buy_point_one">Get &#032;</string>
+    <string name="buy_point_two">&#032; Points for ₹ &#032;</string>
+    <string name="you">You: </string>
+    <string name="you_">You</string>
+    <string name="listening">listening…</string>
+    <string name="listening_one">Listening… (Please speak slowly and loudly)</string>
+    <string name="got_that">I got that !!</string>
+    <string name="correct_answer">Awesome Blossom, Correct Answer!\n\n</string>
+    <string name="wrong_answer">Sorry buddy, Wrong Answer!\n\n</string>
+    <string name="no_asked_doubts">You have not asked any doubt!!</string>
+    <string name="register_now">REGISTER HERE, GET APPROVED AND GET FREE 25 POINTS</string>
+    <string name="name">Name</string>
+    <string name="email_id">Email ID</string>
+    <string name="address">Address</string>
+    <string name="type_of_id_proof">Type of ID Proof</string>
+    <string name="enter_registration">Enter Registration\'s ID to Enter Quizz</string>
+    <string name="feedback_warning">Please provide rating and feedback for this doubt and help our tutors getting better..</string>
+    <string name="write_review">Write your Review</string>
+    <string name="enter_task">Enter Task</string>
+    <string name="type_your_message">Type Your Message...</string>
+    <string name="enter_your_integer">Enter Your Answer up to two decimal points...</string>
+    <string name="enter_competition_id">Enter Competition\'s ID</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="phone_number">Phone number</string>
+    <string name="current_coaching_name">Current coaching name</string>
+    <string name="referral_code_if_any">Referral Code (If any)</string>
+    <string name="upload_identity_better">Upload Your Aadhaar/School/Coaching ID Card</string>
+    <string name="type_your_doubt">Type Your Doubt...</string>
+    <string name="requirements">Please add all the requirements\nYou want in solution...\n(Optional)</string>
+    <string name="type_your_description_with_image">Type Your Description...\nIf your image contains more than 1 doubt, specify Question no. here</string>
+    <string name="type_your_requirement_video">Type Your Requirements in detail\n(Mention the areas you want focus on..)</string>
+    <string name="not_rated_yet">Not Rated Yet</string>
+    <string name="tour_title_pseudolive">Did you have a look at this video ??</string>
+    <string name="tour_description_pseudolive">Click here to know about lectures that interact with you and adapt according to you to confirm your understanding... </string>
+    <string name="tour_title_pseudolive_two">What\'s a Pseudolive lecture ???</string>
+    <string name="tour_description_pseudolive_two">Have a look at this video to know about lectures that interact with you and adapt according to you to confirm your understanding... </string>
+    <string name="tour_title_ask_doubt">Ask you doubts here!</string>
+    <string name="tour_descriptoin_ask_doubt">By clicking or uploading an image or type it and get the solutions from our experts anytime, anywhere...</string>
+    <string name="tour_title_solutions_here">Get your solutions here!</string>
+    <string name="tour_description_solutions_here">You will be notified once your doubts are solved and they will appear here...</string>
+    <string name="tour_title_refer_earn"><![CDATA[Share Knowledge & Earn Points!]]></string>
+    <string name="tour_description_refer_earn">Refer this app to your friends with your referral code and earn more free doubts and free points... </string>
+    <string name="tour_title_enjoy_pseudolive">Enjoy Pseudo live lectures!!!</string>
+    <string name="tour_description_enjoy_pseudolive">These lectures are recorded but interact with you and adapt according to you to confirm your understanding... </string>
+    <string name="tour_title_jee_shorts">Enjoy JEE Shorts Video!!!</string>
+    <string name="tour_description_jee_shorts">Here you get 1 min knowledge videos which contains the apt knowledge from your exam\'s syllabus with a lot of creativity... </string>
+    <string name="task_added">Task Added Successfully !</string>
+    <string name="task_addition_failed">Task Addition Failed with Error!</string>
+    <string name="finishing_task">Finishing Task...</string>
+    <string name="no_camera">Sorry! Your device doesn\'t support camera</string>
+    <string name="error_fetching_data">Error in fetching Data.. \nPlease Restart the App..</string>
+    <string name="cash_prize_ended">Cash Prize Offer Ended..\nYou can win free doubts..</string>
+    <string name="failed_to_capture">Sorry! Failed to capture image</string>
+    <string name="failed_to_record">Sorry! Failed to record video</string>
+    <string name="image_not_vertical">Make Sure that Image is Not Vertically Flipped</string>
+    <string name="update_flow_failed">Update flow failed for latest version!. Please update your app manually for better experience:</string>
+    <string name="congrats_on_winning_referral"><![CDATA[Congrats, You Won 5 Free Doubts & 20 More Points!\nKeep Referring, Keep Winning...]]></string>
+    <string name="click_to_exit">Please click BACK TWICE to exit</string>
+    <string name="connectivity_issue">Connectivity issue. Please try again later.</string>
+    <string name="repeat_your_doubt">Can you please repeat your doubt?</string>
+    <string name="got_discount">Congratulations, You got discount on this lecture. Enjoy the learning!</string>
+    <string name="not_enough_points">Not enough points, please buy points or refer app to earn points.</string>
+    <string name="submission_failed">"Submission Failed. "</string>
+    <string name="review_submission_failed">Error in saving review..</string>
+    <string name="save_intercative_response">Your interaction response saved successfully.</string>
+    <string name="doubt_submitted">Your doubt is submitted! Once it gets solved, you will be notified and you will see it in your Solved Doubt section</string>
+    <string name="moved_forward">Moved Forward !!</string>
+    <string name="pdf_downloaded">PDF Downloaded Successfully at !</string>
+    <string name="permission_denied">Permission denied.\nPlease give permission.</string>
+    <string name="microphone_permission_request">Please grant microphone permission for the interactive features to work.</string>
+
+    <string name="error_in_pdf_downloading">Error in downloading PDF, please try later..\n</string>
+    <string name="permission_denied_please_approve">Permission denied.\nPlease go to app setting and give read and write permission</string>
+    <string name="correct">Correct</string>
+    <string name="please_try_again">Something went Wrong. Please try Again.</string>
+    <string name="transaction_success">Transaction Success</string>
+    <string name="got_your_points">You got your Points!\nAsk Doubts Now..</string>
+    <string name="provide_rating">Please Provide Rating!!</string>
+    <string name="feedback_successful">Feedback Provided Successfully!</string>
+    <string name="tutor_notified">Tutor Notified !!</string>
+    <string name="select_a_plan">Please Select A Plan..</string>
+    <string name="atleast_one_answer">Please select at least one answer !</string>
+    <string name="no_free_doubts">No Free Doubts Available!!\nTry Using Points..</string>
+    <string name="please_select_subject">Please Select Subject!</string>
+    <string name="please_select_chapter">Please Select Chapter!</string>
+    <string name="please_select_preferred_format">Please Select Preferred Solution Format!</string>
+    <string name="video_solutions_by_points_only">Video Solutions can be requested by using points only..</string>
+    <string name="please_select_points">Please Select Points!</string>
+    <string name="low_points">Low Points.. Sorry!</string>
+    <string name="doubt_published">Doubt Published Successfully!</string>
+    <string name="fill_first_name">Please Fill First Name! </string>
+    <string name="fill_last_name">Please Fill Last Name! </string>
+    <string name="fill_contact_number">Please Fill Your Contact No.</string>
+    <string name="fill_coaching_name">Please Fill Your Coaching Name! </string>
+    <string name="fill_your_class">Please Select Your Class! </string>
+    <string name="fill_address">Please Fill Your Address! </string>
+    <string name="last_time_tour">Let\'s have the tour for one last time!!</string>
+    <string name="detail_added">Details Added Successfully!</string>
+    <string name="detail_not_submitted">Details Not Submitted! Please try again</string>
+    <string name="identity_uploaded">Identity Proof Uploaded!</string>
+    <string name="referral_code_used">Referral Code Used Successfully!</string>
+    <string name="choose_your_language">Choose your language</string>
+    <string name="lets_watch_reels">Let\'s watch 1 MIN KNOWLEDGE REELS</string>
+    <string name="lets_watch_reels_description">Wanna utilize free time or revise your concept? Arivihan\'s knowledge reels is the perfect destination</string>
+    <string name="vspot_streak_title">Earn Free Points by solving 7 Questions in a STREAK ..</string>
+    <string name="vspot_streak_description">Wanna quickly test your knowledge? Let\'s begin your streak now..</string>
+    Upload Your Identity Proof
+    <string name="error">Error!! </string>
+    <string name="tour_title_free_points">Wanna Earn Free Points??</string>
+    <string name="tour_description_free_points">Complete your profile, get verified and earn 3 free doubts…</string>
+    <string name="rate_solved_doubts">Please Rate All Solved Doubts in \'Solved Doubts\' section..</string>
+    <string name="small_description">Interact with faculties by clicking a button, Visualize concepts with animated lectures</string>
+    <string name="mock_test_sign_in_description">Play games to learn by fun, Have mock test &amp; Predict your exam score</string>
+    <string name="knowledge_reels_description_sign_in_description">Utilize your free time and Revise your concepts with 1 MIN KNOWLEDGE REELS</string>
+    <string name="option_selector_title">Sorry, I did not get that right</string>
+    <string name="option_selector_description">Please select the correct option</string>
+    <string name="lets_begin">Let\'s begin the </string>
+    <string name="download_pdf"><![CDATA[Please click here & download the explanation pdf for more detailed solution..]]></string>
+    <string name="profile_tool">&#160;&#160;Profile  </string>
+    <string name="loading_right_examples_title"> Adding right examples which suits YOU.</string>
+    <string name="loading_right_examples_description">We are putting right examples after each concept according to your interests</string>
+    <string name="loading_lecture_pace_title"> Regulating Lecture\'s Pace that\'s perfect for YOU.</string>
+    <string name="loading_lecture_pace_description">It regulates the number of examples, questions and length as per your inputs</string>
+    <string name="loading_lecture_loaded_title">Enjoy, Lecture Loaded !</string>
+    <string name="loading_lecture_loaded_description">Learn with AI-based lecture and strengthen your preparation</string>
+    <string name="loading_input_description">Response with yes, no, ,Option A,B,C,D on asked question and lecture behaves accordingly</string>
+    <string name="loading_input_title"> Creating a lecture that will interact with YOU.</string>
+    <string name="do_you_want_to_resume">Do you want to resume ??</string>
+    <string name="do_you_want_to_resume_description">Wanna continue from where you left or lets start with very beginning??</string>
+    <string name="resume_lecture">Resume Lecture</string>
+    <string name="watch_from_begin">Let\'s Begin</string>
+    <string name="loading_lecture_loading_description">Lecture Loading...</string>
+    <string name="optionA">Option A</string>
+    <string name="optionB">Option B</string>
+    <string name="optionC">Option C</string>
+    <string name="optionD">Option D</string>
+    <string name="lecture_not_in_desired_language">Sorry, this lecture is not available in your desired language. Tap one more time to continue.</string>
+    <string name="likes">Likes</string>
+    <string name="views">Views</string>
+    <string name="progress_title_pseudolive">Monitor your progress here!</string>
+    <string name="progress_description_pseudolive">This will keep on filling as you watch lectures and solve questions related to them</string>
+    <string name="lecture_will_respond">Please reply and lecture will respond accordingly</string>
+    <string name="here_are_option">Here are the options..</string>
+    <string name="skip">Skip</string>
+    <string name="behaviour">behaviour</string>
+    <string name="behaviour_not_selected">behaviour_not_selected</string>
+    <string name="update_behaviour">update_behaviour</string>
+    <string name="behaviour_set">behaviour set</string>
+    <string name="thanks_for_response">Thank you for your response</string>
+    <string name="this_info_will_be_used">This info will be used to create personalized lectures for you !!</string>
+    <string name="cannot_increase_speed">You can not increase speed more!</string>
+    <string name="cannot_decrease_speed">You can not decrease speed more!</string>
+    <string name="speed_increased">Speed increased to </string>
+    <string name="speed_decreased">Speed decreased to </string>
+    <string name="cannot_go_backward">Can\'t go backward while explaining a concept!</string>
+    <string name="cannot_go_forward">Can\'t go forward while explaining a concept!</string>
+    <string name="cannot_change_quality">Can\'t change quality while explaining a concept!</string>
+    <string name="only_one_quality">Sorry this video has only one quality.!</string>
+    <string name="will_get_solved_doubt">Instant Solution Was Not Available. You will get the solution in your \'Solved Doubts\' in at most half an hour.</string>
+    <string name="lets_have_personalised_example">Let\'s have a look at this personalized example..</string>
+    <string name="instant_solution">Here is your INSTANT Solution, just like a live lecture..</string>
+    <string name="your_rating">Your Rating</string>
+    <string name="please_click_one_more_time">Please Click Again !! There was some issue.</string>
+    <string name="seekbar_intro_part_one">Of Concentration</string>
+    <string name="seekbar_intro_part_two">To Conquer</string>
+    <string name="seekbar_description">Track the lecture\'s progress at the progress bar here…</string>
+    <string name="min"> Min</string>
+    <string name="sec"> Sec</string>
+    <string name="seekbar_intro_by_default">Few Minutes Of Concentration To Conquer This Topic !!</string>
+    <string name="ask_feature_description_one">Ask your doubt by tapping here,</string>
+    <string name="ask_feature_description_two">If not instantly, we will resolve it in half an hour…</string>
+    <string name="personalize_feature_description_one">Flags in the progress bar represent the surprising Interaction and Personalization.</string>
+    <string name="personalize_feature_description_two">Interaction,Personalization &amp; Suggestions through out the lecture.</string>
+    <string name="personalize_feature_description_three">Enjoy the lecture created just for you!!</string>
+    <string name="ask_feature_title_one">Answers For </string>
+    <string name="ask_feature_title_two">" Questions That You May Ask"</string>
+    <string name="ask_feature_title_three">Are Already Loaded To Give Answers Instantly !!</string>
+    <string name="personlize_feature_new_description_one">Get ready to speak up when you reach these milestones in the lecture! </string>
+    <string name="personalize_feature_new_description_two"> As Per Your Interests !!</string>
+    <string name="just">Just</string>
+    <string name="get_the_solution_from_our_expert_tutors">Get the Solution from our expert tutors</string>
+    <string name="get_solution_from_tutors_go_back">Oops! We are sorry we got this wrong. Don\'t worry we are improving our system day by day. Submit your doubt &amp; We wil provide the solution very soon.</string>
+    <string name="get_solution_from_tutors">Oops! we didn\'t estimate that you\'ll ask this. No worries. Submit your doubt &amp; We wil provide the solution very soon.</string>
+    <string name="personalised_type">Personalised Type</string>
+    <string name="streak_terms_and_condition_description">Only registered and verified students will get the rewards. Fill the registration form to become our verified student.\n\nOne student will get the reward only once.\n\nStudent must have a UPI ID for online payment.\n\nStudents who uploaded their Aadhaar card as identity proof will be eligible to get reward.\n\nStudent must have the updated version of the app while forming the streak to get the reward.</string>
+    <string name="streak_terms_title">Few Terms To Win Reward</string>
+    <string name="won_streak"> You have won the streak.</string>
+    <string name="reward_will_be_processed"> Your reward will be processed in next 48 hours.</string>
+
+
+    //By Raj Kishan
+    <string name="Subjects">Subjects</string>
+    <string name="Classes_in_progress">Continue Learning</string>
+    <string name="Popular_live_classes_now">Popular live classes now</string>
+    <string name="Test_Series">Test Series</string>
+    <string name="Highlights_of_the_week">Highlights of the week</string>
+    <string name="View_All">View All</string>
+    <string name="Solved_doubt">Solved Doubts</string>
+    <string name="Tests">Tests</string>
+    <string name="Queries">Queries</string>
+    <string name="Your_Progress">Your Progress</string>
+    <string name="View_Details">View Details</string>
+    <string name="interactive_chapters">Interactive Chapters</string>
+    <string name="Current_Doubt">Current Doubt</string>
+    <string name="Mock_Test">Mock Test</string>
+    <string name="Refer_Earn">Refer and Learn</string>
+    <string name="Buy_Points">Buy Points</string>
+    <string name="Contact_Us">Contact Us</string>
+    <string name="Your_points">Your Points</string>
+    <string name="Free_Doubt">Free Doubt</string>
+    <string name="Edit_Profile">Edit Profile</string>
+    <string name="What_should_we_call_you">What should we call you?</string>
+    <string name="Please_answer_these">Please answer these to customise your feed</string>
+    <string name="You_are_a">You are a</string>
+    <string name="Student">Student</string>
+    <string name="Parent">Parent</string>
+    <string name="Class11">Class 11</string>
+    <string name="Class12">Class 12</string>
+    <string name="Passout">Passout</string>
+    <string name="IIT">IIT-JEE</string>
+    <string name="Boards">Boards</string>
+    <string name="NEET">NEET</string>
+    <string name="currenctly_enrolled_in">Enroll Now</string>
+    <string name="fun">That was fun!</string>
+    <string name="while_organizing">While we are organizing your feed as per you preferences, why dont\'t you take a look at our Subscriptions plan.</string>
+    <string name="Nah_skip_subscription">Nah, take me to my Feed</string>
+    <string name="Yes_show_subscription">Yes, view Subscription Plans</string>
+    <string name="success_register">Successfully register. Signing in</string>
+    <string name="Name">Name</string>
+    <string name="ParentNumber">Parent Number</string>
+    <string name="CurrentCoaching">Current Coaching</string>
+    <string name="ClassEnrolledIn">Class enrolled in</string>
+    <string name="Address">Address</string>
+    <string name="ReferCode">Refer Code (If Any)</string>
+    <string name="Upload_Aadhar">Upload your Aadhar / School ID / Coaching ID</string>
+    <string name="Upload_Image">Upload Image</string>
+    <string name="Cancel">Cancel</string>
+    <string name="Save">Save</string>
+    <string name="resendotp">Resend OTP</string>
+    <string name="verifyMob">Verify Mobile Number</string>
+    <string name="holdanddrag">Hold and drag the subject Up and Down</string>
+    <string name="holdanddragRoutine">Hold &amp; Drag the Chapters</string>
+    <string name="ArrangeSubject">Arrange easiest to toughest</string>
+    <string name="ArrangeSyllabus">Arrange based on your preferences.</string>
+    <string name="ExamPrepearing">The exam you\'re preparing for.</string>
+    <string name="AddMoreSubejct">Please select your subjects!</string>
+    <string name="logInWIthMob">Log In With Mobile Number</string>
+    <string name="GetOtp">Get OTP</string>
+    <string name="LogINGmail">Or log in through your </string>
+    <string name="GmailAccount">Gmail Account</string>
+    <string name="WelcomeArivihan">Welcome to Arivihan!</string>
+    <string name="PleaseHelpUsToKnowYou">Please help us get to know you better</string>
+    <string name="Help">Help</string>
+    <string name="save">Save</string>
+    <string name="Class">Class</string>
+    <string name="ProfileUpdated">Profile Updated Successfully</string>
+    <string name="PleaseWaitForDataToLoad">Please wait for data to load</string>
+    <string name="ReferCodeIfAny">Refer Code (If Any)</string>
+    <string name="SuccessfullLogout">Logout Successfuly</string>
+    <string name="NoInternetConnection">Internet Connection Lost!</string>
+    <string name="NoInternetConnectionVideo">Internet Connection Lost! Please connect with Internet to resume.</string>
+    <string name="InternetConnection">Internet Connected</string>
+    <string name="InternetConnectionVideo">Internet Connected! Enjoy your video.</string>
+    <string name="NoValidQuestionFound">No valid question found!</string>
+    <string name="PleaseEnterValiedNumber">Please correct 10 digits enter karein!</string>
+    <string name="FormaStreakOf">Form a streak of 7 and win Free points</string>
+    <string name="play">PLAY</string>
+    <string name="ApplyFilter">Apply Filter</string>
+    <string name="Applyfilter">Apply filter</string>
+    <string name="ClearFilter">Clear Filter</string>
+    <string name="Status">Status</string>
+    <string name="Filter">Filters</string>
+    <string name="Unattempted">Unattempted</string>
+    <string name="ExplanationCopied">Explanation Copied</string>
+    <string name="ChapComingSoon">Chapters Coming Soon</string>
+    <string name="PleaseAddTheRequirement">Please add all the requirement you want to add in solution</string>
+    <string name="PLayLearnWin">Play Learn And Win</string>
+    <string name="LetsBegin">Lets Begin The Arena</string>
+    <string name="Answer">Answer</string>
+    <string name="PleaseGiveYourAnswer">Please Give Your Response</string>
+    <string name="YourScore">Your Score</string>
+    <string name="Points">Points</string>
+    <string name="LevelFailed">Oops! Level Failed</string>
+    <string name="TryAgain">You can try again!</string>
+    <string name="TimeUp">Oops! Time Up</string>
+    <string name="AskDoubt">Ask Doubt</string>
+    <string name="AreYouAExistingUser">Are you an Existing User ?</string>
+    <string name="LinkAccount">Link Account</string>
+    <string name="linkAccountMessageImp">Your data will be synced with your old email id.</string>
+    <string name="linkAccountMessage">Do you want to link your old user account to our new Arivihan app?</string>
+    <string name="NoRegisteredUser">No Register User found from this email</string>
+    <string name="LinkOldAccount">Link old Account</string>
+
+    <string name="valid_otp">Please enter valid otp</string>
+    <string name="otp_sent">OTP sent to the given number</string>
+    <string name="auth_error">Authentication failed. Please try again.</string>
+    <string name="user_id">userId</string>
+    <string name="name_required_error">Please apna naam dalein!!</string>
+    <string name="hello">Hi</string>
+    <string name="resend_otp_after">Resend OTP after %1$d sec</string>
+    <string name="second">sec</string>
+    <string name="not_received_otp">Didn\'t receive OTP?</string>
+    <string name="profile_updated_success">Profile Updated Successfully</string>
+    <string name="try_again">Please try again, we got some error.</string>
+    <string name="click_save_to_change">Please click save to make changes.</string>
+    <string name="courser_enorolled_in">Course enrolled in</string>
+    <string name="HowToPlay">How To Play</string>
+    <string name="PleaseClearPrevLevel">Please clear previous level to unlock this</string>
+    <string name="Score">SCORE</string>
+    <string name="Level">LEVEL</string>
+    <string name="AnswerUptoTwo">Type the numerical value (Max length should be 10)</string>
+    <string name="tests">" Tests"</string>
+    <string name="open">Open</string>
+    <string name="preparing_your_test">Preparing your test. Please wait ...</string>
+    <string name="ReattemptTest">Reattempt</string>
+    <string name="Response">Response</string>
+    <string name="Try_Again">Try Again</string>
+    <string name="YourResponse">Review</string>
+    <string name="ReviewMode">Review Mode</string>
+
+    <string name="MockTestMessage">You already have attempted this test, Do you want to review your answer or want to try again?</string>
+    <string name="MessageForReattemptTest">Message for Reattempt Test</string>
+    <string name="selectSubject">Please select subject</string>
+    <string name="selectChapter">Please select chapter</string>
+    <string name="AddImage">Please add image</string>
+
+    <string-array name="Class_list">
+        <item>Class 11</item>
+        <item>Class 12</item>
+        <item>Passout</item>
+    </string-array>
+
+    <string-array name="numbers">
+        <item>+91</item>
+    </string-array>
+    <string name="title_activity_test_intro">ActivityTestIntro</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="test_name">Mock Test </string>
+    <string name="no_of_qs">number</string>
+    <string name="ViewYourAnswer">View Your Answer</string>
+    <string name="ExitMockTest">Exit Mock Test</string>
+    <string name="Attempted">Attempted</string>
+    <string name="TimeRemaining">Time Remaining</string>
+    <string name="Wrong">Wrong</string>
+    <string name="End">End</string>
+    <string name="time_left">time_left</string>
+    <string name="NoValidMockTestFound">No Mock Test Found</string>
+    <string name="YesSubmit">Yes, Submit</string>
+    <string name="YouWillNotAbleReAttempt">NOTE : Your submission will be considered final</string>
+    <string name="hours">hours</string>
+    <string name="StartTest">Start Test</string>
+    <string name="DoYouWishToSubmit">Do you wish to Submit your Test ? </string>
+    <string name="Questions">Questions</string>
+    <string name="MockSubmitted">Mock Submitted Successfully !!</string>
+    <string name="NoOfQuestion">No. of Questions</string>
+    <string name="TimeLimit">Time Limit</string>
+    <string name="instructions">Instructions</string>
+    <string name="mcq_answer_instruction">A) Procedure for answering a Multiple Choice Question (MCQ) \n\n\t i) To select your answer, click on the button of the corresponding option. \n\n\t ii) To deselect your chosen answer, click on the button of the chosen option once again.\n\n\t iii) To change your chosen answer, click on the button of the newly identified answer.</string>
+    <string name="mcq_q_navigation">D) Navigating to a Question:</string>
+    <string name="click_next_and_prev">\n\t i) Swipe left or right to change question..</string>
+    <string name="select_icon_to_choose">\n\t ii) You can view all the questions by clicking on the Question Paper button that appears at top side of the screen.</string>
+    <string name="cant_attempt_again">B) You can not attempt this test twice.</string>
+    <string name="please_read">Please read it carefully</string>
+    <string name="instructions_for_qpellet">The Question Palette displayed on the dialog show the status of each question using one of the following symbols:</string>
+    <string name="unsolved_with_icon">Unsolved</string>
+    <string name="unsolved_marked_with_icon">Unsolved but Marked for review</string>
+    <string name="solved_with_icon">Solved</string>
+    <string name="solved_marked_with_icon">Solved but Marked for review</string>
+    <string name="q1">Q1</string>
+    <string name="ReAttempt">Re-attempt</string>
+    <string name="EnterTheTest">Enter Test</string>
+    <string name="mark_for_review">Mark For Review</string>
+    <string name="marked">Marked</string>
+    <string name="q">Q</string>
+    <string name="please_enter_your_answer"><font size="15">Please enter your answer</font></string>
+    <string name="please_select_your_option">Please select your option.</string>
+    <string name="saved">Saved</string>
+    <string name="update">Update</string>
+    <string name="appUpdate">App Upgrade kiya?</string>
+    <string name="app_update_text">To iske sare benefits\npane ke liye </string>
+    <string name="click_save_to_save_answer">C) Click save to save an answer and then move next</string>
+    <string name="encountered_some_error">We encountered some error. Please come back later.</string>
+    <string name="cancel">Cancel</string>
+    <string name="already_attempted">You already attempted this test</string>
+    <string name="your_score">Your Score</string>
+    <string name="failed_try_again">Failed! Please try again or contact us.</string>
+    <string name="subjectCompletionReport">Subject Completion Report</string>
+    <string name="SubjectTimeReport">Subject Time Report</string>
+    <string name="topic">Topic</string>
+    <string name="topics">Topics</string>
+    <string name="Completion">Completion %</string>
+    <string name="LectureCovered">MicroLecture</string>
+    <string name="numberView">Number View</string>
+    <string name="graphView">Graph View</string>
+    <string name="VideoAnalytics">Video Analytics</string>
+    <string name="VideoWatched">Videos watched</string>
+    <string name="totalHours">Total hours</string>
+    <string name="doubtAsked">Doubt Asked</string>
+    <string name="testAnalysis">Test Analytics</string>
+    <string name="testAttempted">Test Attempted</string>
+    <string name="correctAnswer">Correct Answer %</string>
+    <string name="timeEfficiency">Time Efficiency</string>
+    <string name="noOfCorrectResponse">No. of correct answer given</string>
+    <string name="hard">Hard</string>
+    <string name="medium">Medium</string>
+    <string name="easy">Easy</string>
+    <string name="total_question">Total Question</string>
+    <string name="RegisteredNumber">Registered Number</string>
+    <string name="ChangingNumber">For changing nunmber Please contact Us</string>
+    <string name="changingRegisteredNUmber">*For changing your registered number please contact us</string>
+    <string name="go_back_to_lecture">Go Back</string>
+    <string name="not_find_solution">Please click on Go Back if you don\'t find this answer relevant.</string>
+    <string name="RegisteredEmail">Registered Email</string>
+    <string name="changingRegisteredEmail">*For changing your registered email please contact us</string>
+    <string name="stop">Stop</string>
+    <string name="text_continue">Continue</string>
+    <string name="pause_to_think">Need some time to think ?. Please click on pause.</string>
+    <string name="resume">Resume</string>
+    <string name="resume_info">Click and say your answer</string>
+    <string name="processing">Processing your doubt. Please wait.</string>
+    <string name="confirm">Confirm</string>
+    <string name="OOpsThisChapIsLocked">Oops! this Chapter \n is locked</string>
+    <string name="viewSubscription">View Subscription Plans</string>
+    <string name="OOpsThisMicroIsLocked">Oops! This Microlecture \n is locked!</string>
+    <string name="SubscriptionPlan">Subscription Plans</string>
+    <string name="ChooseYourPlan">Choose your plan that suits you the best</string>
+    <string name="select_course">Select Course</string>
+    <string name="addition_subject">Selected Subjects</string>
+    <string name="selectDuration">Select Duration</string>
+    <string name="payment">Payment</string>
+    <string name="MySubscription">My Subscriptions</string>
+    <string name="ChatSupportHistory">Chat Support History</string>
+    <string name="AddNewPlan">+ Add new plan</string>
+    <string name="Transactions">Transactions</string>
+    <string name="enter_coupon_code">Enter coupon code</string>
+    <string name="apply">Apply</string>
+    <string name="available_coupons">Available Coupons</string>
+    <string name="select_subscriptionType">Subscription Type</string>
+    <string name="Course">Course</string>
+    <string name="subscription_bill_details">Subscription Bill Details</string>
+    <string name="apply_coupons">Apply Coupons</string>
+    <string name="Buy_Now">Buy Now</string>
+    <string name="OOpsThisTestIsLocked">Oops! This Test \n is Locked</string>
+    <string name="no_plan">No Plan available.</string>
+    <string name="coupon_info">Apply to avail discount</string>
+    <string name="use_xx_arivihan_points">Use XX Arivihan points</string>
+    <string name="amount">Amount</string>
+    <string name="discount">Discount</string>
+    <string name="coupon_applied">Coupon Applied!</string>
+    <string name="points_used">Points used</string>
+    <string name="to_pay">To Pay</string>
+    <string name="details">Details</string>
+    <string name="invoices">Invoices</string>
+    <string name="SubscriptionPlanAddedSoon">Subscription plan coming soon</string>
+    <string name="clear">Clear Attempt</string>
+    <string name="optional_error">Not allowed to attempt. Please clear any other answer to save this one.</string>
+    <string name="QuickNotes">10 Mins Notes</string>
+    <string name="Toppers_Notes_Locked">Oops! The notes are locked</string>
+    <string name="manual_play">Manual Play</string>
+    <string name="auto_play">Auto Play</string>
+    <string name="NotesComingSoon">Notes Adding Soon</string>
+    <string name="invalid_otp">Wrong Otp Please try again with correct Otp.</string>
+    <string name="ViewChapWise">Chapter wise Analysis</string>
+    <string name="Test_Series_Analytics">Test Series Analytics</string>
+    <string name="NoTestAttempted">No Test Attempted</string>
+    <string name="FilterYourAnalysis">Filter Your Analytics</string>
+    <string name="whatsapp_not_found">Sorry looks like whatsapp is not installed. Please install and try again.</string>
+    <string name="please_change_image">Please choose another image to upload. This image is incompatible.</string>
+    <string name="select_picture">Select Picture</string>
+    <string name="no_image_selected">No image selected!</string>
+    <string name="upload_failed">Upload failed: %s</string>
+    <string name="Feedback">Feedback</string>
+    <string name="like_lecture">Well Done!! Apko lecture kesa lga?</string>
+    <string name="sorry">We’re Sorry!</string>
+    <string name="yipee_thanks">Happy to Hear This!</string>
+    <string name="feedbacktext">Your feedback here...</string>
+    <string name="no_email_app_found">No app found to open this.</string>
+    <string name="please_share_your_feedback_positive">Please share your feedback. We’ll keep working to make things even better.</string>
+    <string name="please_share_your_feedback_negative">Please share your feedback. We want to ensure a better experience next time."</string>
+    <string name="reels_back_message">Leaving soooo soon. Would you like 1 Min Short Videos for Quick Revision?</string>
+    <string name="game_back_message">Wanna have some fun before leaving? Visit our game section to learn by fun.</string>
+    <string name="take_me_to_plan">Take me to Subscription Plan</string>
+
+    <string name="EnterCompetion">Enter The Competition</string>
+    <string name="ReadyForCompetition">Ready for the Competition!</string>
+    <string name="register">Register</string>
+    <string name="register_to_unlock">Register to unlock</string>
+    <string name="prize">info</string>
+    <string name="save_and_continue">Save &amp; Next</string>
+    <string name="title_activity_competition_question">CompetitionQuestion</string>
+    <string name="syllabus">Syllabus</string>
+    <string name="complete_for_extra_points">Watch these lectures, solve the practice problems and earn extra points.</string>
+    <string name="submitted">Submitted successfully</string>
+    <string name="leaderboard">Leader Board</string>
+    <string name="instruction">Instruction</string>
+    <string name="compete_and_win">Compete And Win Cash Prize</string>
+    <string name="modern_physics">Modern Physics</string>
+    <string name="subscribedSuccessfully">Subscribed Successfully</string>
+    <string name="somethingWentWrong">Something went wrong</string>
+    <string name="forMoreDetails">for more details contact our team</string>
+    <string name="change">Change</string>
+    <string name="history">History</string>
+    <string name="compete_and_win_cash_prizes">Revision Quiz Series</string>
+    <string name="form_a_streak_of_7_and_win_free_points">Form a streak of 7 and win free points</string>
+    <string name="previous_games">Previous Games</string>
+    <string name="please_wait_for_next_game">Please wait for next game.</string>
+    <string name="congrat_registered_for_game">Congratulation you have registered for the game.</string>
+    <string name="not_played">You have not played any game yet.</string>
+    <string name="questions"> Questions</string>
+    <string name="_1_lecture">1 lecture</string>
+    <string name="lecture">Lecture</string>
+    <string name="practice">Practice</string>
+    <string name="next">Next</string>
+    <string name="next_with_space">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Next&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</string>
+    <string name="move_to_next_topic">Move To Next Topic</string>
+    <string name="see_explanation">See explanation</string>
+    <string name="explanation_q">Explanation :</string>
+    <string name="revise_the_concept">Revise the concept</string>
+    <string name="no_explanation">No Explanation</string>
+    <string name="analytics">Analytics</string>
+    <string name="topic_covered">Topic Covered</string>
+    <string name="completion_perc">Completion %</string>
+    <string name="subject">Subject</string>
+    <string name="subject_all">All Subjects</string>
+    <string name="select_subject">Select Subject</string>
+    <string name="invest_in_yourself">Invest In Yourself</string>
+    <string name="are_you_sure_update_course">Are you sure you want to update your Course? It may effect your dashboard</string>
+    <string name="alert">Alert!!</string>
+    <string name="are_you_sure_class">Are you sure you want to update your Class? It may effect your dashboard</string>
+    <string name="overall">Overall</string>
+    <string name="uploading_image">Uploading Image.</string>
+    <string name="fetching_email">Fetching Email.</string>
+    <string name="your_name">Your Name</string>
+    <string name="parent_number">Parent Number</string>
+    <string name="enter_coaching_detail">Enter Your Coaching</string>
+    <string name="enter_your_address">Enter Your Address</string>
+    <string name="too_long_text">Too Long Text!</string>
+    <string name="too_long_address">Too Long Address</string>
+    <string name="invalid_parent_number">Invalid Parent Number</string>
+    <string name="confirm_linking">Are you sure you want to attach this email id to your account? You will gain </string>
+    <string name="points_and">points and</string>
+    <string name="confirm_linking_end">free doubts. Please confirm to attach.</string>
+    <string name="no_email_found">No user with this Email FOUND!!</string>
+    <string name="not_allowed_to_back">You are not allowed to move back during Exam!!</string>
+    <string name="click_back_game">You will not able to enter twice in this game. Press twice to exit.</string>
+    <string name="terms_and_condition">Terms And Conditions</string>
+    <string name="i_accept">I Accept</string>
+    <string name="please_accept_terms_and_condition_first">Please accept terms and condition first.</string>
+    <string name="game_id">Game 1</string>
+    <string name="check_progress_everyday">Check your progress everyday</string>
+    <string name="they_say">They say, “You can’t improve the skill if you can’t measure it.”</string>
+    <string name="progress_dashboard">\" So, here’s Arivihan Progress dashboard where you can keep an effective track of your learning\"</string>
+    <string name="rapid_revision">Here comes the Rrrrrapid Revision</string>
+    <string name="innovative_fun">An innovative and fun way to keep all the important concepts and formulas at your fingertips\n</string>
+    <string name="ask_doubt">Ask your doubts here</string>
+    <string name="clear_confusion">Clear all your confusion with our experts now, so that there is none during exam time</string>
+    <string name="practice_iitian">Practise makes man IITians and Doctors</string>
+    <string name="doomsday">Feel the heat before the doom’s day and become the best version of ourselves.\n</string>
+    <string name="analyse_yourself">Analyse yourself to the best</string>
+    <string name="check_prepare">Check the data, graphs, and patterns every day to strengthen the preparation more than anyone</string>
+    <string name="all_set">All set! Let\'s begin</string>
+    <string name="by_arivihan">By Arivihan</string>
+    <string name="no_notes_found">No Notes Found</string>
+    <string name="search_handwritten_notes">Search the Handwritten notes of your desired chapters here.</string>
+    <string name="revise_weak_topics">Revise your weak topic specially Inorganic Chemistry daily to score more in exams</string>
+    <string name="select_ending_date_of_analytic_week">Select the Ending day of your Analytic Week</string>
+    <string name="some_performance_analysis">Here\'s some performance analysis like never before</string>
+    <string name="overall_progress">This view shows the overall progress of each subject and all together growth</string>
+    <string name="special_view_for_video">A special view for video lectures</string>
+    <string name="all_numbers">Here you get all the important numbers representing your performance during lectures\n</string>
+    <string name="important_Section">Here\'s the most important section</string>
+    <string name="figure_out">Figure out each and every weak topic before exam to improve it before the doom\'s day</string>
+    <string name="first_ai_based">Here’s 1st Ever AI-based Interactive Lectures for you</string>
+    <string name="ask_q">They ask questions, You speak your answers and bammm! Content of lectures will eventually modify based on your right/wrong answers\n</string>
+    <string name="lined_up">Then what’s lined up is Practise Problems to lock the understanding of that concept</string>
+    <string name="detailed_explanation">Go through detailed explanations to get it perfectly and remember forever\n</string>
+    <string name="pattern_1">If you want to understand in more detail, You can press \'Ask\' button and ask \'</string>
+    <string name="pattern_2">By pressing \'Ask\' button, feel free to ask your doubt like \'</string>
+    <string name="pattern_3">If you want to study in detail, You can press \'Ask\' button and ask \'</string>
+    <string name="refer_description">1. Please share the app\n\n2. Increase your referral score\n\n3. And get the benefits soon !!</string>
+    <string name="doubt">Doubt</string>
+    <string name="description">Description</string>
+    <string name="available_in_language">Sorry this lecture is not available in your selected language. We are working on it. </string>
+    <string name="hinglish_language">Meanwhile You can continue in Hinglish language.</string>
+    <string name="notification">Notifications</string>
+    <string name="subscribed_user_tutor_support_limit_exhausted">Your free message limit for this chat has been exceeded. Please talk to our tutor support on Whatsapp.</string>
+    <string name="more_level_coming_soon">More levels Coming Soon</string>
+    <string name="only_verified_and_registered">Only verified and registered students will get rewards. Fill our registration form to become our verified student.</string>
+    <string name="one_student_can_get_the_reward_only_once">One student can get the reward only once.</string>
+    <string name="student_must_have_an_upi_id_for_payment">Students must have an UPI ID for Payment.</string>
+    <string name="student_who_uploaded_their">Students who uploaded their Aadhar Card as Identity proof will be eligible to get the reward.</string>
+    <string name="students_must_have_the">Students must have the updated version of the app while forming the streak to get the reward.</string>
+    <string name="select_chapters">Select Chapters</string>
+    <string name="no_subscription_plan_found">No Subscription plan found</string>
+    <string name="doubt_Asked"><![CDATA[Doubt Asked! Solve & Earn Money Now.]]></string>
+    <string name="please_click_to_upload">Please Click to Upload</string>
+    <string name="your_response">Your Response</string>
+    <string name="correct_answer_1">Correct Answer : </string>
+    <string name="note_consider_asking_doubt">Note: Ask Doubt in the English language, for better results. We are working on improving our ML algorithm in your native language.</string>
+    <string name="do_you_want_to_know_more_about_it_press_ask_button_amp_speak"><![CDATA[Do you want to know more about it? Press \'Ask\' Button & Speak]]></string>
+    <string name="sorry_we_have_found">Please choose your relevant question.</string>
+    <string name="close">Close</string>
+    <string name="info_video_title">Watch Our Quick Demo !!</string>
+    <string name="info_video_body">Click here to see how ARIVIHAN creates magic and teach you in an advanced way.</string>
+    <string name="no_i_was_asking">I want to ask something else.</string>
+    <string name="select_board">Select Board</string>
+    <string name="choose_your_board">Select your board</string>
+    <string name="please_select_language">Please select your language</string>
+    <string name="Accuracy">Accuracy</string>
+    <string name="Percentile">Percentile</string>
+    <string name="HightestScore">Highest Score</string>
+    <string name="AverageTime">Average Time</string>
+    <string name="ViewLeaderboard">View Leaderboard</string>
+    <string name="ranking">Ranking</string>
+    <string name="weekly">Weekly</string>
+    <string name="daily">Daily</string>
+    <string name="track_selection_title">Select Track</string>
+    <string name="clear_text">Clear</string>
+    <string name="terms"><![CDATA[Terms & Condition]]></string>
+    <string name="askedOn">"Asked on : "</string>
+    <string name="sample_paper">Sample Paper</string>
+    <string name="SamplePaperComingSoon">Coming Soon......</string>
+    <string name="sample_paper_info">Previous year papers and chapter notes</string>
+    <string name="sample_paper_desc">Get exam-ready with our Past Papers and Notes section! Access an extensive collection of carefully curated past papers and notes to practice and revise with confidence. With our user-friendly interface.</string>
+    <string name="exam_boards">Examination Board</string>
+    <string name="todo">Click</string>
+    <string name="conceptual_question">Conceptual Question</string>
+    <string name="numerical_question">Numerical Question</string>
+    <string name="level_1">LEVEL 1</string>
+    <string name="score_null">SCORE 00</string>
+    <string name="crop_image_menu_rotate_left">Rotate counter clockwise</string>
+    <string name="crop_image_menu_rotate_right">Rotate</string>
+    <string name="crop_image_menu_crop">Crop</string>
+    <string name="crop_image_menu_flip">Flip</string>
+    <string name="crop_image_menu_flip_horizontally">Flip horizontally</string>
+    <string name="crop_image_menu_flip_vertically">Flip vertically</string>
+    <string name="get_solution_in_your_language">GET SOLUTION IN YOUR LANGUAGE</string>
+    <string name="resubmit_sol_in_your_lang">This solution is available in English. Do you want this solution in your language too? If yes, please click yes.</string>
+    <string name="speak_desc">We have already loaded answers to most of the question you will ask in this lecture. Press here to ask your doubts and get them cleared instantly.</string>
+    <string name="previous_year_papers">Previous Year Papers</string>
+    <string name="title_activity_success">SuccessActivity</string>
+    <string name="dev_callback_url">https://platform-dev.arivihan.com</string>
+    <string name="CustomChapters">Personalised Lectures</string>
+    <string name="AskNewLecture">Get New Lecture</string>
+    <string name="select_exam">Select Exam</string>
+    <string name="select_level">Select Level</string>
+    <string name="PleaseAddTheRequirementForLecture">Please add all the requirements for your on-demand lecture</string>
+    <string name="dont_know">Don\'t know</string>
+    <string name="please_select_exam">Please select your exam</string>
+    <string name="please_select_level">Please select level</string>
+    <string name="desing_lecture">Enter a detailed description that will help us to design a lecture perfect for you.</string>
+    <string name="enter_ur_topic">Enter Your Topic</string>
+    <string name="OOpsThisChapIsGenerated">Your lecture is being generated!</string>
+    <string name="CustomChapterNotAvailable">Request A New On Demand Lecture</string>
+    <string name="on_demand_lecture_intro">Request A New On Demand Lecture</string>
+    <string name="on_demand_lecture_description">Add your topic &amp; preferences in the description and get a perfect lecture specially for you in 10 minutes</string>
+    <string name="personalised_lecture">Personalized Lectures</string>
+    <string name="personalised_lecture_intro">Your Learning, Your Way</string>
+    <string name="personalised_lecture_description">Watch Personalised lectures created to improve your weaknesses</string>
+    <string name="your_rank">Your Rank</string>
+    <string name="apply_filters_to_filter">Filter to view attempted, unattempted tests</string>
+    <string name="your_weekly_checklist">Your Weekly Checklist</string>
+    <string name="your_routine">Today\'s Tasks</string>
+    <string name="profile_your_routine">Your Routine</string>
+    <string name="user_routine">User Routine</string>
+
+    <string name="generate">Generate</string>
+    <string name="monthly">Monthly</string>
+    <string name="syllabus_in_progress">Your customized schedule.\n You\'ll be notified soon!!</string>
+    <string name="your_today_checklist">Today\'s Tasks</string>
+    <string name="edit_your_routine">Edit your Syllabus</string>
+    <string name="title_activity_edit_routine">EditRoutineActivity</string>
+    <string name="ArrangeChapter">Arrange Chapter Order</string>
+    <string name="create">Create</string>
+    <string name="title_activity_to_do_list_main">ToDoListMain</string>
+    <string name="personalised_lecture_blocked_purchase_subs">To continue watching this personalized lecture.</string>
+    <string name="empty_prompt_request">Write question you want to ask…</string>
+    <string name="chat_session_limit">Only 7 chats allowed in session. So please be specific.</string>
+    <string name="chat_session_doubt_resolved">This doubt has been resolved</string>
+    <string name="type_your_query">Type your Query…</string>
+    <string name="chat_init_text">Please let me know if I can explain anything in detail.</string>
+    <string name="Select_Month_and_Year">Select Month and Year</string>
+    <string name="okay">ok</string>
+    <string name="go_to_play_store">Go To Play Store</string>
+    <string name="no_pdf_viewer">Apke device mein default PDF viewer nahi hai.\nPlease install karein!!</string>
+    <string name="Notes">Notes</string>
+    <string name="Long_Answers">Long Answers</string>
+    <string name="Short_Answers">Short Answers</string>
+    <string name="Very_Short_Answers">Very Short Answers</string>
+    <string name="True_or_False">True or False</string>
+    <string name="Match_the_column">Match the column</string>
+    <string name="Fill_in_the_blank">Fill in the blank</string>
+    <string name="type_your_answer">Type your answer</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="extracted_text">Dimensions and units are commonly confused, even though the solution to all engineering problems must include units.
+Dimensions are physical quantities that can be measured, whereas units are arbitrary names that correlate to particular dimensions to make it relative (e.g., a dimension is length, whereas a meter is a relative unit that describes length). All units for the same dimension are related to each other through a conversion factor .
+There are seven base dimensions that can be combined to describe all of the other dimensions of interest in units.</string>
+    <string name="match_column_description">Directions : Drag and drop to pair Column -II answers with correct matches in Column - I</string>
+    <string name="column_i">Column I</string>
+    <string name="column_ii">Column II</string>
+    <string name="drag_and_drop">Drag and Drop</string>
+    <string name="popup_match_column">To pair Column - II answers with correct matches in Column - I</string>
+    <string name="extracting_text_from_image">Extracting Text from image.. \nPlease wait!!</string>
+    <string name="maximum_file_size_15_mb">Maximum file size 10 MB</string>
+    <string name="upload_your">Upload Your</string>
+    <string name="image">&#160;Image&#160;</string>
+    <string name="here">Here</string>
+    <string name="choose_from_gallery">Choose from gallery</string>
+    <string name="select_photo">Select Photo</string>
+    <string name="click_a_photo">Click a photo</string>
+    <string name="check_your_answer_before_submitting">Check your answer before submitting</string>
+    <string name="solution_copied">Solution Copied</string>
+    <string name="copied">Copied</string>
+    <string name="copy_solution">Copy Solution</string>
+    <string name="your_marks">"Your Marks: "</string>
+    <string name="see_solution">See Solution</string>
+    <string name="one_shot_lectures">One-Shot Lectures</string>
+    <string name="board">Board</string>
+    <string name="jee_switch_text">JEE</string>
+    <string name="Solution">"Solution"</string>
+    <string name="word_limit_text">Your word limit exceeded&#160;</string>
+    <string name="choose_action">Choose Action</string>
+    <string name="no_more_data">No more data</string>
+    <string name="manage_your_account">Manage your account</string>
+    <string name="think_beforre_delete">Your profile and progress will be permanently removed. \n \nCan you please share to us what was not working? We are fixing bugs as soon as we spot them. If something slipped through our fingers, we\'d be so grateful to be aware of it and fix it.</string>
+    <string name="delete_your_account">Are you sure you want to delete your account?</string>
+    <string name="delete_hint">Arivihan cares about your experience. Share your concerns or suggestions here</string>
+    <string name="delete">Delete</string>
+    <string name="having_an_issue">Having an issue?</string>
+    <string name="optional_feedback">Your explanation is entirely optional.......</string>
+    <string name="cancel_delete">Cancel</string>
+
+    <string name="previous_year_paper">Previous year paper</string>
+
+    <string name="play_home">Play</string>
+    <string name="reels_home">Reels</string>
+    <string name="home">Home</string>
+    <string name="analytics_home">Analytics</string>
+    <string name="profile_home">Profile</string>
+    <string name="unmarked">Unmarked</string>
+    <string name="single_choice">Single-choice </string>
+    <string name="numerical">Numerical </string>
+    <string name="current_result">Current Result</string>
+    <string name="previous_result">Previous Result</string>
+    <string name="no_response">No response</string>
+    <string name="no_attempt">No attempt</string>
+    <string name="test_is_reattempted">Test is Reattempted</string>
+    <string name="full_syllabus">Full syllabus</string>
+    <string name="select_status">Select Status</string>
+    <string name="change_quality">Video Quality</string>
+    <string name="analysing">Analysing</string>
+    <string name="your_submitted_answer">Your submitted answer</string>
+    <string name="just_relax">Just relax for a moment.</string>
+    <string name="payment_failed">Payment Failed</string>
+    <string name="payment_successfully">Payment successfull</string>
+    <string name="please_don_t_refresh_or_go_back_n_while_making_a_payment">Please don\'t refresh or go back \n while making a payment.</string>
+    <string name="to_do_list_instruction_1">Please select/remove your chapters. Only selected chapters will be included in preparing your everyday to-do list</string>
+    <string name="to_do_list_instruction_2">You can drag and drop chapters up and down, to arrange the priority order in your to-do list.</string>
+    <string name="to_do_list_instruction_3">Your daily tasks will be created by dividing your targeted chapters with the decided timeline.</string>
+    <string name="to_do_list_instruction_4">Tap on “Create” to generate your to-do list. Start completing your everyday tasks. Enjoy learning!</string>
+    <string name="analysing_mock_test">Analysing Mock Test...</string>
+    <string name="your_submitted_answer_mock">Your sumbitted Mock Test!</string>
+    <string name="global_search_unclear_voice_error">Sorry that was not clear.\nPlease click below \n \"Ask what you want to study\"</string>
+    <string name="recent_searches">Recent Searches</string>
+    <string name="multi_choice">Multi-Choice</string>
+    <string name="subjective">Subjective</string>
+    <string name="very_short_answers">Very Short Answers</string>
+    <string name="true_false">True False</string>
+    <string name="fill_in_the_blanks">Fill in the blanks</string>
+    <string name="one_word_answer">One word answer</string>
+    <string name="short_answer">Short Answer</string>
+    <string name="long_answer">Long Answer</string>
+    <string name="match_the_column">Match The Column</string>
+    <string name="creating_syllabus">Creating</string>
+    <string name="review_later">Review Later</string>
+    <string name="see_all">See all</string>
+    <string name="mark">Mark</string>
+    <string name="analyzing_your_test">Analysing your Performance. Please wait</string>
+    <string name="enter_the_numerical_value"><font size="15">Enter the numerical value</font></string>
+    <string name="on_demand_lecture_badge_text">On-Demand\nLectures</string>
+    <string name="waiting_for_response">Waiting for response.</string>
+    <string name="drawer_subscribe_message">Doubts? Unlock the door to success with unlimited access to solutions!</string>
+    <string name="subscribe_now">Subscribe Now</string>
+    <string name="overall_progress_text">Overall progress</string>
+    <string name="category">Category</string>
+    <string name="all">All</string>
+    <string name="solved_papers">Solved Papers</string>
+    <string name="other">Other</string>
+    <string name="coming_soon_text">Coming Soon</string>
+    <string name="search">Search</string>
+    <string name="view_plans">View plans</string>
+    <string name="analysis_progress">Your analysis is in progress. Please click back again to exit</string>
+    <string name="we_hope_your_doubt_is_resolved">"We hope ki apka doubt solve ho gaya hai🤞"</string>
+    <string name="we_hope_you_got_the_solution_of_your_doubt">"We hope ki apka doubt resolved  hai🤞"</string>
+    <string name="we_hope_this_solves_your_doubt">"We hope ki isse apka doubt solve ho gaya hoga 🤞"</string>
+
+    <!--Subscription Screen-->
+
+    <string name="feature">FEATURES</string>
+    <string name="limited_offer">Limited Offer Valid Till %1$d %2$s</string>
+    <string name="price_format">₹%1$s</string>
+    <string name="price_per_month">₹%1$s/mon</string>
+    <string name="you_save">You save ₹%1$s</string>
+    <string name="enroll_Now">Join Now</string>
+    <string name="buy_subscription">Buy Subscription</string>
+    <string name="change_plan">Change Plan</string>
+    <string name="coupon_code">Coupon code</string>
+    <string name="apply_code">Apply Code</string>
+    <string name="subscription_price">Subscription Price</string>
+    <string name="total">Total</string>
+    <string name="process_to_pay">Proceed to pay</string>
+    <string name="price_discount">- ₹%1$s" </string>
+    <string name="off">off</string>
+    <string name="special_offer_for_you">Special Offer for you!</string>
+    <string name="valid_discount">Hurry Up! Highest discount only valid for %1$s</string>
+    <string name="student_already_taken_advantage">students already taken advantage</string>
+    <string name="best_value">BEST VALUE</string>
+    <string name="get_extra_percent_off">Get Extra %1$s%% Off</string>
+    <string name="get_extra_amount_off">Get Extra ₹%1$s off</string>
+    <string name="applied_successfully">%1$s applied successfully!</string>
+    <string name="coupon_Code">Coupon Code</string>
+
+    <!--Talk to our experts-->
+    <string name="talk_to_our_experts">Talk to our experts</string>
+    <string name="have_questions">Have questions?</string>
+    <string name="our_experts_can_answer_your_questions">Our experts can answer all your subscription questions.</string>
+    <string name="how_to_improve_my_marks">“How can I purchase subscription?”</string>
+    <string name="talk_to_us">Need Help</string>
+
+    <!--tnc and privacy policy-->
+    <string name="agree_to_the">I agree to the\u0020</string>
+    <string name="terms_and_conditions">Terms and Condition\u0020</string>
+    <string name="terms_and_conditions_delete">Terms and Condition\u0020</string>
+    <string name="and">and</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="privacy_policy_delete">Privacy Policy</string>
+
+
+    <string name="please_describe_more">Please describe more</string>
+    <string name="instant_guru">Instant Guru</string>
+    <string name="got_a_doubt">Kuch samajh nahi aaya?</string>
+    <string name="got_all_the_answers">Jo poochoge, jawab milega yahin!</string>
+    <string name="choose_your_subject">Choose your subject</string>
+    <string name="new_chat">New Chat</string>
+    <string name="previous_chats">Previous Chats</string>
+    <string name="type_something">Type Something</string>
+    <string name="was_this_helpful">Was this helpful?</string>
+    <string name="ask_anything">Ask Anything...</string>
+
+    <string name="something_went_wrong">Something went wrong</string>
+    <string name="please_try_again_later">We are working on fixing the problem. \nPlease refresh the page and try again</string>
+    <string name="go_back_to_home">GO BACK TO HOME</string>
+    <string name="report_the_issue">REPORT AN ISSUE</string>
+    <string name="report_has_been_submitted">Your report has been submitted!</string>
+    <string name="report_the_issue_subject">An uncaught exception has been reported</string>
+    <string name="report_the_issue_body">This has been reported by %1$s \n</string>
+
+    <string name="no_chat_history">No Chat History</string>
+    <string name="only_1_image_allowed_in_chat_session">Only 1 image allowed in chat session.</string>
+    <string name="chat_limit_in_session_exceeded">Sorry, You\'ve reached your limit of 5 Doubts in this chat. Please subscribe to keep chatting</string>
+    <string name="chat_limit_reached_popup_text">Sorry you have reached your limit of 3 Doubts. Please subscribe to ask more doubts</string>
+    <string name="completion_progress">Completion Progress</string>
+
+    <!--My Doubts-->
+    <string name="my_doubts">My Doubts</string>
+    <string name="SOLVED_UNSEEN">Solution is Ready!</string>
+    <string name="IN_PROGRESS">Solution in Progress!</string>
+    <string name="no_doubts_asked">No Doubts Asked</string>
+    <string name="click_and_ask_doubt">Click the \'Ask Doubt\' button NOW \n &amp; Ask your Questions</string>
+    <string name="no_result_found">No Result Found</string>
+    <string name="try_changing_the_search_term">Try changing the search term</string>
+    <string name="view_image">View Image</string>
+
+    <string name="explore">Explore</string>
+    <string name="learn">Learn</string>
+
+    <string name="free">Free</string>
+    <string name="rank">Rank</string>
+    <string name="reattempt">Re-attempt</string>
+    <string name="marks">Marks</string>
+    <string name="time">Time</string>
+    <string name="overview">Overview</string>
+    <string name="finish">Finish</string>
+    <string name="Submit_Test">Submit Test</string>
+    <string name="once_Submit_Test">Once you click submit, you will not be able to change your answer</string>
+    <string name="answered"> Answered</string>
+    <string name="Marked"> Marked</string>
+    <string name="Unanswered"> Unanswered</string>
+    <string name="performance_analysis">Performance Analysis</string>
+    <string name="Cut_off">Cut off</string>
+    <string name="View_Solutions">View Solutions</string>
+    <string name="Sectional_Summary">Sectional Summary</string>
+    <string name="our_experts_can_answer_your_question">Our experts can answer all your questions over a chat.</string>
+    <string name="Average_speed_per_question">Average speed per question</string>
+    <string name="attempt_analysis">Attempt Analysis</string>
+    <string name="Score_Comparison">Score Comparison</string>
+    <string name="You">You</string>
+    <string name="Topper">Topper</string>
+    <string name="Average">Average</string>
+    <string name="biology">Biology</string>
+    <string name="Chapter_wise_summary">Chapter wise summary</string>
+    <string name="Topic_wise_summary">Topic wise summary</string>
+    <string name="students">students</string>
+    <string name="hr">hr</string>
+    <string name="Marked_Unanswered">Marked &amp; Unanswered</string>
+    <string name="Marked_Answered">Marked &amp; Answered</string>
+    <string name="ask_more">Ask \n More?</string>
+    <string name="total_scoree">Total Score</string>
+    <string name="scoree">Score</string>
+    <string name="Submit">Submit</string>
+    <string name="Incorrect_or_incomplete_question">Incorrect or incomplete question</string>
+    <string name="Incorrect_or_incomplete_option">Incorrect or incomplete option</string>
+    <string name="Formatting_or_image">Formatting or image quality issue</string>
+    <string name="Your_Feedback">Your Feedback</string>
+    <string name="Report_Question">Report Question!</string>
+    <string name="Report">Report</string>
+    <string name="Report_Submitted">Report Submitted !!</string>
+    <string name="Tell_Us_Your_Name">Tell Us Your Name</string>
+    <string name="start_now">Start Now</string>
+
+
+    <!--Practice Question-->
+    <string name="ready_for_another_Try">Ready for Another Try?</string>
+    <string name="want_to_review">Want to review your previous attempt or Reattempt the questions?</string>
+    <string name="dont_leave">Don’t Leave!</string>
+    <string name="complete_all_questions_for_better_marks">Complete all questions for better marks!</string>
+    <string name="view_solution">View Solution</string>
+    <string name="leave_anyway">Leave Anyway</string>
+    <string name="Continue">Continue</string>
+    <string name="quick_right">Excellent, You\'re a Quick Thinker!</string>
+    <string name="normal_right">Correct Answer! Keep going! You\'re doing great!</string>
+    <string name="quick_wrong">%1$s, thoda sochke or time leke answer dein!</string>
+    <string name="normal_wrong">Don’t worry %1$s! You can do it, Just keep trying!</string>
+    <string name="Correct_Answer">Correct Answer</string>
+    <string name="my_answer">My Answer</string>
+    <string name="my_download">My Downloads</string>
+    <string name="quick_match_these">That was quick⚡ \nYour Answer is Submitted!</string>
+    <string name="normal_match_these">Your Answer is Submitted!</string>
+    <string name="select_images">Select Images</string>
+    <string name="submit_karne_se_pehle_answer_check_krein">Submit karne se pehle answer check krein</string>
+    <string name="Your_Answer_is_Checked">Your Answer is Checked!</string>
+    <string name="Extracting_Text_from_Image">Extracting Text from Image</string>
+    <string name="text_extraction_1">Relax Isme around ~1 minute lagta hai</string>
+    <string name="text_extraction_2">Please app band na karein ya back button na dabayein</string>
+    <string name="text_extraction_10">Apki images se text extract ho raha hai</string>
+    <string name="text_extraction_3">Relax it takes around ~1 min</string>
+    <string name="text_extraction_4">Mp Board State Rank 1 ne ye feature 77 times use kiya hai</string>
+    <string name="text_extraction_5">Only platform jo Apke long answers boards ke hisab se check krta h</string>
+    <string name="text_extraction_6">Increase 20% Marks by this feature</string>
+    <string name="text_extraction_7">No 1 platform for MP Board Preparation</string>
+    <string name="text_extraction_8">Aaj se hi Board exam ki tayari krein </string>
+    <string name="text_extraction_9">Guaranteed Marks Increase</string>
+    <string name="Oops_Something_went_wrong">Oops! Something went wrong!</string>
+    <string name="You_might_have_internet_issue">You might have internet issue, please try again later</string>
+    <string name="Checking_your_answer">Checking your answer!</string>
+    <string name="Pareshan_mat_ho_Bas_practice_karte_raho">Pareshan mat ho! \n Bas practice karte raho!</string>
+    <string name="Bahot_Badhiya_Aise_hi_improve_karte_rahe">Bahot Badhiya! Aise hi \n improve karte rahe!</string>
+    <string name="Please_upload_the_Image_first">Please upload the Image first</string>
+    <string name="Read_More">Read More</string>
+    <string name="Read_Less">Read Less</string>
+    <string name="Leaving_this_page_will_cancel_your_upload">Leaving this page will cancel your upload.</string>
+    <string name="Text_not_found">Text not found!</string>
+    <string name="Apki_image_mein_text_nhi_mila">Apki image mein text nhi mila, Dubara Upload karen!</string>
+    <string name="Open_Gallery">Open Gallery</string>
+    <string name="Click_Again">Click Again</string>
+    <string name="analysis">Analysis</string>
+    <string name="ideal_solution">Ideal Solution</string>
+    <string name="in_progress">In Progress</string>
+    <string name="refresh">Refresh</string>
+    <string name="analysing_check_back_later">Your analysis is in progress. Please click refresh or check again later.</string>
+    <string name="secondary_exam">Boards ke sath aap kis exam pe focus karna chahenge?</string>
+    <string name="analysis_mock_progress">Analysis is in progress. Please check this test later.</string>
+
+    <string name="Checking_your_Test">Checking your Test!</string>
+    <string name="Test_Submitted">Test Submitted. We\'ll Notify \nYour Results in ~2–5 Mins</string>
+    <!--video player-->
+    <string name="Ask">Ask ?</string>
+    <string name="Apna_doubt_type_kare_or_paye_uska_Instant_solution">Apna doubt type kare or paye uska Instant solution!</string>
+    <string name="Your_Doubt">Your Doubt</string>
+    <string name="Apko_apke_doubt_ka_solution_kaisa_chahiye">Apko apke doubt ka solution kaisa chahiye?</string>
+    <string name="Please_select_the_option_you_like">Please select the option you like</string>
+    <string name="Text_Solution">Text Solution</string>
+    <string name="Video_Solution">Video Solution</string>
+    <string name="Within_Seconds">(Within Seconds)</string>
+    <string name="two_five_min">(2-5 mins)</string>
+    <string name="Your_Solution_is_getting_Ready">Your Solution is getting Ready!</string>
+    <string name="Solution_bante_hi_aapko">Solution bante hi aapko notification aa \n jayega aur aap ise profile ke \'Solved Doubts\' \n section mein dekh sakte hain.</string>
+    <string name="Quality">Quality</string>
+    <string name="Playback_speed">Playback speed</string>
+    <string name="Your_Solution_is_Ready">Your Solution is Ready!</string>
+    <string name="Doubt_ka_solution_abhi_dekhein_ya_lecture_pe_wapas_jaayein">Doubt ka solution abhi dekhein ya lecture pe wapas jaayein?</string>
+    <string name="Watch_Solution">Watch Solution</string>
+    <string name="More_details_Needed">More details, Needed!</string>
+    <string name="Normal">Normal</string>
+    <string name="practice_question_bot_text">Hi {name}, I\'m Arivihan\'s tutor bot. I hope you found our solution helpful.</string>
+    <string name="technical_issue_please_try_again">We\'re facing a technical issue. Please try again later or contact us directly.</string>
+    <string name="create_routine">Create\nRoutine</string>
+    <string name="to_upload_an_image_please_click_on_new_chat">To upload an Image please click on New Chat</string>
+    <string name="click_here">Click Here</string>
+    <string name="answer_upload_sav">Answer upload karein aur board exam experts se check karwaayein</string>
+    <string name="practice_problems">Practice Problems</string>
+
+    <!--    continuity addition-->
+    <string name="Practice_Problems">Practice Problems</string>
+    <string name="Skip_to_Next_Lecture">Skip to Next Lecture</string>
+    <string name="Skip_to_Next_Practice">Skip to Next %1$s</string>
+    <string name="Up_Next">Up Next</string>
+    <string name="micro_lecture_and_practice_list">micro_lecture_and_practice_list</string>
+    <string name="progressionIsLocked">progressionIsLocked</string>
+    <string name="progressionLockedMessage">progressionLockedMessage</string>
+
+    <!--    today's classes-->
+    <string name="today_s_classes">Today\'s Classes</string>
+    <string name="ends_in">Ends In</string>
+    <string name="superb_task_completed">Superb! {1} out of {2} tasks done!</string>
+    <string name="No_personalized_lectures_available">No personalized lectures available</string>
+    <string name="Show_More">Show More</string>
+    <string name="pay">Pay</string>
+    <string name="scan_qr_code_and_pay">QR Scan / share karke payment karwayein!</string>
+    <string name="make_payment_within">Make Payment within</string>
+    <string name="scan_with_any_upi">Scan the QR from your mobile using any UPI app such as PhonePe, Google Pay, Paytm, CRED, Amazon Pay, BHIM etc.</string>
+    <string name="other_payment_options">Other Payment Options</string>
+    <string name="select_a_payment_method">Select a Payment Method!</string>
+    <string name="pay_with_qr">Pay with QR</string>
+    <string name="select_answer_s_images">Select Answer’s Images</string>
+    <string name="subjective_image_upload_steps">Step 1- Apne answer ko copy me likhe\nStep 2- Uski photo click krke, upload karein</string>
+    <string name="upload_answer_aur_board_expert">Answer upload karein aur board exam experts se check karwaayein</string>
+    <string name="Batch">Batch</string>
+    <!--    congratulations screen-->
+    <string name="Congratulations">Congratulations!</string>
+    <string name="Youve_taken_the_first_step_of_your_Learning_Journey">You\'ve taken the first step of your Learning Journey!</string>
+    <string name="Your_Benefits">Your Benefits</string>
+    <string name="Get_Started">Get Started</string>
+
+    <!--toppers list-->
+    <string name="Champions_of_Arivihan">Champions of Arivihan</string>
+    <string name="toppers_list">toppers_list_new_</string>
+
+    <!--    very short-->
+    <string name="Option_1_Apna_answer_yha_type_karein">Option 1- Apna answer yha type karein&#160;</string>
+    <string name="Apna_answer_yha_type_karein">Apna answer yha type karein&#160;</string>
+    <string name="Option_2_Ya_photo_click_krke_upload_karein">Option 2- Ya photo click krke, upload karein&#160;</string>
+    <string name="Answer_upload_karein">Answer upload karein </string>
+    <!--    subscription benefits visibility boolean-->
+    <string name="show_subscription_benefits">show_subscription_benefits</string>
+    <!--    QR code validity window in milliseconds (default 24 h = 86400000 ms)-->
+
+    <!--    Unnati Batch Texts-->
+    <string name="subscription_updated">subscription_updated</string>
+    <string name="unnati_video">unnati_video_</string>
+    <string name="unnati_poster">unnati_poster_url_</string>
+    <string name="Join_Now">Join Now</string>
+    <string name="Unnati">Unnati</string>
+    <string name="New">New</string>
+    <string name="Language">Language</string>
+    <string name="Pichle_Saal_ke">Pichle Saal ke</string>
+    <string name="State_Toppers">&#160;State Toppers&#160;</string>
+    <string name="ki_Batch">ki Batch</string>
+    <string name="Unnati_Batch">unnati_screen_batch_title_</string>
+    <string name="for_MP_Boards_Includes">for MP Boards, Includes</string>
+    <string name="Discount_ARIVIHAN_Coupon_code_applied"> %1$s Discount - \"%2$s\" Coupon code applied!</string>
+    <string name="Months">&#160;Months</string>
+    <string name="Month">Month</string>
+    <string name="feature1">Important topics for 12th Boards</string>
+    <string name="feature2">6 subjects: Eng, Hindi, Phy, Chem, Math, and Bio</string>
+    <string name="feature3">Mind Maps, Tips &amp; Tricks, and Expert Lectures</string>
+    <string name="feature4_12">Unnati Batch + Sambhav Crash Course</string>
+    <string name="feature4_11">Unnati Batch for 11th Class</string>
+    <string name="feature4_foundation">Unnati Batch for (11+12)th Boards</string>
+    <string name="your_target_percentage_for_boards">Your Target Percentage for Boards 🤩?</string>
+    <string name="_1080p">1080p</string>
+    <string name="backToPreviousVideo">&#160;Back to Previous Video</string>
+    <string name="Toppers_ke_Notes">Toppers ke Notes</string>
+    <string name="here_s_your_instant_solution">Here\'s your Instant ⚡ Solution</string>
+    <string name="i_want_to_discuss_in_detail">I want to discuss in detail</string>
+    <string name="show_me_recommended_videos">Show me recommended videos</string>
+    <string name="random_text"><![CDATA[There are a few with recorded lectures which lack interaction, the most crucial element of a classroom, and a few have live lectures where 20-50 students are grouped to make it affordable where they ask & interact via comments during lectures. On top of that, sadly, these are primarily available in English or Hindi. Can there be a way, a 1-on-1 online class with a highly experienced faculty teaching in your language, where you can interact and ask then and there? There are a few with recorded lectures which lack interaction, the most crucial element of a classroom, and a few have live lectures where 20-50 students are grouped to make it affordable where they ask & interact via comments during lectures. On top of that, sadly, these are primarily available in English or Hindi. Can there be a way, a 1-on-1 online class with a highly experienced faculty teaching in your language, where you can interact and ask then and there? There are a few with recorded lectures which lack interaction, the most crucial element of a classroom, and a few have live lectures where 20-50 students are grouped to make it affordable where they ask & interact via comments during lectures. On top of that, sadly, these are primarily available in English or Hindi. Can there be a way, a 1-on-1 online class with a highly experienced faculty teaching in your language, where you can interact and ask then and there?]]></string>
+    <string name="step_wise_solution">Step Wise Solution</string>
+    <string name="please_wait_writing_your_solution">Please wait while we create your step-by-step solution</string>
+
+    <!--    to do list popup-->
+    <string name="to_do_popup_thumbnail">to_do_popup_thumbnail_</string>
+    <string name="create_to_do_popup_thumbnail">create_to_do_popup_thumbnail_</string>
+    <string name="to_do_popup_video">to_do_popup_video_</string>
+    <string name="create_to_do_popup_video">create_to_do_popup_video_</string>
+    <string name="Aaj_hi_apna_time_table_banayen">Aaj hi apna time table banayen</string>
+    <string name="Time_table_ke_saath_padho">Time table ke saath padho, aur </string>
+    <string name="twelwth_me">12th me 85%&#160;</string>
+    <string name="sapne_ko_sach_banao">ke sapne ko sach banao!</string>
+    <string name="Create_now">Create Now</string>
+
+    <!--    sav changes-->
+    <string name="Your_Uploaded_Answer_Image">Your Uploaded Answer’s Image&#160;</string>
+    <string name="You_can_select_up_to_images">You can select up to %1$d images!</string>
+    <string name="Oops_only_images_allowed">Oops, only %1$d images allowed!</string>
+    <string name="oops_sirf_images_allowed_hain_multiple">Oops! Sirf %1$d images allowed hain!</string>
+    <string name="oops_sirf_images_allowed_hain_single">Oops! Sirf %1$d image allowed hain!</string>
+    <string name="oops_sirf_1_file_allowed">Oops! Sirf 1 file upload ki ja sakti hai!</string>
+    <string name="View_Your_Answer">View Your Answer</string>
+    <string name="level_">Level:&#160;</string>
+    <string name="Submit_karne_se_pehle_answer_check_krein">Submit karne se pehle answer check krein</string>
+    <string name="Step_">Step&#160;</string>
+    <string name="Step">Step</string>
+    <string name="Step_1_5">Step 1/5 : Analysis</string>
+    <string name="Step_2_5">Step 2/5 : Ideal Solution</string>
+    <string name="Step_3_5">Step 3/5 : Your Answer</string>
+    <string name="Step_4_5">Step 4/5 : Ask More</string>
+    <string name="Step_5_5">Step 5/5 : Next</string>
+    <string name="Step_1">Apka answer mein kya sahi tha aur kya \ngalat, yahan dekhein!</string>
+    <string name="Step_2">Board exam ke liye apko kaisa answer \nlikhna hai, yahan dekhein!</string>
+    <string name="Step_3">Aapka submit kiya gaya answer yahan \ndekhein!</string>
+    <string name="Step_4">Solution mein abhi bhi kuch samajh na \naaya ho, toh yahan puchein!</string>
+    <string name="Step_5">Next question pe jaane ke liye yahan click \nkarein!</string>
+    <string name="Step_1_2">Spellings check karo aur zarurat ke hisab \nse answer shi karo</string>
+    <string name="Step_1_3">Spellings check karo aur zarurat ke hisab \nse answer shi karo</string>
+    <string name="Step_2_3">Poora answer dekhne ke liye click kare</string>
+    <string name="Step_3_3">Answer check krwane ke liye submit kare</string>
+    <string name="Step_2_2">Answer check krwane ke liye submit kare</string>
+
+    <!--    comprehensive changes-->
+    <string name="Case_Study">Case \nStudy</string>
+    <string name="Aage_questions">Aage questions ke answer dene ke liye, text ko dhyan se padhein!</string>
+    <string name="Hide">Hide</string>
+    <string name="backend_error_message">We\'re working on this, Please try again or or reach out for help</string>
+    <string name="try_again_later">Try Again Later</string>
+    <string name="Not_Attempted">Not Attempted</string>
+
+    <!--    mock video keys-->
+    <string name="full_test">full_test_</string>
+    <string name="full_test_board">full_test_board_</string>
+    <string name="chapter_test">chapter_test_</string>
+    <string name="chapter_test_board">chapter_test_board_</string>
+    <string name="Choose_an_option_to_answer">Choose an option to answer</string>
+    <string name="Please_enter_an_answer_first_or_Swipe">Please enter an answer first or Swipe</string>
+
+    <!--    half yearly-->
+    <string name="Half_Yearly_Ki_Tayari">Board Exam Ki Taiyari</string>
+    <string name="half_yearly_popup_thumbnail">half_yearly_popup_thumbnail_</string>
+    <string name="half_yearly_popup_video">half_yearly_popup_video_</string>
+    <string name="hide_half_yearly_content">hide_half_yearly_content</string>
+    <string name="hide_crash_course_content">hide_crash_course_content</string>
+    <string name="Read_Now">Read Now</string>
+    <string name="Start_Test_Now">Start Test  Now</string>
+    <string name="Completed">Completed...</string>
+    <string name="Watched">Watched...</string>
+    <string name="Half_yearly_ke_practice_test_kese_dein">“40 dino mein 90% banana hai, par kaise?”</string>
+    <string name="Our_experts_can_answer_all_your_exam_related_questions">Humare experts se baat karein, aur Sambhav Batch ki poori jaankari paayein.</string>
+    <string name="Oops_Aap_late">Oops!! Aap %1$d din late ho gye?</string>
+    <string name="Aaj_se">Aaj se Time table ke saath padho,&#160;</string>
+    <string name="percentage_value">85%&#160;</string>
+    <string name="aur">&#160;aur&#160;</string>
+    <string name="late_popup_thumbnail">late_popup_thumbnail_</string>
+    <string name="late_popup_video">late_popup_video_</string>
+    <string name="routine_pdf">routine_pdf_</string>
+    <string name="Aa_gyi_half_yearly_exam">Aa gyi final board exam?</string>
+    <string name="Tension_khatam_sari">Tension khatam sari, kyunki</string>
+    <string name="ten_dino">&#160;Arivihan&#160;</string>
+    <string name="mein_hogi_Half_Yearly_ki_Tayari">mein hogi Board Exam  ki Tayari!!</string>
+    <string name="ke_sapne_ko_sach_banao">ke sapne ko sach banao!</string>
+
+    <string name="show_device_threshold_dialog">show_device_threshold_dialog</string>
+
+    <!--    test series revamp-->
+    <string name="mins">&#160;mins</string>
+    <string name="Marks">&#160;Marks</string>
+    <string name="Qns">&#160;Qns</string>
+    <string name="checking">Checking....</string>
+    <string name="Apka_test_check_ho_rha_hai">Apka test check ho rha hai!! </string>
+    <string name="View_Result">View Result</string>
+    <string name="Unlock_All_Tests">Unlock All %1$d Tests</string>
+
+    <string name="lastTestAttempted">LastTestAttempted_%1$s_%2$s_%3$s_%4$s</string>
+    <string name="lastTestAttemptedInSubject">LastTestAttempted_%1$s_%2$s_%3$s_%4$s_%5$s</string>
+
+    <string name="Aapka_result_ab_ready_hai">Aapka result ab ready hai!!</string>
+    <string name="result_in">Result in</string>
+    <string name="View_your">View your</string>
+    <string name="Result">Result</string>
+    <string name="Result_time">%1$d mins</string>
+    <string name="video_length">%1$s min</string>
+    <string name="video_length_minutes">%1$d min</string>
+    <string name="video_length_hours">%1$d hr</string>
+    <string name="video_length_hours_minutes">%1$d hr %2$d min</string>
+
+    <string name="video_size">%1$s MB</string>
+    <string name="exo_track_selection_title_video">Video</string>
+    <string name="exo_track_selection_title_text">Text</string>
+    <string name="error_drm_unsupported_before_api_18">Protected content not supported on API levels below 18</string>
+    <string name="download_start_error_offline_license">Failed to obtain offline license</string>
+    <string name="download_live_unsupported">This demo app does not support downloading live content</string>
+    <string name="download_start_error">Failed to start download</string>
+    <string name="download">Download Now</string>
+    <string name="download_lecture_text">Download Quality</string>
+    <string name="memory_limit_text">Memory limit reached. Please free up space to continue.</string>
+    <string name="no_downloaded_videos">No Downloaded Lectures</string>
+    <string name="please_download_lectures">Please download lectures to view them here.</string>
+    <string name="downloading_in_progress">We are preparing your download, please wait.....</string>
+    <string name="user_selected_download_quality">user_selected_download_quality</string>
+    <string name="unable_to_fetch">Your internet seems slow. Check your connection to download lectures.</string>
+    <string name="crash_course">Crash Course</string>
+    <string name="Current_Quality">Current Quality</string>
+    <string name="user_selected_video_quality">User selected video quality</string>
+    <string name="Video_quality_select_karein">Video quality select karein</string>
+    <string name="_Days">45 Days</string>
+    <string name="Begin">Begin</string>
+    <string name="crash_course_sambhav">Sambhav</string>
+    <string name="switching_to">Switching to %1$s Mode</string>
+    <string name="lecture_title">%1$s Lectures</string>
+    <!--    keys-->
+    <string name="Download">Download</string>
+    <string name="Downloaded">Downloaded</string>
+    <string name="Share">Share</string>
+    <string name="Cancel_Download">Cancel Download</string>
+    <string name="OptionTooltipCount">OptionTooltipCount</string>
+    <string name="ClickHereTooltipCount">ClickHereTooltipCount</string>
+    <string name="SubmitTooltipCount">SubmitTooltipCount</string>
+    <string name="ThreeStepTooltipCount">ThreeStepTooltipCount</string>
+    <string name="FiveStepTooltipCount">FiveStepTooltipCount</string>
+
+    <string name="OptionTooltipCountTest">OptionTooltipCountTest</string>
+    <string name="ClickHereTooltipCountTest">ClickHereTooltipCountTest</string>
+    <string name="SubmitTooltipCountTest">SubmitTooltipCountTest</string>
+    <string name="ThreeStepTooltipCountTest">ThreeStepTooltipCountTest</string>
+    <string name="FiveStepTooltipCountTest">FiveStepTooltipCountTest</string>
+    <string name="buy_plan_to_continue">buy plan to continue</string>
+    <string name="UserOngoingTestState">UserOngoingTestState</string>
+    <string name="aap_kis_medium_mein_padhte_hain">Aap kis medium mein padhte hain?</string>
+    <string name="select_optional_subject">Select optional subject</string>
+    <string name="additional_subject_added">Additional Subject Added</string>
+
+    <string name="retry_again">Retry</string>
+    <string name="no_internet_connection">Internet check karein</string>
+    <string name="check_internet_and_retry">Internet weak hone ke kaaran ye page load nahi ho paaya, kuch der baad dobara try karein!</string>
+
+    <string name="cropping_failed">Cropping failed</string>
+    <string name="coupon_code_is_invalid">Coupon code is invalid</string>
+    <string name="press_back_again_to_exit">Press back again to exit</string>
+    <string name="terms_condition">Please agree to terms and conditions to complete payment</string>
+    <string name="Question_describe_karein">Question describe karein...</string>
+    <string name="Apka_solution_ban_rha_hai">Apka solution ban rha hai!!</string>
+    <string name="Aapka_solution_ab_ready_hai">Aapka solution ab ready hai!!</string>
+    <string name="Apka_test_generation_ban_rha_hai">Apka test ban rha hai!!</string>
+    <string name="Aapka_test_generation_ready_hai">Aapka test ready hai!!</string>
+    <string name="test_in">Test in</string>
+    <string name="test_str">Test</string>
+    <string name="Recent_Chats">Recent Chats</string>
+    <string name="Last_Week">Last Week</string>
+    <string name="Last_Month">Last Month</string>
+    <string name="Older_Chats">Older Chats</string>
+    <string name="disclaimer_text">disclaimer_text_</string>
+
+    <string name="Raise_a_Concern">Raise a Concern</string>
+    <string name="Course_Benefits">Course Benefits</string>
+    <string name="Payment_Pending">Payment Pending</string>
+    <string name="Payment_Failed">Payment Failed</string>
+    <string name="Invoice">Receipt</string>
+    <string name="Valid_upto">Valid upto %1$s</string>
+    <string name="Expired_on">Expired on %1$s</string>
+    <string name="Important_Updates_Miss_Na_Ho">Important Updates Miss Na Ho!</string>
+    <string name="Isliye_hume_notifications_bhejne_ki_permission_dein">Isliye hume notifications bhejne ki permission dein!</string>
+    <string name="No_emoji">No 🥹</string>
+    <string name="Yes_emoji">Yes 😍</string>
+    <string name="Notification_Permission_Popup_Count">Notification_Permission_Popup_Count</string>
+    <string name="Buy_Again">Buy Again</string>
+    <string name="no_susbcriptions_purchased">No Subscriptions Purchased</string>
+    <string name="no_failed_Transactions">No Failed Transactions</string>
+    <string name="all_Transactions">All Transactions</string>
+    <string name="failed_Transactions">Failed Transactions</string>
+    <string name="Help_">Help?</string>
+    <string name="Renew_Now">Renew Now</string>
+    <string name="Later">Later</string>
+
+    <string name="HOW_TO_TYPE_TEST_JEE">HOW_TO_TYPE_TEST_JEE_</string>
+    <string name="HOW_TO_TYPE_TEST_JEE_CHAPTER">HOW_TO_TYPE_TEST_JEE_CHAPTER_</string>
+    <string name="HOW_TO_TYPE_TEST_NEET">HOW_TO_TYPE_TEST_NEET_</string>
+    <string name="HOW_TO_TYPE_TEST_NEET_CHAPTER">HOW_TO_TYPE_TEST_NEET_CHAPTER_</string>
+    <string name="HOW_TO_TYPE_TEST_BOARD">HOW_TO_TYPE_TEST_BOARD_</string>
+    <string name="HOW_TO_TYPE_TEST_BOARD_CHAPTER">HOW_TO_TYPE_TEST_BOARD_CHAPTER_</string>
+    <string name="HOW_TO_TYPE_TEST_JEE_ANALYSIS">HOW_TO_TYPE_TEST_JEE_ANALYSIS_</string>
+    <string name="HOW_TO_TYPE_TEST_JEE_CHAPTER_ANALYSIS">HOW_TO_TYPE_TEST_JEE_CHAPTER_ANALYSIS_</string>
+    <string name="HOW_TO_TYPE_TEST_NEET_ANALYSIS">HOW_TO_TYPE_TEST_NEET_ANALYSIS_</string>
+    <string name="HOW_TO_TYPE_TEST_NEET_CHAPTER_ANALYSIS">HOW_TO_TYPE_TEST_NEET_CHAPTER_ANALYSIS_</string>
+    <string name="HOW_TO_TYPE_TEST_BOARD_ANALYSIS">HOW_TO_TYPE_TEST_BOARD_ANALYSIS_</string>
+    <string name="HOW_TO_TYPE_TEST_BOARD_CHAPTER_ANALYSIS">HOW_TO_TYPE_TEST_BOARD_CHAPTER_ANALYSIS_</string>
+    <string name="HOW_TO_TYPE_QUESTION_TYPE_A_ANALYSIS">HOW_TO_TYPE_QUESTION_TYPE_A_ANALYSIS_</string>
+    <string name="HOW_TO_TYPE_QUESTION_TYPE_B_ANALYSIS">HOW_TO_TYPE_QUESTION_TYPE_B_ANALYSIS_</string>
+    <string name="HOW_TO_TYPE_QUESTION_TYPE_SAV_ANALYSIS_TEST">HOW_TO_TYPE_QUESTION_TYPE_SAV_ANALYSIS_TEST_</string>
+    <string name="HOW_TO_TYPE_QUESTION_TYPE_MATCH_TEST_ATTEMPT">HOW_TO_TYPE_QUESTION_TYPE_MATCH_TEST_ATTEMPT_</string>
+    <string name="HOW_TO_TYPE_QUESTION_TYPE_MATCH_PRACTICE_ATTEMPT">HOW_TO_TYPE_QUESTION_TYPE_MATCH_PRACTICE_ATTEMPT_</string>
+    <string name="HOW_TO_TYPE_QUESTION_TYPE_B_ATTEMPT_PRACTICE">HOW_TO_TYPE_QUESTION_TYPE_B_ATTEMPT_PRACTICE_</string>
+    <string name="HOW_TO_TYPE_QUESTION_TYPE_A_ATTEMPT_PRACTICE">HOW_TO_TYPE_QUESTION_TYPE_A_ATTEMPT_PRACTICE_</string>
+    <string name="HOW_TO_TYPE_QUESTION_TYPE_B_ANALYSIS_PRACTICE">HOW_TO_TYPE_QUESTION_TYPE_B_ANALYSIS_PRACTICE_</string>
+    <string name="HOW_TO_TYPE_QUESTION_TYPE_A_ANALYSIS_PRACTICE">HOW_TO_TYPE_QUESTION_TYPE_A_ANALYSIS_PRACTICE_</string>
+    <string name="HOW_TO_TYPE_QUESTION_TYPE_PRACTICE_LIST">HOW_TO_TYPE_QUESTION_TYPE_PRACTICE_LIST_</string>
+    <string name="HOW_TO_TYPE_QUESTION_SUBSCRIPTION">HOW_TO_TYPE_QUESTION_SUBSCRIPTION_</string>
+    <string name="HOW_TO_TYPE_QUESTION_DOUBT_CHAT">HOW_TO_TYPE_QUESTION_DOUBT_CHAT_</string>
+    <string name="HOW_TO_TYPE_QUESTION_LECTURE">HOW_TO_TYPE_QUESTION_LECTURE_</string>
+    <string name="HOW_TO_TYPE_QUESTION_HOME_SCREEN">HOW_TO_TYPE_QUESTION_HOME_SCREEN_</string>
+    <string name="HOW_TO_TYPE_QUESTION_TYPE_SAV_PRACTICE_ATTEMPT">HOW_TO_TYPE_QUESTION_TYPE_SAV_PRACTICE_ATTEMPT_</string>
+    <string name="HOW_TO_TYPE_QUESTION_TYPE_MATCH_PRACTICE_ANALYSIS">HOW_TO_TYPE_QUESTION_TYPE_MATCH_PRACTICE_ANALYSIS_</string>
+    <string name="HOW_TO_TYPE_QUESTION_TYPE_MATCH_TEST_ANALYSIS">HOW_TO_TYPE_QUESTION_TYPE_MATCH_TEST_ANALYSIS_</string>
+    <string name="HOW_TO_TYPE_QUESTION_TYPE_SAV_TEST_ATTEMPT">HOW_TO_TYPE_QUESTION_TYPE_SAV_TEST_ATTEMPT_</string>
+    <string name="HOW_TO_TYPE_QUESTION_TYPE_A_ATTEMPT_TEST">HOW_TO_TYPE_QUESTION_TYPE_A_ATTEMPT_TEST_</string>
+    <string name="HOW_TO_TYPE_QUESTION_TYPE_B_ATTEMPT_TEST">HOW_TO_TYPE_QUESTION_TYPE_B_ATTEMPT_TEST_</string>
+    <string name="HOW_TO_TYPE_QUESTION_TYPE_SAV_PRACTICE_ANALYSIS">HOW_TO_TYPE_QUESTION_TYPE_SAV_PRACTICE_ANALYSIS_</string>
+    <string name="HOW_TO_TYPE_TOPPERS_NOTES">HOW_TO_TYPE_TOPPERS_NOTES</string>
+    <string name="HOW_TO_TYPE_TODO_MAIN_SCREEN">HOW_TO_TYPE_TODO_MAIN_SCREEN</string>
+
+
+    <string name="Ask_Now">Ask Now</string>
+    <string name="Watch_Now">Watch Now</string>
+    <string name="Analyse_Now">Analyse Now</string>
+    <string name="How_to_Use">How to Use</string>
+    <string name="How_to_Join">How to Join</string>
+    <string name="How_to_Ask">How to Ask</string>
+    <string name="solution_in">Solution in</string>
+    <string name="solution">Solution</string>
+    <string name="solution_in_2_min">%1$d min</string>
+    <string name="check_payment_dialog_title">check_payment_dialog_title_</string>
+    <string name="check_payment_dialog_text">check_payment_dialog_text_</string>
+
+    <string name="recheck_payment_status">Recheck</string>
+    <string name="disclaimer_message">disclaimer_message_</string>
+    <string name="allow_permission">This app needs you to allow this permission in order to function. Will you allow it?</string>
+    <string name="Yes">Yes</string>
+    <string name="No">No</string>
+    <string name="disclaimer_dialog_message">disclaimer_dialog_message_</string>
+    <string name="disclaimer_button_text">disclaimer_button_text_</string>
+    <string name="disclaimer_dialog_title">disclaimer_dialog_title_</string>
+
+    <string name="bottom_nav_text">bottom_nav_text</string>
+    <string name="unsubscribed_bottom_nav_text">unsubscribed_bottom_nav_text</string>
+    <string name="verifying_your_payment">We are verifying your payment</string>
+    <string name="mathematics">Mathematics</string>
+
+    <!-- ** to_do_keys ** -->
+
+    <string name="to_do_selected_subjects">to_do_selected_subjects_%1$s_%2$s</string>
+    <string name="to_do_selected_chapters">to_do_selected_chapters_%1$s_%2$s</string>
+    <string name="to_do_go_to_step_number">to_do_go_to_step_number_%1$s_%2$s</string>
+    <string name="to_do_go_to_start_date">to_do_go_to_step_number_%1$s_%2$s</string>
+    <string name="to_do_go_to_end_date">to_do_go_to_step_number_%1$s_%2$s</string>
+
+
+    <string name="Step1">Step 1&#160;</string>
+    <string name="Step_by_totalStep">Step %1$d/%2$d&#160;</string>
+    <string name="to_create_time_table">to create time table</string>
+    <string name="to_do_step_1_text_1">Sabse pehle apne subjects \nchoose karein!</string>
+    <string name="to_do_step_3_text_1">Lets select the chapter of \n%1$s you want to complete!</string>
+    <string name="to_do_step_1_text_2">Jo subjects nahi chahiye, unhe deselect karein!</string>
+    <string name="to_do_step_3_text_2">Jo chapters chaho, unhe apni marzi se arrange karo!</string>
+    <string name="Time_Table_Start_Date">Time Table Start Date</string>
+    <string name="Set_your_target_exam_date">Set your target exam date</string>
+    <string name="Exam_Date">Exam Date</string>
+
+    <string name="to_do_step_5">Keep going %1$s!</string>
+    <string name="to_do_step_4">Keep it up %1$s!</string>
+    <string name="to_do_step_3">Nicely done %1$s!</string>
+    <string name="to_do_step_2">Good Job %1$s!</string>
+    <string name="to_do_step_1">Well Done %1$s!</string>
+    <string name="ka_Time_table_ban_gya_hai">%1$s ka, Time table \nban gya hai </string>
+    <string name="ka_bhi_Time_table_ban_gya">%1$s ka, Time table \nban hi gya</string>
+    <string name="ka_Time_table_complete_ho_gya">%1$s ka, Time table bhi \ncomplete ho gya </string>
+    <string name="Just_more_subject_left">Just %1$d more subject left 🙌🏻</string>
+    <string name="Just_more_subject_left_one">Just %1$d more subject left 🙌🏻</string>
+    <string name="eye_heart_smilie">😍</string>
+    <string name="creating_routine">Creating your time table</string>
+    <string name="wait_karein">Aap ~2 Min wait karein, ya thodi \nder baad check karein</string>
+    <string name="Home_Screen">Home Screen</string>
+    <string name="Apka_time_table_ready_hai">Apka time table ready hai!</string>
+    <string name="Time_Table">Time Table</string>
+    <string name="time_table_ke_saath_padho">Ache se time table ke saath padho, aur\n<strong><font color='#26C6DA'>12th me 85%</font></strong> ke sapne ko sach banao!</string>
+    <string name="changes_save_nahi_honge">Ruk jao! Abhi gaye toh changes save nahi honge!</string>
+    <string name="Task_list_empty">Task list empty</string>
+    <string name="date_se_shuru_ho_jayega">%1$s se aapka naya \nroutine shuru ho jayega.</string>
+    <string name="Apka_plan_active_ho_gya_hai">Aapka plan active ho gaya hai</string>
+    <string name="View_Plan">View Plan</string>
+    <string name="Benefits">Benefits</string>
+    <string name="khamma_ghani">Khamma Ghani!</string>
+    <string name="unnati_screen_title">unnati_screen_title_</string>
+    <string name="subject_text_title_">subject_text_title_</string>
+    <string name="apna_board_exam_choose_karein">Apna board exam choose karein?</string>
+    <string name="aap_kis_competitive_exam_ki_taiyari_krna_chahte_ho">Aap kis competitive exam ki taiyari krna chahte ho?</string>
+    <string name="lectures_text">lecture_text_</string>
+    <string name="lecture_notes">Lecture Notes (PDF)</string>
+    <string name="board_mode_toast">Board mode already on hai</string>
+    <string name="poster_count">poster_popup_count</string>
+    <string name="medium_hindi">हिंदी माध्यम</string>
+    <string name="medium_english">English Medium</string>
+    <string name="JEE">JEE</string>
+    <string name="medium_text">Aap kis <b>medium</b> ke school me padhai krte hein??</string>
+    <string name="board_text">%1$s, Aap kis <b>board</b> se padhai kar rahein hain??</string>
+    <string name="exam_text">Boards ke sath aap kis <b>exam</b> pe focus karna chahenge?</string>
+    <string name="coaching_title_text">Kya aap <b>coaching</b> classes jaate hain?</string>
+    <string name="class_text">%1$s aap kis <b>class</b> me padhai kar rahein hain?</string>
+    <string name="subject_selection_text"><b>%1$s</b>, chaliye aapke subjects select karte hain!</string>
+    <string name="jee_subject_text">Future <b>IITian %1$s</b>, chaliye aapke subjects select karein!</string>
+    <string name="neet_subject_text">Future <b>Dr. %1$s</b>, chaliye aapke subjects select karein!</string>
+    <string name="board_">board</string>
+    <string name="Dr">Dr.</string>
+    <string name="IITian">IITian</string>
+    <string name="class_">class</string>
+    <string name="Please_apna_medium_select_kare">Please apna medium select kare</string>
+    <string name="Please_apna_board_select_kare">Please apna board select kare</string>
+    <string name="Please_apna_exam_select_kare">Please apna exam select kare</string>
+    <string name="Please_ek_option_select_kare">Please ek option select kare</string>
+    <string name="Please_apni_class_select_kare">Please apni class select kare</string>
+    <string name="Aap_sirf_ek_naya_subject_add_kar_sakte_hain">Aap sirf ek naya subject add kar sakte hain</string>
+    <string name="cbse_board">CBSE</string>
+    <string name="rbse_board">RBSE</string>
+    <string name="mpbse_board">MPBSE</string>
+    <string name="viral_videos">Viral Videos</string>
+    <string name="dialog_info_text">dialog_info_text_</string>
+    <string name="info_dialog_subtitle">Kya ye sahi hai??</string>
+    <string name="notes_not_available">Notes not available</string>
+    <string name="logout_confirm_karein">Logout Confirm Karein</string>
+    <string name="kya_aap_logout_karna_chahte_hein">Kya aap logout karna\nchahte hein</string>
+    <string name="lecture_notes_preview">Lecture Notes</string>
+    <string name="lecture_coming_soon">Lecture jaldi hi upload hoga!</string>
+
+    <!--    ASAT Keys -->
+    <string name="asat_main_screen_whatsapp_message">asat_main_screen_whatsapp_message</string>
+    <string name="asat_result_screen_whatsapp_message">asat_result_screen_whatsapp_message</string>
+    <string name="asat_rules_regulation">asat_rules_regulation</string>
+    <string name="asat_syllabus">asat_syllabus</string>
+    <string name="asat_main_screen_share_dates_count">asat_main_screen_share_dates_count</string>
+    <string name="asat_message_date_format">asat_message_date_format</string>
+    <string name="asat_call_back_start_time">asat_call_back_start_time</string>
+    <string name="asat_call_back_end_time">asat_call_back_end_time</string>
+    <string name="asat_call_back_restrict_duration">asat_call_back_restrict_duration</string>
+    <string name="asat_result_topper_header">asat_result_topper_header</string>
+
+    <!--    ASAT Strings    -->
+    <string name="Competition">Competition</string>
+    <string name="ASAT">ASAT</string>
+    <string name="Scholarship_Test">Scholarship Test</string>
+    <string name="Upload_Marksheet">Upload Marksheet</string>
+    <string name="scholarship_text">10th ke marks apke scholarship ka 50% weightage rakhte hain</string>
+    <string name="Roll_Number">10th Roll Number</string>
+    <string name="Class_Percentage">10th Class Percentage</string>
+    <string name="Enter_roll_number">Enter roll number</string>
+    <string name="Enter_percentage">Enter percentage</string>
+    <string name="Test_Score">Test Score</string>
+    <string name="Test_Percentage">Test Percentage</string>
+    <string name="View_Full_Result">View Full Result</string>
+    <string name="upload_text">Upload JPEG or PNG files (Max: 5 MB)</string>
+    <string name="asat_tenth_Marksheet">10th Marksheet</string>
+    <string name="asat_Upload_your">Upload your</string>
+    <string name="note">Note:&#160;</string>
+    <string name="note_text">Marksheet manually check hogi. Galat marksheet hone pe application reject ho jayegi!</string>
+    <string name="select_mesrksheet_image">Select Marksheet Image</string>
+    <string name="ASAT_full_name">Arivihan Scholarship Cum Admission Test</string>
+    <string name="know_more">Know more</string>
+    <string name="start_test_now">Start Test Now</string>
+    <string name="upload_your_result">Upload Your Result</string>
+    <string name="upload_now">Upload Now</string>
+    <string name="scholarship_test_result">Scholarship Test Result</string>
+    <string name="aapka_result_ab_ready_hai">Aapka result ab ready hai</string>
+    <string name="view_your_result">View your Result</string>
+    <string name="pure_saal_ki_fees_maaf_hone_ka_chance">Pure saal ki fees maaf hone ka chance</string>
+    <string name="with_just_">With just 3 simple steps</string>
+    <string name="Upload_your_10th_Result">Upload your 10th Result</string>
+    <string name="Yha_se_50_percent_marks_add_honge">Yha se 50% marks add honge</string>
+    <string name="Take_Scholarship_Test">Take Scholarship Test</string>
+    <string name="Yha_se_bhi_50_percent_marks_add_honge">Yha se bhi 50% marks add honge</string>
+    <string name="Check_Your_Result">Check Your Result</string>
+    <string name="To_see_your_final_scores">To see your final scores</string>
+    <string name="Win_upto_100_percent_Scholarship">Win upto 100% Scholarship</string>
+    <string name="Upload_Result">Upload Result</string>
+    <string name="Take_Test">Take Test</string>
+    <string name="Syllabus">Syllabus</string>
+    <string name="Share_on">Share on</string>
+    <string name="Apne_dosto_ke_sath_share_karo_aur_milkar_aage_badho">Apne dosto ke sath share karo aur milkar aage badho!</string>
+    <string name="Share_with_your_Friends">Share with your Friends</string>
+    <string name="Rules_and_Regulations">Rules &amp; Regulations</string>
+    <string name="tenth_marks_apke_scholarship_ka_50_percent_weightage_rakhte_hain">10th ke marks apke scholarship ka 50% weightage rakhte hain</string>
+    <string name="tenth_Roll_Number">10th Roll Number</string>
+    <string name="Enter_Roll_Number">Enter Roll Number</string>
+    <string name="tenth_Class_Percentage">10th Class Percentage</string>
+    <string name="Enter_Percentage">Enter Percentage</string>
+    <string name="Upload_your_10th_Marksheet">Upload your 10th Marksheet</string>
+    <string name="Upload_JPEG_or_PNG_files_Max_5_MB">Upload JPEG or PNG files (Max: 5 MB)</string>
+    <string name="Note_Marksheet_manually_check_hogi_Galat_marksheet_hone_pe_application_reject_ho_jayegi">Note: Marksheet manually check hogi. Galat marksheet hone pe application reject ho jayegi!</string>
+    <string name="Select_Marksheet_Image">Select Marksheet Image</string>
+    <string name="Choose_from_Gallery">Choose from Gallery</string>
+    <string name="Click_a_Picture">Click a Picture</string>
+    <string name="Scholarship_Won_Ab_aapki_annual_fees_kam_ho_gyi_hai">Scholarship Won\nAb aapki annual fees\n{0}\nkam ho gyi hai!</string>
+    <string name="Congratulation">Congratulation</string>
+    <string name="Aapka_test_complete_hua">Aapka test complete hua</string>
+    <string name="Hume_bharosa_hai_ki">Hume bharosa hai ki</string>
+    <string name="aap_hai">Aap Hain</string>
+    <string name="Next_Topper">Next Topper</string>
+    <string name="Arivihans_Current_Toppers">Arivihan’s Current Toppers</string>
+    <string name="Kya_apko_guidance_chahiye">Kya apko guidance chahiye?</string>
+    <string name="Humare_experts_aapke_12th_ke_saare_sawalon_ke_jawab_denge">Humare experts aapke 12th ke saare sawalon ke jawab denge!!</string>
+    <string name="call_now">Call Now</string>
+    <string name="Offer_Expires_in">Offer Expires in</string>
+    <string name="percent_Discount_Coupon_code_applied">{0} Discount- “{1}” Coupon code applied!</string>
+    <string name="Please_Wait">Please Wait!!</string>
+    <string name="Scholarship_result_no_of_days_mein_aayega">Scholarship result {0} mein aayega!</string>
+    <string name="Main_scholarship_ka_result_no_of_days_mein_ayega">Main scholarship ka result {0} mein ayega</string>
+    <string name="Sorry_Student_Name">Sorry, {0}</string>
+    <string name="Apki_marksheet_reject_ho_gyi_hai">Apki marksheet reject ho gyi hai</string>
+    <string name="view_result">View Result</string>
+    <string name="fill_all_details">fill all details</string>
+    <string name="please_correct_roll_number_enter_karein">Please correct roll number enter karein</string>
+    <string name="please_wait_while_we_upload_your_data">Please wait while we upload your data.</string>
+    <string name="please_wait_while_we_check_your_data">Please wait while we check your data.</string>
+    <string name="step1_complete_ho_gaya_hain">Step 1 complete ho gaya hain</string>
+    <string name="step1_complete_ho_gaya_hain_ab_test_dein">Step 1 complete ho gaya hain, ab test dein!</string>
+    <string name="step2_complete_ho_gaya_hain_ab_result_check_karein">Step 2 complete ho gaya hain, ab results check karein!</string>
+    <string name="result_aa_chuka_hain_check_karein">Result a chuka hain, check karein!</string>
+    <string name="please_correct_percentage_enter_karein">Please correct percentage enter karein</string>
+    <string name="request_a_callback">Request a callback</string>
+    <string name="aapko_30_min_mein_call_aayega">Aapko 30 min mein call aayega</string>
+    <string name="aapko_subah_tak_call_kiya_jayega">Aapko subah tak call kiya jayega</string>
+    <string name="test_submit_ke_baad_marksheet_upload_nahi_hogi">Test submit ke baad marksheet upload nahi hogi, isliye pehle wo karein</string>
+    <string name="pehle_test_complete_karein">Pehle test complete karein</string>
+    <string name="not_allowed">Not allowed</string>
+    <string name="coupon_expired">Coupon expired</string>
+    <string name="image_clear_nahi_hai_marksheet_eupload_karein">Image clear nahi hai, marksheet re-upload karein!</string>
+    <string name="please_image_upload_karein">Please image upload karein</string>
+    <string name="asat_submit">Submit</string>
+    <string name="taking_longer_than_usual_please_try_again">Taking longer than usual. Please try again.</string>
+    <string name="media_entity_null_cannot_play_video">Invalid media data. Cannot play video.</string>
+    <string name="plan_expire">Aapka plan expire ho chuka hai \nLecture unlock karein.</string>
+    <string name="comment">Comment</string>
+    <string name="comments">Comments</string>
+    <string name="aapka_feedback_dein">Apna feedback dein...</string>
+    <string name="well_done">Well Done!!</string>
+    <string name="aapko_lecture_kesa_laga">Aapko lecture kesa laga??</string>
+    <string name="like">Like</string>
+    <string name="dislike">Dislike</string>
+    <string name="apna_feedback_likhein">Apna feedback likhein</string>
+    <string name="Thank_you">Thank You</string>
+    <string name="For_your_feedback">For your feedback!</string>
+    <string name="pehle_humein_apna_feedback_dein">Pehle humein apna feedback dein</string>
+    <string name="no_comments_yet">No comments yet!</string>
+    <string name="Edit">Edit</string>
+    <string name="comment_added">Comment Added</string>
+    <string name="Download_Timetable">Download\nTimetable</string>
+    <string name="today_task_completed_0_1">{0}/{1} today task completed</string>
+    <string name="no_app_available_to_open_pdf">No application available to open PDF</string>
+    <string name="data_not_found">Data not found</string>
+    <string name="please_wait_while_we_sync_your_last_submission">Please wait while we sync your last submission</string>
+    <string name="routine_is_not_assigned">No routine has been assigned</string>
+    <string name="aapka_time_table_abhi_nai_bana_he">Aapka timetable abhi nahi bana hain</string>
+    <string name="time_table_not_created">Timetable Not Created!</string>
+    <string name="not_allowed_message">\@, # aur number likhna allowed nahi hai</string>
+    <string name="ncert_solutions">Maths NCERT \nSolutions</string>
+    <string name="ncert_solutions_lecture">NCERT \nSolutions</string>
+    <string name="step_1_to_create_time_table">Step 1 to create time table</string>
+    <string name="aap_hamse_jo_subject_padna_chahte_he_unhe_tick_kare">Aap humse jo subjects padhna chahte hein unhe tick(✔️) karein!</string>
+    <string name="jo_subject_nahi_chaiye_unka_tick_hataye">Jo subjects nahi chahiye, unke tick (✔️) hataye!</string>
+    <string name="please_ek_subject_select_karna_zaroori_he">Please ek subject select karna zaroori hai!</string>
+    <string name="please_do_chapter_select_karna_zaroori_he">Please do chapter select karna zaroori hai!</string>
+    <string name="please_chapter_select_karna_zaroori_he">Please select karna zaroori hai!</string>
+    <string name="neeche_jayein">Neeche jaayein</string>
+    <string name="uper_jayein">Upar jaayein</string>
+    <string name="todo_chapter_padhna_hain">(Padhna hain)</string>
+    <string name="todo_chapter_nahi_padhna_hain">(Nahi padhna hain)</string>
+    <string name="hamare_sath_quaterly_ki_taiyari_ke_liye_exam_date_batayein">Humare sath quarterly ki taiyari ke liye, exam date batayein!!</string>
+    <string name="set_your_quarterly_exam_date">Set Your Quarterly Exam Date</string>
+    <string name="aur_behtar_timetable_ke_liye_humein_batayein">Aur behtar timetable ke liye humein batayein!</string>
+    <string name="kab_padhna_pasand_hain">Kab padhna pasand hain??</string>
+    <string name="subah_jaldi_uth_kar">Subah jaldi uth kar</string>
+    <string name="raat_mein_der_tak">Raat mein der tak</string>
+    <string name="set_start_time">Set start time</string>
+    <string name="set_end_time">Set end time</string>
+    <string name="todo_se">Se</string>
+    <string name="todo_tak">Tak</string>
+    <string name="ki_aap_morning_mein_kab_se_kab_tak_padhte_hein">Ki aap Morning mein kab se kab tak padhte hain?</string>
+    <string name="agar_aap_afternoon_mein_padte_hein">Agar aap Afternoon mein padhte hain, to batayein kab?(Optional)</string>
+    <string name="agar_aap_evening_mein_padte_hein">Agar aap Evening mein padhte hain, to batayein kab?(Optional)</string>
+    <string name="aap_night_me_kab_tak_padhte_ho">Ki aap Night mein kab se kab tak padhte hain?</string>
+    <string name="please_exam_date_select_karna_zaroori_he">Please exam date select karna zaroori hai!</string>
+
+    <string name="roll_no_already_submitted">Ye roll number already submitted hai!</string>
+    <string name="test_already_attempted">Aap is roll number se already test de chuke hain.</string>
+    <string name="failed_to_check_roll_no">Failed to check roll number. Please try again.</string>
+    <string name="size_issue">size larger than 15mb</string>
+    <string name="rate_the_app">Rate the app</string>
+    <string name="apna_feedback_dein">Apna Feedback dein</string>
+    <string name="lecture_me_kya_pasand_aaya">Lectures mein kya pasand aaya?</string>
+    <string name="type_karein">Type karein...</string>
+    <string name="kya_aap_play_store_per_review_dena_chahte_he">Kya aap Play Store par review dena chahte hain?</string>
+    <string name="thank_you_for_your_feedback">Thank you for your feedback!!</string>
+
+    <string name="ten_min_notes_all_subjects">Overall</string>
+    <string name="go_to_settings">Go To Settings</string>
+    <string name="camera_permission_zaruri_hai_upload_ke_liye">Camera Permission Zaruri Hai Upload Ke Liye!!</string>
+    <string name="loading_test_result">Loading test solution...</string>
+
+    <string name="coaching_list">coaching_list</string>
+    <string name="coaching_jaata_hu">Coaching \n <b>jaata</b> hoon</string>
+    <string name="coaching_nahi_jaata_hu">Coaching <b>nahi</b>\n jaata hoon</string>
+
+    <string name="important_question">Important Question</string>
+    <string name="pages_count">%1$s pages</string>
+    <string name="pdf_size">%1$s KB</string>
+    <string name="important_notes">Important Notes</string>
+    <string name="lectures">Lectures</string>
+    <string name="notes">Notes</string>
+    <string name="delete_note">Delete Note</string>
+    <string name="open_note">Open Note</string>
+    <string name="apka_plan_expire_ho_gaya_hai_note_unload_karein">Aapka plan expire ho chuka hai Note unlock karein.</string>
+    <string name="pdf_document">PDF Document</string>
+    <string name="no_downloaded_notes">No Downloaded Notes</string>
+    <string name="please_download_notes">Please download notes to view them here.</string>
+    <string name="my_downloads">My Downloads</string>
+    <string name="Retry">Retry</string>
+    <string name="apna_internet_connection_check_karke_dobara_koshish_karein">Apna internet connection check karke dobara koshish karein!!</string>
+    <string name="aap_abhi_offline_hain">Aap abhi offline hain!</string>
+    <string name="download_failed_please_try_again">Download failed. Please try again.</string>
+    <string name="bss_thodi_hi_der_me_aapke_notes_open_ho_jayenge">Bss thodi hi der me aapke notes open ho jayenge!</string>
+    <string name="please_number_enter_karein">Please roll number enter karein</string>
+    <string name="live">Live</string>
+    <string name="please_dont_go_back_for_payment">Please don\'t go back or kill application between payment</string>
+    <string name="join_now_text_1">Join Karein</string>
+    <string name="join_now">Join Now</string>
+
+    <string name="join_now_text">Join at ₹51</string>
+
+    <string name="join_now_text_2">80% Laayein</string>
+    <string name="coupon_code_text">Coupon code (%1$s)</string>
+    <string name="back_to_practise">Back to Practice</string>
+    <string name="view_solution_practise">View Solution</string>
+    <string name="jha_doubt_he_vaha_circle_banao">Jha doubt hai wha\npencil se circle banao</string>
+    <string name="failed_to_save_content">Failed to save content.</string>
+    <string name="jo_samaj_na_aaye_vaha_circle_banao">Jo samajh na aaye, uske bahar pencil se circle banao</string>
+    <string name="aapka_answer_ban_raha_he">Aapka answer ban raha hai, wapas jane ke liye back button do baar click krein!</string>
+    <string name="open_pdf">Open PDF</string>
+    <string name="aaj_ki_limit_poori_ho_gayi_hai">Aaj ki limit poori ho gayi hai, kal phir se koshish karein!</string>
+    <string name="refer_win"><![CDATA[Refer & Win]]></string>
+    <string name="aapko_30_min_me_aapko_call_karke_jankari_di_jayegi">30 minute mein aapko call karke jankari di jayegi!</string>
+    <string name="batch_ki_jankari">Batch Ki Jankari</string>
+    <string name="syllabus_khatam_hoga_iss_din">Syllabus khatam hoga is din</string>
+    <string name="decline">Decline</string>
+    <string name="paynow">Pay Now</string>
+    <string name="mentor">Mentor</string>
+    <string name="pdf_sub_title">Click karein aur details dekhein</string>
+    <string name="time_out">Time out</string>
+    <string name="wait_message">Test %1$s baje start hoga </string>
+    <string name="wait_message_subtitle">Abhi wait karo - %1$s baje wapas aana aur test dena mat bhoolna!</string>
+    <string name="time_up">Time’s Up!</string>
+    <string name="time_up_subtitle">Sorry, ab aap ye test nahi de sakte. Ise dene ka samay ab khatam ho chuka hai.</string>
+
+    <string name="course_selection_title">Aapka lakshya kya hai?</string>
+    <string name="dr_batch">Chhalaang</string>
+    <string name="weak">Weak</string>
+    <string name="weakness">Weakness</string>
+    <string name="strength">Strength</string>
+    <string name="video_completion_message">Please complete the video</string>
+    <string name="personalised_path">Personalised Path</string>
+    <string name="continue_practice">Continue Practice</string>
+    <string name="language_updated">Language Updated</string>
+    <string name="arts_stream_instructions">Abhi Arts stream sirf Hindi medium users ke liye uplabdh hai, isliye aapki language Hindi mein badal di gayi hai.</string>
+    <string name="upcoming">Upcoming</string>
+    <string name="no_message_available">No message available</string>
+    <string name="live_dobara_join_kare_technical_issue">Live dobara join karne ke liye neeche diye gaye button pr click karein</string>
+    <string name="sorry_kuch_hamari_aur_se_technical_issue_he">Sorry! Kuch technical issue aa gaya hai.</string>
+    <string name="dobara_join_karein">Dobara Join Karein</string>
+    <string name="aapka_lecture_thodi_der_aa_jayega">Aapka lecture bss thodi hi der mein aa jayega!!</string>
+    <string name="sambhav_timetable">Sambhav Timetable</string>
+    <string name="settings">Settings</string>
+    <string name="additional_settings">Additional Settings</string>
+    <string name="share_karein">Share karein</string>
+    <string name="ram">RAM</string>
+    <string name="android_version">Android Version</string>
+    <string name="model_name">Model Name</string>
+    <string name="your_phone_specifications">Your Phone Specifications</string>
+    <string name="view_details">View details</string>
+    <string name="open_in_browser">Open in browser</string>
+    <string name="storage">Storage</string>
+    <string name="username_restriction_message">Aap username mein {name} use nahi kar sakte, please koi doosra name enter karein!</string>
+    <string name="choose_an_option">Aap is question ke baare me kya jana chahte ho?</string>
+    <string name="read_more">Read more</string>
+    <string name="read_less">Read less</string>
+    <string name="classes">Classes</string>
+    <string name="location_access_dein">Location Access Dein</string>
+    <string name="location_service_on_karein">"Please apni location ON karein, taaki hum aapke area-wise study content de sakein. "</string>
+    <string name="turn_on">Turn on</string>
+    <string name="new_badge_text">NEW</string>
+    <string name="start_lecture">Start Lecture </string>
+    <string name="upload_images">Upload Images</string>
+    <string name="choose_from_gallery_caps">Choose from Gallery</string>
+    <string name="click_a_picture">Click a Picture</string>
+    <string name="Interactive_Question">Interactive Question</string>
+    <string name="please_sahi_option_select_karein">Please sahi option select karein</string>
+    <string name="terms_privacy">By continuing, I agree to Arivihan\'s Terms &amp; Condition and Privacy Policies.</string>
+    <string name="please_enter_your_name">Please Enter Your Name</string>
+    <string name="enter_your_name">Enter Your name</string>
+
+    <string name="switch_to_neet">Switch to NEET Exam</string>
+    <string name="switch_to_neet_subtitle">Kya aap Board se NEET par switch karna chahenge?</string>
+    <string name="switch_to_board">Switch to Board Exam</string>
+    <string name="switch_to_baord_subtitle">Kya aap NEET se Board par switch karna chahenge? </string>
+    <string name="class_confirmation">Class Confirmation</string>
+    <string name="topper_subtitle">Apne Free Notes dekhein</string>
+    <string name="topper_title">Toppers notes downloaded!</string>
+    <string name="view">View</string>
+    <string name="type_your_name">Type your name</string>
+    <string name="beta">Beta</string>
+    <string name="name_updated_mesaaage">Name updated successfully!</string>
+    <string name="apna_naam_likhe">Apna naam likhe</string>
+    <string name="apna_naam_batayein">Apna naam batayein</string>
+    <string name="apna_naam_yahan_likhein">Apna naam yahan likhein 👇🏻</string>
+    <string name="toppers_notes_title">Topper Ke Notes Ready Hai!!</string>
+    <string name="notes_ready_for_you">Abhi dekhein aur padhai start karein</string>
+    <string name="invalid_address">Your address is not valid. Please remove unnecessary special characters.</string>
+
+
+    <string name="original_price">₹3999</string>
+    <string name="discount_price">₹51</string>
+    <string name="batch_validity">Batch Validity: 15 Apr 2027</string>
+    <string name="badge_seal_desc">Price badge seal</string>
+    <string name="badge_ribbon_desc">Price badge ribbon</string>
+    <string name="demo_class">Free Class</string>
+    <string name="continue_lecture">Continue Lecture</string>
+    <string name="premium">Premium</string>
+    <string name="share_qr">QR Share Karo</string>
+    <string name="class_time">Class Time</string>
+    <string name="Date">Date</string>
+
+    <string name="no_data_live_en">Aapki live aur unki recorded classes baad mein yahin milengi!!</string>
+    <string name="no_data_live_hi">आपकी लाइव और उनकी रिकॉर्डेड क्लासेस बाद में यहीं मिलेंगी!!</string>
+    <string name="no_data_premium_en">Aapki recorded classes baad mein yahin milengi!!</string>
+    <string name="no_data_premium_hi">आपकी रिकॉर्डेड क्लासेस बाद में यहीं मिलेंगी!!</string>
+
+
+    <!--    //pro plan sub -->
+    <string name="pro_plan_tag_line">Exam Mein Topper Banna Hoga Pakka!</string>
+    <string name="plan_validity">Plan Validity: 15 April 2027</string>
+    <string name="pro_plan_help_text_1">Pro Plan se judna chahte hain, par kaise?</string>
+    <string name="pro_plan_help_text_2">Hamare experts se baat karein aur plan ki puri jaankari paayein.</string>
+    <string name="Discount_ARIVIHAN_Coupon_code_pro_plan_applied">90% Discount - ARIVIHAN90 Coupon code applied!</string>
+    <string name="arivihan_pro_plan">Arivihan Pro Plan</string>
+    <string name="join_pro_plan">Join Pro Plan</string>
+    <string name="arivihan_pro_plan_title">Arivihan Pro Plan</string>
+    <string name="scan_qr_code_and_pay_subtitle">Aur Plan aapke number par hi active hoga</string>
+
+    <!--    //force update -->
+    <string name="app_update_karein">Update Available!</string>
+    <string name="update_now">Update Now</string>
+    <string name="force_update_sub_title">Naye lectures app par aa gaye hain, unhe dekhne ke liye app update karna bahut zaroori hai!!!</string>
+    <string name="add_optional_subject">Add Optional Subject</string>
+    <string name="apna_optional_subject_select_karein">Apna optional subject select karein!</string>
+    <string name="no_optional_subjects_available">No optional subjects available</string>
+    <string name="optional_subject_selection_limit_exceeded">Sirf %d optional subjects allowed hai!!</string>
+
+    <string name="contact_whatsapp_sub_failed">कोई समस्या है? संपर्क करें</string>
+    <string name="or_pay_using_other_methods">Or Pay using other methods</string>
+    <string name="phonepe">PhonePe</string>
+    <string name="gpay">GPay</string>
+    <string name="sub_failed_help_title">बेटा, आपका पेमेंट फेल हो गया है।</string>
+    <string name="sub_failed_help_subtitle">अभी एक साथ बहुत सारे बच्चे उन्नति बैच से जुड़ रहे हैं, इसलिए पेमेंट फेल हुआ हैं, कृपया फिर से कोशिश करें!</string>
+
+    <!--    //video player-->
+    <string name="playback_speed_">Playback Speed</string>
+    <string name="choose_playback_speed">Choose Playback Speed</string>
+    <string name="choose_video_quality">Choose Video Quality</string>
+    <string name="video_quality">Video Quality</string>
+    <string name="submit_question">Submit Question</string>
+    <string name="question_edit_placeholder">Apna doubt yahan likho...</string>
+    <string name="question_enter_bubble_title">Apna Doubt pucho aur\nTurant solution pao!</string>
+    <string name="question_edit_bubble_title">Apna question edit bhi \nkar sakte hain!</string>
+    <string name="mic_permission_popup_title">Microphone Permission Zaruri Hai Lecture Ke Liye!</string>
+
+    <string name="pro">Pro</string>
+    <string name="pro_plan">Pro Plan</string>
+
+    <string name="subscription_required">Subscription Required</string>
+    <string name="one_shot_lecture">One Shot Lecture</string>
+    <string name="continue_learning">Continue Learning</string>
+    <string name="LIVE_lectures">LIVE Lectures</string>
+
+    <string name="otp_support_text">OTP nahi aa raha? Sampark karo.</string>
+    <string name="adaptive_practise">Adaptive Practise</string>
+
+
+<!--    //delete account-->
+    <string name="empty">empty</string>
+    <string name="delete_account">Delete Account</string>
+    <string name="feedback_enter">Apna feedback likhein…</string>
+    <string name="verify_otp">Verify OTP</string>
+    <string name="account_verification">Account Verification</string>
+    <string name="otp_sent_message">%1$s par bheja gaya OTP enter karein.</string>
+    <string name="account_deletion">Account Deletion</string>
+    <string name="didn_t_receive_otp">Didn\'t receive OTP?</string>
+    <string name="pending">Pending</string>
+    <string name="rescheduled">Rescheduled</string>
+    <string name="reschedule">Reschedule</string>
+    <string name="rescheduled_message">Today\’s live at %s</string>
+
+
+    <!-- ReferAndEarnActivity (Home Screen) -->
+    <string name="refer_share_karo_aur_jeeto">Share karo aur jeeto</string>
+    <string name="refer_karo">Refer Karo</string>
+    <string name="watch">Watch</string>
+    <string name="buy_pro_plan">Buy Pro Plan</string>
+    <string name="redeem_books">Redeem Books</string>
+    <string name="back">Back</string>
+    <string name="referrals">Referrals</string>
+
+    <!-- RewardProgressCard Component -->
+    <string name="aapke_invited_dost">Apke Invited Dost</string>
+    <string name="view_more">VIEW MORE</string>
+    <string name="monthly_winners">Monthly Winners</string>
+    <string name="reward_badge">Reward Badge</string>
+
+    <!-- ReferralInvitedFriendsActivity -->
+    <string name="no_invites_yet">No invites yet</string>
+    <string name="start_inviting_friends">Start inviting friends to earn rewards!</string>
+
+    <!-- ReferBookSelectionActivity (Gift Reveal + Book Selection) -->
+    <string name="gift_reveal_title">Aapne apne 8 friends ko refer karke jeeti hai FREE Book!</string>
+    <string name="gift_reveal_title_dynamic">Aapne apne %s friends ko refer karke jeeti hai FREE Book!</string>
+    <string name="gift_reveal_tap_hint">👆 Gift par tap karo\n aur kholo apna surprise</string>
+    <string name="book_selection_title">Apni FREE Book Chuno</string>
+    <string name="book_selection_subtitle">Abhi order karein, ya baad mein aur\nbooks ke saath paayein</string>
+    <string name="book_selection_buy_later">Baad Mein Lein</string>
+    <string name="book_selection_buy_now">Abhi Kharidein</string>
+    <string name="book_selection_coin_warning_part1">Beta, abhi kharid li to</string>
+    <string name="book_selection_coin_warning_part2">chale jayenge</string>
+    <string name="book_selection_coin_amount">coins</string>
+    <string name="book_selection_coin_warning_dynamic">Beta, abhi kharid li to{coin}coins chale jayenge</string>
+    <string name="book_selection_referral_info">Dusri book k liye fir 8 referral karne padenge</string>
+    <string name="book_selection_referral_info_dynamic">Dusri book k liye fir %d referral karne padenge</string>
+    <string name="book_selection_referral_info_part1">Dusri book k liye fir</string>
+    <string name="book_selection_referral_info_part2">karne padenge</string>
+    <string name="book_selection_referral_info_dynamic_text">Dusri book k liye fir{count}referral karne padenge</string>
+    <string name="referral_label">referral</string>
+    <string name="book_selection_book_equals">1 Book = </string>
+    <string name="added_in_bag">Added in Bag</string>
+    <string name="delivered">Delivered</string>
+    <string name="redeemed">Redeemed</string>
+
+    <!-- BookOrderActivity (Cart / Order Screen) -->
+    <string name="book_order_screen_title">Aapke orders</string>
+    <string name="book_order_selected_books_title">Aapki Selected Books</string>
+    <string name="book_order_free_tag">FREE</string>
+    <string name="book_order_best_deal">🔥 BEST DEAL</string>
+    <string name="book_order_best_deal_">BEST DEAL</string>
+    <string name="book_order_bundle_title">Zyada books, Zyada bachat!</string>
+    <string name="book_order_bundle_subtitle">2-3 Books lo aur extra discount pao  🎉</string>
+    <string name="book_order_bottom_sheet_title">Apni books add karo</string>
+    <string name="book_order_continue_cta">Continue</string>
+    <string name="book_order_refer_now_cta">Refer Now</string>
+    <string name="book_order_empty_title">Apne dosto ko refer karein aur FREE kitaabein jeetein!</string>
+    <string name="book_order_error_title">Kuch galat ho gaya</string>
+    <string name="book_order_error_retry">Dobara try karein</string>
+    <string name="book_order_sheet_error">Books load nahi ho payi. Dobara try karein.</string>
+    <string name="book_order_savings_text">Aap ₹%s bachoge!</string>
+    <string name="book_order_remove">Remove</string>
+    <string name="book_order_delivery_text">7-10 dino mein FREE ghar tak delivery</string>
+    <string name="book_order_delivery_status_text">Aapka order 7–10 dino mein deliver ho jayega</string>
+    <string name="book_order_placed_on">Placed on %s</string>
+
+    <!-- Payment Summary -->
+    <string name="payment_summary_title">Payment Summary</string>
+    <string name="ps_total_price_label">Total Price</string>
+    <string name="ps_coupon_discount_label">Coupon Discount</string>
+    <string name="ps_coin_discount_label">Coin Discount</string>
+    <string name="ps_total_amount_label">Total Amount</string>
+    <string name="payment_offer_discount_label">Discount</string>
+    <string name="payment_delivery_charges_label">Delivery Charges</string>
+    <string name="payment_free_label">FREE</string>
+    <string name="payment_proceed_cta">Proceed</string>
+
+    <!-- OrderHistoryActivity -->
+    <string name="order_history_title">Order History</string>
+    <string name="order_history_books_purchased">Books Purchased</string>
+    <string name="order_history_empty_msg">Aapne abhi Tak Koi Order\nNahi Kiya</string>
+    <string name="order_status_delivered">Delivered</string>
+    <string name="order_status_packed">Packed</string>
+    <string name="order_status_shipped">Shipped</string>
+    <string name="order_status_placed">Order Placed</string>
+    <string name="order_status_failed">Failed</string>
+    <string name="order_id_label">Order ID: %1$s</string>
+
+    <!-- UserAddressActivity (used in old address form) -->
+    <string name="apna_address_daalein">Apna Address Daalein</string>
+    <string name="order_karien">Order karein</string>
+    <string name="contact_number_address">Mobile Number</string>
+    <string name="contact_details">Contact Details</string>
+    <string name="address_details">Address Details</string>
+    <string name="contact_number">Contact Number</string>
+    <string name="pin_code">Pin Code</string>
+    <string name="house_no_village_block">House No./Village/Block</string>
+    <string name="locality_area">Locality/Area</string>
+    <string name="city">City</string>
+    <string name="state">State</string>
+    <string name="hint_name">Apna naam likhe</string>
+    <string name="hint_mobile_number">Apna mobile number likhe</string>
+    <string name="hint_pincode">Apna pincode daalein</string>
+    <string name="hint_house_no">Apna ghar ka number daalein</string>
+    <string name="hint_locality">Apni locality ya area ka naam daalein</string>
+    <string name="hint_city">City name daalein</string>
+    <string name="hint_state">State name daalein</string>
+    <string name="please_valid_pincode_daalein">Please valid pincode daalein</string>
+    <string name="order_dene_ke_liye_details_daalein">Order dene ke liye sabhi details daalein</string>
+
+    <!-- Push Notification Strings (server-triggered) -->
+    <string name="notif_refer_win_title_1">Free Rewards jeetne ka mauka!</string>
+    <string name="notif_refer_win_body_1">Apne Friends ko refer karo aur FREE Books Jeeto</string>
+    <string name="notif_refer_win_title_2">FREE Books aapka wait kar rahi hain</string>
+    <string name="notif_refer_win_body_2">Apna refer link share karo aur rewards jeetna shurut karo.</string>
+    <string name="notif_friend_registered_title">Dost ne register kar liya!</string>
+    <string name="notif_friend_registered_body">Dost ka subscription hote hi aapki FREE book pakki ho jayegi</string>
+    <string name="notif_time_running_out_title">Jaldi karo, Bas thoda time baki hai!</string>
+    <string name="notif_time_running_out_body">Friend ko join karvao aur apni FREE Book pakki karo.</string>
+    <string name="notif_coins_earned_title">Congratulations!</string>
+    <string name="notif_coins_earned_body">50 referral coins ab aapke account me aa chuke hain.</string>
+    <string name="notif_book_unlocked_title">Aapki FREE Book unlock ho gayi!</string>
+    <string name="notif_book_unlocked_body">Abhi redeem karein aur apni FREE Book paayein.</string>
+    <string name="notif_book_waiting_title">Aapki FREE Book wait kar rahi hai!</string>
+    <string name="notif_book_waiting_body">Abhi redeem karein aur apni FREE BOOK order karein.</string>
+    <string name="notif_rewards_waiting_title">Aapke rewards abhi bhi aapka wait kar rahe hain!</string>
+    <string name="notif_rewards_waiting_body">Refer link share karo aur coins collect karna start karo</string>
+    <string name="notif_buy_pro_plan_title">Referral coins se Pro Plan kharido!</string>
+    <string name="notif_buy_pro_plan_body">Apne referral coins use karo aur Pro Plan unlock karo.</string>
+    <string name="notif_pro_plan_activated_title">Congratulations! Pro Plan Activated</string>
+    <string name="notif_pro_plan_activated_body">Ab Premium features ke saath tayari aur strong karo.</string>
+    <string name="notif_book_order_success_title">Congratulations! Book order successful!</string>
+    <string name="notif_book_order_success_body">Aapki FREE BOOK jaldi deliver ki jayegi.</string>
+    <string name="add">Add</string>
+
+    <!-- OrderSuccessActivity -->
+    <string name="order_success_title">Order Successfully</string>
+    <string name="order_success_booked">Order Successfully Book Ho Gaya</string>
+    <string name="order_success_whatsapp_msg">Aapko WhatsApp par regular updates milte rahenge</string>
+    <string name="order_success_done_cta">Done</string>
+    <string name="go_to_home">Go To Home</string>
+    <string name="payment_loading_msg">Processing your payment\u2026</string>
+
+    <!-- Invite Status -->
+    <string name="invite_status_pending">Pending</string>
+    <string name="invite_status_successful">Successful</string>
+    <string name="invite_status_expired">Expired</string>
+    <string name="qty">Qty:</string>
+    <string name="claimed">Claimed</string>
+    <string name="ordered">Ordered</string>
+
+    <string name="extra_classes">Extra Classes</string>
+    <!-- Profile Edit Flow -->
+    <string name="academic_details_title">Apni Details Select Karein</string>
+    <string name="academic_details_subtitle">Apni board, class, subject aur medium ki sahi details select karein.</string>
+    <string name="medium_section_title">Apna medium select karein!</string>
+    <string name="goal_section_title">Apka lakshya kya hai?</string>
+    <string name="class_section_title">Apni class select karein!</string>
+    <string name="stream_section_title">Apna subject select karein!</string>
+    <string name="name_section_title">Apna naam batayein!</string>
+    <string name="enter_your_name_placeholder">Enter Your Name</string>
+    <string name="confirmation_title">Changes save karein?</string>
+    <string name="confirmation_body">Save karte hi aapki details naye selections ke saath update ho jayengi.</string>
+    <string name="save_changes">Save Changes</string>
+    <string name="scroll_down">Neeche jaayein</string>
+    <string name="scroll_up">Upar jaayein</string>
+    <string name="edit_cancel">Cancel</string>
+    <string name="edit_save">Save</string>
+
+    <!-- ── NEET Onboarding: Class Selection Screen ── -->
+    <string name="neet_class_selection_title">Aap kis class me padhai kar rahein hain?</string>
+    <string name="neet_class_dropper">Dropper</string>
+    <string name="neet_class_12th">Class 12th</string>
+    <string name="neet_class_11th">Class 11th</string>
+    <string name="neet_class_10th">Class 10th</string>
+    <string name="neet_class_other">Other Classes</string>
+
+    <!-- ── NEET Onboarding: NEET Not Available Screen (Class 10/11/12) ── -->
+    <string name="neet_not_available_heading">Class %s ke liye NEET abhi available nahi hai.</string>
+    <string name="neet_not_available_subtitle">Lekin tab tak aap apne Board ki taiyari hamare saath shuru kar sakte hain.</string>
+    <string name="neet_not_available_goal_title">Aapka Lakshya Kya Hai?</string>
+
+    <!-- ── NEET Onboarding: Coming Soon Screen (Other Classes) ── -->
+    <string name="neet_coming_soon_heading">Aapki class abhi app par available nahi hai.</string>
+    <string name="neet_coming_soon_subtitle">Abhi app par sirf 10th, 11th aur 12th classes available hain. Aapki class ke liye bhi hum jald hi content aur features lekar aa rahe hain.</string>
+
+    <!-- Test Generation Status -->
+    <string name="test_gen_completed_title">NEET Test Generated!</string>
+    <string name="test_gen_completed_subtitle">Your test is ready to attempt</string>
+    <string name="test_gen_in_progress_title">Creating Test Questions</string>
+    <string name="test_gen_in_progress_subtitle">From your uploaded Files</string>
+    <string name="test_gen_est_time">Est. time</string>
+    <string name="test_gen_est_time_value">2 mins</string>
+    <string name="test_gen_start">start</string>
+
+    <string name="webview_slow_connection">Internet is slow — the page is still loading…</string>
+    <string name="webview_retry_title">Page could not load</string>
+    <string name="webview_retry_subtitle">Please check your internet connection and try again.</string>
+    <string name="webview_retry_button">Try again</string>
+    <string name="webview_update_title">Update required</string>
+    <string name="webview_update_subtitle">Your phone\'s web page viewer (Android System WebView / Chrome) is very old, so this screen cannot load. Please update it from the Play Store and open this screen again.</string>
+    <string name="webview_update_button">Update now</string>
+    <string name="meeting_link_not_available">Meeting link not available</string>
+    <string name="unable_to_open_meeting_link">Unable to open meeting link</string>
+
+<!--    //notification-->
+    <string name="action_btn">Action Btn</string>
+    <string name="live_in">LIVE in</string>
+    <string name="_00_00">00:00</string>
+
+    <!-- Pariksha Adhyayan Referral Dialog -->
+    <string name="pa_referral_title">Refer karo, Lecture dekho!</string>
+    <string name="pa_referral_description">Yeh lectures un krantikari bacchon ke liye hain, jinhone kam se kam 1 dost ko Arivihan par refer kiya hai.</string>
+    <string name="pa_refer_cta">Dost Ko Refer Karo</string>
+
+    <string name="search_no_result_found">No Result Found</string>
+    <string name="change_the_search_item">Try Changing the search item</string>
+
+</resources>

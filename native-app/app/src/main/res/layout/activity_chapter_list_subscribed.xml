@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.competitive.subject.chapter.ChapterListSubscribedActivity">
+
+    <LinearLayout
+        android:id="@+id/ll_parent_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_color"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:id="@+id/back_button_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="20dp"
+                android:paddingEnd="17dp">
+
+                <ImageView
+                    android:id="@+id/back_arrow"
+                    android:layout_width="13dp"
+                    android:layout_height="15dp"
+                    android:layout_marginTop="1dp"
+                    android:src="@drawable/arrow_icon"
+                    app:tint="@color/text_primary" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/activity_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/urbanist_semi_bold"
+                android:text="@string/lectures"
+                android:textColor="@color/text_primary"
+                android:textSize="@dimen/toolbar_title_size" />
+
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/search_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/divider_color"
+                android:visibility="visible"
+                app:closeIcon="@drawable/search_close_btn"
+                app:searchHintIcon="@null"
+                app:searchIcon="@drawable/search_outline" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_shimmer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <com.facebook.shimmer.ShimmerFrameLayout
+                android:id="@+id/sfl_shimmer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <include layout="@layout/shimmer_chapter_by_batch" />
+            </com.facebook.shimmer.ShimmerFrameLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_data"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <View
+                android:id="@+id/view_divider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/divider_color" />
+
+            <LinearLayout
+                android:id="@+id/ll_section_buttons"
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <!-- live -->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="8dp"
+                    android:layout_weight="1">
+
+                    <arivihan.technologies.doubtbuzzter2.customView.gradient.AnimatedBorderView
+                        android:id="@+id/border_animation_live"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:cornerRadius="12dp" />
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/newLectureLiveButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="bottom"
+                        android:layout_margin="3dp"
+                        app:cardBackgroundColor="@android:color/transparent"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="0dp">
+
+                        <LinearLayout
+                            android:id="@+id/live_btn_bg"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/new_lecture_live_btn"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:padding="14dp">
+
+                            <TextView
+                                android:id="@+id/tv_live_btn"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:fontFamily="@font/urbanist_bold"
+                                android:text="@string/live"
+                                android:textColor="@color/new_lecture_live_btn_text"
+                                android:textSize="18sp" />
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <!-- premium -->
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="8dp"
+                    android:layout_weight="1">
+
+                    <arivihan.technologies.doubtbuzzter2.customView.gradient.AnimatedBorderView
+                        android:id="@+id/border_animation_premium"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:cornerRadius="12dp" />
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/newLecturePremiumButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="bottom"
+                        android:layout_margin="3dp"
+                        app:cardBackgroundColor="@android:color/transparent"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="0dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/new_lecture_premium_btn"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:padding="14dp">
+
+                            <ImageView
+                                android:id="@+id/icon"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:contentDescription="@string/todo"
+                                android:src="@drawable/ic_pro_premium_star" />
+
+                            <TextView
+                                android:id="@+id/premiumText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:gravity="center_vertical"
+                                android:fontFamily="@font/urbanist_bold"
+                                android:text="@string/extra_classes"
+                                android:textSize="18sp"
+                                android:maxLines="1"
+                                android:ellipsize="end"
+                                android:autoSizeTextType="uniform"
+                                android:autoSizeMinTextSize="11sp"
+                                android:autoSizeMaxTextSize="18sp" />
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                </FrameLayout>
+
+            </LinearLayout>
+
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/fragment_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Covers the full screen during the circular reveal transition -->
+    <View
+        android:id="@+id/reveal_overlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible" />
+
+</FrameLayout>

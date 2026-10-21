@@ -1,0 +1,17 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="335dp"
+    android:height="180dp"
+    android:viewportWidth="335"
+    android:viewportHeight="180">
+  <group>
+    <!-- Remove clip-path for compatibility -->
+    <path
+        android:pathData="M0,14.57C0,10.31 0,8.19 0.64,6.49C1.65,3.78 3.78,1.65 6.49,0.64C8.19,0 10.31,0 14.57,0H162.83C257.92,0 335,77.08 335,172.17V172.17C335,176.5 331.5,180 327.17,180H20C10.57,180 5.86,180 2.93,177.07C0,174.14 0,169.43 0,160V14.57Z"
+        android:fillColor="#13A0B2" />
+    <!-- Replace gradient with solid color for compatibility -->
+    <path
+        android:pathData="M244.5,121.5m-108.5,0a108.5,108.5 0,1 1,217 0a108.5,108.5 0,1 1,-217 0"
+        android:fillColor="#FFFFFF"
+        android:fillAlpha="0.2" />
+  </group>
+</vector>

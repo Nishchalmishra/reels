@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/doubt_videos_card_view"
+    android:layout_width="match_parent"
+    android:layout_height="170dp"
+    android:elevation="0dp"
+    app:cardBackgroundColor="@color/background_youtube">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:scrollbars="horizontal"
+        android:layout_marginVertical="6dp"
+        android:id="@+id/recycler_view_intent_videos"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:listitem="@layout/video_card_view" />
+
+
+</androidx.cardview.widget.CardView>

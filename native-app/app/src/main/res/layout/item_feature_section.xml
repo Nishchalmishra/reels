@@ -1,0 +1,159 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/Parent_Layout"
+    android:layout_width="92dp"
+    android:layout_height="138dp">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@drawable/bg_card_shadow_small_bottom"
+        android:elevation="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@drawable/bg_card_shadow_small_top"
+        android:elevation="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:elevation="1dp">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cv_feature_item"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="5dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:outlineSpotShadowColor="@color/grey_500"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingHorizontal="6dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="8dp">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_feature_icon_container"
+                    android:layout_width="46dp"
+                    android:layout_height="46dp"
+                    app:cardBackgroundColor="@color/light_blue"
+                    app:cardCornerRadius="22dp"
+                    app:cardElevation="0dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/ivFeatureIcon"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerInside"
+                            android:visibility="gone" />
+
+                        <com.google.android.material.progressindicator.CircularProgressIndicator
+                            android:id="@+id/feature_progress_indicator"
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:layout_gravity="center"
+                            android:indeterminate="false"
+                            android:visibility="gone"
+                            app:indicatorColor="#3463D9"
+                            app:indicatorSize="36dp"
+                            app:trackColor="@color/white"
+                            app:trackThickness="3dp" />
+
+                        <TextView
+                            android:id="@+id/feature_progress_percentage"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/urbanist_semi_bold"
+                            android:text="0%"
+                            android:textColor="#3463D9"
+                            android:textSize="9sp"
+                            android:visibility="gone" />
+
+                    </FrameLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/tvFeatureTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/urbanist_semi_bold"
+                    android:maxLines="2"
+                    android:minLines="2"
+                    android:text="गणित NCERT सोल्यूशन्स"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="11sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cv_feature_icon_container" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <arivihan.technologies.doubtbuzzter2.customView.gradient.AnimatedBorderView
+            android:id="@+id/border_animation"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="2dp"
+            android:layout_marginTop="13dp"
+            android:layout_marginBottom="13dp" />
+
+    </FrameLayout>
+
+    <!-- Trending Badge -->
+    <RelativeLayout
+        android:id="@+id/rl_feature_badge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="9dp"
+        android:elevation="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_feature_badge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="#FFE26D"
+            app:cardCornerRadius="4dp"
+            app:cardElevation="0dp">
+
+            <TextView
+                android:id="@+id/tv_featureBadge_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/urbanist_semi_bold"
+                android:gravity="center"
+                android:paddingHorizontal="4dp"
+                android:paddingVertical="2dp"
+                android:text="Trending"
+                android:textColor="@color/black"
+                android:textSize="7sp" />
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

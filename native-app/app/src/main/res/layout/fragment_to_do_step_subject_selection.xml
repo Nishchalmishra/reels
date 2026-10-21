@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/parent_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.todo.create_todo.ToDoStepSubjectSelectionFragment">
+
+    <!-- Top Layout (Fixed at Top) -->
+    <LinearLayout
+        android:id="@+id/top_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/step_number_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:fontFamily="@font/urbanist_medium"
+                android:maxLines="1"
+                android:text="@string/step_1_to_create_time_table"
+                android:textColor="#191919"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_sub_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="15dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/urbanist_semi_bold"
+            android:gravity="center"
+            android:maxLines="2"
+            android:text="@string/aap_hamse_jo_subject_padna_chahte_he_unhe_tick_kare"
+            android:textColor="#191919"
+            android:textSize="21sp" />
+    </LinearLayout>
+
+    <!-- Anim Layout (Centered, Minimum 300dp Height) -->
+    <LinearLayout
+        android:id="@+id/ll_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        android:minHeight="200dp"
+        android:orientation="vertical"
+        app:layout_constraintHeight="true"
+        app:layout_constraintTop_toBottomOf="@id/top_layout"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/step_animation"
+            android:layout_width="110dp"
+            android:layout_height="90dp"
+            android:scaleX="2.0"
+            android:scaleY="2.0"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp"
+            android:layout_gravity="center_horizontal"
+            app:lottie_rawRes="@raw/to_do_step_one" />
+
+        <TextView
+            android:id="@+id/tv_body"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/urbanist_light_italic"
+            android:gravity="center"
+            android:maxLines="1"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/jo_subject_nahi_chaiye_unka_tick_hataye"
+            android:textColor="#696969"
+            android:textSize="13sp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/subject_selection_rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginTop="8dp"
+            android:fadeScrollbars="false"
+            android:scrollbars="vertical"
+            tools:itemCount="6"
+            tools:listitem="@layout/to_do_step_1_subject_card" />
+
+    </LinearLayout>
+
+    <arivihan.technologies.doubtbuzzter2.customView.video_player.MiniVideoPlayer
+        android:id="@+id/mini_video_player"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

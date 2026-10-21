@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_margin="10dp"
+            android:background="@drawable/coupon_background"
+            android:layout_width="0dp"
+            android:layout_weight="80"
+            android:layout_height="wrap_content"
+            tools:ignore="UselessParent">
+            <TextView
+                android:id="@+id/coupon_code"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                style="@style/tertiaryText"
+                android:layout_margin="5dp"
+                android:text="@string/add_points"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                tools:ignore="NestedWeights" />
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/couponApply"
+            android:textStyle="bold"
+            android:textColor="@color/arivihan_primary_color"
+            android:background="@color/fui_transparent"
+            android:text="@string/apply"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/description"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="@string/coupon_info"
+        style="@style/secondaryText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <LinearLayout
+        android:background="@color/grey_300"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+
+</LinearLayout>

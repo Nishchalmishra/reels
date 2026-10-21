@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout"
+    android:layout_width="match_parent"
+    android:layout_height="120dp">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="100dp"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:textSize="@dimen/tertiary_text_size"
+            android:text="Physics Mock Test 2 Microlecture Rotational Motion II"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/subtitle"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="Order No : #9584525251"
+            android:maxLength="40"
+            android:layout_below="@id/title"
+            android:layout_marginTop="3dp"
+            android:textSize="@dimen/small_chapter_number"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/liltitle"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="20 March 2022 3:05 PM"
+            android:maxLength="40"
+            android:layout_below="@id/subtitle"
+            android:layout_marginTop="3dp"
+            android:textSize="@dimen/small_chapter_number"
+            android:layout_height="wrap_content"/>
+
+
+
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_alignParentRight="true"
+            android:text="Rs. 250"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/subscription_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/price"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:fontFamily="@font/poppins_light"
+            android:text="On-going"
+            android:textColor="@color/green"
+            android:textSize="@dimen/small_chapter_number"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:id="@+id/download_invoice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:paddingEnd="10dp"
+        android:paddingVertical="5dp"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:src="@drawable/download_invoice"
+            android:layout_marginHorizontal="5dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Invoice"
+            android:textSize="14sp"
+            android:fontFamily="@font/urbanist_semi_bold"
+            android:textColor="@color/subscription_blue"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/grey_500" />
+
+</RelativeLayout>

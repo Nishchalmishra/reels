@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/quesCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/white"
+        app:cardElevation="0dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingVertical="14dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:fontFamily="@font/nunito_semibold"
+                android:text="@string/overview"
+                android:textColor="@color/black"
+                android:textSize="18dp" />
+
+            <ImageView
+                android:id="@+id/close_overview"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp"
+                android:src="@drawable/ic_close_black" />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <View
+
+        android:id="@+id/header_divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/quesCard"
+        android:layout_marginHorizontal="20dp"
+        android:background="@color/grey_300" />
+
+    <LinearLayout
+        android:id="@+id/instruction"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/header_divider"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="12dp">
+
+        <ImageView
+            android:id="@+id/instruction_icon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_info_24" />
+
+        <TextView
+            android:id="@+id/instruction_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="6dp"
+            android:fontFamily="@font/nunito_regular"
+            android:text="@string/instructions"
+            android:textColor="#02858D"
+            android:textSize="16dp" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/instruction_divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/instruction"
+        android:layout_marginHorizontal="20dp"
+        android:background="@color/grey_300" />
+
+
+    <LinearLayout
+        android:id="@+id/up"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/instruction_divider"
+        android:layout_marginBottom="10dp"
+        android:orientation="vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/grid_item_layout"
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:layout_margin="8dp"
+                    app:cardBackgroundColor="#B1EEF5"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="0dp">
+
+
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/overview_answerted_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:text="Answered"
+                    android:textColor="@color/grey_500"
+                    android:textSize="12dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:orientation="horizontal">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/marked_and_answered_dot"
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:layout_margin="8dp"
+                    app:cardBackgroundColor="#FCD8B7"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="0dp" />
+
+
+                <TextView
+                    android:id="@+id/overview_marked_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:text="Marked &amp; Answered"
+                    android:textColor="@color/grey_500"
+                    android:textSize="12dp" />
+
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:layout_margin="8dp"
+                    app:cardBackgroundColor="#D9DADC"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="0dp" />
+
+
+                <TextView
+                    android:id="@+id/overview_unanswered_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:text="8 Unanswered"
+                    android:textColor="@color/grey_500"
+                    android:textSize="12dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:orientation="horizontal">
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/marked_and_unanswered_dot"
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:layout_margin="8dp"
+                    app:cardBackgroundColor="#FFBCB8"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="0dp" />
+
+                <TextView
+                    android:id="@+id/overview_unseen_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:text="Marked &amp; Unanswered"
+                    android:textColor="@color/grey_500"
+                    android:textSize="12dp" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+
+    <ScrollView
+        android:id="@+id/gridScroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/up"
+        android:layout_marginTop="4dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/grid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    app:spanCount="5"
+                    tools:listitem="@layout/grid_single_item" />
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/instruction_recycler_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:paddingHorizontal="20dp"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager" />
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

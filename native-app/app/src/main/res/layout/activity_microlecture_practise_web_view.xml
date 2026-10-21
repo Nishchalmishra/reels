@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rl_parent_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".activity.web_view.MicrolecturePractiseWebViewActivity">
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/webView_lottie_animation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_margin="30dp"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/chat_loader" />
+
+    <!-- INVISIBLE, never GONE: a GONE view is skipped during measure and layout entirely, so
+         the WebView would stay 0×0 and Chromium cannot commit a navigation into an empty
+         viewport — the load sits at 10% until the renderer is declared unresponsive. INVISIBLE
+         is laid out at full size and simply not drawn, which the loader covers anyway. -->
+    <WebView
+        android:id="@+id/webview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible" />
+
+    <include
+        android:visibility="gone"
+        layout="@layout/continuity_layout"/>
+
+</RelativeLayout>

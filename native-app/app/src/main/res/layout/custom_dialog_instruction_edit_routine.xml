@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="40dp"
+    android:background="@color/fui_transparent"
+    android:theme="@style/Theme.MaterialComponents.DayNight"
+    app:cardCornerRadius="20dp">
+
+
+    <RelativeLayout
+        android:id="@+id/relativeLayoutDoubt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:maxHeight="300dp">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="7dp">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutDoubt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:clipChildren="true"
+
+                    android:orientation="vertical">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:theme="@style/Theme.MaterialComponents.DayNight"
+                        app:cardCornerRadius="20dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:clipChildren="true"
+                        android:background="@color/mock_primary_color">
+
+                        <TextView
+                            android:id="@+id/instruction"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:paddingVertical="10dp"
+                            android:text="@string/instructions"
+                            android:textAlignment="center"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/LargeTitleSize"
+                            android:fontFamily="@font/urbanist_medium"/>
+
+                        <ImageView
+                            android:id="@+id/close_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="10dp"
+                            android:src="@drawable/ic_baseline_close_24" />
+
+
+                    </RelativeLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/dialog_recycler_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginRight="2dp"
+                        android:layout_marginBottom="10dp"
+                        android:paddingVertical="10dp"
+                        android:paddingEnd="10dp"/>
+
+
+                </LinearLayout>
+
+            </ScrollView>
+
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+
+
+</com.google.android.material.card.MaterialCardView>

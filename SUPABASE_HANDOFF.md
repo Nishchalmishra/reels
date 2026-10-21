@@ -1,3 +1,5 @@
+> Current frontend: responsive web (`npm run live`), not an APK. The revised Feed/Explore service calls the deployed discovery RPCs and shares the existing authenticated identity, preferences, wallet and simulated checkout. See [DISCOVERY_HANDOFF.md](DISCOVERY_HANDOFF.md). Historical chapter integration details follow.
+
 # Supabase integration handoff
 
 Status: **connected, deployed and hosted-verified** on project `pbaegeqjargtsfortsyh`. Official MCP, anonymous Auth, live services, secured grading/rewards and simulated checkout work. No remaining integration blocker. See [SUPABASE_VERIFICATION.md](SUPABASE_VERIFICATION.md).
@@ -64,3 +66,7 @@ Typecheck, both builds, 23 tests, ten hosted API checks and the full live mobile
 The final security advisor has no ERROR or anonymous definer-function warning. Expected warnings cover authenticated trusted RPCs, anonymous Auth, intentional deny-all tables and existing leaked-password protection disabled for a project where this MVP uses no passwords. No unrelated Auth/policy settings were changed. No manual deployment step remains.
 
 Watch reports alone cannot prove attention or eliminate determined abuse. The RPC validates timing/coverage consistency and ownership, not human attention. Production anti-abuse, recoverable account linking, more robust catalogue version management and any real payments remain separate work.
+# Revised native discovery integration
+
+The current native Feed/Explore flow uses isolated discovery tables and RPCs deployed through migrations `202610190004`–`202610190006`. Existing chapter structures and RPCs below remain unchanged. See [DISCOVERY_HANDOFF.md](DISCOVERY_HANDOFF.md) for the three/four-video cycle model, actual local media, hosted verification and native build/device status. Backend/API verification must not be read as a native UI acceptance claim.
+

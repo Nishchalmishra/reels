@@ -1,0 +1,53 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/contentContainer"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:elevation="1dp">
+
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottieView"
+        android:layout_width="match_parent"
+        android:layout_height="76dp"
+        app:lottie_autoPlay="true"
+        android:scaleType="centerCrop"
+        android:scaleX="1.02"
+        app:lottie_rawRes="@raw/banner_animation"
+        app:lottie_loop="true" />
+
+    <!-- 3. Text Overlay -->
+    <LinearLayout
+        android:id="@+id/textWrapper"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:visibility="visible"
+        android:orientation="vertical"
+        android:layout_marginTop="-8dp"
+        android:padding="8dp">
+
+        <TextView
+            android:id="@+id/titleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/urbanist_bold"
+            android:gravity="center"
+            android:text="Master any 2 topics for free"
+            android:textColor="@android:color/white"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/subtitleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/urbanist_bold"
+            android:gravity="center"
+            android:text="2 topics remaining"
+            android:textColor="@android:color/white"
+            android:textSize="13sp" />
+
+    </LinearLayout>
+
+</FrameLayout>

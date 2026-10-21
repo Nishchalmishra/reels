@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/block_chat_and_redirect_to_whatsapp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/subscription_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/subscribed_user_tutor_support_limit_exhausted"
+        android:textAlignment="center" />
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/open_subscription"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_marginTop="6dp"
+        android:visibility="gone"
+        app:cardBackgroundColor="@color/arivihan_secondary_color"
+        app:cardCornerRadius="60dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="Subscribe Now"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="17dp" />
+        </RelativeLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/open_whatsapp_btn"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_marginTop="6dp"
+        app:cardBackgroundColor="@color/arivihan_secondary_color"
+        app:cardCornerRadius="44dp"
+        app:cardElevation="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="Open Whatsapp"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="17dp" />
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginLeft="8dp"
+                android:src="@drawable/whatsapp" />
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

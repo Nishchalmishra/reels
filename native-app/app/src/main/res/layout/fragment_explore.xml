@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar"
+    tools:context=".activity.ExploreActivity"
+    android:background="#fefcfe">
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <include
+                layout="@layout/explore_shimmer_layout"/>
+        </LinearLayout>
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+    <ImageView
+        android:id="@+id/btn_close"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_margin="7dp"
+        android:padding="10dp"
+        android:src="@drawable/search_close_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="gone"/>
+
+    <include
+        android:id="@+id/steps"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/steps_layout"
+        android:layout_marginHorizontal="45dp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/scroll_container"
+        android:layout_marginBottom="20dp"
+        android:visibility="gone"/>
+
+    <ScrollView
+        android:id="@+id/scroll_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintVertical_weight="1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/steps"
+        app:layout_constraintBottom_toTopOf="@id/btn_layout"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:id="@+id/detail_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:layout_marginBottom="40dp"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/step_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/urbanist_medium"
+                android:text="SIMPLE STEP 1 TO CRACK JEE"
+                android:textColor="#191919"
+                android:textAlignment="center"
+                android:textSize="15sp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginHorizontal="20dp"/>
+
+            <TextView
+                android:id="@+id/title_bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/urbanist_extra_bold"
+                android:gravity="center"
+                android:text="Start with the \nUltimate Planner"
+                android:textColor="#191919"
+                android:textSize="26sp"
+                android:layout_marginHorizontal="20dp"/>
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/urbanist_medium"
+                android:gravity="center"
+                android:text="Kya aaj padhu  kya kal syllabus kab khatam hoga? \n\nEsa koi bhi Confusion Nahi hoga!"
+                android:textColor="#494A4B"
+                android:textSize="13sp"
+                android:lineSpacingExtra="5dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginHorizontal="30dp"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="400dp">
+
+                <ImageView
+                    android:id="@+id/gif_image"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:scaleType="fitCenter"
+                    app:layout_constraintDimensionRatio="H,4:3"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginHorizontal="20dp"/>
+
+                <ProgressBar
+                    android:id="@+id/progress"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/subtitle_quote"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/urbanist_bold"
+                android:gravity="center"
+                android:text="Dusre bhatke to bhatke, lekin aap humare sath \nroz apne goals ki taraf aage badhenge."
+                android:textColor="#25C6DA"
+                android:textSize="13sp"
+                android:visibility="gone"
+                android:layout_marginTop="10dp"
+                android:lineSpacingExtra="5dp"
+                android:layout_marginHorizontal="30dp"/>
+
+            <TextView
+                android:id="@+id/subtitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/urbanist_medium"
+                android:gravity="center"
+                android:text="Dusre bhatke to bhatke, lekin aap humare sath \nroz apne goals ki taraf aage badhenge."
+                android:textColor="#494A4B"
+                android:textSize="13sp"
+                android:layout_marginTop="20dp"
+                android:lineSpacingExtra="5dp"
+                android:layout_marginHorizontal="30dp"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/btn_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="25dp"
+        android:visibility="gone">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/prev"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:cardCornerRadius="25dp"
+            app:cardElevation="0dp"
+            app:strokeColor="@color/button_light"
+            app:strokeWidth="0.8dp">
+
+            <ImageView
+                android:id="@+id/prev_image"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:src="@drawable/prev_arrow_light" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/goTo"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_weight="1"
+            android:backgroundTint="#25C6DA"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="0dp">
+
+            <TextView
+                android:id="@+id/btn_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/urbanist_semi_bold"
+                android:text="Plan Now"
+                android:textAlignment="center"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/next"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:cardCornerRadius="25dp"
+            app:cardElevation="0dp"
+            app:strokeColor="@color/button_dark"
+            app:strokeWidth="0.8dp">
+
+            <ImageView
+                android:id="@+id/next_image"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:src="@drawable/next_arrow_dark" />
+        </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/parent_layout"
+    android:background="@color/color_transparent"
+    tools:context=".fragments.authentication.LoginCourseSelectionFragment">
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="108dp"
+        android:layout_above="@id/ll_bottom_course_selection"
+        android:layout_marginTop="-72dp"
+        android:layout_marginBottom="-75dp"
+        android:elevation="2dp"
+        android:visibility="visible"
+        android:background="@drawable/gradient_top_to_bottom_transparent_white_to_back"/>
+
+    <!-- Bottom content -->
+    <LinearLayout
+        android:id="@+id/ll_bottom_course_selection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingVertical="16dp"
+        android:background="@android:color/transparent"
+        android:layout_gravity="bottom"
+        android:elevation="3dp"
+        android:layout_alignParentBottom="true"
+        >
+
+        <TextView
+            android:id="@+id/exam_selection_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/course_selection_title"
+            android:textSize="20sp"
+            android:fontFamily="@font/urbanist_semi_bold"
+            android:textColor="@android:color/black"
+            android:layout_gravity="center"
+            android:layout_marginBottom="12dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/exam_selection_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:paddingBottom="20dp"
+            android:paddingHorizontal="8dp"
+            tools:itemCount="3"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            tools:listitem="@layout/item_exam_selection" />
+
+    </LinearLayout>
+
+</RelativeLayout>

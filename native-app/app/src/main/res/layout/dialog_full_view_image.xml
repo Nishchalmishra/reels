@@ -1,0 +1,33 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center">
+
+<!--        <androidx.core.widget.NestedScrollView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:scrollbars="vertical">-->
+
+            <com.davemorrissey.labs.subscaleview.SubsamplingScaleImageView
+                android:id="@+id/fullscreen_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fadeScrollbars="false"
+                android:nestedScrollingEnabled="false"
+                android:scrollbars="vertical" />
+
+<!--        </androidx.core.widget.NestedScrollView>-->
+
+    </RelativeLayout>
+    <ImageView
+        android:id="@+id/close_dialog_btn"
+        android:layout_width="48dp"
+        android:src="@drawable/icon_close_black"
+        android:layout_height="48dp"
+        android:layout_gravity="top|end"
+        android:padding="8dp" />
+</FrameLayout>

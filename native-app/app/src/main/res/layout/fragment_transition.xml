@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingTop="60dp">
+
+    <TextView
+        android:id="@+id/mode_text_transition"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Switching to JEE MODE"
+        android:layout_gravity="center"
+        android:textSize="18sp"
+        android:textColor="#9B9B9F"
+        android:fontFamily="@font/urbanist_semi_bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottie_animation_view_transition"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        app:lottie_rawRes="@raw/flying_man"
+        android:layout_marginHorizontal="30dp"
+        app:lottie_speed="2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mode_text_transition"
+        app:lottie_autoPlay="true"
+        android:layout_marginTop="20dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

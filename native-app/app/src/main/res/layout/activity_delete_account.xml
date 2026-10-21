@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".activity.DeleteAccountActivity">
+
+    <LinearLayout
+        android:id="@+id/toolbar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="155dp"
+        android:background="@drawable/theme_gradient_color"
+        android:paddingStart="24dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/back_arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="34dp"
+            android:layout_marginTop="39dp"
+            android:src="@drawable/ic_baseline_arrow_back_ios_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="39dp"
+            android:fontFamily="@font/nunito_bold"
+            android:text="Delete Account"
+            android:textColor="@color/white"
+            android:textSize="24sp" />
+    </LinearLayout>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/textCard"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="110dp"
+        app:cardCornerRadius="50dp"
+        app:cardElevation="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <android.widget.ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+
+            <LinearLayout
+                android:id="@+id/textLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingTop="30dp">
+
+
+                <TextView
+                    android:id="@+id/delete_info_account"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="24dp"
+                    android:fontFamily="@font/nunito_bold"
+                    android:text="@string/delete_your_account"
+                    android:textColor="@color/black"
+                    android:textSize="23sp" />
+
+                <TextView
+                    android:id="@+id/account_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="24dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:text="@string/think_beforre_delete"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="170dp"
+                    android:layout_marginHorizontal="22dp"
+                    android:layout_marginTop="24dp"
+                    android:backgroundTint="@color/grey_300"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="0dp"
+                    app:cardUseCompatPadding="false">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="1dp"
+                        app:cardCornerRadius="20dp"
+                        app:cardElevation="0dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/delete_reason"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@null"
+                            android:fontFamily="@font/nunito_regular"
+                            android:gravity="start"
+                            android:hint="@string/optional_feedback"
+                            android:inputType="textMultiLine"
+                            android:padding="12dp"
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/grey_400"
+                            android:textSize="17sp" />
+
+
+                    </androidx.cardview.widget.CardView>
+
+                </androidx.cardview.widget.CardView>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="22dp"
+                    android:layout_marginTop="24dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="10dp"
+                        android:layout_weight="1"
+                        app:cardCornerRadius="15dp"
+                        app:cardElevation="0dp">
+
+                        <Button
+                            android:id="@+id/delete_account"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/navy_blue"
+                            android:text="Delete"
+                            android:textColor="@color/white" />
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
+                        app:cardCornerRadius="15dp"
+                        app:cardElevation="0dp">
+
+                        <Button
+                            android:id="@+id/cancel"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/grey_400"
+                            android:text="Cancel"
+                            android:textColor="@color/white" />
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+            </LinearLayout>
+        </android.widget.ScrollView>
+    </androidx.cardview.widget.CardView>
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminateTint="@color/navy_blue"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

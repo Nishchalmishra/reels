@@ -1,0 +1,217 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:id="@+id/parent_layout"
+    android:paddingHorizontal="20dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:id="@+id/notes_top_dash"
+                android:layout_width="1dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/verticle_dotted_line"
+                android:orientation="vertical" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/notes_dot_card"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:backgroundTint="@color/dot_color"
+                android:visibility="visible"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="0dp" />
+
+            <LinearLayout
+                android:id="@+id/notes_bottom_dash"
+                android:layout_width="1dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/verticle_dotted_line"
+                android:orientation="vertical" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="15dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <LinearLayout
+                    android:id="@+id/divider1"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1"
+                    android:background="@color/mock_light_grey"
+                    android:orientation="horizontal" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/notes_practice_type"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/urbanist_semi_bold"
+                    android:text="@string/lecture_notes"
+                    android:textColor="@color/title_color"
+                    android:textSize="12sp"
+                    android:layout_marginVertical="15dp"/>
+
+                <ImageView
+                    android:id="@+id/notes_badge_btn"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="5dp"
+                    android:src="@drawable/notes_light"
+                    android:layout_marginVertical="15dp"/>
+
+                <LinearLayout
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:visibility="visible"
+                    android:layout_gravity="center_vertical"
+                    >
+
+                    <RelativeLayout
+                        android:id="@+id/rl_download"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:orientation="vertical"
+                        android:visibility="visible">
+
+                        <ImageView
+                            android:id="@+id/iv_download"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_gravity="center"
+                            android:contentDescription="@string/download"
+                            android:src="@drawable/download_dark"
+                            />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rl_download_progress"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:visibility="gone">
+
+                        <ProgressBar
+                            android:id="@+id/pb_progress"
+                            style="?android:attr/progressBarStyleHorizontal"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:background="@drawable/circle_shape_video_download"
+                            android:indeterminate="false"
+                            android:progressDrawable="@drawable/circle_progress_video_download"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            android:layout_centerInParent="true"/>
+
+                        <TextView
+                            android:id="@+id/tv_progress"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            android:text="0%"
+                            android:fontFamily="@font/urbanist_semi_bold"
+                            android:textColor="#3F3F3F"
+                            android:layout_centerInParent="true"
+                            android:textSize="9sp"/>
+
+<!--                        <ProgressBar-->
+<!--                            android:id="@+id/pb_progress"-->
+<!--                            style="?android:attr/progressBarStyleHorizontal"-->
+<!--                            android:layout_width="30dp"-->
+<!--                            android:layout_height="30dp"-->
+<!--                            android:layout_centerInParent="true"-->
+<!--                            android:background="@drawable/circle_progress_teal"-->
+<!--                            android:indeterminate="false"-->
+<!--                            android:progress="0"-->
+<!--                            android:progressDrawable="@drawable/circle_progress_chapter"-->
+<!--                            android:visibility="visible"-->
+<!--                            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                            app:layout_constraintLeft_toLeftOf="parent"-->
+<!--                            app:layout_constraintRight_toRightOf="parent"-->
+<!--                            app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--                        <TextView-->
+<!--                            android:id="@+id/tv_progress"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_centerInParent="true"-->
+<!--                            android:ellipsize="end"-->
+<!--                            android:fontFamily="@font/nunito_bold"-->
+<!--                            android:gravity="center"-->
+<!--                            android:maxLines="1"-->
+<!--                            android:text="0%"-->
+<!--                            android:textColor="#7B7B81"-->
+<!--                            android:textSize="8sp" />-->
+
+                    </RelativeLayout>
+
+                    <ImageView
+                        android:id="@+id/iv_status_lock"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/lock_light"
+                        android:scaleType="centerInside"
+                        android:layout_gravity="center"
+                        android:padding="3dp"
+                        android:visibility="gone" />
+
+                    <ImageView
+                        android:id="@+id/iv_status_download_completed"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:src="@drawable/img_download_completed_green"
+                        android:scaleType="centerInside"
+                        android:layout_gravity="center"
+                        android:padding="5dp"
+                        android:visibility="gone" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,10 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Selected tab -->
+    <item android:state_selected="true"
+        android:drawable="@drawable/tab_selected_shadow_bg"/>
+
+    <!-- Default -->
+    <item android:drawable="@android:color/transparent"/>
+
+</selector>

@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rl_parent_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.VideoPlayerActivity">
+
+    <androidx.media3.ui.PlayerView
+        android:id="@+id/videoFullScreenPlayer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#A6000000"
+        app:controller_layout_id="@layout/exo_playback_control_view2"
+        app:hide_on_touch="true"
+        app:repeat_toggle_modes="none"
+        app:resize_mode="fill"
+        app:show_timeout="6000"
+        app:shutter_background_color="#33000000"
+        app:surface_type="surface_view" />
+
+    <Button
+        android:id="@+id/askButton"
+        android:layout_width="80dp"
+        android:layout_height="35dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/ask_back"
+        android:fontFamily="@font/urbanist_semi_bold"
+        android:padding="0dp"
+        android:text="@string/Ask"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/videoPreview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:contentDescription="@string/preview"
+        android:scaleType="fitXY"
+        android:visibility="visible" />
+
+    <ProgressBar
+        android:id="@+id/loading_progress_bar"
+        style="@android:style/Widget.Holo.Light.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="15dp"
+        android:indeterminateOnly="true"
+        android:indeterminateTint="@color/arivihan_secondary_color"
+        android:visibility="visible" />
+
+    <!--buffering loading image view-->
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/logo_loading"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="-8dp"
+        android:alpha="1"
+        android:rotation="45"
+        android:visibility="gone"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/logo_loading_better_two" />
+
+    <!--buffering loading image view-->
+
+    <!--Listening mode of speech recognizer-->
+    <include layout="@layout/exo_player_listening_view" />
+    <!--END-->
+
+    <!-- Animation used in video switching -->
+    <ImageView
+        android:id="@+id/transition_image_left"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="transition_left"
+        android:scaleX="1.5"
+        android:src="@drawable/transition_left_used3"
+        android:translationX="-1400dp"
+        tools:ignore="HardcodedText" />
+
+    <ImageView
+        android:id="@+id/transition_image_right"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="transition_right"
+        android:scaleX="1.5"
+        android:src="@drawable/transition_right_used3"
+        android:translationX="1400dp"
+        tools:ignore="HardcodedText" />
+    <!-- END -->
+
+    <!-- Animation used in API Calling -->
+
+    <RelativeLayout
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/api_processing"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="5dp"
+            android:visibility="gone"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/infinity" />
+    </RelativeLayout>
+
+    <!-- END -->
+
+    <!-- Animation used in ask doubt -->
+    <include
+        android:id="@+id/disambiguation_dialog"
+        layout="@layout/intent_option"
+        android:layout_width="500dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:visibility="gone" />
+    <!-- END -->
+
+    <LinearLayout
+        android:id="@+id/success_celebration"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/celebration1"
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            android:layout_marginLeft="-100dp"
+            android:layout_marginRight="-100dp"
+            android:layout_weight="1"
+            android:visibility="visible"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/confetti"
+            app:lottie_repeatCount="1" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/celebration3"
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            android:layout_marginLeft="-100dp"
+            android:layout_marginRight="-100dp"
+            android:layout_weight="1"
+            android:visibility="visible"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/confetti"
+            app:lottie_repeatCount="1" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/celebration2"
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            android:layout_marginLeft="-100dp"
+            android:layout_marginRight="-100dp"
+            android:layout_weight="1"
+            android:visibility="visible"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/confetti"
+            app:lottie_repeatCount="1" />
+
+    </LinearLayout>
+
+    <include
+        layout="@layout/continuity_layout"
+        android:visibility="gone" />
+
+    <include
+        android:id="@+id/context_doubt_layout"
+        layout="@layout/contextualized_doubt_view"
+        android:layout_width="460dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="8dp"
+        android:visibility="gone" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/instant_videos_close"
+        android:layout_width="26dp"
+        android:layout_height="26dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginBottom="160dp"
+        android:elevation="10dp"
+        android:visibility="gone"
+        app:cardCornerRadius="24dp"
+        app:cardElevation="8dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:src="@drawable/ic_close_black" />
+
+    </androidx.cardview.widget.CardView>
+
+    <include
+        android:id="@+id/instant_videos_recycler_layout"
+        layout="@layout/instant_videos_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        android:layout_alignParentBottom="true"
+        android:visibility="gone" />
+
+    <include
+        android:id="@+id/how_to_video_view"
+        layout="@layout/activity_mock_demo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/iv_active_interactive_question"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:alpha="0.4"
+        android:scaleType="fitXY"
+        android:visibility="gone" />
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/long_press_speed_card"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:visibility="gone"
+        app:cardBackgroundColor="#80000000"
+        app:cardCornerRadius="50dp"
+        app:cardElevation="0dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2x"
+                android:textColor="#E5FFFFFF"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="6dp"
+                android:src="@drawable/ic_speed_fast"
+                app:tint="#FFFFFF" />
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+<!--    //+10 -10 view-->
+    <LinearLayout
+        android:id="@+id/exoplayer_control_anim_layout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal"
+            android:layout_marginEnd="180dp">
+
+            <ImageView
+                android:id="@+id/rewind_arrow"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="30dp"
+                android:src="@drawable/arrow_back_ios_black"
+                android:visibility="invisible"
+                app:tint="@color/white" />
+
+            <TextView
+                android:id="@+id/rewind_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="10dp"
+                android:text="-10"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:visibility="invisible" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal"
+            android:layout_marginStart="180dp">
+
+            <TextView
+                android:id="@+id/forward_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="10dp"
+                android:text="+10"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:visibility="invisible" />
+
+            <ImageView
+                android:id="@+id/forward_arrow"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="30dp"
+                android:rotation="180"
+                android:src="@drawable/arrow_back_ios_black"
+                android:visibility="invisible"
+                app:tint="@color/white" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

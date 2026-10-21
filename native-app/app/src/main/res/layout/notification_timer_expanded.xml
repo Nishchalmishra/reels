@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootContainerExpanded"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/app_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:text="@string/app_name"
+        android:textSize="11sp"
+        android:textStyle="bold"
+        android:textColor="@color/notification_card_title"
+        android:layout_marginBottom="2dp"
+        android:layout_marginTop="5dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:baselineAligned="false"
+        android:orientation="horizontal"
+        android:gravity="start"
+        android:layout_weight="0"
+        android:minHeight="80dp">
+
+        <FrameLayout
+            android:id="@+id/thumbnailContainerLeft"
+            android:layout_width="130dp"
+            android:layout_height="73dp"
+            android:layout_marginEnd="10dp"
+            android:visibility="gone"
+            android:background="@drawable/bg_timer_thumbnail_rounded"
+            android:clipToOutline="true">
+
+            <ImageView
+                android:id="@+id/imgTimerThumbnailLeft"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:contentDescription="@null" />
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_gravity="top">
+
+            <!-- MiniTitle (optional) -->
+            <TextView
+                android:id="@+id/txtTimerExpandedMiniTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+                android:visibility="gone"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:textColor="@color/notification_card_title"
+                android:layout_marginBottom="2dp"
+                tools:ignore="SmallSp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <LinearLayout
+                    android:id="@+id/layoutLiveBadge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:background="@drawable/bg_live_badge"
+                    android:paddingStart="6dp"
+                    android:paddingEnd="6dp"
+                    android:paddingTop="1dp"
+                    android:paddingBottom="1dp"
+                    android:layout_marginEnd="6dp">
+
+                    <ImageView
+                        android:layout_width="7dp"
+                        android:layout_height="7dp"
+                        android:src="@drawable/ic_live_dot_white"
+                        android:layout_marginEnd="5dp"
+                        android:contentDescription="@null" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/live"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold"
+                        android:textSize="11sp" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/txtTimerExpandedTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/app_name"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    android:textStyle="bold"
+                    android:textColor="@color/notification_card_title"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+            <!-- Body -->
+            <TextView
+                android:id="@+id/txtTimerExpandedBody"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:ellipsize="end"
+                android:maxLines="8"
+                android:textSize="13sp"
+                android:textColor="@color/notification_card_sub_title"
+                android:layout_marginTop="6dp"
+                android:visibility="visible" />
+
+            <LinearLayout
+                android:id="@+id/timerLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical|start"
+                android:layout_marginTop="10dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/liveText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/live_in"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/notification_card_sub_title"
+                    android:layout_marginEnd="6dp" />
+
+                <Chronometer
+                    android:id="@+id/chronometer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_timer_badge"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="5dp"
+                    android:paddingTop="2dp"
+                    android:paddingBottom="2dp"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/txtTimerExpired"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/_00_00"
+                    android:background="@drawable/bg_timer_badge"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="5dp"
+                    android:paddingTop="2dp"
+                    android:paddingBottom="2dp"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/thumbnailContainerRight"
+            android:layout_width="130dp"
+            android:layout_height="73dp"
+            android:layout_marginStart="10dp"
+            android:visibility="gone"
+            android:background="@drawable/bg_timer_thumbnail_rounded"
+            android:clipToOutline="true">
+
+            <ImageView
+                android:id="@+id/imgTimerThumbnailRight"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:contentDescription="@null" />
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <!-- Thumbnail Bottom (match_parent width × 180dp height for 16:9 ratio) -->
+    <FrameLayout
+        android:id="@+id/thumbnailContainerBottom"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:visibility="gone"
+        android:layout_weight="0"
+        android:background="@drawable/bg_timer_thumbnail_rounded"
+        android:layout_marginTop="5dp"
+        android:clipToOutline="true">
+
+        <ImageView
+            android:id="@+id/imgTimerThumbnailBottom"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:contentDescription="@null" />
+
+    </FrameLayout>
+
+ <!--//cta-->
+    <LinearLayout
+        android:id="@+id/ctaButtonsContainer"
+        style="?android:attr/buttonBarStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="5dp"
+        android:gravity="center_horizontal"
+        android:spacing="4dp">
+
+        <Button
+            android:id="@+id/ctaButton1"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="38dp"
+            android:layout_weight="1"
+            android:paddingStart="14dp"
+            android:paddingEnd="14dp"
+            android:text="@string/action_btn"
+            android:textSize="12sp"
+            android:textColor="@color/notification_card_title"
+            android:background="@android:color/transparent"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/ctaButton2"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="38dp"
+            android:layout_weight="1"
+            android:paddingStart="14dp"
+            android:paddingEnd="14dp"
+            android:text="@string/action_btn"
+            android:textSize="12sp"
+            android:textColor="@color/notification_card_title"
+            android:background="@android:color/transparent"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/ctaButton3"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="38dp"
+            android:layout_weight="1"
+            android:paddingStart="14dp"
+            android:paddingEnd="14dp"
+            android:text="@string/action_btn"
+            android:textSize="12sp"
+            android:textColor="@color/notification_card_title"
+            android:background="@android:color/transparent"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+</LinearLayout>

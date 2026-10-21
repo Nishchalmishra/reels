@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<!--  7-inch tablets  -->
+
+    <dimen name="text_sp_09">10sp</dimen> <!-- 9 * 1.15 = 10.35 -> 10 -->
+    <dimen name="text_sp_10">12sp</dimen> <!-- 10 * 1.15 = 11.5 -> 12 -->
+    <dimen name="text_sp_11">13sp</dimen> <!-- 11 * 1.15 = 12.65 -> 13 -->
+    <dimen name="text_sp_12">14sp</dimen> <!-- 12 * 1.15 = 13.8 -> 14 -->
+    <dimen name="text_sp_13">15sp</dimen> <!-- 13 * 1.15 = 14.95 -> 15 -->
+    <dimen name="text_sp_14">16sp</dimen> <!-- 14 * 1.15 = 16.1 -> 16 -->
+    <dimen name="text_sp_15">17sp</dimen> <!-- 15 * 1.15 = 17.25 -> 17 -->
+    <dimen name="text_sp_16">18sp</dimen> <!-- 16 * 1.15 = 18.4 -> 18 -->
+    <dimen name="text_sp_17">20sp</dimen> <!-- 17 * 1.15 = 19.55 -> 20 -->
+    <dimen name="text_sp_18">21sp</dimen> <!-- 18 * 1.15 = 20.7 -> 21 -->
+    <dimen name="text_sp_19">22sp</dimen> <!-- 19 * 1.15 = 21.85 -> 22 -->
+    <dimen name="text_sp_20">23sp</dimen> <!-- 20 * 1.15 = 23 -> 23 -->
+    <dimen name="text_sp_21">24sp</dimen> <!-- 21 * 1.15 = 24.15 -> 24 -->
+    <dimen name="text_sp_22">25sp</dimen> <!-- 22 * 1.15 = 25.3 -> 25 -->
+    <dimen name="text_sp_23">26sp</dimen> <!-- 23 * 1.15 = 26.45 -> 26 -->
+    <dimen name="text_sp_24">28sp</dimen> <!-- 24 * 1.15 = 27.6 -> 28 -->
+    <dimen name="text_sp_25">29sp</dimen> <!-- 25 * 1.15 = 28.75 -> 29 -->
+    <dimen name="text_sp_26">30sp</dimen> <!-- 26 * 1.15 = 29.9 -> 30 -->
+    <dimen name="text_sp_27">31sp</dimen> <!-- 27 * 1.15 = 31.05 -> 31 -->
+    <dimen name="text_sp_28">32sp</dimen> <!-- 28 * 1.15 = 32.2 -> 32 -->
+    <dimen name="text_sp_29">33sp</dimen> <!-- 29 * 1.15 = 33.35 -> 33 -->
+    <dimen name="text_sp_30">35sp</dimen> <!-- 30 * 1.15 = 34.5 -> 35 -->
+    <dimen name="text_sp_31">36sp</dimen> <!-- 31 * 1.15 = 35.65 -> 36 -->
+    <dimen name="text_sp_32">37sp</dimen> <!-- 32 * 1.15 = 36.8 -> 37 -->
+    <dimen name="text_sp_33">38sp</dimen> <!-- 33 * 1.15 = 37.95 -> 38 -->
+    <dimen name="text_sp_34">40sp</dimen> <!-- 34 * 1.15 = 39.1 -> 40 -->
+    <dimen name="text_sp_35">42sp</dimen> <!-- 35 * 1.15 = 40.25 -> 42 -->
+    <dimen name="text_sp_36">44sp</dimen> <!-- 36 * 1.15 = 41.4 -> 44 -->
+    <dimen name="text_sp_37">46sp</dimen> <!-- 37 * 1.15 = 42.55 -> 46 -->
+    <dimen name="text_sp_38">48sp</dimen> <!-- 38 * 1.15 = 43.7 -> 48 -->
+    <dimen name="text_sp_39">50sp</dimen> <!-- 39 * 1.15 = 44.85 -> 50 -->
+    <dimen name="text_sp_40">52sp</dimen> <!-- 40 * 1.15 = 46 -> 52 -->
+
+
+</resources>

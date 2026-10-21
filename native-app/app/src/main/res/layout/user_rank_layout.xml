@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/otherCard"
+        android:layout_width="match_parent"
+        app:cardBackgroundColor="#F5DFFB"
+        app:cardCornerRadius="25dp"
+        android:layout_margin="8dp"
+        app:cardElevation="0dp"
+        android:layout_height="wrap_content">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/rank"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:fontFamily="@font/poppins_light"
+                android:text="4"
+                android:textColor="@color/black"
+                android:textSize="@dimen/primary_text_size"
+                android:textStyle="bold" />
+
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/celebrationImage"
+                android:layout_width="70dp"
+                android:layout_height="50dp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:lottie_rawRes="@raw/profile_avatar"
+                app:lottie_loop="true"
+                android:scaleType="fitXY"
+                app:lottie_repeatCount="10"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_toRightOf="@id/rank"
+                app:lottie_autoPlay="true"/>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/image"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:visibility="gone"
+                android:layout_toRightOf="@id/rank"
+                android:src="@drawable/avatar" />
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_toLeftOf="@+id/points"
+                android:layout_toRightOf="@id/celebrationImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_toLeftOf="@+id/points"
+                    android:fontFamily="@font/poppins_light"
+                    android:text="Raj Kishan"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/timeTaken"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="25dp"
+                    android:visibility="gone"
+                    android:layout_marginRight="10dp"
+                    android:layout_toLeftOf="@+id/points"
+                    android:layout_toRightOf="@id/image"
+                    android:fontFamily="@font/poppins_light"
+                    android:text="Time"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+
+
+
+
+            <TextView
+                android:id="@+id/points"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="25dp"
+                android:text="254.62"
+                android:fontFamily="@font/poppins_light"
+                android:textColor="@color/arivihan_primary_color"
+                android:textSize="@dimen/primary_text_size"
+                android:textStyle="bold" />
+
+
+
+        </RelativeLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/myCard"
+        android:layout_width="match_parent"
+        app:cardBackgroundColor="@color/lightGreen"
+        app:cardCornerRadius="25dp"
+        android:layout_margin="8dp"
+        app:strokeWidth="1dp"
+        android:visibility="gone"
+        app:strokeColor="@color/colorPrimaryDark"
+        app:cardElevation="0dp"
+        android:layout_height="wrap_content">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="2dp">
+
+            <TextView
+                android:id="@+id/Myrank"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:fontFamily="@font/poppins_light"
+                android:text="4"
+                android:textColor="@color/black"
+                android:textSize="@dimen/LargeTitleSize"
+                android:textStyle="bold" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/Myimage"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_toRightOf="@id/Myrank"
+                android:src="@drawable/avatar" />
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="10dp"
+                android:layout_toLeftOf="@+id/Mypoints"
+                android:layout_toRightOf="@id/Myimage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/Myname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_toLeftOf="@+id/points"
+                    android:layout_toRightOf="@id/image"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:fontFamily="@font/poppins_light"
+                    android:text="Raj Kishan"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/MytimeTaken"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginRight="10dp"
+                    android:visibility="gone"
+                    android:layout_toLeftOf="@+id/Mypoints"
+                    android:layout_toRightOf="@id/Myimage"
+                    android:fontFamily="@font/poppins_light"
+                    android:text="Time"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+
+
+
+
+            <TextView
+                android:id="@+id/Mypoints"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="25dp"
+                android:text="254.62"
+                android:fontFamily="@font/poppins_light"
+                android:textColor="@color/arivihan_primary_color"
+                android:textSize="@dimen/primary_text_size"
+                android:textStyle="bold" />
+
+
+
+        </RelativeLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+</RelativeLayout>

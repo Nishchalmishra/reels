@@ -1,0 +1,930 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:scrollbars="none"
+        tools:context=".activity.MockTestAnalysisActivity">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+                android:layout_marginVertical="10dp"
+                android:layout_marginEnd="20dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/back_arrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="17dp">
+
+                    <ImageView
+                        android:layout_width="13dp"
+                        android:layout_height="15dp"
+                        android:layout_marginTop="1dp"
+                        android:src="@drawable/arrow_icon" />
+                </LinearLayout>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/urbanist_semi_bold"
+                    android:maxLines="1"
+                    android:text="@string/performance_analysis"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/toolbar_title_size" />
+            </LinearLayout>
+
+
+            <com.facebook.shimmer.ShimmerFrameLayout
+                android:id="@+id/analysis_loading_shimmer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="20dp"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="190dp"
+                        app:cardBackgroundColor="#E7E7E7"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="0dp"
+                        app:contentPadding="20dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="240dp"
+                                android:layout_height="50dp"
+                                app:cardBackgroundColor="@color/white"
+                                app:cardCornerRadius="8dp"
+                                app:cardElevation="0dp" />
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:orientation="horizontal">
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="70dp"
+                                    android:layout_height="48dp"
+                                    app:cardBackgroundColor="@color/off_white"
+                                    app:cardCornerRadius="8dp"
+                                    app:cardElevation="0dp" />
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="70dp"
+                                    android:layout_height="48dp"
+                                    android:layout_marginLeft="10dp"
+                                    app:cardBackgroundColor="@color/off_white"
+                                    app:cardCornerRadius="8dp"
+                                    app:cardElevation="0dp" />
+
+                            </LinearLayout>
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="180dp"
+                                android:layout_height="32dp"
+                                android:layout_marginTop="10dp"
+                                app:cardBackgroundColor="@color/white"
+                                app:cardCornerRadius="8dp"
+                                app:cardElevation="0dp" />
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="20dp"
+                        android:orientation="vertical"
+                        android:visibility="visible">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginBottom="15dp"
+                            android:fontFamily="@font/nunito_bold"
+                            android:textColor="@color/mock_darker_grey"
+                            android:textSize="18sp" />
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:cardBackgroundColor="#E7E7E7"
+                            app:cardCornerRadius="10dp"
+                            app:cardElevation="0dp"
+                            app:contentPadding="20dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <androidx.cardview.widget.CardView
+                                        android:layout_width="80dp"
+                                        android:layout_height="30dp"
+                                        app:cardBackgroundColor="@color/white"
+                                        app:cardCornerRadius="8dp" />
+
+                                    <androidx.cardview.widget.CardView
+                                        android:layout_width="80dp"
+                                        android:layout_height="30dp"
+                                        android:layout_marginLeft="10dp"
+                                        app:cardBackgroundColor="@color/white"
+                                        app:cardCornerRadius="8dp" />
+
+                                    <androidx.cardview.widget.CardView
+                                        android:layout_width="80dp"
+                                        android:layout_height="30dp"
+                                        android:layout_marginLeft="10dp"
+                                        app:cardBackgroundColor="@color/white"
+                                        app:cardCornerRadius="8dp" />
+
+                                </LinearLayout>
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="64dp"
+                                    android:layout_marginTop="20dp"
+                                    app:cardBackgroundColor="@color/white"
+                                    app:cardCornerRadius="16dp"
+                                    app:cardElevation="0dp" />
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="64dp"
+                                    android:layout_marginTop="12dp"
+                                    app:cardBackgroundColor="@color/white"
+                                    app:cardCornerRadius="16dp"
+                                    app:cardElevation="0dp" />
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="64dp"
+                                    android:layout_marginTop="12dp"
+                                    app:cardBackgroundColor="@color/white"
+                                    app:cardCornerRadius="16dp"
+                                    app:cardElevation="0dp" />
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="64dp"
+                                    android:layout_marginTop="12dp"
+                                    app:cardBackgroundColor="@color/white"
+                                    app:cardCornerRadius="16dp"
+                                    app:cardElevation="0dp" />
+
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+            </com.facebook.shimmer.ShimmerFrameLayout>
+
+            <TextView
+                android:id="@+id/mock_test_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/nunito_bold"
+                android:text="Mock Test 1"
+                android:textColor="#9905040E"
+                android:textSize="16sp" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/mock_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:visibility="visible">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/card_bg"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/mock_character"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintRight_toRightOf="parent" />
+
+                <TextView
+                    android:id="@+id/message"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="120dp"
+                    android:fontFamily="@font/nunito_regular"
+                    android:textColor="@color/white"
+                    android:textSize="11sp"
+                    android:textStyle="italic"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/your_score"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/nunito_regular"
+                    android:text="@string/your_score"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/message" />
+
+                <TextView
+                    android:id="@+id/user_score_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="2dp"
+                    android:fontFamily="@font/nunito_bold"
+                    android:text="-"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/your_score" />
+
+                <TextView
+                    android:id="@+id/cut_off"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="73dp"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/nunito_regular"
+                    android:text="@string/rank"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    app:layout_constraintLeft_toRightOf="@id/your_score"
+                    app:layout_constraintTop_toBottomOf="@id/message" />
+
+                <TextView
+                    android:id="@+id/cut_off_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="5dp"
+                    android:fontFamily="@font/nunito_bold"
+                    android:text="-"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    app:layout_constraintLeft_toRightOf="@id/user_score_value"
+                    app:layout_constraintStart_toStartOf="@id/cut_off"
+                    app:layout_constraintTop_toBottomOf="@id/cut_off" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/view_solution_card"
+                    android:layout_width="150dp"
+                    android:layout_height="30dp"
+                    android:layout_marginVertical="10dp"
+                    android:layout_marginStart="15dp"
+                    android:background="@color/white"
+                    android:theme="@style/Theme.MaterialComponents.Light"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="10dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/user_score_value">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="150dp"
+                        android:layout_height="match_parent">
+
+                        <com.airbnb.lottie.LottieAnimationView
+                            android:layout_width="150dp"
+                            android:layout_height="match_parent"
+                            android:scaleX="5"
+                            android:scaleY="5"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:lottie_autoPlay="true"
+                            app:lottie_loop="true"
+                            app:lottie_rawRes="@raw/view_solution_background" />
+
+                        <com.airbnb.lottie.LottieAnimationView
+                            android:layout_width="320dp"
+                            android:layout_height="30dp"
+                            android:layout_marginTop="4dp"
+                            android:scaleX="4"
+                            android:scaleY="4"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:lottie_autoPlay="true"
+                            app:lottie_loop="true"
+                            app:lottie_rawRes="@raw/view_solution" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginEnd="25dp"
+                            android:fontFamily="@font/nunito_bold"
+                            android:text="@string/View_Solutions"
+                            android:textColor="@color/mock_primary_color"
+                            android:textSize="13sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                </com.google.android.material.card.MaterialCardView>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:id="@+id/summary_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.facebook.shimmer.ShimmerFrameLayout
+                    android:id="@+id/shimmer_layout_analysis"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingHorizontal="10dp"
+                    android:paddingTop="20dp"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <include layout="@layout/onboarding_shimmer_layout" />
+                    </LinearLayout>
+
+                </com.facebook.shimmer.ShimmerFrameLayout>
+
+                <LinearLayout
+                    android:id="@+id/sectional_summary_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginVertical="20dp"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginBottom="15dp"
+                        android:fontFamily="@font/nunito_bold"
+                        android:text="@string/Sectional_Summary"
+                        android:textColor="@color/mock_darker_grey"
+                        android:textSize="18sp" />
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:theme="@style/Theme.MaterialComponents.Light"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="10dp"
+                        app:cardUseCompatPadding="true">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/section_subject_tag_rv"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="10dp"
+                                android:layout_marginTop="20dp"
+                                android:layout_marginBottom="10dp"
+                                android:orientation="horizontal"
+                                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                                tools:itemCount="4"
+                                tools:listitem="@layout/mock_analysis_tab_view_item" />
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/section_subject_card_rv"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:nestedScrollingEnabled="false"
+                                android:paddingHorizontal="15dp"
+                                tools:itemCount="4"
+                                tools:listitem="@layout/mock_subject_progress_card_item" />
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/average_speed_card"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="15dp"
+                                android:layout_marginVertical="10dp"
+                                android:theme="@style/Theme.MaterialComponents.Light"
+                                android:visibility="gone"
+                                app:cardCornerRadius="15dp"
+                                app:cardElevation="0dp">
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@color/mock_lightest_grey">
+
+                                    <LinearLayout
+                                        android:id="@+id/color_tag"
+                                        android:layout_width="9dp"
+                                        android:layout_height="0dp"
+                                        android:background="@color/mock_red"
+                                        android:orientation="horizontal"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintLeft_toLeftOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+                                    <TextView
+                                        android:id="@+id/average_speed_title"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginHorizontal="15dp"
+                                        android:layout_marginVertical="15dp"
+                                        android:ellipsize="end"
+                                        android:fontFamily="@font/nunito_bold"
+                                        android:maxLines="2"
+                                        android:scrollHorizontally="false"
+                                        android:text="@string/Average_speed_per_question"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/tertiary_text_size"
+                                        app:layout_constraintLeft_toRightOf="@id/color_tag"
+                                        app:layout_constraintRight_toRightOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                                    <androidx.recyclerview.widget.RecyclerView
+                                        android:id="@+id/section_average_speed_rv"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="8dp"
+                                        android:layout_marginTop="10dp"
+                                        android:layout_marginBottom="10dp"
+                                        android:orientation="horizontal"
+                                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintLeft_toRightOf="@id/color_tag"
+                                        app:layout_constraintRight_toRightOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@id/average_speed_title"
+                                        tools:itemCount="3"
+                                        tools:listitem="@layout/mock_average_speed_item" />
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <LinearLayout
+                                android:id="@+id/divider"
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginHorizontal="18dp"
+                                android:layout_marginVertical="15dp"
+                                android:background="@color/mock_card_boundary"
+                                android:orientation="horizontal"
+                                android:visibility="visible" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginTop="10dp"
+                                android:fontFamily="@font/nunito_bold"
+                                android:text="@string/attempt_analysis"
+                                android:textColor="@color/mock_dark_grey"
+                                android:textSize="18sp"
+                                app:layout_constraintLeft_toRightOf="@id/color_tag"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:id="@+id/your_score_text"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/nunito_regular"
+                                    android:text="@string/your_score"
+                                    android:textColor="@color/mock_darker_grey"
+                                    android:textSize="@dimen/tertiary_text_size"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintLeft_toLeftOf="parent"
+                                    app:layout_constraintRight_toRightOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/score_value_text"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/nunito_bold"
+                                    android:text="100/360"
+                                    android:textColor="@color/black"
+                                    android:textSize="16sp"
+                                    app:layout_constraintLeft_toLeftOf="parent"
+                                    app:layout_constraintRight_toRightOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@id/your_score_text" />
+
+                                <com.mancj.slimchart.SlimChart
+                                    android:id="@+id/slimChart"
+                                    android:layout_width="140dp"
+                                    android:layout_height="140dp"
+                                    android:layout_marginTop="20dp"
+                                    android:paddingVertical="10dp"
+                                    android:rotation="90"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintLeft_toLeftOf="parent"
+                                    app:layout_constraintRight_toRightOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:roundedEdges="true"
+                                    app:strokeWidth="10dp" />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <HorizontalScrollView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fillViewport="true"
+                                android:scrollbars="none">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginVertical="20dp"
+                                    android:gravity="center"
+                                    android:orientation="horizontal">
+
+                                    <include
+                                        android:id="@+id/correct_attempt"
+                                        layout="@layout/mock_attempt_analysis_item"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content" />
+
+                                    <include
+                                        android:id="@+id/incorrect_attempt"
+                                        layout="@layout/mock_attempt_analysis_item"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginHorizontal="20dp" />
+
+                                    <include
+                                        android:id="@+id/not_attempt"
+                                        layout="@layout/mock_attempt_analysis_item"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content" />
+                                </LinearLayout>
+                            </HorizontalScrollView>
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/chapter_wise_summary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="15dp"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:fontFamily="@font/nunito_bold"
+                        android:text="@string/Chapter_wise_summary"
+                        android:textColor="@color/mock_darker_grey"
+                        android:textSize="18sp" />
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="15dp"
+                        android:theme="@style/Theme.MaterialComponents.Light"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="10dp"
+                        app:cardUseCompatPadding="true">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/chapter_summary_tabs_rv"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="10dp"
+                                android:layout_marginTop="20dp"
+                                android:orientation="horizontal"
+                                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                                tools:itemCount="4"
+                                tools:listitem="@layout/mock_analysis_tab_view_item" />
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/chapter_summary_rv"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="15dp"
+                                android:layout_marginBottom="20dp"
+                                tools:itemCount="2"
+                                tools:listitem="@layout/mock_analysis_summary_item" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/topic_wise_summary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="15dp"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:fontFamily="@font/nunito_bold"
+                        android:text="@string/Topic_wise_summary"
+                        android:textColor="@color/mock_darker_grey"
+                        android:textSize="18sp" />
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="15dp"
+                        android:theme="@style/Theme.MaterialComponents.Light"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="10dp"
+                        app:cardUseCompatPadding="true">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/topic_summary_tabs_rv"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="10dp"
+                                android:layout_marginTop="20dp"
+                                android:orientation="horizontal"
+                                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                                tools:itemCount="4"
+                                tools:listitem="@layout/mock_analysis_tab_view_item" />
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/topic_summary_rv"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="15dp"
+                                android:layout_marginBottom="20dp"
+                                tools:itemCount="2"
+                                tools:listitem="@layout/mock_analysis_summary_item" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/score_comparison"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="20dp"
+                        android:layout_marginVertical="20dp"
+                        android:fontFamily="@font/nunito_bold"
+                        android:text="@string/Score_Comparison"
+                        android:textColor="@color/mock_darker_grey"
+                        android:textSize="18sp" />
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:theme="@style/Theme.MaterialComponents.Light"
+                        app:cardCornerRadius="10dp"
+                        app:cardUseCompatPadding="true">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/score_comparison_tabs"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="10dp"
+                                android:layout_marginVertical="20dp"
+                                android:orientation="horizontal"
+                                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                                tools:itemCount="4"
+                                tools:listitem="@layout/mock_analysis_tab_view_item" />
+
+                            <include
+                                android:id="@+id/score_comparison_graph_view"
+                                layout="@layout/mock_graph_background"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginVertical="20dp" />
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/how_to_poster"
+                android:layout_width="match_parent"
+                android:layout_height="156dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="15dp"
+                android:scaleType="fitXY"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/talk_to_us_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="15dp"
+                    android:fontFamily="@font/urbanist_semi_bold"
+                    android:text="@string/talk_to_our_experts"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="10dp"
+                    android:theme="@style/Theme.MaterialComponents.Light"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="15dp"
+                    app:cardElevation="2dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="135dp"
+                            android:layout_height="match_parent"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/laptop_guy" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="vertical"
+                            android:paddingHorizontal="20dp"
+                            android:paddingVertical="15dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/urbanist_semi_bold"
+                                android:text="@string/have_questions"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/tertiary_text_size" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:fontFamily="@font/urbanist_medium"
+                                android:text="@string/our_experts_can_answer_your_questions"
+                                android:textColor="@color/subscription_questions"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginVertical="7dp"
+                                android:fontFamily="@font/urbanist_regular"
+                                android:text="@string/how_to_improve_my_marks"
+                                android:textColor="@color/subscription_questions"
+                                android:textSize="11sp"
+                                android:textStyle="italic" />
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:theme="@style/Theme.MaterialComponents.Light"
+                                app:cardCornerRadius="8dp"
+                                app:cardElevation="0dp">
+
+                                <TextView
+                                    android:id="@+id/talk_to_us"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="@color/mock_primary_color"
+                                    android:fontFamily="@font/urbanist_semi_bold"
+                                    android:paddingHorizontal="20dp"
+                                    android:paddingVertical="8dp"
+                                    android:text="@string/talk_to_us"
+                                    android:textColor="@color/white"
+                                    android:textSize="12sp" />
+                            </com.google.android.material.card.MaterialCardView>
+                        </LinearLayout>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <include
+        android:id="@+id/how_to_video_view"
+        layout="@layout/activity_mock_demo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

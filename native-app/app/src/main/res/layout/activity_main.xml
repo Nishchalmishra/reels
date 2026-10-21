@@ -1,0 +1,673 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/off_white_background"
+    app:cardUseCompatPadding="true"
+    tools:context=".activity.MainActivity">
+
+    <include
+        android:id="@+id/include2"
+        layout="@layout/back_ground_image_dark" />
+
+
+
+
+    <LinearLayout
+        android:id="@+id/linearLayoutRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?android:actionBarSize"
+        android:orientation="vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="60dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <include
+                    layout="@layout/main_activity_quick_tab"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginBottom="2dp" />
+
+
+                <TextView
+                    style="@style/blackBoldText"
+                    android:id="@+id/physicsTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="2dp"
+                    android:fontFamily="@font/opensans_bold"
+                    android:text="@string/physics_pseudolive" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewPhysics"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusableInTouchMode="true"
+                    android:focusable="true"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginBottom="2dp" />
+
+                <TextView
+                    style="@style/blackBoldText"
+                    android:id="@+id/mathsTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="2dp"
+                    android:fontFamily="@font/opensans_bold"
+                    android:text="@string/maths_pseudolive" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewMaths"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginBottom="5dp" />
+
+                <TextView
+                    style="@style/blackBoldText"
+                    android:id="@+id/chemistryTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="2dp"
+                    android:fontFamily="@font/opensans_bold"
+                    android:text="@string/chemistry_pseudolive" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewChemistry"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginBottom="5dp" />
+
+
+                <TextView
+                    style="@style/blackBoldText"
+                    android:id="@+id/serverErrorTextView"
+                    android:textAlignment="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="2dp"
+                    android:visibility="gone"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="2dp"
+                    android:fontFamily="@font/opensans_bold"
+                    android:text="@string/server_error_reels" />
+
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/lottie_internet"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_width="300dp"
+                    android:layout_height="300dp"
+                    android:layout_centerInParent="true"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:lottie_autoPlay="true"
+                    app:lottie_loop="true"
+                    app:lottie_rawRes="@raw/no_content" />
+
+
+
+                <TextView
+                    android:id="@+id/moreVideoLecturesTextView"
+                    style="@style/blackBoldText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="2dp"
+                    android:fontFamily="@font/opensans_bold"
+                    android:text="@string/more_video_lectures" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginBottom="5dp"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:context=".activity.MainActivity"
+                    tools:showIn="@layout/activity_main">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerVideo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </RelativeLayout>
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+    <!-- To preview video recorded -->
+    <VideoView
+        android:id="@+id/videoPreview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:visibility="gone" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="70dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent">
+
+        <Button
+            android:id="@+id/button_ask_doubt"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/popup_shape3"
+            android:elevation="20dp"
+            android:fontFamily="@font/opensans_regular"
+            android:text="Ask Your Doubt Here..."
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="#fff"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:visibility="gone" />
+
+
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/relativeLayoutReferralCrossed"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:foregroundGravity="center"
+        android:gravity="center"
+        android:visibility="gone">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="50dp">
+
+            <LinearLayout
+                android:id="@+id/linearLayoutReferralCrossed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:background="@drawable/container_border"
+                android:elevation="4dp"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/referral_crossed_title"
+                    style="@style/whiteBolText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/theme_gradient_color"
+                    android:paddingLeft="0dp"
+                    android:paddingTop="0dp"
+                    android:paddingEnd="0dp"
+                    android:paddingBottom="0dp"
+                    android:text="@string/thanks_a_lot"
+                    android:textSize="16sp" />
+
+
+                <TextView
+                    android:id="@+id/referral_crossed_text"
+                    style="@style/blackBoldText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="10dp"
+                    android:text="@string/congrats"
+                    android:textAlignment="center"
+                    android:textColor="@color/dark_grey"
+                    android:textIsSelectable="true" />
+
+                <ImageView
+                    android:id="@+id/referral_crossed_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:adjustViewBounds="true"
+                    android:visibility="gone"
+                    app:srcCompat="@drawable/free_sample_by_wix" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/button_give_free_doubts"
+                        style="@style/tertiaryText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginRight="20dp"
+                        android:background="@drawable/button_border"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="15dp"
+                        android:text="@string/free_doubts" />
+
+                    <Button
+                        android:id="@+id/button_give_money"
+                        style="@style/tertiaryText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginLeft="20dp"
+                        android:background="@drawable/button_border"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="15dp"
+                        android:text="\u20B9 51" />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/relativeLayoutEnterToDo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/container_border"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/enter_to_do"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:hint="@string/enter_task"
+                android:maxLength="100" />
+
+            <Button
+                android:id="@+id/button_enter_to_do"
+                style="@style/tertiaryText"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/button_border"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:text="@string/submit" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/relativeLayoutClearToDo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/container_border"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/clear_to_do"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="10dp"
+                android:text="Are you sure.. All task will be deleted !!"
+                android:textAlignment="center"
+                android:textColor="#008080"
+                android:textStyle="bold" />
+
+
+            <Button
+                android:id="@+id/button_clear"
+                style="@style/tertiaryText"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/button_border"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:text="@string/submit" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/relativeLayoutEnterToDoConfirm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/container_border"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="10dp"
+                android:text="@string/are_you_sure"
+                android:textAlignment="center"
+                android:textColor="#008080"
+                android:textStyle="bold" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/button_enter_to_do_confirm"
+                    style="@style/tertiaryText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginRight="20dp"
+                    android:background="@drawable/button_border"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:text="Finish Task" />
+
+                <Button
+                    android:id="@+id/button_enter_to_do_go_back"
+                    style="@style/tertiaryText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginLeft="20dp"
+                    android:background="@drawable/button_border"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:text="@string/go_back" />
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayoutOpaque"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/relativeLayoutNewInfo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="50dp"
+        android:background="#B7000000"
+        android:foregroundGravity="center"
+        android:gravity="bottom"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/new_info_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="10dp"
+            app:cardCornerRadius="7dp">
+
+            <ImageView
+                android:id="@+id/new_info_image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:background="@drawable/button_border"/>
+        </androidx.cardview.widget.CardView>
+
+        <Button
+            android:id="@+id/new_info_got_it"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="-5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/infobutton"
+            android:fontFamily="baskerville"
+            android:gravity="center"
+            android:paddingBottom="4dp"
+            android:text="&#10006;"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="#fff"
+            android:textSize="14dp" />
+
+    </RelativeLayout>
+
+
+
+
+    <!-- <Button
+            app:itemBackground="@color/bgBottomNavigation"
+        android:id="@+id/submit_doubt_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="80dp"
+        android:text="Submit Your Doubt"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />-->
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/windowBackground"
+        android:foreground="?attr/selectableItemBackground"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:theme="@style/MyBottomNav"
+        app:itemIconSize="22sp"
+        app:itemIconTint="@color/arivihan_primary_color"
+        app:itemTextAppearanceActive="@style/BottomNavigationView.Active"
+        app:itemTextAppearanceInactive="@style/BottomNavigationView"
+        app:itemTextColor="@color/arivihan_primary_color"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:menu="@menu/navigation" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        style="@style/whiteBolText"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@drawable/theme_gradient_color"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayoutRecyclerView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:logo="@drawable/ic_doubtbuzter"
+        app:popupTheme="@style/Arivihan.Toolbar"
+        app:title="@string/arivihan"
+        app:titleTextAppearance="@style/TitleTextStyle" >
+        <ImageView
+            android:id="@+id/streak_icon"
+            android:layout_width="33dp"
+            android:elevation="5dp"
+            android:layout_height="33dp"
+            android:layout_gravity="end"
+            android:layout_marginEnd="20dp"/>
+        <ImageView
+            android:id="@+id/vernacular_icon"
+            android:layout_width="35dp"
+            android:elevation="5dp"
+            android:layout_height="35dp"
+            android:layout_gravity="end"
+            android:layout_marginEnd="20dp"
+            android:src="@drawable/vernacular_one_white" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <ScrollView
+        android:id="@+id/imgPreviewLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:foregroundGravity="center_vertical"
+        android:layout_marginTop="55dp"
+        android:visibility="gone"
+        android:layout_marginBottom="55dp"
+        android:background="#B7000000"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+
+            <ImageView
+                android:id="@+id/imgPreview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:visibility="gone"
+                />
+
+
+            <Button
+                android:id="@+id/submit_doubt_button"
+                style="@style/tertiaryText"
+                android:layout_width="200dp"
+                android:layout_marginTop="20dp"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/button_border"
+                android:text="@string/awesome_click"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

@@ -1,6 +1,71 @@
 import { defineConfig, loadEnv } from "vite";
 import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
+import { createReadStream, statSync, readFileSync } from "node:fs";
+import { resolve } from "node:path";
+import type { Connect } from "vite";
+// Only explicitly reviewed media IDs are served. No database credentials or arbitrary paths.
+function suppliedMedia() {
+  const manifest = JSON.parse(
+    readFileSync(resolve("reference-frames/discovery/manifest.json"), "utf8"),
+  ) as { id: string; file: string }[];
+  const files = new Map(manifest.map((r) => [r.id, resolve("videos", r.file)]));
+  const handler: Connect.NextHandleFunction = (req, res, next) => {
+    if (!req.url?.startsWith("/media/")) return next();
+    const file = files.get(req.url.split("?")[0].slice(7));
+    if (!file) {
+      res.statusCode = 404;
+      res.end("Unknown lesson");
+      return;
+    }
+    try {
+      const size = statSync(file).size;
+      let start = 0,
+        end = size - 1;
+      if (req.headers.range) {
+        const m = /^bytes=(\d+)-(\d*)$/.exec(req.headers.range);
+        if (!m) {
+          res.statusCode = 416;
+          res.end();
+          return;
+        }
+        start = Number(m[1]);
+        end = m[2] ? Math.min(Number(m[2]), end) : end;
+        if (start > end) {
+          res.statusCode = 416;
+          res.setHeader("Content-Range", `bytes */${size}`);
+          res.end();
+          return;
+        }
+        res.statusCode = 206;
+        res.setHeader("Content-Range", `bytes ${start}-${end}/${size}`);
+      }
+      res.setHeader("Content-Type", "video/mp4");
+      res.setHeader("Accept-Ranges", "bytes");
+      res.setHeader("Content-Length", end - start + 1);
+      if (req.method === "HEAD") {
+        res.end();
+        return;
+      }
+      const stream = createReadStream(file, { start, end });
+      stream.on("error", () => res.destroy());
+      res.on("close", () => stream.destroy());
+      stream.pipe(res);
+    } catch {
+      res.statusCode = 404;
+      res.end("Supplied lesson file unavailable");
+    }
+  };
+  return {
+    name: "supplied-lesson-media",
+    configureServer(s: { middlewares: Connect.Server }) {
+      s.middlewares.use(handler);
+    },
+    configurePreviewServer(s: { middlewares: Connect.Server }) {
+      s.middlewares.use(handler);
+    },
+  };
+}
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), "");
   if (
@@ -38,6 +103,10 @@ export default defineConfig(({ mode }) => {
           ".env.*",
           "*.{crt,pem}",
           "**/.git/**",
+          "**/.tools/**",
+          "**/native-app/**",
+          "**/*.hprof",
+          "**/hs_err_pid*.log",
           "**/supabase/**",
           "**/scripts/**",
           "**/*.test.*",
@@ -47,7 +116,7 @@ export default defineConfig(({ mode }) => {
         ],
       },
     },
-    plugins: [react(), tailwindcss()],
+    plugins: [react(), tailwindcss(), suppliedMedia()],
     build: { target: "es2022" },
     define: {
       "import.meta.env.VITE_SUPABASE_URL": JSON.stringify(url),

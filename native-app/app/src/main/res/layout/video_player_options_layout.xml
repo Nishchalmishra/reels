@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_centerInParent="true"
+    android:layout_marginHorizontal="70dp"
+    android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="0dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginVertical="25dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/alert_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/urbanist_bold"
+            android:text="@string/here_are_option"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/linearLayoutNewInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:id="@+id/confirmation_text1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/urbanist_medium"
+                    android:text="@string/option_selector_description"
+                    android:textColor="#99191919"
+                    android:textSize="14sp" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_weight="1"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="0dp"
+                        app:strokeColor="#BCBABA"
+                        app:strokeWidth="1dp">
+
+                        <TextView
+                            android:id="@+id/optionA"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginVertical="15dp"
+                            android:fontFamily="@font/urbanist_medium"
+                            android:gravity="center"
+                            android:text="@string/optionA"
+                            android:textAllCaps="false"
+                            android:textColor="#191919"
+                            android:textSize="14sp" />
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="30dp"
+                        android:layout_weight="1"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="0dp"
+                        app:strokeColor="#BCBABA"
+                        app:strokeWidth="1dp">
+
+                        <TextView
+                            android:id="@+id/optionB"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginVertical="15dp"
+                            android:fontFamily="@font/urbanist_medium"
+                            android:gravity="center"
+                            android:text="@string/optionB"
+                            android:textAllCaps="false"
+                            android:textColor="#191919"
+                            android:textSize="14sp" />
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_weight="1"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="0dp"
+                        app:strokeColor="#BCBABA"
+                        app:strokeWidth="1dp">
+
+                        <TextView
+                            android:id="@+id/optionC"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginVertical="15dp"
+                            android:fontFamily="@font/urbanist_medium"
+                            android:gravity="center"
+                            android:text="@string/optionC"
+                            android:textColor="#191919"
+                            android:textSize="14sp" />
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="30dp"
+                        android:layout_weight="1"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="0dp"
+                        app:strokeColor="#BCBABA"
+                        app:strokeWidth="1dp">
+
+                        <TextView
+                            android:id="@+id/optionD"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/urbanist_medium"
+                            android:text="@string/optionD"
+                            android:textColor="#191919"
+                            android:textSize="14sp"
+                            android:gravity="center"
+                            android:layout_marginVertical="15dp"/>
+                    </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

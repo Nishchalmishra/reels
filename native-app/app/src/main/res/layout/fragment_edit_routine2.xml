@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.EditRoutineFragment">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card5"
+        android:padding="10dp"
+        android:visibility="visible"
+        android:layout_height="match_parent"
+        android:theme="@style/Theme.MaterialComponents.Light"
+        android:layout_width="match_parent"
+        app:cardElevation="8dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                style="@style/CardTextInAboutUser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ArrangeChapter"
+                android:textColor="@color/black" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/toughness_recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="40dp"
+                android:background="@color/grey_100"
+                android:layout_marginTop="70dp"/>
+
+        </RelativeLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+</FrameLayout>

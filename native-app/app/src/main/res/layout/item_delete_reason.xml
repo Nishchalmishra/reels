@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+    <RadioButton
+        android:id="@+id/rbReason"
+        android:buttonTint="@color/radio_button_color"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/tvReason"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/urbanist_semi_bold"
+        android:layout_weight="1"
+        android:textSize="15sp"
+        android:textColor="#1A1D1F"/>
+
+</LinearLayout>

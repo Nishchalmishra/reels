@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:id="@+id/playback_speed_layout"
+    android:background="@color/fui_transparent"
+    android:layout_height="wrap_content">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/parent_card_view"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        app:strokeWidth="0dp"
+        app:cardElevation="0dp"
+        app:cardBackgroundColor="#1A26C6DA"
+        app:cardCornerRadius="8dp"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingHorizontal="12dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/text"
+                android:layout_marginEnd="25dp"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:textColor="@color/black"
+                android:text="HD 720p"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:fontFamily="@font/urbanist_semi_bold"/>
+
+            <ImageView
+                android:id="@+id/checkImageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_video_setting_unselected"
+                android:layout_weight="0" />
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+</LinearLayout>

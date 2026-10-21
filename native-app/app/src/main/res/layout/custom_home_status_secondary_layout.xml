@@ -1,0 +1,120 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/custom_home_status_main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/main_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginBottom="10dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="4dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:padding="10dp">
+
+            <Space
+                android:layout_width="50dp"
+                android:layout_height="47dp" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginHorizontal="20dp">
+
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/urbanist_semi_bold"
+                    android:text="Title"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:maxLines="1"
+                    android:ellipsize="end" />
+
+                <TextView
+                    android:id="@+id/tv_sub_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/urbanist_medium"
+                    android:text="Subtitle"
+                    android:textColor="#B3000000"
+                    android:textSize="11sp"
+                    android:layout_marginTop="2dp" />
+            </LinearLayout>
+
+            <!-- Button Card -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btn_card"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/subscription_blue"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="0dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:minWidth="80dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="8dp"
+                    android:paddingVertical="6dp"
+                    android:gravity="center_horizontal">
+
+                    <TextView
+                        android:id="@+id/btn_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:fontFamily="@font/urbanist_medium"
+                        android:text="@string/register"
+                        android:textColor="@color/white"
+                        android:textSize="11sp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <ImageView
+        android:id="@+id/img_home_status_view"
+        android:layout_width="70dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="5dp"
+        android:visibility="gone"
+        android:src="@drawable/img_pdf_teal"
+        android:layout_alignTop="@id/main_card"
+        android:layout_alignStart="@id/main_card"
+        android:translationY="-20dp"
+        android:elevation="8dp" />
+
+    <!-- Close Button -->
+    <!-- Close Button -->
+    <!-- Close Button -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/close"
+        android:layout_width="19dp"
+        android:layout_height="20dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="2dp"
+        android:layout_marginTop="7dp"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="12dp">
+
+        <ImageView
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_gravity="center"
+            android:layout_margin="8dp"
+            android:src="@drawable/close_dark_grey" />
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>

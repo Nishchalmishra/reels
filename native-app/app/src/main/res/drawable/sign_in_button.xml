@@ -1,0 +1,16 @@
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="?android:attr/colorControlHighlight">
+    <item>
+        <shape android:shape="rectangle">
+
+            <gradient
+                android:startColor="@color/arivihan_primary_color"
+                android:endColor="@color/arivihan_secondary_color"
+                android:angle="180"
+                android:gradientRadius="12"
+                />
+            <corners android:radius="30dp" />
+
+        </shape>
+    </item>
+</ripple>

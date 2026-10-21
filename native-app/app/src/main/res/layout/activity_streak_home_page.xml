@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@drawable/gamegradient"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ReelsActivity">
+
+<RelativeLayout
+    android:id="@+id/ParentRelativeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"/>
+
+
+   <androidx.recyclerview.widget.RecyclerView
+       android:id="@+id/recyclerview"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"/>
+
+   <com.github.ybq.android.spinkit.SpinKitView
+       android:id="@+id/progressbar"
+       style="@style/SpinKitView.FadingCircle"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_margin="25dp"
+       android:paddingTop="50dp"
+       app:SpinKit_Color="#19B0C1"
+       app:layout_constraintBottom_toBottomOf="@+id/ParentRelativeLayout"
+       app:layout_constraintTop_toTopOf="@+id/ParentRelativeLayout"
+       tools:layout_editor_absoluteX="25dp" />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

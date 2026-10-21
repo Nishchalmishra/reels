@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="16dp"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="8dp"
+    app:cardUseCompatPadding="true"
+    app:cardBackgroundColor="@android:color/white">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp"
+            android:gravity="center_horizontal">
+
+            <!-- Title -->
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/apna_naam_batayein"
+                android:textSize="24sp"
+                android:textColor="#1A1A1A"
+                android:layout_marginBottom="16dp"
+                android:gravity="center"
+                android:fontFamily="@font/urbanist_bold"/>
+
+            <!--  Illustration shrinks in landscape via maxHeight -->
+            <ImageView
+                android:id="@+id/ivIllustration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxWidth="200dp"
+                android:maxHeight="180dp"
+                android:adjustViewBounds="true"
+                android:src="@drawable/name_input_girl_illustration"
+                android:scaleType="fitCenter"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Input -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/name_card"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                app:cardCornerRadius="10dp"
+                app:strokeColor="#ebebeb"
+                app:strokeWidth="1dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="@android:color/white">
+
+                <EditText
+                    android:id="@+id/user_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    android:background="@android:color/transparent"
+                    android:hint="@string/enter_your_name"
+                    android:fontFamily="@font/urbanist_medium"
+                    android:inputType="textPersonName"
+                    android:maxLength="20"
+                    android:textColor="#333333"
+                    android:textSize="18sp"
+                    android:textColorHint="#66666680"/>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/name_error"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="8dp"
+                android:paddingHorizontal="4dp"
+                android:textSize="12sp"
+                android:textColor="@color/input_name_stroke_error"
+                android:fontFamily="@font/urbanist_medium"
+                android:visibility="invisible" />
+
+            <!-- Button -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/next_card"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="@color/arivihan_secondary_color">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/submit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="@string/Submit"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/LargeTitleSize"
+                        android:fontFamily="@font/urbanist_semi_bold"/>
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.cardview.widget.CardView>

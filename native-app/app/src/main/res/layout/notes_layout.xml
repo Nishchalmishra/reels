@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/type_card"
+    android:layout_width="match_parent"
+    android:layout_height="56dp"
+    android:layout_marginHorizontal="10dp"
+    android:layout_marginVertical="8dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="2dp">
+
+    <LinearLayout
+        android:id="@+id/detail_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingStart="2dp"
+        android:paddingEnd="2dp">
+
+        <LinearLayout
+            android:id="@+id/ll_name"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:paddingStart="16dp"
+            android:paddingEnd="2dp"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:fontFamily="@font/urbanist_medium"
+                android:maxLines="1"
+                android:text="Electric "
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/rl_download"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/iv_download"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center"
+                    android:contentDescription="@string/download"
+                    android:src="@drawable/download_light"
+                    app:tint="#AEAEAE" />
+
+                <TextView
+                    android:id="@+id/tv_pdf_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/iv_download"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/urbanist_semi_bold"
+                    android:text="PDF"
+                    android:textColor="#AEAEAE"
+                    android:textSize="12sp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_download_progress"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:visibility="gone">
+
+                <ProgressBar
+                    android:id="@+id/pb_progress"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/circle_progress_teal"
+                    android:indeterminate="false"
+                    android:progress="0"
+                    android:progressDrawable="@drawable/circle_progress_chapter"
+                    android:visibility="visible"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_progress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/nunito_bold"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:text="0%"
+                    android:textColor="#7B7B81"
+                    android:textSize="8sp" />
+
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/iv_status_lock"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/lock_image_red"
+                android:scaleType="centerInside"
+                android:layout_gravity="center"
+                android:padding="1dp"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/iv_status_download_completed"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/img_complete_green"
+                android:scaleType="centerInside"
+                android:layout_gravity="center"
+                android:padding="5dp"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

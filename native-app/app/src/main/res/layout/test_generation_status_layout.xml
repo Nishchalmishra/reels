@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/amp_transparent"
+    android:paddingHorizontal="6dp">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:cardCornerRadius="12dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginVertical="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:padding="10dp">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/animation"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:scaleX="2.5"
+                android:scaleY="2.5"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/no_results" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginHorizontal="20dp">
+
+                <TextView
+                    android:id="@+id/test_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/urbanist_semi_bold"
+                    android:text="JEE mains full syllabus ...."
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:maxLines="1"
+                    android:ellipsize="end"/>
+
+                <TextView
+                    android:id="@+id/result_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/urbanist_medium"
+                    android:text="@string/Apka_test_check_ho_rha_hai"
+                    android:textColor="#B3000000"
+                    android:textSize="11sp"
+                    android:layout_marginTop="2dp"/>
+            </LinearLayout>
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/chip_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:cardBackgroundColor="@color/teal_light"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="0dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingHorizontal="15dp"
+                        android:paddingVertical="6dp"
+                        android:gravity="center_horizontal">
+
+                        <TextView
+                            android:id="@+id/text1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/urbanist_medium"
+                            android:text="result in"
+                            android:textColor="@color/subscription_blue"
+                            android:textSize="11sp" />
+
+                        <TextView
+                            android:id="@+id/text2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/urbanist_bold"
+                            android:text="20 mins"
+                            android:textColor="@color/subscription_blue"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/chip_start"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    app:cardBackgroundColor="@color/subscription_blue"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="0dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingHorizontal="14dp"
+                        android:paddingVertical="9dp"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:id="@+id/text_start"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/urbanist_bold"
+                            android:text="@string/test_gen_start"
+                            android:textColor="@color/white"
+                            android:textSize="13sp" />
+
+                        <ImageView
+                            android:id="@+id/icon_arrow_start"
+                            android:layout_width="10dp"
+                            android:layout_height="10dp"
+                            android:layout_marginStart="4dp"
+                            android:src="@drawable/right_arrow" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </FrameLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:cardCornerRadius="11dp"
+        app:cardElevation="3dp">
+        <ImageView
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:src="@drawable/close_dark_grey"
+            android:layout_gravity="center"
+            android:layout_margin="8dp"/>
+    </androidx.cardview.widget.CardView>
+
+
+    <!-- Stub views for ViewHolder (invisible) -->
+    <ImageView
+        android:id="@+id/img_home_status_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/topper_notes"
+        android:visibility="gone"
+        tools:ignore="MissingConstraints" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

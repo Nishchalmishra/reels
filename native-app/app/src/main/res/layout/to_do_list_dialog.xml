@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    android:background="@color/white"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="600dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/doubt_title"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginBottom="5dp"
+        android:paddingStart="0dp"
+        android:paddingTop="0dp"
+        android:paddingEnd="0dp"
+        android:paddingBottom="0dp"
+        android:textAlignment="center"
+        app:cardBackgroundColor="@color/navy_blue"
+        app:cardCornerRadius="0dp"
+        app:cardElevation="5dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+         >
+
+            <TextView
+                android:id="@+id/text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/your_today_checklist"
+                android:textColor="@color/white"
+                android:textSize="@dimen/primary_text_size" />
+
+            <ImageButton
+                android:id="@+id/dialog_close_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+
+                android:layout_marginEnd="12dp"
+                android:background="@color/fui_transparent"
+                android:src="@drawable/ic_baseline_close_24"
+                />
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/toDoRecyclerItem"
+        tools:listitem="@layout/to_do_list_recycler_item"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"/>
+
+    <LinearLayout
+        android:id="@+id/futureDateLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+        
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/animation"
+            android:layout_width="170dp"
+            android:layout_height="150dp"
+            app:lottie_rawRes="@raw/to_do_empty"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Task_list_empty"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/urbanist_semi_bold"
+            android:layout_marginTop="30dp"/>
+
+        <TextView
+            android:id="@+id/start_date_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/date_se_shuru_ho_jayega"
+            android:textSize="16sp"
+            android:textColor="#888889"
+            android:fontFamily="@font/urbanist_semi_bold"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="15dp"/>
+
+
+    </LinearLayout>
+</androidx.appcompat.widget.LinearLayoutCompat>

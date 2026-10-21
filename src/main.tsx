@@ -51,6 +51,7 @@ import {
 } from "./services";
 import type { Snapshot, Attempt, Quote } from "./services/contracts";
 import "./styles.css";
+import { Discovery } from "./Discovery";
 const money = (p: number) =>
   new Intl.NumberFormat("en-IN", {
     style: "currency",
@@ -1673,7 +1674,7 @@ function Wallet() {
           <h3>Knowledge pays forward.</h3>
           <p>
             5 coins = ₹1. Earn 5 coins when you answer all 5 questions correctly
-            after watching a chapter’s five lessons.
+            in a quick quiz drawn from your watched lessons.
           </p>
           <p>
             Use coins for up to <strong>10% of an eligible price</strong>. Your
@@ -1688,8 +1689,8 @@ function Wallet() {
           <div className="empty">
             <Coins />
             <h3>Your first little win awaits</h3>
-            <p>Finish a chapter challenge to earn your first 5 coins.</p>
-            <Link className="text-button" to="/">
+            <p>Get all five questions right to earn your first five coins.</p>
+            <Link className="text-button" to="/reels">
               Start learning <ArrowRight size={15} />
             </Link>
           </div>
@@ -1817,6 +1818,7 @@ function Checkout({ id }: { id: string }) {
     [pending, setPending] = useState(false);
   const request = useRef<string>(crypto.randomUUID());
   useEffect(() => {
+    if (order) return;
     let active = true;
     service
       .quote(id, coins)
@@ -1832,7 +1834,7 @@ function Checkout({ id }: { id: string }) {
     return () => {
       active = false;
     };
-  }, [id, coins, s.ledger.length]);
+  }, [id, coins, s.ledger.length, order]);
   if (!p) return <NotFound />;
   return (
     <>
@@ -1914,7 +1916,7 @@ function Checkout({ id }: { id: string }) {
               <p className="fine">
                 Up to 10% of the eligible subtotal. 1 coin = ₹0.20.
                 {!balance(s) &&
-                  " Earn coins in a chapter challenge to use this benefit."}
+                  " Earn coins in a quick recall quiz to use this benefit."}
               </p>
             </div>
             {q && (
@@ -2012,7 +2014,9 @@ function Recognition() {
       <main>
         <div className="recognition-intro">
           <Trophy size={38} />
-          <span className="eyebrow gold">{liveMode?'YOUR LEARNING COHORT':'YOUR DEMO COHORT'}</span>
+          <span className="eyebrow gold">
+            {liveMode ? "YOUR LEARNING COHORT" : "YOUR DEMO COHORT"}
+          </span>
           <h1>
             Celebrate the
             <br />
@@ -2024,7 +2028,11 @@ function Recognition() {
           </p>
         </div>
         <div className="info-card">
-          <span className="eyebrow">{liveMode?'LEARNING ACTIVITY - PRIVATE STUDENT LABELS':'FICTIONAL STUDENTS - DEMO DATA'}</span>
+          <span className="eyebrow">
+            {liveMode
+              ? "LEARNING ACTIVITY - PRIVATE STUDENT LABELS"
+              : "FICTIONAL STUDENTS - DEMO DATA"}
+          </span>
           {rows.map((r, i) => (
             <div key={r.name} className={`leader ${r.current ? "you" : ""}`}>
               <span>{i + 1}</span>
@@ -2513,7 +2521,52 @@ function App() {
         </Link>
       </main>
     );
-  else if (!parts.length) page = <HomePage />;
+  else if (!parts.length && !liveMode) page = <HomePage />;
+  else if (!parts.length)
+    page = (
+      <main className="web-home">
+        <div className="brand">
+          <span className="brandmark">a</span> arivihan
+        </div>
+        <p>
+          {s.profile.batch} · {s.profile.language}
+        </p>
+        <span className="eyebrow cyan">YOUR DAILY DOSE OF CURIOSITY</span>
+        <h1>
+          Hello, {s.profile.name}.<br />
+          Let's make an idea click.
+        </h1>
+        <Link to="/reels" className="home-reels-card">
+          <span className="eyebrow cyan">ARIVIHAN REELS</span>
+          <h2>
+            Small lessons.
+            <br />
+            Big lightbulb moments.
+          </h2>
+          <p>Watch, explore and put your learning to the test.</p>
+          <span className="button">
+            Start watching <Play size={16} />
+          </span>
+        </Link>
+        <div className="home-summary">
+          <Link to="/wallet">
+            <Coins size={20} color="#efc86b" /> {balance(s)} coins
+            <small>5 coins = ₹1</small>
+          </Link>
+          <Link to="/store">
+            <ShoppingBag size={20} /> Demo store
+            <small>Simulated checkout only</small>
+          </Link>
+        </div>
+        <p className="fine">
+          {liveMode
+            ? "Live Supabase · Persistent guest profile"
+            : "Local demo · Device-only storage"}
+        </p>
+      </main>
+    );
+  else if (parts[0] === "reels") page = <Discovery s={s} refresh={refresh} />;
+  else if (parts[0] === "chapters") page = <HomePage />;
   else if (parts[0] === "chapter") page = <ChapterPage id={parts[1]} />;
   else if (parts[0] === "player")
     page = <Player chapterId={parts[1]} reelId={parts[2]} />;
@@ -2593,22 +2646,19 @@ function App() {
                   }
                 >
                   <Home size={21} />
-                  <span>Reels</span>
+                  <span>Home</span>
                 </Link>
               )}
               <Link
-                to="/downloads"
-                className={parts[0] === "downloads" ? "active" : ""}
+                to={liveMode ? "/reels" : "/chapters"}
+                className={
+                  parts[0] === "reels" || parts[0] === "chapters"
+                    ? "active"
+                    : ""
+                }
               >
-                <Download size={21} />
-                <span>Downloads</span>
-              </Link>
-              <Link
-                to="/recognition"
-                className={parts[0] === "recognition" ? "active" : ""}
-              >
-                <Trophy size={21} />
-                <span>Cohort</span>
+                <Play size={21} />
+                <span>Reels</span>
               </Link>
               <Link
                 to="/store"

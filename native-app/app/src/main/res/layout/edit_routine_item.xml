@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="UselessParent">
+
+
+        <LinearLayout
+            android:layout_marginVertical="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <CheckBox
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:background="@drawable/routine_selector"
+                android:id="@+id/checkbox"
+                android:button="@null"
+                android:buttonTint="@color/white"
+                android:layout_width="24dp"
+                android:layout_height="24dp"/>
+
+            <TextView
+                style="@style/tertiaryText"
+                android:id="@+id/text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="24dp"
+                android:text="Subject"
+                />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginVertical="3dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginStart="54dp"
+            android:background="@color/grey_300"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

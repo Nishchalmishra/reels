@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".activity.TestSeriesListActivity">
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:elevation="8dp"
+        android:clickable="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <LinearLayout
+                android:id="@+id/no_result_found_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:layout_width="wrap_content"
+                    android:layout_height="200dp"
+                    app:lottie_autoPlay="true"
+                    app:lottie_loop="true"
+                    app:lottie_rawRes="@raw/no_results" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/urbanist_bold"
+                    android:text="No Result Found"
+                    android:textColor="@color/black"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="@font/urbanist_medium"
+                    android:text="Try changing the search term"
+                    android:textSize="14dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+                android:layout_marginVertical="10dp"
+                android:layout_marginEnd="20dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:id="@+id/back_button_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="17dp">
+
+                    <ImageView
+                        android:id="@+id/back_button"
+                        android:layout_width="13dp"
+                        android:layout_height="15dp"
+                        android:layout_marginTop="1dp"
+                        android:src="@drawable/arrow_icon" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/urbanist_semi_bold"
+                        android:text="Mock Test"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/toolbar_title_size" />
+
+                </LinearLayout>
+
+                <androidx.appcompat.widget.SearchView
+                    android:id="@+id/search_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:closeIcon="@drawable/search_close_btn"
+                    app:searchHintIcon="@null"
+                    app:searchIcon="@drawable/search_outline" />
+
+                <ImageView
+                    android:id="@+id/filter_mock"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/options_outline"
+                    android:focusable="true"
+                    android:clickable="true"
+                    android:visibility="visible" />
+            </LinearLayout>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/image_slider"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar"
+                android:visibility="visible"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="0dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="170dp"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="20dp">
+
+                    <com.facebook.shimmer.ShimmerFrameLayout
+                        android:id="@+id/carousel_shimmer"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginHorizontal="6dp"
+                            app:cardBackgroundColor="#E7E7E7"
+                            app:cardCornerRadius="11dp" />
+
+                    </com.facebook.shimmer.ShimmerFrameLayout>
+
+
+                    <com.denzcoskun.imageslider.ImageSlider
+                        android:id="@+id/image_sliders"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:iss_auto_cycle="true"
+                        app:iss_corner_radius="10"
+                        app:iss_delay="3000"
+                        app:iss_period="1000"
+                        app:iss_placeholder="@drawable/blank" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.facebook.shimmer.ShimmerFrameLayout
+                android:id="@+id/list_shimmer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                app:layout_constraintTop_toBottomOf="@id/image_slider"
+                app:shimmer_auto_start="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <include layout="@layout/mock_test_list_shimmer_item"></include>
+
+                    <include layout="@layout/mock_test_list_shimmer_item"></include>
+
+                    <include layout="@layout/mock_test_list_shimmer_item"></include>
+                </LinearLayout>
+            </com.facebook.shimmer.ShimmerFrameLayout>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/tab_card"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginBottom="3dp"
+                android:visibility="gone"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="4dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/unlock_bottom_layout"
+                app:layout_constraintTop_toBottomOf="@id/image_slider"
+                app:layout_constraintVertical_weight="1">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.tabs.TabLayout
+                        android:id="@+id/tabs"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:background="@color/white"
+                        app:tabIndicatorColor="@color/fui_transparent"
+                        app:tabIndicatorFullWidth="false"
+                        app:tabMode="scrollable"
+                        app:tabPaddingEnd='0dp'
+                        app:tabRippleColor="@color/fui_transparent"
+                        app:tabSelectedTextColor="@color/black" />
+                    <!--            app:tabIndicatorColor="@colors/fui_transparent"-->
+
+
+                    <androidx.viewpager.widget.ViewPager
+                        android:id="@+id/viewpager"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:background="@color/white" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/test_series_list_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="10dp"
+                        android:visibility="gone"
+                        app:cardCornerRadius="10dp" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:id="@+id/background_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:alpha="0.8"
+                android:background="@color/fui_transparent"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:id="@+id/unlock_bottom_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:elevation="5dp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginVertical="15dp"
+                    app:cardBackgroundColor="@color/subscription_blue"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="0dp">
+
+                    <TextView
+                        android:id="@+id/unlock_bottom_layout_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginVertical="12dp"
+                        android:fontFamily="@font/urbanist_semi_bold"
+                        android:text="@string/Unlock_All_Tests"
+                        android:textColor="@color/white"
+                        android:textSize="15sp" />
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+            <include
+                android:id="@+id/how_to_video_view"
+                layout="@layout/activity_mock_demo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toTopOf="@id/unlock_bottom_layout"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/nav_view"
+            android:layout_width="250dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="end"
+            android:background="#FFFFFF"
+            android:clickable="true"
+            app:menu="@null">
+
+            <include
+                layout="@layout/activity_filter"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </com.google.android.material.navigation.NavigationView>
+
+    </androidx.drawerlayout.widget.DrawerLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

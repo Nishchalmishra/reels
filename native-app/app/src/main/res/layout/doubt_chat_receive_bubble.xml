@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="6dp"
+        android:orientation="horizontal">
+
+
+        <ImageView
+            android:id="@+id/bot_avatar"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_gravity="bottom"
+            android:src="@drawable/icon_chat_avatar" />
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/chat_card_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginLeft="8dp"
+            android:visibility="visible"
+            app:cardBackgroundColor="#F6F6F6"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="0dp"
+            app:contentPadding="12dp">
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="160dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/chat_receive"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autoSizeTextType="uniform"
+                    android:fontFamily="@font/urbanist_medium"
+                    android:text="Hi Yash, A pseudo force, also known as a fictitious force, is a force that appears to act on an object when it is being observed from a non-inertial frame of reference.
+                            \n\n
+                            This means that if you are observing an object from a frame of reference that is moving or accelerating, the object will appear to experience an additional force called a pseudo force.
+                            \n\n
+                            For example, if you are sitting in a car that is accelerating, you will feel like you are being pushed back into your seat. However, in reality, there is no external force pushing you back. The feeling of being pushed back is due to the fact that you and the car are accelerating together
+"
+                    android:textColor="#191919"
+                    android:textSize="15dp"
+                    android:visibility="gone" />
+
+                <WebView
+                    android:id="@+id/chat_receive_webview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="none"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:layout_marginTop="6dp"
+                    android:id="@+id/show_full_answer_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Show full answer"
+                    android:textColor="@color/arivihan_secondary_color"
+                    android:textAlignment="textEnd"
+                    android:layout_gravity="end"
+                    android:gravity="end"
+                    android:visibility="gone"
+                    android:fontFamily="@font/urbanist_semi_bold"
+                    />
+
+                <arivihan.technologies.doubtbuzzter2.helper.WrapContentHeightRecyclerView
+                    android:id="@+id/response_list"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone" />
+                <!--                <androidx.recyclerview.widget.RecyclerView-->
+                <!--                    android:id="@+id/response_list"-->
+                <!--                    android:layout_width="wrap_content"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:visibility="gone"-->
+                <!--                    />-->
+                <!--                    android:minHeight="180dp"-->
+                <!--                    android:nestedScrollingEnabled="false"-->
+                <!--                    android:overScrollMode="never"-->
+
+                <RelativeLayout
+                    android:layout_width="280dp"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/doubt_video_solution"
+                        android:layout_width="220dp"
+                        android:layout_height="150dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/mock_test_video_player_image"
+                        android:visibility="gone" />
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/video_seen_teal"
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10dp"
+                        android:visibility="gone"
+                        app:cardBackgroundColor="@color/arivihan_secondary_color"
+                        app:cardCornerRadius="20dp" />
+                </RelativeLayout>
+
+
+                <TextView
+                    android:id="@+id/subtitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/urbanist_medium"
+                    android:text="Wha is first law of motion?"
+                    android:textColor="#191919"
+                    android:textSize="14dp"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/feedback_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_marginTop="4dp"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/urbanist_medium"
+            android:text="@string/was_this_helpful"
+            android:textSize="10dp" />
+
+        <ImageView
+            android:id="@+id/thumbs_up_btn"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_marginHorizontal="10dp"
+            android:src="@drawable/icon_thumbs_up" />
+
+        <ImageView
+            android:id="@+id/thumbs_down_btn"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:src="@drawable/icon_thumbs_down" />
+    </LinearLayout>
+
+</LinearLayout>
+
+

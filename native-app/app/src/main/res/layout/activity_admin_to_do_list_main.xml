@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".activity.ToDoListMain">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+                android:paddingEnd="20dp"
+                android:layout_marginVertical="10dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:background="@color/white">
+
+                <LinearLayout
+                    android:id="@+id/back_button_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="17dp">
+
+                    <ImageView
+                        android:id="@+id/back_button"
+                        android:layout_width="13dp"
+                        android:layout_height="15dp"
+                        android:layout_marginTop="1dp"
+                        android:src="@drawable/arrow_icon" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/urbanist_semi_bold"
+                    android:text="@string/profile_your_routine"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/toolbar_title_size" />
+
+                <ImageView
+                    android:id="@+id/edit"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="10dp"
+                    android:contentDescription="@string/edit_your_routine"
+                    android:src="@drawable/edit_ic_black" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/spinnerRelativeLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="10dp">
+
+                <LinearLayout
+                    android:visibility="gone"
+                    android:id="@+id/spinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/type"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:text="@string/daily"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/secondary_text_size" />
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginStart="8dp"
+                        android:src="@drawable/todolist_spinner_arrow_down" />
+                </LinearLayout>
+
+
+                <View
+                    android:visibility="gone"
+                    android:layout_width="70dp"
+                    android:layout_height="5dp"
+                    android:layout_below="@+id/spinner"
+                    android:layout_marginTop="0dp"
+                    android:background="@drawable/dashed_line" />
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+        <arivihan.technologies.doubtbuzzter2.customView.MyTabLayout
+            android:id="@+id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:tabIndicatorColor="@android:color/black"
+            app:tabMode="scrollable"
+            app:tabSelectedTextColor="@color/black"
+            app:tabTextAppearance="@style/TabsTextAppearance"
+            android:background="@color/white"/>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/view_pager_admin_todo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/to_do_list_shimmer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="110dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <include layout="@layout/shimmer_mock_tests" />
+            <include layout="@layout/shimmer_mock_tests" />
+            <include layout="@layout/shimmer_mock_tests" />
+            <include layout="@layout/shimmer_mock_tests" />
+            <include layout="@layout/shimmer_mock_tests" />
+            <include layout="@layout/shimmer_mock_tests" />
+        </LinearLayout>
+
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:visibility="gone"
+            android:id="@+id/load_prev"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/arrow_back_white_24"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="24dp"
+            android:layout_marginBottom="24dp"
+            android:background="@color/arivihan_primary_color"
+            app:backgroundTint="@color/arivihan_secondary_color"
+            />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:visibility="gone"
+            android:id="@+id/load_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/arrow_forward_white_24"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="24dp"
+            android:background="@color/arivihan_primary_color"
+            android:backgroundTint="@color/arivihan_secondary_color"
+            app:borderWidth="0dp"
+            />
+
+    </RelativeLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

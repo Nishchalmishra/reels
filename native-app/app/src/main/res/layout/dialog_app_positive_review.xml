@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="24dp"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="5dp">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingVertical="24dp">
+
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:fontFamily="@font/nunito_bold"
+                    android:gravity="center"
+                    android:text="@string/thank_you_for_your_feedback"
+                    android:textColor="@color/black"
+                    android:textSize="22sp"
+                    android:textAlignment="center"
+                    android:layout_marginHorizontal="24dp"
+                    />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="8dp"
+                    android:orientation="horizontal"
+                    android:paddingVertical="8dp">
+
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:id="@+id/lottie_animation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="90dp"
+                        app:lottie_autoPlay="true"
+                        app:lottie_loop="true"
+                        app:lottie_rawRes="@raw/anim_5_star_rating"
+                        android:visibility="visible"/>
+
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_sub_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="2dp"
+                    android:fontFamily="@font/nunito_medium"
+                    android:text="@string/kya_aap_play_store_per_review_dena_chahte_he"
+                    android:textAlignment="center"
+                    android:textColor="#696969"
+                    android:textIsSelectable="true"
+                    android:textSize="20sp"
+                    android:layout_marginHorizontal="24dp"
+                    />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="12dp"
+                    android:layout_marginTop="18dp"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cv_secondary"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginHorizontal="12dp"
+                        android:layout_weight="1"
+                        app:cardBackgroundColor="#E9FBFC"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="0dp"
+                        app:contentPaddingBottom="10dp"
+                        app:contentPaddingLeft="16dp"
+                        app:contentPaddingRight="16dp"
+                        app:contentPaddingTop="10dp">
+
+                        <TextView
+                            android:id="@+id/tv_secondary_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginRight="8dp"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/urbanist_semi_bold"
+                            android:maxLines="1"
+                            android:text="@string/No"
+                            android:textAlignment="center"
+                            android:textColor="@color/arivihan_secondary_color"
+                            android:textSize="17sp" />
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cv_primary"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginHorizontal="12dp"
+                        android:layout_weight="1"
+                        app:cardBackgroundColor="@color/arivihan_secondary_color"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="0dp"
+                        app:contentPaddingBottom="10dp"
+                        app:contentPaddingLeft="16dp"
+                        app:contentPaddingRight="16dp"
+                        app:contentPaddingTop="10dp">
+
+                        <TextView
+                            android:id="@+id/tv_primary_btn"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginRight="8dp"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/urbanist_semi_bold"
+                            android:maxLines="1"
+                            android:text="@string/Yes"
+                            android:textAlignment="center"
+                            android:textColor="@color/white"
+                            android:textSize="17sp" />
+
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+        <ImageView
+            android:id="@+id/iv_close"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginHorizontal="8dp"
+            android:layout_marginVertical="8dp"
+            android:padding="4dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_close_black"
+            app:tint="@color/black" />
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>

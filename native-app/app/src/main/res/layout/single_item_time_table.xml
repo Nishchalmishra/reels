@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    item_timetable.xml
+    Place in:  res/layout/item_timetable.xml
+-->
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
+    app:cardCornerRadius="14dp"
+    app:cardElevation="2dp"
+    app:cardBackgroundColor="#FFFFFF">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:minHeight="90dp">
+
+        <!-- ── Date block ── -->
+        <LinearLayout
+            android:id="@+id/layoutDate"
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp">
+
+            <TextView
+                android:id="@+id/tvDayNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="24sp"
+                android:text="8"
+                android:fontFamily="@font/urbanist_semi_bold"
+                android:textColor="#1A1A1A"
+                android:lineSpacingExtra="0dp" />
+
+            <TextView
+                android:id="@+id/tvDayName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:textColor="#1A1A1A"
+                android:fontFamily="@font/urbanist_regular"/>
+        </LinearLayout>
+
+        <!-- ── Class info ── -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingTop="14dp"
+            android:layout_marginStart="20dp"
+            android:paddingBottom="14dp"
+            android:paddingStart="4dp"
+            android:paddingEnd="4dp">
+
+            <TextView
+                android:id="@+id/tvClassName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:text="DIFFRENTIATTIOn"
+                android:textColor="#1A1A1A"
+                android:fontFamily="@font/urbanist_semi_bold"
+                android:maxLines="1"
+                android:ellipsize="end" />
+
+            <!-- Time row -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="4dp">
+
+                <!-- Coloured dot -->
+                <View
+                    android:id="@+id/dotStatus"
+                    android:layout_width="6dp"
+                    android:layout_height="6dp"
+                    android:background="@drawable/circle_dot"
+                    android:layout_marginEnd="6dp" />
+
+                <TextView
+                    android:id="@+id/tvTimeSlot"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/urbanist_regular"
+                    android:textSize="12sp"
+                    android:textColor="#666666" />
+            </LinearLayout>
+
+            <!-- Subject pill wrapped in CardView -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvSubject"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="@android:color/transparent">
+
+                <TextView
+                    android:id="@+id/tvSubject"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="14dp"
+                    android:paddingVertical="4dp"
+                    android:text="Maths"
+                    android:textSize="11sp"
+                    android:fontFamily="@font/urbanist_medium"
+                    android:textColor="@color/black"
+                    android:textStyle="normal" />
+
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+        <!-- ── Teacher photo ── -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="70dp"
+            android:layout_height="80dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            android:layout_margin="4dp">
+
+            <FrameLayout
+                android:id="@+id/frameTeacher"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <!-- Background (optional color/gradient) -->
+
+                <!-- Teacher Image -->
+                <View
+                    android:id="@+id/viewTeacherBg"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+                <ImageView
+                    android:id="@+id/ivTeacher"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:padding="6dp"
+                    android:src="@drawable/teacher_icon"
+                    android:contentDescription="Teacher" />
+
+                <!-- Play Icon (BOTTOM LEFT) -->
+                <ImageView
+                    android:id="@+id/ivPlay"
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:layout_gravity="bottom|start"
+                    android:src="@drawable/play_icon"
+                    android:padding="5dp"
+                    android:contentDescription="Play" />
+
+            </FrameLayout>
+
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
