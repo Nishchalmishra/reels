@@ -704,3 +704,49 @@
   cursor: pointer;
   margin: 0;
 }
+/* The signed-in landing screen shares one viewport with its navigation. */
+.app-stage.home-stage {
+  height: 100dvh;
+  min-height: 0;
+  padding-bottom: 0;
+  display: flex;
+  flex-direction: column;
+}
+.home-stage > .web-home {
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  grid-template-rows: auto auto auto auto minmax(0, 1fr) auto auto;
+  gap: clamp(6px, 1.4dvh, 12px);
+  padding: clamp(12px, 2.5dvh, 24px) clamp(17px, 5vw, 24px) 12px;
+}
+.home-stage .web-home > * { min-width: 0; }
+.home-stage .web-home > p { margin: 0; font-size: 12px; line-height: 1.4; }
+.home-stage .web-home > h1 { font-size: clamp(22px, 3.8dvh, 30px); margin: 0; }
+.home-greeting { display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.home-stage .web-home > .eyebrow { font-size: 8px; }
+.home-stage .home-reels-card {
+  min-height: 0;
+  margin: 0;
+  padding: clamp(12px, 2.5dvh, 22px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.home-stage .home-reels-card h2 { font-size: clamp(24px, 4.4dvh, 32px); line-height: 1.12; max-width: none; margin: 10px 0; }
+.home-stage .home-reels-card p { font-size: 12px; line-height: 1.4; margin: 0 0 12px; max-width: 240px; }
+.home-stage .home-reels-card .button { min-height: 44px; margin: 0; padding: 10px 15px; max-width: 100%; }
+.home-stage .home-summary { margin: 0; gap: 10px; }
+.home-stage .home-summary > a { min-width: 0; padding: 12px; display: grid; grid-template-columns: 20px 1fr; align-items: center; gap: 5px 7px; }
+.home-stage .home-summary small { grid-column: 1 / -1; margin: 0; font-size: 9px; }
+.home-stage .web-home > .fine { font-size: 8px; }
+.home-stage > .bottom-nav { position: static; transform: none; flex-shrink: 0; width: 100%; }
+.home-stage > .desktop-caption { display: none; }
+@media (max-height: 650px) {
+  .home-stage > .web-home { gap: 6px; padding-block: 12px 8px; }
+  .home-stage .web-home > .eyebrow { display: none; }
+  .home-stage > .web-home { grid-template-rows: auto auto auto minmax(0, 1fr) auto auto; }
+  .home-stage .home-reels-card h2 { margin: 7px 0; }
+  .home-stage .home-reels-card p { margin-bottom: 8px; }
+  .home-stage .home-summary > a { padding: 9px 10px; }
+}

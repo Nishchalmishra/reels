@@ -2533,7 +2533,7 @@ function App() {
         </p>
         <span className="eyebrow cyan">YOUR DAILY DOSE OF CURIOSITY</span>
         <h1>
-          Hello, {s.profile.name}.<br />
+          <span className="home-greeting" title={s.profile.name}>Hello, {s.profile.name}.</span>
           Let's make an idea click.
         </h1>
         <Link to="/reels" className="home-reels-card">
@@ -2602,7 +2602,7 @@ function App() {
         modal,
       }}
     >
-      <div className="app-stage">
+      <div className={`app-stage${ready && s.profile && liveMode && !parts.length ? " home-stage" : ""}`}>
         {page}
         {error && (
           <div className="error-toast" role="alert">

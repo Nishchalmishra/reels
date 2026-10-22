@@ -1749,6 +1749,106 @@ label select {
   margin: 15px auto;
   font-size: 9px;
 }
+/* Let content fit the viewport without clipping the form or trapping scrolling. */
+.app-stage:has(> .onboarding) {
+  width: 100%;
+  padding-bottom: 0;
+}
+.app-stage:has(> .onboarding) .desktop-caption {
+  display: none;
+}
+main.onboarding {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(8px, 1.4dvh, 12px);
+  min-height: 100dvh;
+  padding: clamp(12px, 2.5dvh, 24px) clamp(17px, 5vw, 26px);
+}
+.onboarding > * {
+  min-width: 0;
+  max-width: 100%;
+}
+.onboarding .welcome-art {
+  flex-shrink: 0;
+  height: clamp(60px, 14dvh, 130px);
+  margin: 0;
+  overflow: clip;
+}
+.onboarding > h1 {
+  font-size: clamp(32px, 5dvh, 42px);
+  line-height: 1.08;
+  margin: 0;
+}
+.onboarding > p,
+.onboarding > .fine,
+.onboarding > .text-button {
+  margin: 0;
+}
+.onboarding > p {
+  line-height: 1.5;
+}
+.onboarding > .text-button {
+  min-height: 40px;
+}
+.onboarding form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0;
+}
+.onboarding .form-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin: 0;
+}
+.onboarding label {
+  min-width: 0;
+  gap: 6px;
+}
+.onboarding input,
+.onboarding select {
+  width: 100%;
+  max-width: 100%;
+  min-height: 44px;
+  font-size: 16px;
+}
+.onboarding .button {
+  margin: 0;
+}
+@media (max-height: 740px) {
+  main.onboarding {
+    gap: 8px;
+    padding-block: 16px;
+  }
+  .onboarding .welcome-art {
+    height: 56px;
+  }
+  .onboarding .welcome-art > svg {
+    width: 50px;
+    height: 50px;
+  }
+  .onboarding > h1 {
+    font-size: 34px;
+  }
+  .onboarding form {
+    gap: 10px;
+  }
+  .onboarding > .fine {
+    line-height: 1.4;
+  }
+}
+@media (max-height: 600px) {
+  main.onboarding {
+    gap: 6px;
+    padding-block: 12px;
+  }
+  .onboarding .welcome-art {
+    display: none;
+  }
+  .onboarding > h1 {
+    font-size: 30px;
+  }
+}
 .loading {
   min-height: 80dvh;
   display: flex;
