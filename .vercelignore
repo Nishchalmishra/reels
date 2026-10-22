@@ -1,0 +1,12 @@
+videos/
+native-app/
+reference-frames/
+.tools/
+verification-live/
+verification-native/
+supabase/.test-sessions/
+supabase/.test-sessions.json
+supabase/inspection/*private*
+.env
+.env.*
+!.env.example

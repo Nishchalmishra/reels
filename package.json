@@ -27,7 +27,8 @@
     "test:discovery:live": "node scripts/verify-discovery-live.mjs",
     "test:discovery:lifecycle": "node scripts/verify-discovery-lifecycle-live.mjs",
     "preview:live": "node scripts/run-mode.mjs supabase preview --outDir dist-live --port 4173",
-    "test:web:discovery": "node scripts/web-discovery-journey.mjs"
+    "test:web:discovery": "node scripts/web-discovery-journey.mjs",
+    "test:media:hosted": "node scripts/verify-hosted-media.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.118.0",

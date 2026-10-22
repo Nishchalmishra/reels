@@ -29,7 +29,7 @@ VITE_DEMO_TOOLS=false
 VITE_INTEGRATION_TEST=false
 ```
 
-Only the URL/publishable key belong in public configuration. Privileged keys, database URLs and management tokens must never have a `VITE_` prefix. Vite rejects unsafe key configuration and blocks backend seeds/tooling/mock-key source in live dev mode. The build outputs frontend assets to `dist-live/`. For a local production preview use `npm run preview:live`: its whitelist media handler streams the supplied `videos/` files with byte-range support. Publishing only `dist-live/` to a static host will not include these clips; a hosted deployment must provide matching `/media/<lesson-id>` URLs. No AWS/S3 integration or upload was added.
+Only the URL/publishable key belong in public configuration. Privileged keys, database URLs and management tokens must never have a `VITE_` prefix. Vite rejects unsafe key configuration and blocks backend seeds/tooling/mock-key source in live dev mode. The build outputs frontend assets to `dist-live/`. Videos and posters are now hosted in the existing Supabase project, in bucket `arivihan-reels`. The adapter uses the catalogue HTTPS URLs directly, so the frontend works on Vercel without local files or a media server. `VITE_MEDIA_MODE=hosted` is the default; `local` is an explicit development-only override and is rejected during deployment builds. No AWS or Cloudinary account is used.
 
 ## Database deployment and verification
 
@@ -84,3 +84,11 @@ Guest sessions are genuine Supabase anonymous Auth sessions; ownership comes fro
 Live answers/grades, stored eligibility, ledger rewards, prices and orders use narrow authenticated RPCs. Keys live in a private database schema; frontend questions contain no unsubmitted answers. Rewards and debits are transactional and idempotent; spending does not lower learning recognition. Browser watch reports cannot prove attention or defeat determined abuse: the server validates/report-merges coverage but production anti-abuse needs more than client timing.
 
 See [SUPABASE_HANDOFF.md](SUPABASE_HANDOFF.md), [SUPABASE_VERIFICATION.md](SUPABASE_VERIFICATION.md), [CONTENT_GUIDE.md](CONTENT_GUIDE.md), and the historical [local frontend verification](VERIFICATION.md).
+
+## Hosted media and Vercel
+
+All ten unique source videos and ten posters are uploaded and verified. The duplicate Rock painting file shares its existing lesson asset. Bucket `arivihan-reels` allows public playback; anyone with a file URL can view it. It does not permit student uploads, updates or deletes. These demo assets are not a protected paid-video delivery system.
+
+`vercel.json` builds with `npm run build:live`, serves `dist-live/`, and supports React Router deep links. Set the existing browser-safe Supabase URL/key in Vercel environment settings and keep `VITE_SERVICE_MODE=supabase`. `VITE_MEDIA_MODE=hosted` is optional because it is the default. Push/redeploy this updated frontend to your existing Vercel project: uploading the videos does not replace an already deployed JavaScript bundle. No Vercel credentials or deployment connection were available in this workspace, so an actual Vercel redeploy was not performed.
+
+The media migration `202610220008_hosted_media.sql` changes delivery metadata only. Lesson IDs, content versions, mappings, progress and reward uniqueness remain intact. Full-file SHA-256 and HTTP 206 byte-range checks passed for every object. See `supabase/inspection/media-upload.json` and `verification-live/hosted-media/browser.json` for local evidence. The one-time uploader identity was deleted and its temporary Edge Function was replaced with a disabled 410 response.

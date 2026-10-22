@@ -1,3 +1,5 @@
+> 22 October update: hosted delivery is now active. All ten MP4s and ten posters live in Supabase Storage bucket `arivihan-reels`. Migration `202610220008_hosted_media.sql` updates catalogue URLs without changing content versions or reward identity. The adapter defaults to hosted delivery; local `/media` is development-only and opt-in. `vercel.json` configures the production build and SPA routes. Redeploy the existing Vercel project to publish the frontend changes. The prior local-media delivery notes below are historical.
+
 # Web Feed and Explore handoff
 
 The active demo is the responsive React/TypeScript application. The native Android source is preserved in `native-app/`, but APK and emulator work is paused at the user's request. Existing web onboarding, authenticated profile, wallet and simulated checkout are reused. This is not a claim that the Android onboarding was ported screen for screen.
@@ -59,4 +61,6 @@ Only clearly marked TEST identities are used. Test sessions stay in ignored `sup
 
 ## Remaining limits
 
-No blocker remains for the local connected web demo. Internet hosting and hosted media delivery are not configured. Full audio/transcript editorial review, physical mobile-browser coverage and a screen-for-screen port of native onboarding were not performed. Native device acceptance is paused, not represented as passed by these web tests.
+No blocker remains for the connected web demo. Hosted media delivery is configured and verified; redeploying the existing Vercel frontend remains a user deployment step because no Vercel connection was supplied. Full audio/transcript editorial review, physical mobile-browser coverage and a screen-for-screen port of native onboarding were not performed. Native device acceptance is paused, not represented as passed by these web tests.
+
+Hosted-media verification completed on 22 October: all ten actual videos played from Supabase Storage in the built mobile web application, Class 11/12 filtering and hosted posters worked, refresh retained Explore, no local media request or browser error occurred, and authenticated student uploads were rejected. Run `28636731-d020-4138-8b46-33b8760b11ef`; retained TEST identity `108a7645-1b52-4b44-aea8-3a2620f0e8b3` has no coins or orders. Build and all 33 tests passed. The actual Vercel site was not redeployed or tested because its project connection/URL was not supplied. Deploy the updated repository using the included `vercel.json`.

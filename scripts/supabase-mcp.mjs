@@ -27,13 +27,13 @@ try{
  const tool=Object.keys(server.tools).find(t=>/get_project_url$/.test(t))||Object.keys(server.tools).find(t=>/list_tables$/.test(t));
  if(!tool)throw Error('No supported read-only project verification tool is available.');
  const args=tool.endsWith('list_tables')?{schemas:['public']}:{};
- const result=await request('mcpServer/tool/call',{threadId:thread.id,server:'supabase',tool,arguments:args});
+ const result=await request('mcpServer/tool/call',{threadId:thread.id,server:'supabase',tool,arguments:{...(server.tools[tool].inputSchema?.properties?.project_id?{project_id:'pbaegeqjargtsfortsyh'}:{}),...args}});
  if(result.isError)throw Error('The actual Supabase MCP tool returned an error.');
  const contents=JSON.stringify(result);if(tool.endsWith('get_project_url')&&!contents.includes('pbaegeqjargtsfortsyh.supabase.co'))throw Error('MCP project URL does not match the intended project.');
  const report={at:new Date().toISOString(),project:'pbaegeqjargtsfortsyh',server:'supabase',tool,toolCallVerified:true,result};
  fs.writeFileSync('supabase/inspection/mcp-verified.json',JSON.stringify(report,null,2));
  console.log('PASS actual authenticated Supabase MCP tool call:',tool,'for project pbaegeqjargtsfortsyh.');
- const call=async(tool,args)=>{const result=await request('mcpServer/tool/call',{threadId:thread.id,server:'supabase',tool,arguments:args});if(result.isError)throw Error('Supabase MCP '+tool+' returned an error.');return result;};
+ const call=async(tool,args)=>{const result=await request('mcpServer/tool/call',{threadId:thread.id,server:'supabase',tool,arguments:{...(server.tools[tool].inputSchema?.properties?.project_id?{project_id:'pbaegeqjargtsfortsyh'}:{}),...args}});if(result.isError)throw Error('Supabase MCP '+tool+' returned an error.');return result;};
  if(process.argv.includes('--inspect')){
   const query=`select jsonb_build_object('columns',(select jsonb_agg(to_jsonb(c)) from information_schema.columns c where table_schema='public'), 'policies',(select jsonb_agg(to_jsonb(p)) from pg_policies p where schemaname='public'), 'functions',(select jsonb_agg(jsonb_build_object('name',p.proname,'arguments',pg_get_function_identity_arguments(p.oid),'security_definer',p.prosecdef,'definition',pg_get_functiondef(p.oid))) from pg_proc p join pg_namespace n on n.oid=p.pronamespace where n.nspname='public' and p.prokind='f'), 'tables',(select jsonb_agg(jsonb_build_object('name',c.relname,'rls',c.relrowsecurity)) from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname='public' and c.relkind='r'), 'buckets',(select jsonb_agg(jsonb_build_object('id',id,'public',public,'limit',file_size_limit)) from storage.buckets)) inspection`;
   const inspection=await call('execute_sql',{query});fs.writeFileSync('supabase/inspection/mcp-database-private.json',JSON.stringify(inspection,null,2));console.log('Actual database columns, policies, function definitions, RLS and bucket metadata saved privately; no row data or credentials printed.');

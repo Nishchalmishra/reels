@@ -1,0 +1,357 @@
+{
+  "project": "pbaegeqjargtsfortsyh",
+  "bucket": "arivihan-reels",
+  "broker": "ar-reels-media-upload-20261022",
+  "uploaderId": "6973aa4b-5a9c-4c75-ae28-49658b552f90",
+  "expires": "2026-10-22T13:14:40.214Z",
+  "phase": "verified",
+  "videos": 10,
+  "posters": 10,
+  "bytes": 61708319,
+  "assets": [
+    {
+      "id": "lesson-c1f35ba60fdf6b04",
+      "kind": "video",
+      "file": "videos\\Concert and waves _ सुरजीत का concert.mp4",
+      "sha256": "c1f35ba60fdf6b0417ffebc0f66b59c5fa5378847e90ae16392899e6035a7464",
+      "size": 9222911,
+      "type": "video/mp4",
+      "object": "lessons/lesson-c1f35ba60fdf6b04/v1/c1f35ba60fdf6b0417ffebc0f66b59c5fa5378847e90ae16392899e6035a7464.mp4",
+      "url": "https://pbaegeqjargtsfortsyh.supabase.co/storage/v1/object/public/arivihan-reels/lessons/lesson-c1f35ba60fdf6b04/v1/c1f35ba60fdf6b0417ffebc0f66b59c5fa5378847e90ae16392899e6035a7464.mp4"
+    },
+    {
+      "id": "lesson-c1f35ba60fdf6b04",
+      "kind": "poster",
+      "file": "public/posters/lesson-c1f35ba60fdf6b04.jpg",
+      "sha256": "cd7bfe37c110415b46699a5eb6c619bd4f344910bc96a9984c8d6033c8e84158",
+      "size": 31484,
+      "type": "image/jpeg",
+      "object": "lessons/lesson-c1f35ba60fdf6b04/v1/poster-cd7bfe37c110415b46699a5eb6c619bd4f344910bc96a9984c8d6033c8e84158.jpg",
+      "url": "https://pbaegeqjargtsfortsyh.supabase.co/storage/v1/object/public/arivihan-reels/lessons/lesson-c1f35ba60fdf6b04/v1/poster-cd7bfe37c110415b46699a5eb6c619bd4f344910bc96a9984c8d6033c8e84158.jpg"
+    },
+    {
+      "id": "lesson-0ba81c055000009e",
+      "kind": "video",
+      "file": "videos\\Floating in space _ #momentum #conservationofmomentum #physics #jee #neet #space #education.mp4",
+      "sha256": "0ba81c055000009ec6e31e6e5c6feb67b587d3d890e4086054b69d8f16a31a09",
+      "size": 3612232,
+      "type": "video/mp4",
+      "object": "lessons/lesson-0ba81c055000009e/v1/0ba81c055000009ec6e31e6e5c6feb67b587d3d890e4086054b69d8f16a31a09.mp4",
+      "url": "https://pbaegeqjargtsfortsyh.supabase.co/storage/v1/object/public/arivihan-reels/lessons/lesson-0ba81c055000009e/v1/0ba81c055000009ec6e31e6e5c6feb67b587d3d890e4086054b69d8f16a31a09.mp4"
+    },
+    {
+      "id": "lesson-0ba81c055000009e",
+      "kind": "poster",
+      "file": "public/posters/lesson-0ba81c055000009e.jpg",
+      "sha256": "8943bcc46277e619e2193f76ec31fb0498c1eb97bc79fcea4726bb85e86f3a81",
+      "size": 19183,
+      "type": "image/jpeg",
+      "object": "lessons/lesson-0ba81c055000009e/v1/poster-8943bcc46277e619e2193f76ec31fb0498c1eb97bc79fcea4726bb85e86f3a81.jpg",
+      "url": "https://pbaegeqjargtsfortsyh.supabase.co/storage/v1/object/public/arivihan-reels/lessons/lesson-0ba81c055000009e/v1/poster-8943bcc46277e619e2193f76ec31fb0498c1eb97bc79fcea4726bb85e86f3a81.jpg"
+    },
+    {
+      "id": "lesson-21ec700c98e20ddc",
+      "kind": "video",
+      "file": "videos\\Newtons_Laws_Entertaining_Reel.mp4",
+      "sha256": "21ec700c98e20ddccd6e7ce388a48b91cae10d34f202ca67284ec0ec5022aecf",
+      "size": 2669744,
+      "type": "video/mp4",
+      "object": "lessons/lesson-21ec700c98e20ddc/v1/21ec700c98e20ddccd6e7ce388a48b91cae10d34f202ca67284ec0ec5022aecf.mp4",
+      "url": "https://pbaegeqjargtsfortsyh.supabase.co/storage/v1/object/public/arivihan-reels/lessons/lesson-21ec700c98e20ddc/v1/21ec700c98e20ddccd6e7ce388a48b91cae10d34f202ca67284ec0ec5022aecf.mp4"
+    },
+    {
+      "id": "lesson-21ec700c98e20ddc",
+      "kind": "poster",
+      "file": "public/posters/lesson-21ec700c98e20ddc.jpg",
+      "sha256": "beceff5db3e3cccbb18835cf63b8e9731cf6a66cbcdcf1764c065dbfdfbfd323",
+      "size": 15222,
+      "type": "image/jpeg",
+      "object": "lessons/lesson-21ec700c98e20ddc/v1/poster-beceff5db3e3cccbb18835cf63b8e9731cf6a66cbcdcf1764c065dbfdfbfd323.jpg",
+      "url": "https://pbaegeqjargtsfortsyh.supabase.co/storage/v1/object/public/arivihan-reels/lessons/lesson-21ec700c98e20ddc/v1/poster-beceff5db3e3cccbb18835cf63b8e9731cf6a66cbcdcf1764c065dbfdfbfd323.jpg"
+    },
+    {
+      "id": "lesson-22bcc41eece62149",
+      "kind": "video",
+      "file": "videos\\Pressure and height _ बांटी का पापा अलार्म.mp4",
+      "sha256": "22bcc41eece6214910a81aa7ed87e021c79f4dc4c36b2bab950dcd1120c9314e",
+      "size": 7296697,
+      "type": "video/mp4",
+      "object": "lessons/lesson-22bcc41eece62149/v1/22bcc41eece6214910a81aa7ed87e021c79f4dc4c36b2bab950dcd1120c9314e.mp4",
+      "url": "https://pbaegeqjargtsfortsyh.supabase.co/storage/v1/object/public/arivihan-reels/lessons/lesson-22bcc41eece62149/v1/22bcc41eece6214910a81aa7ed87e021c79f4dc4c36b2bab950dcd1120c9314e.mp4"
+    },
+    {
+      "id": "lesson-22bcc41eece62149",
+      "kind": "poster",
+      "file": "public/posters/lesson-22bcc41eece62149.jpg",
+      "sha256": "13098c3013d9a2e58afa85fd9fd8fd3529f775155af260ed30a7e167ab060558",
+      "size": 23245,
+      "type": "image/jpeg",
+      "object": "lessons/lesson-22bcc41eece62149/v1/poster-13098c3013d9a2e58afa85fd9fd8fd3529f775155af260ed30a7e167ab060558.jpg",
+      "url": "https://pbaegeqjargtsfortsyh.supabase.co/storage/v1/object/public/arivihan-reels/lessons/lesson-22bcc41eece62149/v1/poster-13098c3013d9a2e58afa85fd9fd8fd3529f775155af260ed30a7e167ab060558.jpg"
+    },
+    {
+      "id": "lesson-6cc9df849e4990a3",
+      "kind": "video",
+      "file": "videos\\Principle of moment _ तराजू में गड़बड़ #storywise.mp4",
+      "sha256": "6cc9df849e4990a3fefd8d31f62015123bb87914c556c3a8a3ad1f5af89f440b",
+      "size": 9084445,
+      "type": "video/mp4",
+      "object": "lessons/lesson-6cc9df849e4990a3/v1/6cc9df849e4990a3fefd8d31f62015123bb87914c556c3a8a3ad1f5af89f440b.mp4",
+      "url": "https://pbaegeqjargtsfortsyh.supabase.co/storage/v1/object/public/arivihan-reels/lessons/lesson-6cc9df849e4990a3/v1/6cc9df849e4990a3fefd8d31f62015123bb87914c556c3a8a3ad1f5af89f440b.mp4"
+    },
+    {
+      "id": "lesson-6cc9df849e4990a3",
+      "kind": "poster",
+      "file": "public/posters/lesson-6cc9df849e4990a3.jpg",
+      "sha256": "fe9d85375ac05248a46536ab59571ae0afce8cafc7680f0f88d65e69b3db4a25",
+      "size": 36093,
+      "type": "image/jpeg",
+      "object": "lessons/lesson-6cc9df849e4990a3/v1/poster-fe9d85375ac05248a46536ab59571ae0afce8cafc7680f0f88d65e69b3db4a25.jpg",
+      "url": "https://pbaegeqjargtsfortsyh.supabase.co/storage/v1/object/public/arivihan-reels/lessons/lesson-6cc9df849e4990a3/v1/poster-fe9d85375ac05248a46536ab59571ae0afce8cafc7680f0f88d65e69b3db4a25.jpg"
+    },
+    {
+      "id": "lesson-7e7d2dd1b05bdeec",
+      "kind": "video",
+      "file": "videos\\Rock painting ki age #storywise - Copy.mp4",
+      "sha256": "7e7d2dd1b05bdeec4d668d0974e9ae978915287f18215cd303d7881756662d15",
+      "size": 11473701,
+      "type": "video/mp4",
+      "object": "lessons/lesson-7e7d2dd1b05bdeec/v1/7e7d2dd1b05bdeec4d668d0974e9ae978915287f18215cd303d7881756662d15.mp4",
+      "url": "https://pbaegeqjargtsfortsyh.supabase.co/storage/v1/object/public/arivihan-reels/lessons/lesson-7e7d2dd1b05bdeec/v1/7e7d2dd1b05bdeec4d668d0974e9ae978915287f18215cd303d7881756662d15.mp4"
+    },
+    {
+      "id": "lesson-7e7d2dd1b05bdeec",
+      "kind": "poster",
+      "file": "public/posters/lesson-7e7d2dd1b05bdeec.jpg",
+      "sha256": "0ac1ddc4b2483d001fc57fb0ba74289d6812191e69ca1da8ced4ad734ee63266",
+      "size": 28857,
+      "type": "image/jpeg",
+      "object": "lessons/lesson-7e7d2dd1b05bdeec/v1/poster-0ac1ddc4b2483d001fc57fb0ba74289d6812191e69ca1da8ced4ad734ee63266.jpg",
+      "url": "https://pbaegeqjargtsfortsyh.supabase.co/storage/v1/object/public/arivihan-reels/lessons/lesson-7e7d2dd1b05bdeec/v1/poster-0ac1ddc4b2483d001fc57fb0ba74289d6812191e69ca1da8ced4ad734ee63266.jpg"
+    },
+    {
+      "id": "lesson-0ec8f943a53ccaf2",
+      "kind": "video",
+      "file": "videos\\videoplayback.mp4",
+      "sha256": "0ec8f943a53ccaf2c1e3e6f75b74b8d0c2a5631790edb623be84d9f48c52ea8f",
+      "size": 8457069,
+      "type": "video/mp4",
+      "object": "lessons/lesson-0ec8f943a53ccaf2/v1/0ec8f943a53ccaf2c1e3e6f75b74b8d0c2a5631790edb623be84d9f48c52ea8f.mp4",
+      "url": "https://pbaegeqjargtsfortsyh.supabase.co/storage/v1/object/public/arivihan-reels/lessons/lesson-0ec8f943a53ccaf2/v1/0ec8f943a53ccaf2c1e3e6f75b74b8d0c2a5631790edb623be84d9f48c52ea8f.mp4"
+    },
+    {
+      "id": "lesson-0ec8f943a53ccaf2",
+      "kind": "poster",
+      "file": "public/posters/lesson-0ec8f943a53ccaf2.jpg",
+      "sha256": "551def1cf83f191abf67db12f5e0ff2c9bb7e64fd90296a5835b5f0dd1182561",
+      "size": 34245,
+      "type": "image/jpeg",
+      "object": "lessons/lesson-0ec8f943a53ccaf2/v1/poster-551def1cf83f191abf67db12f5e0ff2c9bb7e64fd90296a5835b5f0dd1182561.jpg",
+      "url": "https://pbaegeqjargtsfortsyh.supabase.co/storage/v1/object/public/arivihan-reels/lessons/lesson-0ec8f943a53ccaf2/v1/poster-551def1cf83f191abf67db12f5e0ff2c9bb7e64fd90296a5835b5f0dd1182561.jpg"
+    },
+    {
+      "id": "lesson-8d664afc5b23fa13",
+      "kind": "video",
+      "file": "videos\\खजाने की खोज _ #physics #refraction #criticalangle #totalinternalreflection #jee #neet #education.mp4",
+      "sha256": "8d664afc5b23fa1341065792365465707d168e2ce9bc329ef21f58b7f26b1790",
+      "size": 3779325,
+      "type": "video/mp4",
+      "object": "lessons/lesson-8d664afc5b23fa13/v1/8d664afc5b23fa1341065792365465707d168e2ce9bc329ef21f58b7f26b1790.mp4",
+      "url": "https://pbaegeqjargtsfortsyh.supabase.co/storage/v1/object/public/arivihan-reels/lessons/lesson-8d664afc5b23fa13/v1/8d664afc5b23fa1341065792365465707d168e2ce9bc329ef21f58b7f26b1790.mp4"
+    },
+    {
+      "id": "lesson-8d664afc5b23fa13",
+      "kind": "poster",
+      "file": "public/posters/lesson-8d664afc5b23fa13.jpg",
+      "sha256": "055c34b3b3e4bcba83327743c59e4c4411368d90990beacbc1d2e280f752ad4b",
+      "size": 18145,
+      "type": "image/jpeg",
+      "object": "lessons/lesson-8d664afc5b23fa13/v1/poster-055c34b3b3e4bcba83327743c59e4c4411368d90990beacbc1d2e280f752ad4b.jpg",
+      "url": "https://pbaegeqjargtsfortsyh.supabase.co/storage/v1/object/public/arivihan-reels/lessons/lesson-8d664afc5b23fa13/v1/poster-055c34b3b3e4bcba83327743c59e4c4411368d90990beacbc1d2e280f752ad4b.jpg"
+    },
+    {
+      "id": "lesson-203184a1fd21bfb8",
+      "kind": "video",
+      "file": "videos\\धूप वाली car _ #physics #solarcell #capacitor #dc #directcurrent #jee #neet #electricity.mp4",
+      "sha256": "203184a1fd21bfb8c0a2df3bafa1cf5100ddd0f2af9435c095ccd930416ed9a8",
+      "size": 2918614,
+      "type": "video/mp4",
+      "object": "lessons/lesson-203184a1fd21bfb8/v1/203184a1fd21bfb8c0a2df3bafa1cf5100ddd0f2af9435c095ccd930416ed9a8.mp4",
+      "url": "https://pbaegeqjargtsfortsyh.supabase.co/storage/v1/object/public/arivihan-reels/lessons/lesson-203184a1fd21bfb8/v1/203184a1fd21bfb8c0a2df3bafa1cf5100ddd0f2af9435c095ccd930416ed9a8.mp4"
+    },
+    {
+      "id": "lesson-203184a1fd21bfb8",
+      "kind": "poster",
+      "file": "public/posters/lesson-203184a1fd21bfb8.jpg",
+      "sha256": "2015c2d742b70ae94701fe5bca0a618ab09bb0c929a8d2beb85518e82676b0e6",
+      "size": 25348,
+      "type": "image/jpeg",
+      "object": "lessons/lesson-203184a1fd21bfb8/v1/poster-2015c2d742b70ae94701fe5bca0a618ab09bb0c929a8d2beb85518e82676b0e6.jpg",
+      "url": "https://pbaegeqjargtsfortsyh.supabase.co/storage/v1/object/public/arivihan-reels/lessons/lesson-203184a1fd21bfb8/v1/poster-2015c2d742b70ae94701fe5bca0a618ab09bb0c929a8d2beb85518e82676b0e6.jpg"
+    },
+    {
+      "id": "lesson-bee1037221c7d0eb",
+      "kind": "video",
+      "file": "videos\\रिंकी का mirror _ #physics #reflection #education #optics #jee #neet #cartoon #storywise.mp4",
+      "sha256": "bee1037221c7d0eb2e28c52d2db36b74296570ecd8a8818ce38bc9cd9d21461f",
+      "size": 2928321,
+      "type": "video/mp4",
+      "object": "lessons/lesson-bee1037221c7d0eb/v1/bee1037221c7d0eb2e28c52d2db36b74296570ecd8a8818ce38bc9cd9d21461f.mp4",
+      "url": "https://pbaegeqjargtsfortsyh.supabase.co/storage/v1/object/public/arivihan-reels/lessons/lesson-bee1037221c7d0eb/v1/bee1037221c7d0eb2e28c52d2db36b74296570ecd8a8818ce38bc9cd9d21461f.mp4"
+    },
+    {
+      "id": "lesson-bee1037221c7d0eb",
+      "kind": "poster",
+      "file": "public/posters/lesson-bee1037221c7d0eb.jpg",
+      "sha256": "fa444cabc3005eb7c31f477ba882eb56a7f53923a26385c3ddc0c1da8f434acd",
+      "size": 33438,
+      "type": "image/jpeg",
+      "object": "lessons/lesson-bee1037221c7d0eb/v1/poster-fa444cabc3005eb7c31f477ba882eb56a7f53923a26385c3ddc0c1da8f434acd.jpg",
+      "url": "https://pbaegeqjargtsfortsyh.supabase.co/storage/v1/object/public/arivihan-reels/lessons/lesson-bee1037221c7d0eb/v1/poster-fa444cabc3005eb7c31f477ba882eb56a7f53923a26385c3ddc0c1da8f434acd.jpg"
+    }
+  ],
+  "verified": [
+    {
+      "id": "lesson-c1f35ba60fdf6b04",
+      "kind": "video",
+      "checksum": true,
+      "range": true,
+      "url": "https://pbaegeqjargtsfortsyh.supabase.co/storage/v1/object/public/arivihan-reels/lessons/lesson-c1f35ba60fdf6b04/v1/c1f35ba60fdf6b0417ffebc0f66b59c5fa5378847e90ae16392899e6035a7464.mp4"
+    },
+    {
+      "id": "lesson-c1f35ba60fdf6b04",
+      "kind": "poster",
+      "checksum": true,
+      "range": true,
+      "url": "https://pbaegeqjargtsfortsyh.supabase.co/storage/v1/object/public/arivihan-reels/lessons/lesson-c1f35ba60fdf6b04/v1/poster-cd7bfe37c110415b46699a5eb6c619bd4f344910bc96a9984c8d6033c8e84158.jpg"
+    },
+    {
+      "id": "lesson-0ba81c055000009e",
+      "kind": "video",
+      "checksum": true,
+      "range": true,
+      "url": "https://pbaegeqjargtsfortsyh.supabase.co/storage/v1/object/public/arivihan-reels/lessons/lesson-0ba81c055000009e/v1/0ba81c055000009ec6e31e6e5c6feb67b587d3d890e4086054b69d8f16a31a09.mp4"
+    },
+    {
+      "id": "lesson-0ba81c055000009e",
+      "kind": "poster",
+      "checksum": true,
+      "range": true,
+      "url": "https://pbaegeqjargtsfortsyh.supabase.co/storage/v1/object/public/arivihan-reels/lessons/lesson-0ba81c055000009e/v1/poster-8943bcc46277e619e2193f76ec31fb0498c1eb97bc79fcea4726bb85e86f3a81.jpg"
+    },
+    {
+      "id": "lesson-21ec700c98e20ddc",
+      "kind": "video",
+      "checksum": true,
+      "range": true,
+      "url": "https://pbaegeqjargtsfortsyh.supabase.co/storage/v1/object/public/arivihan-reels/lessons/lesson-21ec700c98e20ddc/v1/21ec700c98e20ddccd6e7ce388a48b91cae10d34f202ca67284ec0ec5022aecf.mp4"
+    },
+    {
+      "id": "lesson-21ec700c98e20ddc",
+      "kind": "poster",
+      "checksum": true,
+      "range": true,
+      "url": "https://pbaegeqjargtsfortsyh.supabase.co/storage/v1/object/public/arivihan-reels/lessons/lesson-21ec700c98e20ddc/v1/poster-beceff5db3e3cccbb18835cf63b8e9731cf6a66cbcdcf1764c065dbfdfbfd323.jpg"
+    },
+    {
+      "id": "lesson-22bcc41eece62149",
+      "kind": "video",
+      "checksum": true,
+      "range": true,
+      "url": "https://pbaegeqjargtsfortsyh.supabase.co/storage/v1/object/public/arivihan-reels/lessons/lesson-22bcc41eece62149/v1/22bcc41eece6214910a81aa7ed87e021c79f4dc4c36b2bab950dcd1120c9314e.mp4"
+    },
+    {
+      "id": "lesson-22bcc41eece62149",
+      "kind": "poster",
+      "checksum": true,
+      "range": true,
+      "url": "https://pbaegeqjargtsfortsyh.supabase.co/storage/v1/object/public/arivihan-reels/lessons/lesson-22bcc41eece62149/v1/poster-13098c3013d9a2e58afa85fd9fd8fd3529f775155af260ed30a7e167ab060558.jpg"
+    },
+    {
+      "id": "lesson-6cc9df849e4990a3",
+      "kind": "video",
+      "checksum": true,
+      "range": true,
+      "url": "https://pbaegeqjargtsfortsyh.supabase.co/storage/v1/object/public/arivihan-reels/lessons/lesson-6cc9df849e4990a3/v1/6cc9df849e4990a3fefd8d31f62015123bb87914c556c3a8a3ad1f5af89f440b.mp4"
+    },
+    {
+      "id": "lesson-6cc9df849e4990a3",
+      "kind": "poster",
+      "checksum": true,
+      "range": true,
+      "url": "https://pbaegeqjargtsfortsyh.supabase.co/storage/v1/object/public/arivihan-reels/lessons/lesson-6cc9df849e4990a3/v1/poster-fe9d85375ac05248a46536ab59571ae0afce8cafc7680f0f88d65e69b3db4a25.jpg"
+    },
+    {
+      "id": "lesson-7e7d2dd1b05bdeec",
+      "kind": "video",
+      "checksum": true,
+      "range": true,
+      "url": "https://pbaegeqjargtsfortsyh.supabase.co/storage/v1/object/public/arivihan-reels/lessons/lesson-7e7d2dd1b05bdeec/v1/7e7d2dd1b05bdeec4d668d0974e9ae978915287f18215cd303d7881756662d15.mp4"
+    },
+    {
+      "id": "lesson-7e7d2dd1b05bdeec",
+      "kind": "poster",
+      "checksum": true,
+      "range": true,
+      "url": "https://pbaegeqjargtsfortsyh.supabase.co/storage/v1/object/public/arivihan-reels/lessons/lesson-7e7d2dd1b05bdeec/v1/poster-0ac1ddc4b2483d001fc57fb0ba74289d6812191e69ca1da8ced4ad734ee63266.jpg"
+    },
+    {
+      "id": "lesson-0ec8f943a53ccaf2",
+      "kind": "video",
+      "checksum": true,
+      "range": true,
+      "url": "https://pbaegeqjargtsfortsyh.supabase.co/storage/v1/object/public/arivihan-reels/lessons/lesson-0ec8f943a53ccaf2/v1/0ec8f943a53ccaf2c1e3e6f75b74b8d0c2a5631790edb623be84d9f48c52ea8f.mp4"
+    },
+    {
+      "id": "lesson-0ec8f943a53ccaf2",
+      "kind": "poster",
+      "checksum": true,
+      "range": true,
+      "url": "https://pbaegeqjargtsfortsyh.supabase.co/storage/v1/object/public/arivihan-reels/lessons/lesson-0ec8f943a53ccaf2/v1/poster-551def1cf83f191abf67db12f5e0ff2c9bb7e64fd90296a5835b5f0dd1182561.jpg"
+    },
+    {
+      "id": "lesson-8d664afc5b23fa13",
+      "kind": "video",
+      "checksum": true,
+      "range": true,
+      "url": "https://pbaegeqjargtsfortsyh.supabase.co/storage/v1/object/public/arivihan-reels/lessons/lesson-8d664afc5b23fa13/v1/8d664afc5b23fa1341065792365465707d168e2ce9bc329ef21f58b7f26b1790.mp4"
+    },
+    {
+      "id": "lesson-8d664afc5b23fa13",
+      "kind": "poster",
+      "checksum": true,
+      "range": true,
+      "url": "https://pbaegeqjargtsfortsyh.supabase.co/storage/v1/object/public/arivihan-reels/lessons/lesson-8d664afc5b23fa13/v1/poster-055c34b3b3e4bcba83327743c59e4c4411368d90990beacbc1d2e280f752ad4b.jpg"
+    },
+    {
+      "id": "lesson-203184a1fd21bfb8",
+      "kind": "video",
+      "checksum": true,
+      "range": true,
+      "url": "https://pbaegeqjargtsfortsyh.supabase.co/storage/v1/object/public/arivihan-reels/lessons/lesson-203184a1fd21bfb8/v1/203184a1fd21bfb8c0a2df3bafa1cf5100ddd0f2af9435c095ccd930416ed9a8.mp4"
+    },
+    {
+      "id": "lesson-203184a1fd21bfb8",
+      "kind": "poster",
+      "checksum": true,
+      "range": true,
+      "url": "https://pbaegeqjargtsfortsyh.supabase.co/storage/v1/object/public/arivihan-reels/lessons/lesson-203184a1fd21bfb8/v1/poster-2015c2d742b70ae94701fe5bca0a618ab09bb0c929a8d2beb85518e82676b0e6.jpg"
+    },
+    {
+      "id": "lesson-bee1037221c7d0eb",
+      "kind": "video",
+      "checksum": true,
+      "range": true,
+      "url": "https://pbaegeqjargtsfortsyh.supabase.co/storage/v1/object/public/arivihan-reels/lessons/lesson-bee1037221c7d0eb/v1/bee1037221c7d0eb2e28c52d2db36b74296570ecd8a8818ce38bc9cd9d21461f.mp4"
+    },
+    {
+      "id": "lesson-bee1037221c7d0eb",
+      "kind": "poster",
+      "checksum": true,
+      "range": true,
+      "url": "https://pbaegeqjargtsfortsyh.supabase.co/storage/v1/object/public/arivihan-reels/lessons/lesson-bee1037221c7d0eb/v1/poster-fa444cabc3005eb7c31f477ba882eb56a7f53923a26385c3ddc0c1da8f434acd.jpg"
+    }
+  ],
+  "verifiedAt": "2026-10-22T11:48:43.289Z",
+  "uploaderDeleted": true
+}

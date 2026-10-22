@@ -21,8 +21,14 @@ export class SupabaseAdapter implements DemoService, DiscoveryService {
     return this.rpc<Lesson[]>("ar_reels_discovery_catalogue").then((rows) =>
       rows.map((l) => ({
         ...l,
-        source: `/media/${l.id}`,
-        poster: `/posters/${l.id}.jpg`,
+        source:
+          this.mediaMode === "local"
+            ? `/media/${l.id}`
+            : this.hostedUrl(l.source, l.id),
+        poster:
+          this.mediaMode === "local"
+            ? `/posters/${l.id}.jpg`
+            : this.hostedUrl(l.poster, l.id),
       })),
     );
   }
@@ -79,9 +85,34 @@ export class SupabaseAdapter implements DemoService, DiscoveryService {
     });
   }
   readonly client: SupabaseClient;
+  private mediaMode: "hosted" | "local";
+  private hostedUrl(value: string, id: string): string {
+    try {
+      const parsed = new URL(value);
+      if (
+        parsed.protocol === "https:" &&
+        !parsed.username &&
+        !parsed.password &&
+        !["localhost", "127.0.0.1", "[::1]"].includes(parsed.hostname) &&
+        !parsed.hostname.endsWith(".localhost")
+      )
+        return value;
+    } catch {}
+    return this.fail(
+      `Lesson ${id} has no valid hosted media URL. Publish the lesson assets or explicitly select VITE_MEDIA_MODE=local for local development.`,
+    );
+  }
   private sessionId: string = crypto.randomUUID();
   private test: boolean;
-  constructor(url: string, key: string, test = false) {
+  constructor(
+    url: string,
+    key: string,
+    test = false,
+    mediaMode: "hosted" | "local" = import.meta.env.VITE_MEDIA_MODE === "local"
+      ? "local"
+      : "hosted",
+  ) {
+    this.mediaMode = mediaMode;
     if (!url || !key)
       throw Error(
         "Live Supabase mode requires a project URL and publishable key.",

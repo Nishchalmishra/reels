@@ -1,0 +1,25 @@
+﻿import {createClient} from 'npm:@supabase/supabase-js@2';
+const allowedUser=__ALLOWED_USER__, expires=__EXPIRES__, bucket=__BUCKET__;
+const assets: {object:string;size:number;type:string}[]=__ASSETS__;
+const json=(value:unknown,status=200)=>new Response(JSON.stringify(value),{status,headers:{'Content-Type':'application/json','Cache-Control':'no-store'}});
+Deno.serve(async(req:Request)=>{
+ if(req.method!=='POST')return json({error:'Method not allowed'},405);
+ if(Date.now()>Date.parse(expires))return json({error:'Upload window closed'},410);
+ const authorization=req.headers.get('Authorization')||'';
+ if(!authorization.startsWith('Bearer '))return json({error:'Authentication required'},401);
+ const client=createClient(Deno.env.get('SUPABASE_URL')!,Deno.env.get('SUPABASE_ANON_KEY')!,{auth:{persistSession:false,autoRefreshToken:false}});
+ const {data:{user},error:authError}=await client.auth.getUser(authorization.slice(7));
+ if(authError||user?.id!==allowedUser)return json({error:'Not authorized for this upload job'},403);
+ const admin=createClient(Deno.env.get('SUPABASE_URL')!,Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!,{auth:{persistSession:false,autoRefreshToken:false}});
+ try {
+  const body=await req.json();
+  if(body.action==='finish') {const {error}=await admin.auth.admin.deleteUser(allowedUser);return error?json({error:'Cleanup failed'},500):json({finished:true});}
+  if(body.action!=='sign')return json({error:'Unknown action'},400);
+  const asset=assets.find(a=>a.object===body.object);if(!asset)return json({error:'Object not in the authorized manifest'},403);
+  const {data:existing,error:readError}=await admin.storage.getBucket(bucket);
+  if(readError){const {error}=await admin.storage.createBucket(bucket,{public:true,fileSizeLimit:20*1024*1024,allowedMimeTypes:['video/mp4','image/jpeg']});if(error)return json({error:'Could not create scoped media bucket'},500);}
+  else if(!existing.public)return json({error:'Existing bucket has unexpected visibility'},409);
+  const {data,error}=await admin.storage.from(bucket).createSignedUploadUrl(asset.object,{upsert:false});
+  return error?json({error:'Could not sign the authorized upload'},500):json({token:data.token});
+ }catch{return json({error:'Upload request failed'},500);}
+});

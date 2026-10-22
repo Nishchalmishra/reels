@@ -6,6 +6,59 @@ const sdk = vi.hoisted(() => ({
 vi.mock("@supabase/supabase-js", () => ({ createClient: () => sdk }));
 import { SupabaseAdapter } from "./supabase";
 describe("Supabase adapter trust boundary", () => {
+  it("keeps hosted catalogue URLs rather than replacing them with local paths", async () => {
+    const row = {
+      id: "lesson",
+      source:
+        "https://example.supabase.co/storage/v1/object/public/reels/video.mp4",
+      poster:
+        "https://example.supabase.co/storage/v1/object/public/reels/poster.jpg",
+    };
+    sdk.rpc.mockResolvedValue({ data: [row], error: null });
+    const hosted = new SupabaseAdapter(
+      "https://example.supabase.co",
+      "sb_publishable_test",
+      false,
+      "hosted",
+    );
+    expect(await hosted.discoveryCatalogue()).toEqual([row]);
+    const local = new SupabaseAdapter(
+      "https://example.supabase.co",
+      "sb_publishable_test",
+      false,
+      "local",
+    );
+    expect(await local.discoveryCatalogue()).toEqual([
+      { ...row, source: "/media/lesson", poster: "/posters/lesson.jpg" },
+    ]);
+  });
+  it("fails clearly on missing or local URLs in hosted mode without substituting media", async () => {
+    const hosted = new SupabaseAdapter(
+      "https://example.supabase.co",
+      "sb_publishable_test",
+      false,
+      "hosted",
+    );
+    for (const source of [
+      "/media/lesson",
+      "http://127.0.0.1:8766/media/lesson",
+      "https://localhost/media/lesson",
+    ]) {
+      sdk.rpc.mockResolvedValue({
+        data: [
+          {
+            id: "lesson",
+            source,
+            poster: "https://example.supabase.co/poster.jpg",
+          },
+        ],
+        error: null,
+      });
+      await expect(hosted.discoveryCatalogue()).rejects.toThrow(
+        /no valid hosted media URL/,
+      );
+    }
+  });
   it("rejects privileged browser configuration", () => {
     expect(
       () =>

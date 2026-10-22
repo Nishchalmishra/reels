@@ -1,3 +1,5 @@
+> Hosted media: bucket `arivihan-reels` now contains 10 immutable checksum-named MP4s and 10 posters. Public retrieval is enabled for the authorized demo clips; student writes are denied. All uploads used a short-lived authenticated, identity-scoped broker with service credentials kept only in the Edge Function runtime. The uploader identity was deleted and the broker is disabled. No admin credentials entered the frontend or workspace `.env`. Applied migration `202610220008_hosted_media.sql` only changes catalogue delivery metadata. See README for Vercel deployment settings.
+
 > Current frontend: responsive web (`npm run live`), not an APK. The revised Feed/Explore service calls the deployed discovery RPCs and shares the existing authenticated identity, preferences, wallet and simulated checkout. See [DISCOVERY_HANDOFF.md](DISCOVERY_HANDOFF.md). Historical chapter integration details follow.
 
 # Supabase integration handoff
@@ -70,3 +72,5 @@ Watch reports alone cannot prove attention or eliminate determined abuse. The RP
 
 The current native Feed/Explore flow uses isolated discovery tables and RPCs deployed through migrations `202610190004`–`202610190006`. Existing chapter structures and RPCs below remain unchanged. See [DISCOVERY_HANDOFF.md](DISCOVERY_HANDOFF.md) for the three/four-video cycle model, actual local media, hosted verification and native build/device status. Backend/API verification must not be read as a native UI acceptance claim.
 
+
+Hosted-media verification completed on 22 October: all ten actual videos played from Supabase Storage in the built mobile web application, Class 11/12 filtering and hosted posters worked, refresh retained Explore, no local media request or browser error occurred, and authenticated student uploads were rejected. Run `28636731-d020-4138-8b46-33b8760b11ef`; retained TEST identity `108a7645-1b52-4b44-aea8-3a2620f0e8b3` has no coins or orders. Build and all 33 tests passed. The actual Vercel site was not redeployed or tested because its project connection/URL was not supplied. Deploy the updated repository using the included `vercel.json`.

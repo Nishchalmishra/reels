@@ -66,8 +66,14 @@ function suppliedMedia() {
     },
   };
 }
-export default defineConfig(({ mode }) => {
+export default defineConfig(({ mode, command }) => {
   const env = loadEnv(mode, process.cwd(), "");
+  if (env.VITE_MEDIA_MODE && !["hosted", "local"].includes(env.VITE_MEDIA_MODE))
+    throw Error("VITE_MEDIA_MODE must be hosted or local.");
+  if (command === "build" && env.VITE_MEDIA_MODE === "local")
+    throw Error(
+      "Local video delivery is development-only. Set VITE_MEDIA_MODE=hosted for deployment.",
+    );
   if (
     Object.keys(env).some((name) =>
       /^VITE_.*(SECRET|SERVICE_ROLE|ACCESS_TOKEN|DB_URL|DATABASE_URL|PASSWORD)/i.test(
@@ -116,7 +122,11 @@ export default defineConfig(({ mode }) => {
         ],
       },
     },
-    plugins: [react(), tailwindcss(), suppliedMedia()],
+    plugins: [
+      react(),
+      tailwindcss(),
+      ...(env.VITE_MEDIA_MODE === "local" ? [suppliedMedia()] : []),
+    ],
     build: { target: "es2022" },
     define: {
       "import.meta.env.VITE_SUPABASE_URL": JSON.stringify(url),
