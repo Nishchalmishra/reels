@@ -29,6 +29,7 @@ export interface DiscoveryService {
     speed: number,
     visible: boolean,
     playing: boolean,
+    playback?: { id: string; sequence: number },
   ): Promise<void>;
   discoveryOffer(): Promise<{
     ready: boolean;

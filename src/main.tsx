@@ -2533,7 +2533,9 @@ function App() {
         </p>
         <span className="eyebrow cyan">YOUR DAILY DOSE OF CURIOSITY</span>
         <h1>
-          <span className="home-greeting" title={s.profile.name}>Hello, {s.profile.name}.</span>
+          <span className="home-greeting" title={s.profile.name}>
+            Hello, {s.profile.name}.
+          </span>
           Let's make an idea click.
         </h1>
         <Link to="/reels" className="home-reels-card">
@@ -2602,7 +2604,9 @@ function App() {
         modal,
       }}
     >
-      <div className={`app-stage${ready && s.profile && liveMode && !parts.length ? " home-stage" : ""}`}>
+      <div
+        className={`app-stage${ready && s.profile && liveMode && !parts.length ? " home-stage" : ""}`}
+      >
         {page}
         {error && (
           <div className="error-toast" role="alert">
@@ -2703,8 +2707,19 @@ function downloadNote(r: Reel) {
     "text/plain",
   );
 }
+const AdminPage = React.lazy(() => import("./admin/Admin"));
+function Root() {
+  const loc = useLocation();
+  return loc.pathname === "/admin" || loc.pathname.startsWith("/admin/") ? (
+    <React.Suspense fallback={<Loading />}>
+      <AdminPage />
+    </React.Suspense>
+  ) : (
+    <App />
+  );
+}
 createRoot(document.getElementById("root")!).render(
   <BrowserRouter>
-    <App />
+    <Root />
   </BrowserRouter>,
 );

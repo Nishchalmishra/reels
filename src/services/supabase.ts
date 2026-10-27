@@ -43,16 +43,23 @@ export class SupabaseAdapter implements DemoService, DiscoveryService {
     speed: number,
     visible: boolean,
     playing: boolean,
+    playback?: { id: string; sequence: number },
   ) {
-    await this.rpc("ar_reels_discovery_progress", {
-      p_reel: id,
-      p_from: from,
-      p_to: to,
-      p_wall: wall,
-      p_speed: speed,
-      p_visible: visible,
-      p_playing: playing,
-    });
+    await this.rpc(
+      playback ? "ar_reels_discovery_playback" : "ar_reels_discovery_progress",
+      {
+        ...(playback
+          ? { p_session: playback.id, p_sequence: playback.sequence }
+          : {}),
+        p_reel: id,
+        p_from: from,
+        p_to: to,
+        p_wall: wall,
+        p_speed: speed,
+        p_visible: visible,
+        p_playing: playing,
+      },
+    );
   }
   discoveryOffer() {
     return this.rpc<{ ready: boolean; id?: string; diagnostic?: string }>(

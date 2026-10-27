@@ -403,7 +403,7 @@ export function Discovery({
                             positions: { ...v.positions, [id]: position },
                           }))
                         }
-                        onProgress={(from, to, wall, speed) =>
+                        onProgress={(from, to, wall, speed, playback) =>
                           report(() =>
                             api.discoveryProgress(
                               id,
@@ -413,11 +413,14 @@ export function Discovery({
                               speed,
                               true,
                               true,
+                              playback,
                             ),
                           )
                         }
                         onEnded={() => {
-                          feed.current?.scrollTo({top:(i+1)*feed.current.clientHeight});
+                          feed.current?.scrollTo({
+                            top: (i + 1) * feed.current.clientHeight,
+                          });
                         }}
                         onError={setError}
                       />
@@ -750,7 +753,9 @@ export function Discovery({
           </header>
           {attempt.finished ? (
             <div className="quiz-result">
-              <div className={`result-medal ${celebrate && attempt.rewarded ? "coin-pop" : ""}`}>
+              <div
+                className={`result-medal ${celebrate && attempt.rewarded ? "coin-pop" : ""}`}
+              >
                 {attempt.rewarded ? "+5" : `${attempt.score}/5`}
               </div>
               <span className="eyebrow cyan">
@@ -911,13 +916,23 @@ function LessonVideo({
   muted: boolean;
   position: number;
   onPosition: (p: number) => void;
-  onProgress: (from: number, to: number, wall: number, speed: number) => void;
+  onProgress: (
+    from: number,
+    to: number,
+    wall: number,
+    speed: number,
+    playback: { id: string; sequence: number },
+  ) => void;
   onEnded: () => void;
   onError: (e: string) => void;
 }) {
   const video = useRef<HTMLVideoElement>(null),
     last = useRef<{ position: number; at: number } | null>(null);
   const callbacks = useRef({ onPosition, onProgress, onEnded, onError });
+  const playback = useRef({ id: crypto.randomUUID(), sequence: 0 });
+  useEffect(() => {
+    if (active) playback.current = { id: crypto.randomUUID(), sequence: 0 };
+  }, [active]);
   callbacks.current = { onPosition, onProgress, onEnded, onError };
   const [blocked, setBlocked] = useState(false),
     [failed, setFailed] = useState(false),
@@ -954,6 +969,7 @@ function LessonVideo({
         v.currentTime,
         wall,
         v.playbackRate,
+        { id: playback.current.id, sequence: ++playback.current.sequence },
       );
   };
   useEffect(() => {
