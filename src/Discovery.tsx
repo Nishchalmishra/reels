@@ -425,7 +425,7 @@ export function Discovery({
                         onError={setError}
                       />
                     ) : (
-                      <img src={l.poster} alt="" />
+                      l.poster ? <img src={l.poster} alt="" /> : null
                     )}
                     {i === saved.index && (
                       <>
@@ -606,7 +606,9 @@ export function Discovery({
                     onClick={() => openLesson(l.id)}
                   >
                     <div>
-                      <img src={l.poster} alt="" loading="lazy" />
+                      {l.poster ? (
+                        <img src={l.poster} alt="" loading="lazy" />
+                      ) : null}
                       <span className="tile-play">
                         <Play size={16} fill="currentColor" />
                       </span>
@@ -1003,7 +1005,7 @@ function LessonVideo({
       <video
         ref={video}
         src={lesson.source}
-        poster={lesson.poster}
+        poster={lesson.poster || undefined}
         muted={muted}
         playsInline
         preload={active ? "auto" : "metadata"}

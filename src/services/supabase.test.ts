@@ -59,6 +59,27 @@ describe("Supabase adapter trust boundary", () => {
       );
     }
   });
+  it("allows a lesson without a poster in hosted mode", async () => {
+    const hosted = new SupabaseAdapter(
+      "https://example.supabase.co",
+      "sb_publishable_test",
+      false,
+      "hosted",
+    );
+    sdk.rpc.mockResolvedValue({
+      data: [
+        {
+          id: "lesson",
+          source: "https://example.supabase.co/lesson.mp4",
+          poster: null,
+        },
+      ],
+      error: null,
+    });
+    const [lesson] = await hosted.discoveryCatalogue();
+    expect(lesson.source).toBe("https://example.supabase.co/lesson.mp4");
+    expect(lesson.poster).toBe("");
+  });
   it("rejects privileged browser configuration", () => {
     expect(
       () =>

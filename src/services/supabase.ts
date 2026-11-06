@@ -28,7 +28,9 @@ export class SupabaseAdapter implements DemoService, DiscoveryService {
         poster:
           this.mediaMode === "local"
             ? `/posters/${l.id}.jpg`
-            : this.hostedUrl(l.poster, l.id),
+            : l.poster
+              ? this.hostedUrl(l.poster, l.id)
+              : "",
       })),
     );
   }
