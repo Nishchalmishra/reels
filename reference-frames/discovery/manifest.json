@@ -258,5 +258,356 @@
     "concept": "Plane-mirror images and viewing geometry",
     "source": "http://127.0.0.1:8766/media/lesson-bee1037221c7d0eb",
     "discovery": true
+  },
+  {
+    "id": "lesson-87b7632383e25dcb",
+    "file": "Atom की कहानी - Part 1 #storywise #physics.mp4",
+    "duration": 146.81,
+    "width": 480,
+    "height": 854,
+    "sha256": "87b7632383e25dcbf8dea085f436f89810202c1f5c4165f1ba37b457dcc31bc9",
+    "contentVersion": 1,
+    "reviewStatus": "added via add-reels.mjs; editorial review pending",
+    "title": "Atom की कहानी – Part 1",
+    "topic": "Atomic structure",
+    "chapterId": "discovery-atomic-structure",
+    "subject": "Physics",
+    "grades": [
+      11
+    ],
+    "languages": [
+      "Hindi",
+      "English"
+    ],
+    "narration": "Hindi / Hinglish; English scientific labels",
+    "concept": "Dalton's atomic theory and the law of multiple proportions",
+    "discovery": true,
+    "source": "https://__PROJECT__.supabase.co/storage/v1/object/public/arivihan-reels/lessons/lesson-87b7632383e25dcb/v1/87b7632383e25dcbf8dea085f436f89810202c1f5c4165f1ba37b457dcc31bc9.mp4",
+    "storageBucket": "arivihan-reels",
+    "storageObject": "lessons/lesson-87b7632383e25dcb/v1/87b7632383e25dcbf8dea085f436f89810202c1f5c4165f1ba37b457dcc31bc9.mp4"
+  },
+  {
+    "id": "lesson-89018210089178d4",
+    "file": "Atom की कहानी - Part 2 #storywise #physics.mp4",
+    "duration": 179.132,
+    "width": 480,
+    "height": 854,
+    "sha256": "89018210089178d4cc737601080d14d14e28ef537ebd089eed0543140e0595cd",
+    "contentVersion": 1,
+    "reviewStatus": "added via add-reels.mjs; editorial review pending",
+    "title": "Atom की कहानी – Part 2",
+    "topic": "Discovery of the electron",
+    "chapterId": "discovery-discovery-of-the-electron",
+    "subject": "Physics",
+    "grades": [
+      12
+    ],
+    "languages": [
+      "Hindi",
+      "English"
+    ],
+    "narration": "Hindi / Hinglish; English scientific labels",
+    "concept": "Thomson's cathode-ray experiment and e/m = 1.76 × 10¹¹ C/kg",
+    "discovery": true,
+    "source": "https://__PROJECT__.supabase.co/storage/v1/object/public/arivihan-reels/lessons/lesson-89018210089178d4/v1/89018210089178d4cc737601080d14d14e28ef537ebd089eed0543140e0595cd.mp4",
+    "storageBucket": "arivihan-reels",
+    "storageObject": "lessons/lesson-89018210089178d4/v1/89018210089178d4cc737601080d14d14e28ef537ebd089eed0543140e0595cd.mp4"
+  },
+  {
+    "id": "lesson-44a2bf384010ed55",
+    "file": "Atom की कहानी - Part 3 #storywise #physics.mp4",
+    "duration": 173.376,
+    "width": 360,
+    "height": 640,
+    "sha256": "44a2bf384010ed556c3f536513d6d4ee4659511b2ec842e46a1ae1bb94570115",
+    "contentVersion": 1,
+    "reviewStatus": "added via add-reels.mjs; editorial review pending",
+    "title": "Atom की कहानी – Part 3",
+    "topic": "Rutherford model",
+    "chapterId": "discovery-rutherford-model",
+    "subject": "Physics",
+    "grades": [
+      12
+    ],
+    "languages": [
+      "Hindi",
+      "English"
+    ],
+    "narration": "Hindi / Hinglish; English scientific labels",
+    "concept": "Alpha scattering, the nucleus, and why orbiting electrons are a problem",
+    "discovery": true,
+    "source": "https://__PROJECT__.supabase.co/storage/v1/object/public/arivihan-reels/lessons/lesson-44a2bf384010ed55/v1/44a2bf384010ed556c3f536513d6d4ee4659511b2ec842e46a1ae1bb94570115.mp4",
+    "storageBucket": "arivihan-reels",
+    "storageObject": "lessons/lesson-44a2bf384010ed55/v1/44a2bf384010ed556c3f536513d6d4ee4659511b2ec842e46a1ae1bb94570115.mp4"
+  },
+  {
+    "id": "lesson-103dcaa493e09910",
+    "file": "Atom की कहानी - Part 4 #storywise #physics.mp4",
+    "duration": 179.883,
+    "width": 360,
+    "height": 640,
+    "sha256": "103dcaa493e099102e49f32b143c66f95543f1d7958331b48d885a3581fb5fc9",
+    "contentVersion": 1,
+    "reviewStatus": "added via add-reels.mjs; editorial review pending",
+    "title": "Atom की कहानी – Part 4",
+    "topic": "Bohr model",
+    "chapterId": "discovery-bohr-model",
+    "subject": "Physics",
+    "grades": [
+      12
+    ],
+    "languages": [
+      "Hindi",
+      "English"
+    ],
+    "narration": "Hindi / Hinglish; English scientific labels",
+    "concept": "Bohr's quantised orbits, angular momentum and spectral lines",
+    "discovery": true,
+    "source": "https://__PROJECT__.supabase.co/storage/v1/object/public/arivihan-reels/lessons/lesson-103dcaa493e09910/v1/103dcaa493e099102e49f32b143c66f95543f1d7958331b48d885a3581fb5fc9.mp4",
+    "storageBucket": "arivihan-reels",
+    "storageObject": "lessons/lesson-103dcaa493e09910/v1/103dcaa493e099102e49f32b143c66f95543f1d7958331b48d885a3581fb5fc9.mp4"
+  },
+  {
+    "id": "lesson-1f55e659aefe0227",
+    "file": "Buffalo.mp4",
+    "duration": 176.043,
+    "width": 360,
+    "height": 640,
+    "sha256": "1f55e659aefe02279ab2b87268f8fd26f20395d7abb8d3297a954efcaf7c24ce",
+    "contentVersion": 1,
+    "reviewStatus": "added via add-reels.mjs; editorial review pending",
+    "title": "गई भैंस कुएँ में",
+    "topic": "Laws of motion",
+    "chapterId": "discovery-laws-of-motion",
+    "subject": "Physics",
+    "grades": [
+      11
+    ],
+    "languages": [
+      "Hindi",
+      "English"
+    ],
+    "narration": "Hindi / Hinglish; English scientific labels",
+    "concept": "Tension, pulleys and the force needed to lift a load",
+    "discovery": true,
+    "source": "https://__PROJECT__.supabase.co/storage/v1/object/public/arivihan-reels/lessons/lesson-1f55e659aefe0227/v1/1f55e659aefe02279ab2b87268f8fd26f20395d7abb8d3297a954efcaf7c24ce.mp4",
+    "storageBucket": "arivihan-reels",
+    "storageObject": "lessons/lesson-1f55e659aefe0227/v1/1f55e659aefe02279ab2b87268f8fd26f20395d7abb8d3297a954efcaf7c24ce.mp4"
+  },
+  {
+    "id": "lesson-bdbd458f2e87bac2",
+    "file": "Calorific value - E20 ka Average #cartoon #science #animation.mp4",
+    "duration": 167.476,
+    "width": 720,
+    "height": 1280,
+    "sha256": "bdbd458f2e87bac2ffdea71422529dd4c1d121eeb5e5300d068dac143351c2bd",
+    "contentVersion": 1,
+    "reviewStatus": "added via add-reels.mjs; editorial review pending",
+    "title": "E20 का Average",
+    "topic": "Heat and fuels",
+    "chapterId": "discovery-heat-and-fuels",
+    "subject": "Physics",
+    "grades": [
+      11
+    ],
+    "languages": [
+      "Hindi",
+      "English"
+    ],
+    "narration": "Hindi / Hinglish; English scientific labels",
+    "concept": "Calorific value of a petrol–ethanol blend and efficiency",
+    "discovery": true,
+    "source": "https://__PROJECT__.supabase.co/storage/v1/object/public/arivihan-reels/lessons/lesson-bdbd458f2e87bac2/v1/bdbd458f2e87bac2ffdea71422529dd4c1d121eeb5e5300d068dac143351c2bd.mp4",
+    "storageBucket": "arivihan-reels",
+    "storageObject": "lessons/lesson-bdbd458f2e87bac2/v1/bdbd458f2e87bac2ffdea71422529dd4c1d121eeb5e5300d068dac143351c2bd.mp4"
+  },
+  {
+    "id": "lesson-83f6ce6ab07c854e",
+    "file": "Diving का time _ #physics #lawsofmotion #inertia #freefall #gravity #11thphysics #jee #neet.mp4",
+    "duration": 76.51,
+    "width": 360,
+    "height": 640,
+    "sha256": "83f6ce6ab07c854e31c23ec08c0f85365ffc9e68ba675ee42c0690c1ade651e2",
+    "contentVersion": 1,
+    "reviewStatus": "added via add-reels.mjs; editorial review pending",
+    "title": "Diving का time",
+    "topic": "Laws of motion",
+    "chapterId": "discovery-laws-of-motion",
+    "subject": "Physics",
+    "grades": [
+      11
+    ],
+    "languages": [
+      "Hindi",
+      "English"
+    ],
+    "narration": "Hindi / Hinglish; English scientific labels",
+    "concept": "Weight, inertia and why all objects fall with g",
+    "discovery": true,
+    "source": "https://__PROJECT__.supabase.co/storage/v1/object/public/arivihan-reels/lessons/lesson-83f6ce6ab07c854e/v1/83f6ce6ab07c854e31c23ec08c0f85365ffc9e68ba675ee42c0690c1ade651e2.mp4",
+    "storageBucket": "arivihan-reels",
+    "storageObject": "lessons/lesson-83f6ce6ab07c854e/v1/83f6ce6ab07c854e31c23ec08c0f85365ffc9e68ba675ee42c0690c1ade651e2.mp4"
+  },
+  {
+    "id": "lesson-a991899276706fca",
+    "file": "Fake gravity _ #circularmotion #centripetalforce #physics #ncert #cbse #cbse12physics #jee #neet.mp4",
+    "duration": 66.804,
+    "width": 360,
+    "height": 640,
+    "sha256": "a991899276706fcabddcbb4c7e60e8cb58e9c51d505f98535dfd5d3ae32ac8e4",
+    "contentVersion": 1,
+    "reviewStatus": "added via add-reels.mjs; editorial review pending",
+    "title": "Fake Gravity",
+    "topic": "Circular motion",
+    "chapterId": "discovery-circular-motion",
+    "subject": "Physics",
+    "grades": [
+      11
+    ],
+    "languages": [
+      "Hindi",
+      "English"
+    ],
+    "narration": "Hindi / Hinglish; English scientific labels",
+    "concept": "Artificial gravity on a rotating space station",
+    "discovery": true,
+    "source": "https://__PROJECT__.supabase.co/storage/v1/object/public/arivihan-reels/lessons/lesson-a991899276706fca/v1/a991899276706fcabddcbb4c7e60e8cb58e9c51d505f98535dfd5d3ae32ac8e4.mp4",
+    "storageBucket": "arivihan-reels",
+    "storageObject": "lessons/lesson-a991899276706fca/v1/a991899276706fcabddcbb4c7e60e8cb58e9c51d505f98535dfd5d3ae32ac8e4.mp4"
+  },
+  {
+    "id": "lesson-ceb9b8059d6b681b",
+    "file": "GPS.mp4",
+    "duration": 173.546,
+    "width": 360,
+    "height": 640,
+    "sha256": "ceb9b8059d6b681b2a6e87bc2d6092b04e32f9077ac10a03ac907e6a15c79241",
+    "contentVersion": 1,
+    "reviewStatus": "added via add-reels.mjs; editorial review pending",
+    "title": "How GPS works?",
+    "topic": "Electromagnetic waves",
+    "chapterId": "discovery-electromagnetic-waves",
+    "subject": "Physics",
+    "grades": [
+      12
+    ],
+    "languages": [
+      "Hindi",
+      "English"
+    ],
+    "narration": "Hindi / Hinglish; English scientific labels",
+    "concept": "Distance from signal time and trilateration",
+    "discovery": true,
+    "source": "https://__PROJECT__.supabase.co/storage/v1/object/public/arivihan-reels/lessons/lesson-ceb9b8059d6b681b/v1/ceb9b8059d6b681b2a6e87bc2d6092b04e32f9077ac10a03ac907e6a15c79241.mp4",
+    "storageBucket": "arivihan-reels",
+    "storageObject": "lessons/lesson-ceb9b8059d6b681b/v1/ceb9b8059d6b681b2a6e87bc2d6092b04e32f9077ac10a03ac907e6a15c79241.mp4"
+  },
+  {
+    "id": "lesson-d0f490446d0d2c87",
+    "file": "Refraction ki race _ #refraction_of_light #refraction #ncert #cbse #physics.mp4",
+    "duration": 74.977,
+    "width": 360,
+    "height": 640,
+    "sha256": "d0f490446d0d2c87b860101141e2a81ce5e212dfc01dded7dec5ce2f22ddbaca",
+    "contentVersion": 1,
+    "reviewStatus": "added via add-reels.mjs; editorial review pending",
+    "title": "Refraction की race",
+    "topic": "Ray optics",
+    "chapterId": "discovery-ray-optics",
+    "subject": "Physics",
+    "grades": [
+      12
+    ],
+    "languages": [
+      "Hindi",
+      "English"
+    ],
+    "narration": "Hindi / Hinglish; English scientific labels",
+    "concept": "Fermat's principle: light takes the path of least time",
+    "discovery": true,
+    "source": "https://__PROJECT__.supabase.co/storage/v1/object/public/arivihan-reels/lessons/lesson-d0f490446d0d2c87/v1/d0f490446d0d2c87b860101141e2a81ce5e212dfc01dded7dec5ce2f22ddbaca.mp4",
+    "storageBucket": "arivihan-reels",
+    "storageObject": "lessons/lesson-d0f490446d0d2c87/v1/d0f490446d0d2c87b860101141e2a81ce5e212dfc01dded7dec5ce2f22ddbaca.mp4"
+  },
+  {
+    "id": "lesson-a6afdd1435d5263d",
+    "file": "Torque ने बचाई जान _ #torque #rotationalmotion #ncert #physics #jee #neet #rotation #class11physics.mp4",
+    "duration": 94.018,
+    "width": 360,
+    "height": 640,
+    "sha256": "a6afdd1435d5263dce0b7462985e252ad8ef2c78955226c68a23e5d687ea2a65",
+    "contentVersion": 1,
+    "reviewStatus": "added via add-reels.mjs; editorial review pending",
+    "title": "Torque ने बचाई जान",
+    "topic": "Rotational motion",
+    "chapterId": "discovery-rotational-motion",
+    "subject": "Physics",
+    "grades": [
+      11
+    ],
+    "languages": [
+      "Hindi",
+      "English"
+    ],
+    "narration": "Hindi / Hinglish; English scientific labels",
+    "concept": "Torque τ = r × F and balancing moments",
+    "discovery": true,
+    "source": "https://__PROJECT__.supabase.co/storage/v1/object/public/arivihan-reels/lessons/lesson-a6afdd1435d5263d/v1/a6afdd1435d5263dce0b7462985e252ad8ef2c78955226c68a23e5d687ea2a65.mp4",
+    "storageBucket": "arivihan-reels",
+    "storageObject": "lessons/lesson-a6afdd1435d5263d/v1/a6afdd1435d5263dce0b7462985e252ad8ef2c78955226c68a23e5d687ea2a65.mp4"
+  },
+  {
+    "id": "lesson-f12305dc52d2625a",
+    "file": "Wavefront and energy loss _ Water tank dispute.mp4",
+    "duration": 165.479,
+    "width": 720,
+    "height": 1280,
+    "sha256": "f12305dc52d2625a0af43315fbd6f20a19358d3b1e5f91b6acfc78bc2ed60a6e",
+    "contentVersion": 1,
+    "reviewStatus": "added via add-reels.mjs; editorial review pending",
+    "title": "Water tank dispute",
+    "topic": "Waves",
+    "chapterId": "discovery-waves",
+    "subject": "Physics",
+    "grades": [
+      11
+    ],
+    "languages": [
+      "Hindi",
+      "English"
+    ],
+    "narration": "Hindi / Hinglish; English scientific labels",
+    "concept": "Intensity falling with distance and guiding waves",
+    "discovery": true,
+    "source": "https://__PROJECT__.supabase.co/storage/v1/object/public/arivihan-reels/lessons/lesson-f12305dc52d2625a/v1/f12305dc52d2625a0af43315fbd6f20a19358d3b1e5f91b6acfc78bc2ed60a6e.mp4",
+    "storageBucket": "arivihan-reels",
+    "storageObject": "lessons/lesson-f12305dc52d2625a/v1/f12305dc52d2625a0af43315fbd6f20a19358d3b1e5f91b6acfc78bc2ed60a6e.mp4"
+  },
+  {
+    "id": "lesson-d3b9019f0c946389",
+    "file": "चाचा Mayday का airplane _ Coriolis Effect explained  #storywise #physics.mp4",
+    "duration": 231.921,
+    "width": 640,
+    "height": 360,
+    "sha256": "d3b9019f0c9463898ca0ed8c3ad79ec6e8e085a1e599866a8568bbdf1ca7bbe3",
+    "contentVersion": 1,
+    "reviewStatus": "added via add-reels.mjs; editorial review pending",
+    "title": "चाचा Mayday का airplane",
+    "topic": "Non-inertial frames",
+    "chapterId": "discovery-non-inertial-frames",
+    "subject": "Physics",
+    "grades": [
+      11
+    ],
+    "languages": [
+      "Hindi",
+      "English"
+    ],
+    "narration": "Hindi / Hinglish; English scientific labels",
+    "concept": "The Coriolis effect on a rotating Earth",
+    "discovery": true,
+    "source": "https://__PROJECT__.supabase.co/storage/v1/object/public/arivihan-reels/lessons/lesson-d3b9019f0c946389/v1/d3b9019f0c9463898ca0ed8c3ad79ec6e8e085a1e599866a8568bbdf1ca7bbe3.mp4",
+    "storageBucket": "arivihan-reels",
+    "storageObject": "lessons/lesson-d3b9019f0c946389/v1/d3b9019f0c9463898ca0ed8c3ad79ec6e8e085a1e599866a8568bbdf1ca7bbe3.mp4"
   }
 ]
