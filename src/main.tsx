@@ -50,7 +50,9 @@ import {
   liveMode,
 } from "./services";
 import type { Snapshot, Attempt, Quote } from "./services/contracts";
+import "./theme.css";
 import "./styles.css";
+import { ThemeToggle, useTheme } from "./theme";
 import { Discovery } from "./Discovery";
 const money = (p: number) =>
   new Intl.NumberFormat("en-IN", {
@@ -402,11 +404,14 @@ function HomePage() {
             <span className="brandmark">a</span> arivihan
             <span className="brand-dot">•</span>
           </div>
-          <Link to="/wallet" className="wallet-chip">
-            <Coins size={17} />
-            {balance(s)}
-            <ChevronRight size={13} />
-          </Link>
+          <div className="home-header-actions">
+            <ThemeToggle />
+            <Link to="/wallet" className="wallet-chip">
+              <Coins size={17} />
+              {balance(s)}
+              <ChevronRight size={13} />
+            </Link>
+          </div>
         </div>
       </header>
       <main>
@@ -2525,8 +2530,11 @@ function App() {
   else if (!parts.length)
     page = (
       <main className="web-home">
-        <div className="brand">
-          <span className="brandmark">a</span> arivihan
+        <div className="row">
+          <div className="brand">
+            <span className="brandmark">a</span> arivihan
+          </div>
+          <ThemeToggle />
         </div>
         <p>
           {s.profile.batch} · {s.profile.language}
@@ -2710,10 +2718,14 @@ function downloadNote(r: Reel) {
 const AdminPage = React.lazy(() => import("./admin/Admin"));
 function Root() {
   const loc = useLocation();
+  useTheme(); // applies the saved/system theme and follows OS changes app-wide
   return loc.pathname === "/admin" || loc.pathname.startsWith("/admin/") ? (
-    <React.Suspense fallback={<Loading />}>
-      <AdminPage />
-    </React.Suspense>
+    // The admin console has its own dark design; keep it dark whatever the learner theme is.
+    <div data-theme="dark" className="theme-island">
+      <React.Suspense fallback={<Loading />}>
+        <AdminPage />
+      </React.Suspense>
+    </div>
   ) : (
     <App />
   );

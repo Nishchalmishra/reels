@@ -312,7 +312,13 @@ export function Discovery({
       </div>
     );
   return (
-    <div className="discovery">
+    <div
+      className="discovery"
+      // Video screens stay dark in every theme; the Explore grid follows the chosen theme.
+      data-theme={
+        (saved.tab === "feed" || explorePlayer) && !attempt ? "dark" : undefined
+      }
+    >
       <header className="discovery-header">
         {explorePlayer ? (
           <button

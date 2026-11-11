@@ -8,6 +8,26 @@
     />
     <meta name="theme-color" content="#080d11" />
     <title>Arivihan · Learn a little. Go a long way.</title>
+    <script>
+      /* Apply the saved theme before first paint so there is no flash. Keep in sync with src/theme.tsx. */
+      (function () {
+        var pref = "system";
+        try {
+          var v = localStorage.getItem("ar-theme");
+          if (v === "light" || v === "dark" || v === "system") pref = v;
+        } catch (e) {}
+        var theme =
+          pref === "system"
+            ? window.matchMedia &&
+              window.matchMedia("(prefers-color-scheme: light)").matches
+              ? "light"
+              : "dark"
+            : pref;
+        var root = document.documentElement;
+        root.setAttribute("data-theme", theme);
+        root.setAttribute("data-theme-pref", pref);
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

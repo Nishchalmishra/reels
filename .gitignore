@@ -25,3 +25,6 @@ verification-native/
 native-app/hs_err_pid*.log
 native-app/*.hprof
 .vercel
+
+# Local UI screenshots
+ui-captures/
