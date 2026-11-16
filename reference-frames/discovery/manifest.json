@@ -282,9 +282,10 @@
     "narration": "Hindi / Hinglish; English scientific labels",
     "concept": "Dalton's atomic theory and the law of multiple proportions",
     "discovery": true,
-    "source": "https://__PROJECT__.supabase.co/storage/v1/object/public/arivihan-reels/lessons/lesson-87b7632383e25dcb/v1/87b7632383e25dcbf8dea085f436f89810202c1f5c4165f1ba37b457dcc31bc9.mp4",
+    "source": "https://pbaegeqjargtsfortsyh.supabase.co/storage/v1/object/public/arivihan-reels/lessons/lesson-87b7632383e25dcb/v1/87b7632383e25dcbf8dea085f436f89810202c1f5c4165f1ba37b457dcc31bc9.mp4",
     "storageBucket": "arivihan-reels",
-    "storageObject": "lessons/lesson-87b7632383e25dcb/v1/87b7632383e25dcbf8dea085f436f89810202c1f5c4165f1ba37b457dcc31bc9.mp4"
+    "storageObject": "lessons/lesson-87b7632383e25dcb/v1/87b7632383e25dcbf8dea085f436f89810202c1f5c4165f1ba37b457dcc31bc9.mp4",
+    "poster": "https://pbaegeqjargtsfortsyh.supabase.co/storage/v1/object/public/arivihan-reels/lessons/lesson-87b7632383e25dcb/v1/poster-aa720077ae5ef6c6f335eb3339934514307d02f81203392dbe3c9ecdf58a8546.jpg"
   },
   {
     "id": "lesson-89018210089178d4",
@@ -309,9 +310,10 @@
     "narration": "Hindi / Hinglish; English scientific labels",
     "concept": "Thomson's cathode-ray experiment and e/m = 1.76 × 10¹¹ C/kg",
     "discovery": true,
-    "source": "https://__PROJECT__.supabase.co/storage/v1/object/public/arivihan-reels/lessons/lesson-89018210089178d4/v1/89018210089178d4cc737601080d14d14e28ef537ebd089eed0543140e0595cd.mp4",
+    "source": "https://pbaegeqjargtsfortsyh.supabase.co/storage/v1/object/public/arivihan-reels/lessons/lesson-89018210089178d4/v1/89018210089178d4cc737601080d14d14e28ef537ebd089eed0543140e0595cd.mp4",
     "storageBucket": "arivihan-reels",
-    "storageObject": "lessons/lesson-89018210089178d4/v1/89018210089178d4cc737601080d14d14e28ef537ebd089eed0543140e0595cd.mp4"
+    "storageObject": "lessons/lesson-89018210089178d4/v1/89018210089178d4cc737601080d14d14e28ef537ebd089eed0543140e0595cd.mp4",
+    "poster": "https://pbaegeqjargtsfortsyh.supabase.co/storage/v1/object/public/arivihan-reels/lessons/lesson-89018210089178d4/v1/poster-9af310be45d04d21ea47729b6217f3e8fc88349924645ec3422044626686c32f.jpg"
   },
   {
     "id": "lesson-44a2bf384010ed55",
@@ -336,9 +338,10 @@
     "narration": "Hindi / Hinglish; English scientific labels",
     "concept": "Alpha scattering, the nucleus, and why orbiting electrons are a problem",
     "discovery": true,
-    "source": "https://__PROJECT__.supabase.co/storage/v1/object/public/arivihan-reels/lessons/lesson-44a2bf384010ed55/v1/44a2bf384010ed556c3f536513d6d4ee4659511b2ec842e46a1ae1bb94570115.mp4",
+    "source": "https://pbaegeqjargtsfortsyh.supabase.co/storage/v1/object/public/arivihan-reels/lessons/lesson-44a2bf384010ed55/v1/44a2bf384010ed556c3f536513d6d4ee4659511b2ec842e46a1ae1bb94570115.mp4",
     "storageBucket": "arivihan-reels",
-    "storageObject": "lessons/lesson-44a2bf384010ed55/v1/44a2bf384010ed556c3f536513d6d4ee4659511b2ec842e46a1ae1bb94570115.mp4"
+    "storageObject": "lessons/lesson-44a2bf384010ed55/v1/44a2bf384010ed556c3f536513d6d4ee4659511b2ec842e46a1ae1bb94570115.mp4",
+    "poster": "https://pbaegeqjargtsfortsyh.supabase.co/storage/v1/object/public/arivihan-reels/lessons/lesson-44a2bf384010ed55/v1/poster-52450cf9abaa5e435b4feae3e061e0c54453e3b2574c4124bf154d009d24213c.jpg"
   },
   {
     "id": "lesson-103dcaa493e09910",
@@ -363,9 +366,10 @@
     "narration": "Hindi / Hinglish; English scientific labels",
     "concept": "Bohr's quantised orbits, angular momentum and spectral lines",
     "discovery": true,
-    "source": "https://__PROJECT__.supabase.co/storage/v1/object/public/arivihan-reels/lessons/lesson-103dcaa493e09910/v1/103dcaa493e099102e49f32b143c66f95543f1d7958331b48d885a3581fb5fc9.mp4",
+    "source": "https://pbaegeqjargtsfortsyh.supabase.co/storage/v1/object/public/arivihan-reels/lessons/lesson-103dcaa493e09910/v1/103dcaa493e099102e49f32b143c66f95543f1d7958331b48d885a3581fb5fc9.mp4",
     "storageBucket": "arivihan-reels",
-    "storageObject": "lessons/lesson-103dcaa493e09910/v1/103dcaa493e099102e49f32b143c66f95543f1d7958331b48d885a3581fb5fc9.mp4"
+    "storageObject": "lessons/lesson-103dcaa493e09910/v1/103dcaa493e099102e49f32b143c66f95543f1d7958331b48d885a3581fb5fc9.mp4",
+    "poster": "https://pbaegeqjargtsfortsyh.supabase.co/storage/v1/object/public/arivihan-reels/lessons/lesson-103dcaa493e09910/v1/poster-f6f458cf34fd7ad33d126605ba5f8aaf1095da4b156cace96eb3bea9913b3540.jpg"
   },
   {
     "id": "lesson-1f55e659aefe0227",
@@ -390,9 +394,10 @@
     "narration": "Hindi / Hinglish; English scientific labels",
     "concept": "Tension, pulleys and the force needed to lift a load",
     "discovery": true,
-    "source": "https://__PROJECT__.supabase.co/storage/v1/object/public/arivihan-reels/lessons/lesson-1f55e659aefe0227/v1/1f55e659aefe02279ab2b87268f8fd26f20395d7abb8d3297a954efcaf7c24ce.mp4",
+    "source": "https://pbaegeqjargtsfortsyh.supabase.co/storage/v1/object/public/arivihan-reels/lessons/lesson-1f55e659aefe0227/v1/1f55e659aefe02279ab2b87268f8fd26f20395d7abb8d3297a954efcaf7c24ce.mp4",
     "storageBucket": "arivihan-reels",
-    "storageObject": "lessons/lesson-1f55e659aefe0227/v1/1f55e659aefe02279ab2b87268f8fd26f20395d7abb8d3297a954efcaf7c24ce.mp4"
+    "storageObject": "lessons/lesson-1f55e659aefe0227/v1/1f55e659aefe02279ab2b87268f8fd26f20395d7abb8d3297a954efcaf7c24ce.mp4",
+    "poster": "https://pbaegeqjargtsfortsyh.supabase.co/storage/v1/object/public/arivihan-reels/lessons/lesson-1f55e659aefe0227/v1/poster-3a676b844fae2e2e414f68760936d36ee21975d1e07114168d2d1899d54caf11.jpg"
   },
   {
     "id": "lesson-bdbd458f2e87bac2",
@@ -417,9 +422,10 @@
     "narration": "Hindi / Hinglish; English scientific labels",
     "concept": "Calorific value of a petrol–ethanol blend and efficiency",
     "discovery": true,
-    "source": "https://__PROJECT__.supabase.co/storage/v1/object/public/arivihan-reels/lessons/lesson-bdbd458f2e87bac2/v1/bdbd458f2e87bac2ffdea71422529dd4c1d121eeb5e5300d068dac143351c2bd.mp4",
+    "source": "https://pbaegeqjargtsfortsyh.supabase.co/storage/v1/object/public/arivihan-reels/lessons/lesson-bdbd458f2e87bac2/v1/bdbd458f2e87bac2ffdea71422529dd4c1d121eeb5e5300d068dac143351c2bd.mp4",
     "storageBucket": "arivihan-reels",
-    "storageObject": "lessons/lesson-bdbd458f2e87bac2/v1/bdbd458f2e87bac2ffdea71422529dd4c1d121eeb5e5300d068dac143351c2bd.mp4"
+    "storageObject": "lessons/lesson-bdbd458f2e87bac2/v1/bdbd458f2e87bac2ffdea71422529dd4c1d121eeb5e5300d068dac143351c2bd.mp4",
+    "poster": "https://pbaegeqjargtsfortsyh.supabase.co/storage/v1/object/public/arivihan-reels/lessons/lesson-bdbd458f2e87bac2/v1/poster-f6aba53f4371e68823d4228f7a4c2e4449613f85f7f787f93d1a3f7415836839.jpg"
   },
   {
     "id": "lesson-83f6ce6ab07c854e",
@@ -444,9 +450,10 @@
     "narration": "Hindi / Hinglish; English scientific labels",
     "concept": "Weight, inertia and why all objects fall with g",
     "discovery": true,
-    "source": "https://__PROJECT__.supabase.co/storage/v1/object/public/arivihan-reels/lessons/lesson-83f6ce6ab07c854e/v1/83f6ce6ab07c854e31c23ec08c0f85365ffc9e68ba675ee42c0690c1ade651e2.mp4",
+    "source": "https://pbaegeqjargtsfortsyh.supabase.co/storage/v1/object/public/arivihan-reels/lessons/lesson-83f6ce6ab07c854e/v1/83f6ce6ab07c854e31c23ec08c0f85365ffc9e68ba675ee42c0690c1ade651e2.mp4",
     "storageBucket": "arivihan-reels",
-    "storageObject": "lessons/lesson-83f6ce6ab07c854e/v1/83f6ce6ab07c854e31c23ec08c0f85365ffc9e68ba675ee42c0690c1ade651e2.mp4"
+    "storageObject": "lessons/lesson-83f6ce6ab07c854e/v1/83f6ce6ab07c854e31c23ec08c0f85365ffc9e68ba675ee42c0690c1ade651e2.mp4",
+    "poster": "https://pbaegeqjargtsfortsyh.supabase.co/storage/v1/object/public/arivihan-reels/lessons/lesson-83f6ce6ab07c854e/v1/poster-e551cc3664675e162c0d904eb4ce16748b4aea0b728cd167433bcd39c7cce9d5.jpg"
   },
   {
     "id": "lesson-a991899276706fca",
@@ -471,9 +478,10 @@
     "narration": "Hindi / Hinglish; English scientific labels",
     "concept": "Artificial gravity on a rotating space station",
     "discovery": true,
-    "source": "https://__PROJECT__.supabase.co/storage/v1/object/public/arivihan-reels/lessons/lesson-a991899276706fca/v1/a991899276706fcabddcbb4c7e60e8cb58e9c51d505f98535dfd5d3ae32ac8e4.mp4",
+    "source": "https://pbaegeqjargtsfortsyh.supabase.co/storage/v1/object/public/arivihan-reels/lessons/lesson-a991899276706fca/v1/a991899276706fcabddcbb4c7e60e8cb58e9c51d505f98535dfd5d3ae32ac8e4.mp4",
     "storageBucket": "arivihan-reels",
-    "storageObject": "lessons/lesson-a991899276706fca/v1/a991899276706fcabddcbb4c7e60e8cb58e9c51d505f98535dfd5d3ae32ac8e4.mp4"
+    "storageObject": "lessons/lesson-a991899276706fca/v1/a991899276706fcabddcbb4c7e60e8cb58e9c51d505f98535dfd5d3ae32ac8e4.mp4",
+    "poster": "https://pbaegeqjargtsfortsyh.supabase.co/storage/v1/object/public/arivihan-reels/lessons/lesson-a991899276706fca/v1/poster-d174fa939b610b80ca19bb5042349f77590f2cbda39eb353e07a4c51a855fb6c.jpg"
   },
   {
     "id": "lesson-ceb9b8059d6b681b",
@@ -498,9 +506,10 @@
     "narration": "Hindi / Hinglish; English scientific labels",
     "concept": "Distance from signal time and trilateration",
     "discovery": true,
-    "source": "https://__PROJECT__.supabase.co/storage/v1/object/public/arivihan-reels/lessons/lesson-ceb9b8059d6b681b/v1/ceb9b8059d6b681b2a6e87bc2d6092b04e32f9077ac10a03ac907e6a15c79241.mp4",
+    "source": "https://pbaegeqjargtsfortsyh.supabase.co/storage/v1/object/public/arivihan-reels/lessons/lesson-ceb9b8059d6b681b/v1/ceb9b8059d6b681b2a6e87bc2d6092b04e32f9077ac10a03ac907e6a15c79241.mp4",
     "storageBucket": "arivihan-reels",
-    "storageObject": "lessons/lesson-ceb9b8059d6b681b/v1/ceb9b8059d6b681b2a6e87bc2d6092b04e32f9077ac10a03ac907e6a15c79241.mp4"
+    "storageObject": "lessons/lesson-ceb9b8059d6b681b/v1/ceb9b8059d6b681b2a6e87bc2d6092b04e32f9077ac10a03ac907e6a15c79241.mp4",
+    "poster": "https://pbaegeqjargtsfortsyh.supabase.co/storage/v1/object/public/arivihan-reels/lessons/lesson-ceb9b8059d6b681b/v1/poster-2ec0fbdba78aa0f9c727599df79656c41b9b02fede2b1e9623a4969dd6c179ab.jpg"
   },
   {
     "id": "lesson-d0f490446d0d2c87",
@@ -525,9 +534,10 @@
     "narration": "Hindi / Hinglish; English scientific labels",
     "concept": "Fermat's principle: light takes the path of least time",
     "discovery": true,
-    "source": "https://__PROJECT__.supabase.co/storage/v1/object/public/arivihan-reels/lessons/lesson-d0f490446d0d2c87/v1/d0f490446d0d2c87b860101141e2a81ce5e212dfc01dded7dec5ce2f22ddbaca.mp4",
+    "source": "https://pbaegeqjargtsfortsyh.supabase.co/storage/v1/object/public/arivihan-reels/lessons/lesson-d0f490446d0d2c87/v1/d0f490446d0d2c87b860101141e2a81ce5e212dfc01dded7dec5ce2f22ddbaca.mp4",
     "storageBucket": "arivihan-reels",
-    "storageObject": "lessons/lesson-d0f490446d0d2c87/v1/d0f490446d0d2c87b860101141e2a81ce5e212dfc01dded7dec5ce2f22ddbaca.mp4"
+    "storageObject": "lessons/lesson-d0f490446d0d2c87/v1/d0f490446d0d2c87b860101141e2a81ce5e212dfc01dded7dec5ce2f22ddbaca.mp4",
+    "poster": "https://pbaegeqjargtsfortsyh.supabase.co/storage/v1/object/public/arivihan-reels/lessons/lesson-d0f490446d0d2c87/v1/poster-00bde4e6b50b103dd0a398066c0c34d56085cccbe92c9f65619022e115e32f20.jpg"
   },
   {
     "id": "lesson-a6afdd1435d5263d",
@@ -552,9 +562,10 @@
     "narration": "Hindi / Hinglish; English scientific labels",
     "concept": "Torque τ = r × F and balancing moments",
     "discovery": true,
-    "source": "https://__PROJECT__.supabase.co/storage/v1/object/public/arivihan-reels/lessons/lesson-a6afdd1435d5263d/v1/a6afdd1435d5263dce0b7462985e252ad8ef2c78955226c68a23e5d687ea2a65.mp4",
+    "source": "https://pbaegeqjargtsfortsyh.supabase.co/storage/v1/object/public/arivihan-reels/lessons/lesson-a6afdd1435d5263d/v1/a6afdd1435d5263dce0b7462985e252ad8ef2c78955226c68a23e5d687ea2a65.mp4",
     "storageBucket": "arivihan-reels",
-    "storageObject": "lessons/lesson-a6afdd1435d5263d/v1/a6afdd1435d5263dce0b7462985e252ad8ef2c78955226c68a23e5d687ea2a65.mp4"
+    "storageObject": "lessons/lesson-a6afdd1435d5263d/v1/a6afdd1435d5263dce0b7462985e252ad8ef2c78955226c68a23e5d687ea2a65.mp4",
+    "poster": "https://pbaegeqjargtsfortsyh.supabase.co/storage/v1/object/public/arivihan-reels/lessons/lesson-a6afdd1435d5263d/v1/poster-0a7d7f0ca1a06f2f9e14f0687d4a5c8b16a8206295054a0379c373910a490908.jpg"
   },
   {
     "id": "lesson-f12305dc52d2625a",
@@ -579,9 +590,10 @@
     "narration": "Hindi / Hinglish; English scientific labels",
     "concept": "Intensity falling with distance and guiding waves",
     "discovery": true,
-    "source": "https://__PROJECT__.supabase.co/storage/v1/object/public/arivihan-reels/lessons/lesson-f12305dc52d2625a/v1/f12305dc52d2625a0af43315fbd6f20a19358d3b1e5f91b6acfc78bc2ed60a6e.mp4",
+    "source": "https://pbaegeqjargtsfortsyh.supabase.co/storage/v1/object/public/arivihan-reels/lessons/lesson-f12305dc52d2625a/v1/f12305dc52d2625a0af43315fbd6f20a19358d3b1e5f91b6acfc78bc2ed60a6e.mp4",
     "storageBucket": "arivihan-reels",
-    "storageObject": "lessons/lesson-f12305dc52d2625a/v1/f12305dc52d2625a0af43315fbd6f20a19358d3b1e5f91b6acfc78bc2ed60a6e.mp4"
+    "storageObject": "lessons/lesson-f12305dc52d2625a/v1/f12305dc52d2625a0af43315fbd6f20a19358d3b1e5f91b6acfc78bc2ed60a6e.mp4",
+    "poster": "https://pbaegeqjargtsfortsyh.supabase.co/storage/v1/object/public/arivihan-reels/lessons/lesson-f12305dc52d2625a/v1/poster-25b32745064304d96313f610a9c628d8059424346124855a0c44474e365c7ba4.jpg"
   },
   {
     "id": "lesson-d3b9019f0c946389",
@@ -606,8 +618,9 @@
     "narration": "Hindi / Hinglish; English scientific labels",
     "concept": "The Coriolis effect on a rotating Earth",
     "discovery": true,
-    "source": "https://__PROJECT__.supabase.co/storage/v1/object/public/arivihan-reels/lessons/lesson-d3b9019f0c946389/v1/d3b9019f0c9463898ca0ed8c3ad79ec6e8e085a1e599866a8568bbdf1ca7bbe3.mp4",
+    "source": "https://pbaegeqjargtsfortsyh.supabase.co/storage/v1/object/public/arivihan-reels/lessons/lesson-d3b9019f0c946389/v1/d3b9019f0c9463898ca0ed8c3ad79ec6e8e085a1e599866a8568bbdf1ca7bbe3.mp4",
     "storageBucket": "arivihan-reels",
-    "storageObject": "lessons/lesson-d3b9019f0c946389/v1/d3b9019f0c9463898ca0ed8c3ad79ec6e8e085a1e599866a8568bbdf1ca7bbe3.mp4"
+    "storageObject": "lessons/lesson-d3b9019f0c946389/v1/d3b9019f0c9463898ca0ed8c3ad79ec6e8e085a1e599866a8568bbdf1ca7bbe3.mp4",
+    "poster": "https://pbaegeqjargtsfortsyh.supabase.co/storage/v1/object/public/arivihan-reels/lessons/lesson-d3b9019f0c946389/v1/poster-7a840894d11dbb45b1bda535df45f2d52dc87aa964b5e04b56ec155a9af88d47.jpg"
   }
 ]
