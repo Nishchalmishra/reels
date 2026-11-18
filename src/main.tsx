@@ -354,7 +354,7 @@ function Onboarding() {
         {liveMode ? "Continue as guest student" : "Continue with demo student"}
       </button>
       <p className="fine">
-        {liveMode ? "Persistent guest profile" : "Local demo profile"} · No
+        {liveMode ? "Your progress is saved" : "Local demo profile"} · No
         account needed
         <br />
         Lessons in English · Hindi content coming soon
@@ -1754,7 +1754,7 @@ function Store() {
     <>
       <PageHeader title="Learning essentials" />
       <main>
-        <span className="eyebrow cyan">THE DEMO STORE</span>
+        <span className="eyebrow cyan">THE STORE</span>
         <h1>
           A little boost for
           <br />
@@ -2564,13 +2564,13 @@ function App() {
             <small>5 coins = ₹1</small>
           </Link>
           <Link to="/store">
-            <ShoppingBag size={20} /> Demo store
-            <small>Simulated checkout only</small>
+            <ShoppingBag size={20} /> Store
+            <small>Redeem your coins</small>
           </Link>
         </div>
         <p className="fine">
           {liveMode
-            ? "Live Supabase · Persistent guest profile"
+            ? "Guest profile · Progress saved"
             : "Local demo · Device-only storage"}
         </p>
       </main>
@@ -2685,7 +2685,7 @@ function App() {
           <span className="brandmark">a</span>
           <span>A little learning goes a long way.</span>
           <span>
-            ARIVIHAN REELS · {liveMode ? "LIVE SUPABASE" : "LOCAL DEMO"}
+            ARIVIHAN REELS{liveMode ? "" : " · LOCAL DEMO"}
           </span>
         </div>
       </div>

@@ -529,7 +529,7 @@ export function Discovery({
                           <h1>{l.title}</h1>
                           <p>{l.concept}</p>
                           <div className="video-footer">
-                            <span>Arivihan · Supplied lesson</span>
+                            <span>Arivihan</span>
                             <button
                               onClick={() => {
                                 const next = Math.min(

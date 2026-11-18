@@ -136,6 +136,12 @@
   gap: 19px;
   z-index: 2;
 }
+@media (max-height: 640px) {
+  .video-actions {
+    bottom: 120px;
+    gap: 10px;
+  }
+}
 .video-actions button {
   display: flex;
   flex-direction: column;
