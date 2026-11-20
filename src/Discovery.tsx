@@ -4,6 +4,7 @@ import {
   ArrowLeft,
   Bookmark,
   Check,
+  CircleDollarSign,
   Coins,
   Heart,
   Play,
@@ -379,7 +380,7 @@ export function Discovery({
           className="coin-action"
           aria-label={`Wallet ${balance(s)} coins`}
         >
-          <Coins size={18} />
+          <CircleDollarSign size={18} />
           {balance(s)}
         </Link>
       </header>

@@ -174,11 +174,11 @@
 .lesson-topic {
   color: var(--c-t-8ce6e9);
   background: var(--c-b-123d43b3);
-  padding: 5px 9px;
-  font-size: 10px;
+  padding: 7px 12px;
+  font-size: 13px;
   font-weight: 700;
   border: 1px solid #5ce1e63b;
-  border-radius: 5px;
+  border-radius: 7px;
 }
 .video-caption h1 {
   font-size: 23px;
