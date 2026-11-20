@@ -6,8 +6,9 @@ import {
   Check,
   Coins,
   Heart,
-  Pause,
   Play,
+  FastForward,
+  Rewind,
   Search,
   Share2,
   Volume2,
@@ -85,6 +86,7 @@ export function Discovery({
     [note, setNote] = useState<Lesson | null>(null);
   const [muted, setMuted] = useState(s.mute),
     [paused, setPaused] = useState(false),
+    [speed, setSpeed] = useState(1),
     [hidden, setHidden] = useState(document.hidden),
     [transitioning, setTransitioning] = useState(false);
   const [message, setMessage] = useState(""),
@@ -402,6 +404,7 @@ export function Discovery({
                         active={i === saved.index}
                         playing={playing && i === saved.index}
                         muted={muted}
+                        speed={speed}
                         position={saved.positions[id] || 0}
                         onPosition={(position) =>
                           setSaved((v) => ({
@@ -430,15 +433,49 @@ export function Discovery({
                         }}
                         onError={setError}
                       />
-                    ) : (
-                      l.poster ? <img src={l.poster} alt="" /> : null
-                    )}
+                    ) : l.poster ? (
+                      <img src={l.poster} alt="" />
+                    ) : null}
                     {i === saved.index && (
                       <>
                         <div className="video-topline">
                           <span>
                             {l.subject} · Class {l.grades[0]}
                           </span>
+                        </div>
+                        <aside className="video-actions">
+                          <button
+                            onClick={() =>
+                              setSpeed(
+                                SPEEDS[
+                                  Math.min(
+                                    SPEEDS.indexOf(speed) + 1,
+                                    SPEEDS.length - 1,
+                                  )
+                                ],
+                              )
+                            }
+                            disabled={speed === SPEEDS[SPEEDS.length - 1]}
+                            aria-label={`Increase playback speed, now ${speed}x`}
+                          >
+                            <FastForward />
+                            <span>Faster</span>
+                          </button>
+                          <span className="speed-readout" aria-live="polite">
+                            {speed}x
+                          </span>
+                          <button
+                            onClick={() =>
+                              setSpeed(
+                                SPEEDS[Math.max(SPEEDS.indexOf(speed) - 1, 0)],
+                              )
+                            }
+                            disabled={speed === SPEEDS[0]}
+                            aria-label={`Decrease playback speed, now ${speed}x`}
+                          >
+                            <Rewind />
+                            <span>Slower</span>
+                          </button>
                           <button
                             onClick={() => {
                               const v = !muted;
@@ -451,16 +488,8 @@ export function Discovery({
                             aria-label={muted ? "Unmute" : "Mute"}
                           >
                             {muted ? <VolumeX /> : <Volume2 />}
+                            <span>{muted ? "Unmute" : "Mute"}</span>
                           </button>
-                        </div>
-                        <button
-                          className="play-toggle"
-                          onClick={() => setPaused((v) => !v)}
-                          aria-label={paused ? "Play lesson" : "Pause lesson"}
-                        >
-                          {paused ? <Play /> : <Pause />}
-                        </button>
-                        <aside className="video-actions">
                           <button
                             aria-label="Like lesson"
                             className={s.likes.includes(id) ? "liked" : ""}
@@ -907,11 +936,13 @@ export function Discovery({
   );
 }
 
+const SPEEDS = [0.5, 0.75, 1, 1.25, 1.5, 2];
 function LessonVideo({
   lesson,
   active,
   playing,
   muted,
+  speed,
   position,
   onPosition,
   onProgress,
@@ -922,6 +953,7 @@ function LessonVideo({
   active: boolean;
   playing: boolean;
   muted: boolean;
+  speed: number;
   position: number;
   onPosition: (p: number) => void;
   onProgress: (
@@ -945,8 +977,7 @@ function LessonVideo({
   const [blocked, setBlocked] = useState(false),
     [failed, setFailed] = useState(false),
     [waiting, setWaiting] = useState(true),
-    [elapsed, setElapsed] = useState(position),
-    [speed, setSpeed] = useState(1);
+    [elapsed, setElapsed] = useState(position);
   const sample = () => {
     const v = video.current;
     if (!v || !active) return;
@@ -1051,16 +1082,6 @@ function LessonVideo({
       />
       {active && (
         <>
-          <select
-            className="video-speed"
-            aria-label="Playback speed"
-            value={speed}
-            onChange={(e) => setSpeed(Number(e.target.value))}
-          >
-            <option value={1}>1x</option>
-            <option value={1.5}>1.5x</option>
-            <option value={2}>2x</option>
-          </select>
           <input
             className="watch-timeline"
             aria-label="Lesson position"

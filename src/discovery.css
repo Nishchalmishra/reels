@@ -130,16 +130,16 @@
 .video-actions {
   position: absolute;
   right: 13px;
-  bottom: 174px;
+  bottom: 22px;
   display: flex;
   flex-direction: column;
-  gap: 19px;
+  gap: 14px;
   z-index: 2;
 }
 @media (max-height: 640px) {
   .video-actions {
-    bottom: 120px;
-    gap: 10px;
+    bottom: 16px;
+    gap: 8px;
   }
 }
 .video-actions button {
@@ -781,4 +781,14 @@
 }
 .discovery[data-theme="dark"] .discovery-tabs button {
   text-shadow: 0 1px 6px #000;
+}
+
+.video-actions .speed-readout {
+  font-size: 11px;
+  font-weight: 700;
+  text-shadow: 0 2px 6px #000;
+  margin: -10px 0;
+}
+.video-actions button:disabled {
+  opacity: 0.4;
 }
