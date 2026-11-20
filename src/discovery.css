@@ -133,7 +133,7 @@
   bottom: 22px;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 12px;
   z-index: 2;
 }
 @media (max-height: 640px) {
@@ -150,12 +150,12 @@
   text-shadow: 0 2px 6px #000;
 }
 .video-actions svg {
-  width: 25px;
-  height: 25px;
+  width: 22px;
+  height: 22px;
   filter: drop-shadow(0 2px 3px #0008);
 }
 .video-actions span {
-  font-size: 10px;
+  font-size: 9px;
   font-weight: 600;
 }
 .video-actions .liked {
@@ -784,10 +784,10 @@
 }
 
 .video-actions .speed-readout {
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 700;
   text-shadow: 0 2px 6px #000;
-  margin: -10px 0;
+  margin: -8px 0;
 }
 .video-actions button:disabled {
   opacity: 0.4;
