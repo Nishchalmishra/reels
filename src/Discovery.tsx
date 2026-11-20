@@ -5,7 +5,6 @@ import {
   Bookmark,
   Check,
   CircleDollarSign,
-  Coins,
   Heart,
   Play,
   FastForward,
@@ -829,7 +828,7 @@ export function Discovery({
               <ArrowLeft />
             </button>
             <span>{attempt.finished ? "YOUR RECALL" : "QUICK RECALL"}</span>
-            <Coins color="#efc86b" />
+            <CircleDollarSign color="#efc86b" />
             {!attempt.finished && (
               <div className="quiz-progress">
                 {attempt.questions.map((q, i) => (

@@ -88,7 +88,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(#0007, transparent 18%, transparent 55%, #000c);
+  background: linear-gradient(#0007, transparent 9%, transparent 78%, #000c);
   pointer-events: none;
   z-index: 0;
 }
@@ -778,7 +778,7 @@
   top: 0;
   left: 0;
   right: 0;
-  background: linear-gradient(#000a, transparent);
+  background: linear-gradient(#0008, transparent) no-repeat top / 100% 44px;
 }
 .discovery[data-theme="dark"] .video-topline {
   top: 74px;
