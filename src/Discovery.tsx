@@ -804,6 +804,13 @@ export function Discovery({
             </button>
             <span>{attempt.finished ? "YOUR RECALL" : "QUICK RECALL"}</span>
             <Coins color="#efc86b" />
+            {!attempt.finished && (
+              <div className="quiz-progress">
+                {attempt.questions.map((q, i) => (
+                  <span key={q.id} className={i <= question ? "filled" : ""} />
+                ))}
+              </div>
+            )}
           </header>
           {attempt.finished ? (
             <div className="quiz-result">
@@ -874,11 +881,6 @@ export function Discovery({
             </div>
           ) : (
             <div className="quiz-body">
-              <div className="quiz-progress">
-                {attempt.questions.map((q, i) => (
-                  <span key={q.id} className={i <= question ? "filled" : ""} />
-                ))}
-              </div>
               <span className="eyebrow">QUESTION {question + 1} OF 5</span>
               <span className="source-chip">
                 From{" "}
