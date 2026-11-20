@@ -3,6 +3,7 @@ import { createRoot } from "react-dom/client";
 import {
   BrowserRouter,
   Link,
+  Navigate,
   useNavigate,
   useLocation,
   useParams,
@@ -19,7 +20,7 @@ import {
   Coins,
   Download,
   Heart,
-  Home,
+  UserRound,
   Layers,
   Lock,
   MoreHorizontal,
@@ -360,6 +361,63 @@ function Onboarding() {
         Lessons in English · Hindi content coming soon
       </p>
     </main>
+  );
+}
+function ProfileEditor() {
+  const { s, run, busy } = React.useContext(AppContext);
+  const p = s.profile!;
+  const [name, setName] = useState(p.name === "Ananya" ? "" : p.name),
+    [batch, setBatch] = useState(p.batch),
+    [language, setLanguage] = useState(p.language);
+  return (
+    <form
+      className="profile-editor"
+      onSubmit={(e) => {
+        e.preventDefault();
+        run(async () => {
+          await service.session({
+            ...p,
+            name: name.trim() || "Ananya",
+            batch,
+            language,
+          });
+        });
+      }}
+    >
+      <h2>Customize your reels</h2>
+      <label>
+        Your name
+        <input
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          placeholder="What should we call you?"
+          maxLength={40}
+        />
+      </label>
+      <div className="form-grid">
+        <label>
+          Class / batch
+          <select value={batch} onChange={(e) => setBatch(e.target.value)}>
+            <option>Class 11 · NEET</option>
+            <option>Class 12 · NEET</option>
+            <option>Class 11 · JEE</option>
+          </select>
+        </label>
+        <label>
+          Language
+          <select
+            value={language}
+            onChange={(e) => setLanguage(e.target.value)}
+          >
+            <option>English</option>
+            <option>Hindi</option>
+          </select>
+        </label>
+      </div>
+      <Button type="submit" disabled={busy}>
+        Save details
+      </Button>
+    </form>
   );
 }
 function HomePage() {
@@ -2385,7 +2443,16 @@ function App() {
           service.catalogue(),
           service.products(),
         ]);
-        setS(state);
+        if (!state.profile) {
+          await service.session({
+            name: "Ananya",
+            batch: "Class 11 · NEET",
+            language: "English",
+            persona: "Pro",
+          });
+          await service.analytics("reels_entry_clicked");
+          setS(await service.snapshot());
+        } else setS(state);
         setCatalogue(cat);
         setProducts(productList);
       } catch (e) {
@@ -2451,7 +2518,7 @@ function App() {
         <Button
           onClick={() => {
             close();
-            nav("/");
+            nav("/chapters");
           }}
         >
           Explore Physics
@@ -2526,8 +2593,10 @@ function App() {
         </Link>
       </main>
     );
-  else if (!parts.length && !liveMode) page = <HomePage />;
   else if (!parts.length)
+    page = <Navigate to={liveMode ? "/reels" : "/chapters"} replace />;
+  else if (parts[0] === "profile" && !liveMode) page = <HomePage />;
+  else if (parts[0] === "profile")
     page = (
       <main className="web-home">
         <div className="row">
@@ -2568,6 +2637,7 @@ function App() {
             <small>Redeem your coins</small>
           </Link>
         </div>
+        <ProfileEditor />
         <p className="fine">
           {liveMode
             ? "Guest profile · Progress saved"
@@ -2612,9 +2682,7 @@ function App() {
         modal,
       }}
     >
-      <div
-        className={`app-stage${ready && s.profile && liveMode && !parts.length ? " home-stage" : ""}`}
-      >
+      <div className={`app-stage`}>
         {page}
         {error && (
           <div className="error-toast" role="alert">
@@ -2650,21 +2718,12 @@ function App() {
           s.profile &&
           !["player", "quiz", "presenter"].includes(parts[0]) && (
             <nav className="bottom-nav" aria-label="Main navigation">
-              {s.profile.persona !== "None" && (
-                <Link
-                  to="/"
-                  className={
-                    !parts.length || parts[0] === "chapter" ? "active" : ""
-                  }
-                >
-                  <Home size={21} />
-                  <span>Home</span>
-                </Link>
-              )}
               <Link
                 to={liveMode ? "/reels" : "/chapters"}
                 className={
-                  parts[0] === "reels" || parts[0] === "chapters"
+                  parts[0] === "reels" ||
+                  parts[0] === "chapters" ||
+                  parts[0] === "chapter"
                     ? "active"
                     : ""
                 }
@@ -2679,14 +2738,21 @@ function App() {
                 <ShoppingBag size={21} />
                 <span>Store</span>
               </Link>
+              {s.profile.persona !== "None" && (
+                <Link
+                  to="/profile"
+                  className={parts[0] === "profile" ? "active" : ""}
+                >
+                  <UserRound size={21} />
+                  <span>Profile</span>
+                </Link>
+              )}
             </nav>
           )}
         <div className="desktop-caption">
           <span className="brandmark">a</span>
           <span>A little learning goes a long way.</span>
-          <span>
-            ARIVIHAN REELS{liveMode ? "" : " · LOCAL DEMO"}
-          </span>
+          <span>ARIVIHAN REELS{liveMode ? "" : " · LOCAL DEMO"}</span>
         </div>
       </div>
     </AppContext.Provider>

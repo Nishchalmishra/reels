@@ -14,9 +14,9 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 18px;
-  background: var(--c-b-10171b);
+  background: transparent;
   z-index: 5;
-  border-bottom: 1px solid var(--c-b-ffffff0d);
+  border-bottom: 0;
 }
 .discovery-tabs {
   display: flex;
@@ -755,4 +755,30 @@
   .home-stage .home-reels-card h2 { margin: 7px 0; }
   .home-stage .home-reels-card p { margin-bottom: 8px; }
   .home-stage .home-summary > a { padding: 9px 10px; }
+}
+
+.profile-editor { display: flex; flex-direction: column; gap: 12px; margin: 20px 0 8px; }
+.profile-editor h2 { margin: 0; font-size: 16px; }
+.profile-editor .form-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin: 0; }
+.profile-editor label { min-width: 0; gap: 6px; }
+.profile-editor input, .profile-editor select { width: 100%; min-height: 44px; font-size: 16px; }
+.profile-editor .button { margin: 0; }
+
+/* Feed / Explore player: header floats over the video instead of reserving space. */
+.discovery[data-theme="dark"] > .discovery-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(#000a, transparent);
+}
+.discovery[data-theme="dark"] .video-topline {
+  top: 74px;
+}
+.discovery[data-theme="dark"] .coin-action {
+  background: #0006;
+  backdrop-filter: blur(6px);
+}
+.discovery[data-theme="dark"] .discovery-tabs button {
+  text-shadow: 0 1px 6px #000;
 }
