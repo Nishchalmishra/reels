@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import {
   ArrowLeft,
   Bookmark,
@@ -70,6 +70,7 @@ export function Discovery({
   s: Snapshot;
   refresh: () => Promise<void>;
 }) {
+  const entry = useLocation().state as { reelsNav?: boolean } | null;
   const key = `ar-discovery-v1:${s.profile!.id}`;
   const [saved, setSaved] = useState(() => readSaved(key));
   const state = useRef(saved);
@@ -286,6 +287,30 @@ export function Discovery({
     }));
     setExplorePlayer(false);
   };
+  // The navbar Reels button always lands on the Feed: coming from another
+  // section (mount) or while already here (Explore, a lesson, or a quiz).
+  const goFeed = useRef<() => void>(() => {});
+  goFeed.current = () => {
+    if (attempt && !attempt.finished) void task(defer);
+    else {
+      setAttempt(null);
+      setInvite(null);
+      update({ attempt: undefined });
+    }
+    selectTab("feed");
+  };
+  useEffect(() => {
+    if (entry?.reelsNav)
+      setSaved((v) => ({
+        ...v,
+        ...(v.returnFeed || {}),
+        tab: "feed",
+        returnFeed: undefined,
+      }));
+    const onNav = () => goFeed.current();
+    window.addEventListener("reels-nav-click", onNav);
+    return () => window.removeEventListener("reels-nav-click", onNav);
+  }, []);
   const openLesson = (id: string) => {
     const rest = extendQueue(lessons, [id], 12);
     setSaved((v) => ({

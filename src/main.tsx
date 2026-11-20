@@ -2720,6 +2720,10 @@ function App() {
             <nav className="bottom-nav" aria-label="Main navigation">
               <Link
                 to={liveMode ? "/reels" : "/chapters"}
+                state={{ reelsNav: true }}
+                onClick={() =>
+                  window.dispatchEvent(new Event("reels-nav-click"))
+                }
                 className={
                   parts[0] === "reels" ||
                   parts[0] === "chapters" ||
