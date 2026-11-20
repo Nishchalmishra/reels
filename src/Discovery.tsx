@@ -554,7 +554,24 @@ export function Discovery({
                           </button>
                         </aside>
                         <div className="video-caption">
-                          <span className="lesson-topic">{l.topic}</span>
+                          <button
+                            type="button"
+                            className="lesson-topic"
+                            aria-label={`Explore ${l.topic} lessons`}
+                            onClick={() => {
+                              setSaved((v) => ({
+                                ...v,
+                                ...(v.returnFeed || {}),
+                                tab: "explore",
+                                topic: l.topic,
+                                search: "",
+                                returnFeed: undefined,
+                              }));
+                              setExplorePlayer(false);
+                            }}
+                          >
+                            {l.topic}
+                          </button>
                           <h1>{l.title}</h1>
                           <p>{l.concept}</p>
                           <div className="video-footer">

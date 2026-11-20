@@ -792,3 +792,7 @@
 .video-actions button:disabled {
   opacity: 0.4;
 }
+
+button.lesson-topic {
+  cursor: pointer;
+}
