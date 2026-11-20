@@ -6,6 +6,7 @@ import {
   Check,
   CircleDollarSign,
   Heart,
+  Pause,
   Play,
   FastForward,
   Rewind,
@@ -469,6 +470,14 @@ export function Discovery({
                           </span>
                         </div>
                         <aside className="video-actions">
+                          <button
+                            className="web-only"
+                            onClick={() => setPaused((v) => !v)}
+                            aria-label={paused ? "Play lesson" : "Pause lesson"}
+                          >
+                            {paused ? <Play /> : <Pause />}
+                            <span>{paused ? "Play" : "Pause"}</span>
+                          </button>
                           <button
                             onClick={() =>
                               setSpeed(

@@ -1,5 +1,6 @@
 ﻿.discovery {
-  height: calc(100dvh - 68px);
+  /* 68px nav on desktop; on phones the nav grows with the safe-area inset. */
+  height: calc(100dvh - 56px - max(12px, env(safe-area-inset-bottom, 0px)));
   min-height: 400px;
   display: flex;
   flex-direction: column;
@@ -803,4 +804,14 @@
 
 button.lesson-topic {
   cursor: pointer;
+}
+
+/* Pause is a web-only control; phones keep the original layout. */
+.video-actions .web-only {
+  display: none;
+}
+@media (min-width: 760px) {
+  .video-actions .web-only {
+    display: flex;
+  }
 }
