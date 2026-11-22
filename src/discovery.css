@@ -815,3 +815,24 @@ button.lesson-topic {
     display: flex;
   }
 }
+
+/* Centered indicator shown while a tap/click has paused the reel. */
+.tap-paused {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  pointer-events: none;
+  z-index: 3;
+}
+.tap-paused svg {
+  width: 32px;
+  height: 32px;
+}

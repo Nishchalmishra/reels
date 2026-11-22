@@ -423,6 +423,16 @@ export function Discovery({
                     className="feed-slide"
                     key={`${id}:${i}`}
                     aria-label={l.title}
+                    onClick={(e) => {
+                      if (i !== saved.index) return;
+                      if (
+                        (e.target as HTMLElement).closest(
+                          "button,input,a,aside",
+                        )
+                      )
+                        return;
+                      setPaused((v) => !v);
+                    }}
                   >
                     {Math.abs(i - saved.index) <= 1 ? (
                       <LessonVideo
@@ -462,6 +472,11 @@ export function Discovery({
                     ) : l.poster ? (
                       <img src={l.poster} alt="" />
                     ) : null}
+                    {i === saved.index && paused && (
+                      <span className="tap-paused" aria-hidden="true">
+                        <Play />
+                      </span>
+                    )}
                     {i === saved.index && (
                       <>
                         <div className="video-topline">
