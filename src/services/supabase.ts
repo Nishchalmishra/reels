@@ -68,6 +68,9 @@ export class SupabaseAdapter implements DemoService, DiscoveryService {
       "ar_reels_discovery_offer",
     );
   }
+  async discoveryFocus(chapterId: string | null) {
+    await this.rpc("ar_reels_discovery_set_focus", { p_chapter: chapterId });
+  }
   async discoveryDefer(id: string) {
     await this.rpc("ar_reels_discovery_defer", { p_batch: id });
   }

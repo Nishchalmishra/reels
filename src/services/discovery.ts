@@ -36,6 +36,8 @@ export interface DiscoveryService {
     id?: string;
     diagnostic?: string;
   }>;
+  // Tie the active quiz cycle to a chapter (null clears it).
+  discoveryFocus(chapterId: string | null): Promise<void>;
   discoveryDefer(id: string): Promise<void>;
   discoveryStart(id: string): Promise<DiscoveryAttempt>;
   discoveryReview(id: string): Promise<DiscoveryAttempt>;
@@ -64,6 +66,32 @@ export function extendQueue(
     if (!pool.length) pool = lessons;
     if (!pool.length) break;
     result.push(pool[Math.floor(random() * pool.length)].id);
+  }
+  return result;
+}
+
+// Chapter focus: lessons of one chapter in lesson (id) order.
+export function chapterLessons(lessons: Lesson[], chapterId: string): Lesson[] {
+  return lessons
+    .filter((l) => l.chapterId === chapterId)
+    .sort((a, b) => a.id.localeCompare(b.id, undefined, { numeric: true }));
+}
+// Extends a focused queue in lesson order, continuing after the last entry and
+// wrapping to the chapter's first lesson. Falls back to the random mix when the
+// chapter has no lessons.
+export function extendFocusQueue(
+  lessons: Lesson[],
+  chapterId: string,
+  history: string[],
+  count = 8,
+): string[] {
+  const chapter = chapterLessons(lessons, chapterId);
+  if (!chapter.length) return extendQueue(lessons, history, count);
+  const result = [...history];
+  let pos = chapter.findIndex((l) => l.id === result.at(-1));
+  for (let i = 0; i < count; i++) {
+    pos = (pos + 1) % chapter.length;
+    result.push(chapter[pos].id);
   }
   return result;
 }

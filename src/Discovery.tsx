@@ -12,6 +12,7 @@ import {
   Rewind,
   Search,
   Share2,
+  Target,
   Volume2,
   VolumeX,
   X,
@@ -20,6 +21,8 @@ import {
 import { service, liveMode, balance } from "./services";
 import {
   extendQueue,
+  extendFocusQueue,
+  chapterLessons,
   type DiscoveryService,
   type DiscoveryAttempt,
   type Lesson,
@@ -34,6 +37,7 @@ type Saved = {
   tab: "feed" | "explore";
   search: string;
   topic: string;
+  focus?: string;
   scroll: number;
   positions: Record<string, number>;
   returnFeed?: { queue: string[]; index: number };
@@ -104,6 +108,9 @@ export function Discovery({
       if (mounted.current) setError(e.message);
     });
   };
+  // Tells the server which chapter (if any) the current quiz cycle is tied to.
+  const syncFocus = () =>
+    report(() => api.discoveryFocus(state.current.focus ?? null));
   const update = (patch: Partial<Saved>) =>
     setSaved((v) => ({ ...v, ...patch }));
   const task = async (fn: () => Promise<void>) => {
@@ -149,6 +156,7 @@ export function Discovery({
       );
       setLessons(eligible);
       setPending(p.pending);
+      if (state.current.focus) syncFocus();
       const ids = new Set(eligible.map((l) => l.id));
       setSaved((v) => {
         const queue = v.queue.filter((id) => ids.has(id));
@@ -157,12 +165,17 @@ export function Discovery({
           return {
             ...v,
             tab: "feed",
+            focus: undefined,
             queue: extendQueue(eligible, [shared]),
             index: 0,
           };
         return {
           ...v,
-          queue: queue.length ? queue : extendQueue(eligible, []),
+          queue: queue.length
+            ? queue
+            : v.focus && eligible.some((l) => l.chapterId === v.focus)
+              ? extendFocusQueue(eligible, v.focus, [], 12)
+              : extendQueue(eligible, []),
           index: Math.min(v.index, Math.max(0, queue.length - 1)),
         };
       });
@@ -224,9 +237,19 @@ export function Discovery({
       index,
       queue:
         index >= v.queue.length - 3
-          ? extendQueue(lessons, v.queue, 8)
+          ? v.focus
+            ? extendFocusQueue(lessons, v.focus, v.queue, 8)
+            : extendQueue(lessons, v.queue, 8)
           : v.queue,
     }));
+    if (state.current.focus) {
+      const chapter = chapterLessons(lessons, state.current.focus);
+      const id = state.current.queue[index];
+      if (chapter.length > 1 && chapter.at(-1)?.id === id)
+        setMessage(
+          "Last reel of this chapter. Next replays it from the start. Turn Focus off to explore.",
+        );
+    }
     void checkOffer();
   };
   const begin = async (id: string) => {
@@ -252,6 +275,7 @@ export function Discovery({
     setAttempt(null);
     update({ attempt: undefined });
     setPending((await api.discoveryState()).pending);
+    syncFocus();
   };
   const finish = async () => {
     if (!attempt) return;
@@ -259,6 +283,7 @@ export function Discovery({
     setAttempt(a);
     await refresh();
     setPending((await api.discoveryState()).pending);
+    syncFocus();
     if (a.rewarded && !localStorage.getItem(`ar-celebrated:${a.id}`)) {
       setCelebrate(true);
       localStorage.setItem(`ar-celebrated:${a.id}`, "1");
@@ -312,10 +337,33 @@ export function Discovery({
     window.addEventListener("reels-nav-click", onNav);
     return () => window.removeEventListener("reels-nav-click", onNav);
   }, []);
+  // Focus locks the feed to the chapter of the reel on screen, in lesson order.
+  // Upcoming reels are replaced; the current one stays so the place is kept.
+  const toggleFocus = () => {
+    setSaved((v) => {
+      const keep = v.queue.slice(0, v.index + 1);
+      const current = lessons.find((l) => l.id === v.queue[v.index]);
+      if (!v.focus && current)
+        return {
+          ...v,
+          focus: current.chapterId,
+          queue: extendFocusQueue(lessons, current.chapterId, keep, 8),
+        };
+      return { ...v, focus: undefined, queue: extendQueue(lessons, keep, 8) };
+    });
+    setMessage("");
+    // state.current catches up after the render the setSaved above triggers.
+    setTimeout(syncFocus, 0);
+  };
   const openLesson = (id: string) => {
-    const rest = extendQueue(lessons, [id], 12);
+    const opened = lessons.find((l) => l.id === id);
+    const focus = saved.focus && opened ? opened.chapterId : undefined;
+    const rest = focus
+      ? extendFocusQueue(lessons, focus, [id], 12)
+      : extendQueue(lessons, [id], 12);
     setSaved((v) => ({
       ...v,
+      focus,
       returnFeed: v.returnFeed || { queue: v.queue, index: v.index },
       queue: rest,
       index: 0,
@@ -323,6 +371,7 @@ export function Discovery({
     setExplorePlayer(true);
     setPaused(false);
     if (feed.current) feed.current.scrollTop = 0;
+    if ((focus ?? "") !== (state.current.focus ?? "")) setTimeout(syncFocus, 0);
   };
   const activeAnswer = attempt?.answers[question];
   if (s.profile!.persona !== "Pro")
@@ -483,6 +532,15 @@ export function Discovery({
                           <span>
                             {l.subject} · Class {l.grades[0]}
                           </span>
+                          {saved.focus === l.chapterId && (
+                            <span className="focus-chip">
+                              Chapter focus ·{" "}
+                              {chapterLessons(lessons, l.chapterId).findIndex(
+                                (x) => x.id === l.id,
+                              ) + 1}
+                              /{chapterLessons(lessons, l.chapterId).length}
+                            </span>
+                          )}
                         </div>
                         <aside className="video-actions">
                           <button
@@ -492,6 +550,19 @@ export function Discovery({
                           >
                             {paused ? <Play /> : <Pause />}
                             <span>{paused ? "Play" : "Pause"}</span>
+                          </button>
+                          <button
+                            className={saved.focus ? "focus-on" : ""}
+                            onClick={toggleFocus}
+                            aria-pressed={!!saved.focus}
+                            aria-label={
+                              saved.focus
+                                ? "Turn chapter focus off"
+                                : "Focus on this chapter"
+                            }
+                          >
+                            <Target />
+                            <span>{saved.focus ? "Focus on" : "Focus"}</span>
                           </button>
                           <button
                             onClick={() =>
@@ -866,24 +937,26 @@ export function Discovery({
               <div
                 className={`result-medal ${celebrate && attempt.rewarded ? "coin-pop" : ""}`}
               >
-                {attempt.rewarded ? "+5" : `${attempt.score}/5`}
+                {attempt.rewarded
+                  ? "+5"
+                  : `${attempt.score}/${attempt.questions.length}`}
               </div>
               <span className="eyebrow cyan">
-                {attempt.score === 5
-                  ? "ALL FIVE. WELL REMEMBERED."
+                {attempt.score === attempt.questions.length
+                  ? "ALL CORRECT. WELL REMEMBERED."
                   : "A LITTLE REVISION GOES A LONG WAY."}
               </span>
               <h1>
                 {attempt.rewarded
-                  ? "Five ideas. Five coins."
-                  : attempt.score === 5
+                  ? "Perfect score. Five coins."
+                  : attempt.score === attempt.questions.length
                     ? "Perfect practice."
                     : "Keep your curiosity going."}
               </h1>
               <p>
                 {attempt.rewarded
                   ? "Five coins have been added to your wallet. ₹1, earned by learning."
-                  : attempt.score === 5
+                  : attempt.score === attempt.questions.length
                     ? "This lesson set has already earned its five-coin reward."
                     : "No coins this time. Revisit the lessons and try again — a later perfect attempt can earn the reward."}
               </p>
@@ -930,7 +1003,9 @@ export function Discovery({
             </div>
           ) : (
             <div className="quiz-body">
-              <span className="eyebrow">QUESTION {question + 1} OF 5</span>
+              <span className="eyebrow">
+                QUESTION {question + 1} OF {attempt.questions.length}
+              </span>
               <span className="source-chip">
                 From{" "}
                 {lessons.find(

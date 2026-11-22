@@ -1,4 +1,4 @@
-import {beforeAll,afterAll,it,expect} from 'vitest';
+import {beforeAll,afterAll,it,expect,describe} from 'vitest';
 import {PGlite} from '@electric-sql/pglite';
 import {buildMigrationBatch} from '../../scripts/migration-batch.mjs';
 let db:PGlite;const A=crypto.randomUUID(), B=crypto.randomUUID();
@@ -84,4 +84,57 @@ it('rewatching the same content in a different order cannot reward a new cycle a
  expect(repeatedContent.questions.map((q:any)=>q.id)).toEqual(first.questions.map((q:any)=>q.id));
  const finished=await answer(repeatedContent,true);expect(finished.score).toBe(5);expect(finished.rewarded).toBe(false);expect(finished.alreadyRewarded).toBe(true);
  const ledger=(await rpc('snapshot')).ledger;expect(ledger.filter((row:any)=>row.amount===5)).toHaveLength(1);
+});
+async function answerAll(a:any,perfect:boolean){
+ for(let i=0;i<a.questions.length;i++){
+  await owner();const key=(await db.query<{correct_index:number}>('select correct_index from ar_reels_private.discovery_answer_keys where question_id=$1',[a.questions[i].id])).rows[0].correct_index;
+  await user(a.__u);await rpc('submit',[a.id,i,perfect||i>0?key:(key+1)%4]);
+ }
+ return rpc('finish',[a.id]);
+}
+async function newUser(label:string,threshold:number){
+ const id=crypto.randomUUID();await owner();await db.query('insert into auth.users(id) values($1)',[id]);await user(id);await rpc('profile',[label,'11 science','Hindi',true]);
+ const state=await rpc('discovery_state');await owner();await db.query('update public.ar_reels_discovery_cycles set threshold=$2 where id=$1',[state.cycleId,threshold]);await user(id);return id;
+}
+const inChapter=(c:string)=>media.filter(m=>m.chapterId===c);
+describe('chapter focus quiz',()=>{
+ it('a one-reel chapter quizzes from just that reel, even when the cycle threshold is 4',async()=>{
+  const u=await newUser('TEST focus single',4);const chapter='discovery-momentum';const only=inChapter(chapter);expect(only).toHaveLength(1);
+  await rpc('discovery_set_focus',[chapter]);
+  const others=media.filter(m=>m.chapterId!==chapter).slice(0,3);
+  for(const m of others)await watch(m.id,m.duration);
+  expect((await rpc('discovery_offer')).ready).toBe(false); // random reels do not count while focused
+  await watch(only[0].id,only[0].duration);
+  const offer=await rpc('discovery_offer');expect(offer.ready).toBe(true);
+  const a=await rpc('discovery_start',[offer.id]);a.__u=u;
+  expect(a.questions.length).toBe(2);expect(a.questions.every((q:any)=>q.reelId===only[0].id)).toBe(true);
+  const done=await answerAll(a,true);expect(done.score).toBe(2);expect(done.rewarded).toBe(true);
+  expect((await rpc('snapshot')).ledger.reduce((n:number,r:any)=>n+r.amount,0)).toBe(5);
+ });
+ it('a short quiz is not rewarded unless every answer is right',async()=>{
+  const u=await newUser('TEST focus miss',4);const only=inChapter('discovery-reflection');await rpc('discovery_set_focus',['discovery-reflection']);
+  await watch(only[0].id,only[0].duration);const offer=await rpc('discovery_offer');const a=await rpc('discovery_start',[offer.id]);a.__u=u;
+  const done=await answerAll(a,false);expect(done.score).toBe(a.questions.length-1);expect(done.rewarded).toBe(false);
+ });
+ it('a three-reel chapter offers a five-question quiz from its own reels only',async()=>{
+  await newUser('TEST focus three',4);const chapter='discovery-laws-of-motion';const reels=inChapter(chapter);expect(reels).toHaveLength(3);
+  await rpc('discovery_set_focus',[chapter]);
+  await watch(media.find(m=>m.chapterId!==chapter).id,60);
+  for(const m of reels.slice(0,2))await watch(m.id,m.duration);
+  expect((await rpc('discovery_offer')).ready).toBe(false);
+  await watch(reels[2].id,reels[2].duration);
+  const offer=await rpc('discovery_offer');expect(offer.ready).toBe(true);
+  const a=await rpc('discovery_start',[offer.id]);expect(a.questions).toHaveLength(5);
+  expect(a.questions.every((q:any)=>reels.some(r=>r.id===q.reelId))).toBe(true);
+ });
+ it('turning focus off restores the normal rules; unknown chapters and frozen cycles are rejected',async()=>{
+  await newUser('TEST focus off',3);await rpc('discovery_set_focus',['discovery-momentum']);await rpc('discovery_set_focus',[null]);
+  for(const m of media.slice(0,3))await watch(m.id,m.duration);
+  const offer=await rpc('discovery_offer');expect(offer.ready).toBe(true);
+  const a=await rpc('discovery_start',[offer.id]);expect(a.questions).toHaveLength(5);
+  await expect(rpc('discovery_set_focus',['no-such-chapter'])).rejects.toThrow(/Unknown chapter/);
+  await rpc('discovery_set_focus',['discovery-momentum']); // cycle already produced a quiz: ignored
+  expect((await rpc('discovery_offer')).ready).toBe(false); // quiz already started; no second offer
+  expect((await rpc('discovery_start',[offer.id])).questions).toHaveLength(5);
+ });
 });
