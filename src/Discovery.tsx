@@ -373,7 +373,9 @@ export function Discovery({
     if (feed.current) feed.current.scrollTop = 0;
     if ((focus ?? "") !== (state.current.focus ?? "")) setTimeout(syncFocus, 0);
   };
-  const activeAnswer = attempt?.answers[question];
+  // Never index past the quiz, whatever its length (focus quizzes have 1-5 questions).
+  const qi = attempt ? Math.min(question, attempt.questions.length - 1) : 0;
+  const activeAnswer = attempt?.answers[qi];
   if (s.profile!.persona !== "Pro")
     return (
       <div className="discovery-empty">
@@ -1006,17 +1008,16 @@ export function Discovery({
           ) : (
             <div className="quiz-body">
               <span className="eyebrow">
-                QUESTION {question + 1} OF {attempt.questions.length}
+                QUESTION {qi + 1} OF {attempt.questions.length}
               </span>
               <span className="source-chip">
                 From{" "}
-                {lessons.find(
-                  (l) => l.id === attempt.questions[question].reelId,
-                )?.title || "your watched lesson"}
+                {lessons.find((l) => l.id === attempt.questions[qi].reelId)
+                  ?.title || "your watched lesson"}
               </span>
-              <h1>{attempt.questions[question].prompt}</h1>
+              <h1>{attempt.questions[qi].prompt}</h1>
               <div className="quiz-options">
-                {attempt.questions[question].options.map((option, i) => (
+                {attempt.questions[qi].options.map((option, i) => (
                   <button
                     key={i}
                     disabled={!!activeAnswer || busy}
@@ -1050,16 +1051,12 @@ export function Discovery({
                   void task(async () => {
                     if (!activeAnswer) {
                       setAttempt(
-                        await api.discoverySubmit(
-                          attempt.id,
-                          question,
-                          selected!,
-                        ),
+                        await api.discoverySubmit(attempt.id, qi, selected!),
                       );
-                    } else if (question === 4) {
+                    } else if (qi >= attempt.questions.length - 1) {
                       await finish();
                     } else {
-                      setQuestion(question + 1);
+                      setQuestion(qi + 1);
                       setSelected(null);
                     }
                   })
@@ -1068,7 +1065,7 @@ export function Discovery({
                 {busy
                   ? "Saving…"
                   : activeAnswer
-                    ? question === 4
+                    ? qi >= attempt.questions.length - 1
                       ? "See my result"
                       : "Next question"
                     : "Submit answer"}
