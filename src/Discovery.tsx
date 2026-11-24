@@ -845,9 +845,9 @@ export function Discovery({
             <span className="eyebrow cyan">A MOMENT TO RECALL</span>
             <h2>Make those ideas stick.</h2>
             <p>
-              Five questions from the lessons you watched.
+              Questions from the lessons you watched.
               <br />
-              Get all five right to earn five coins.
+              Earn one coin for every correct answer.
             </p>
             <button
               className="button"
@@ -937,8 +937,8 @@ export function Discovery({
               <div
                 className={`result-medal ${celebrate && attempt.rewarded ? "coin-pop" : ""}`}
               >
-                {attempt.rewarded
-                  ? "+5"
+                {attempt.coins
+                  ? `+${attempt.coins}`
                   : `${attempt.score}/${attempt.questions.length}`}
               </div>
               <span className="eyebrow cyan">
@@ -947,18 +947,20 @@ export function Discovery({
                   : "A LITTLE REVISION GOES A LONG WAY."}
               </span>
               <h1>
-                {attempt.rewarded
-                  ? "Perfect score. Five coins."
-                  : attempt.score === attempt.questions.length
-                    ? "Perfect practice."
+                {attempt.coins
+                  ? attempt.coins === 1
+                    ? "One coin earned."
+                    : `${attempt.coins} coins earned.`
+                  : attempt.score > 0
+                    ? "Already rewarded."
                     : "Keep your curiosity going."}
               </h1>
               <p>
-                {attempt.rewarded
-                  ? "Five coins have been added to your wallet. ₹1, earned by learning."
-                  : attempt.score === attempt.questions.length
-                    ? "This lesson set has already earned its five-coin reward."
-                    : "No coins this time. Revisit the lessons and try again — a later perfect attempt can earn the reward."}
+                {attempt.coins
+                  ? `${attempt.coins === 1 ? "One coin has" : `${attempt.coins} coins have`} been added to your wallet. One coin for every correct answer.`
+                  : attempt.score > 0
+                    ? "You have already earned coins for these questions. A correct answer on a new question earns a coin."
+                    : "No coins this time. Every correct answer earns one coin, so revisit the lessons and try again."}
               </p>
               <div className="quiz-review">
                 {attempt.questions.map((q, i) => (
@@ -1038,7 +1040,7 @@ export function Discovery({
                 </div>
               ) : (
                 <p className="quiz-rule">
-                  All five correct = five coins total. You can always retry.
+                  One coin for each correct answer. You can always retry.
                 </p>
               )}
               <button

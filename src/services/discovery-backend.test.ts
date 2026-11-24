@@ -48,11 +48,11 @@ async function answer(a:any,perfect:boolean){
  return rpc('finish',[a.id]);
 }
 it('awards zero for 4/5 then five total on a perfect retry, never twice',async()=>{
- const failed=await answer(first,false);expect(failed.score).toBe(4);expect(failed.rewarded).toBe(false);
+ const failed=await answer(first,false);expect(failed.score).toBe(4);expect(failed.rewarded).toBe(true);expect(failed.coins).toBe(4);
  const retry=await rpc('discovery_start',[batch.id]);expect(retry.id).not.toBe(first.id);
- const completed=await answer(retry,true);expect(completed.score).toBe(5);expect(completed.rewarded).toBe(true);
+ const completed=await answer(retry,true);expect(completed.score).toBe(5);expect(completed.rewarded).toBe(true);expect(completed.coins).toBe(1);
  expect(await rpc('finish',[retry.id])).toEqual(completed);
- const practice=await rpc('discovery_start',[batch.id]);expect((await answer(practice,true)).rewarded).toBe(false);
+ const practice=await rpc('discovery_start',[batch.id]);const again=await answer(practice,true);expect(again.rewarded).toBe(false);expect(again.coins).toBe(0);expect(again.alreadyRewarded).toBe(true);
  const snapshot=await rpc('snapshot');expect(snapshot.ledger.reduce((n:number,r:any)=>n+r.amount,0)).toBe(5);
 });
 it('private keys and other users attempts remain inaccessible, redemption remains transactional',async()=>{
@@ -80,10 +80,10 @@ it('acceptance keeps the cycle stable and blocks overlapping offers until comple
 it('rewatching the same content in a different order cannot reward a new cycle again',async()=>{
  await user(A);for(const m of [...media.slice(0,4)].reverse())await watch(m.id,m.duration);
  const offered=await rpc('discovery_offer');expect(offered.ready).toBe(true);expect(offered.id).not.toBe(batch.id);
- const repeatedContent=await rpc('discovery_start',[offered.id]);expect(repeatedContent.alreadyRewarded).toBe(true);
+ const repeatedContent=await rpc('discovery_start',[offered.id]);
  expect(repeatedContent.questions.map((q:any)=>q.id)).toEqual(first.questions.map((q:any)=>q.id));
- const finished=await answer(repeatedContent,true);expect(finished.score).toBe(5);expect(finished.rewarded).toBe(false);expect(finished.alreadyRewarded).toBe(true);
- const ledger=(await rpc('snapshot')).ledger;expect(ledger.filter((row:any)=>row.amount===5)).toHaveLength(1);
+ const finished=await answer(repeatedContent,true);expect(finished.score).toBe(5);expect(finished.rewarded).toBe(false);expect(finished.coins).toBe(0);expect(finished.alreadyRewarded).toBe(true);
+ const ledger=(await rpc('snapshot')).ledger;expect(ledger.filter((row:any)=>row.amount>0).reduce((n:number,r:any)=>n+r.amount,0)).toBe(5);
 });
 async function answerAll(a:any,perfect:boolean){
  for(let i=0;i<a.questions.length;i++){
@@ -108,13 +108,13 @@ describe('chapter focus quiz',()=>{
   const offer=await rpc('discovery_offer');expect(offer.ready).toBe(true);
   const a=await rpc('discovery_start',[offer.id]);a.__u=u;
   expect(a.questions.length).toBe(2);expect(a.questions.every((q:any)=>q.reelId===only[0].id)).toBe(true);
-  const done=await answerAll(a,true);expect(done.score).toBe(2);expect(done.rewarded).toBe(true);
-  expect((await rpc('snapshot')).ledger.reduce((n:number,r:any)=>n+r.amount,0)).toBe(5);
+  const done=await answerAll(a,true);expect(done.score).toBe(2);expect(done.rewarded).toBe(true);expect(done.coins).toBe(2);
+  expect((await rpc('snapshot')).ledger.reduce((n:number,r:any)=>n+r.amount,0)).toBe(2);
  });
- it('a short quiz is not rewarded unless every answer is right',async()=>{
+ it('a short quiz pays one coin per correct answer',async()=>{
   const u=await newUser('TEST focus miss',4);const only=inChapter('discovery-reflection');await rpc('discovery_set_focus',['discovery-reflection']);
   await watch(only[0].id,only[0].duration);const offer=await rpc('discovery_offer');const a=await rpc('discovery_start',[offer.id]);a.__u=u;
-  const done=await answerAll(a,false);expect(done.score).toBe(a.questions.length-1);expect(done.rewarded).toBe(false);
+  const done=await answerAll(a,false);expect(done.score).toBe(a.questions.length-1);expect(done.coins).toBe(a.questions.length-1);
  });
  it('a three-reel chapter offers a five-question quiz from its own reels only',async()=>{
   await newUser('TEST focus three',4);const chapter='discovery-laws-of-motion';const reels=inChapter(chapter);expect(reels).toHaveLength(3);

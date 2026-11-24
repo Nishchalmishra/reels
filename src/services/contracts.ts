@@ -23,6 +23,8 @@ export type Attempt = {
   score: number;
   rewarded: boolean;
   alreadyRewarded: boolean;
+  // Reels quizzes: coins earned by this attempt (one per newly correct answer).
+  coins?: number;
 };
 export type Ledger = {
   id: string;
